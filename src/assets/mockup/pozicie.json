@@ -1,0 +1,14 @@
+[
+  {
+    "id":"POS123456", "title":"Programátor JAVA",
+    "competenceId": ["A0001", "A0002", "A0005", "A0006", "A0007", "A0008"]
+  },
+  {
+    "id":"POS123457", "title":"Programátor UI",
+    "competenceId": ["A0003"]
+  },
+  {
+    "id":"POS123458", "title":"Analytik",
+    "competenceId": ["A0004", "A0008"]
+  }
+]

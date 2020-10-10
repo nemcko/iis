@@ -1,0 +1,63 @@
+<article class="b-article article-vertical mb-6" *ngIf="model.openAttachment && model.attachmentUrl.length == 1">
+  <div class="row">
+    <div class="col-12 col-xl-6">
+      <a [href]="model.attachmentUrl[0]" class="image box-shadow-lg article-actions-on">
+        <span class="article-actions position-absolute top-12 left-12">
+          <span class="e-round-icon text-secondary" preventDefault stopPropagation (click)="editArticle(model.id)"
+            *ngIf="isHR">
+            <i class="icon icon-edit"></i>
+          </span>
+        </span>
+        <img src="./assets/img-placeholder-700x520.png" class="img-fluid">
+        <img [src]="model?.imgUrl || './assets/empty_image.jpg'" class="img-fluid  article-image">
+      </a>
+    </div>
+  </div>
+
+  <div class="content bg-white border-radius-md p-4 p-xl-6 box-shadow-lg d-flex flex-column">
+    <h3 class="fs-6 font-weight-bold mb-2 mt-auto">
+      <a [href]="model.attachmentUrl[0]">{{model.title}}</a>
+    </h3>
+    <div class="my-2 lh-24 perex">{{model.description | urlDecode}}</div>
+    <div class="mb-2">
+      <a [href]="model.attachmentUrl[0]" class="text-gray fs-3 font-weight-bold">{{model.created}}</a>
+      <span class="ml-3 text-gray fs-3 font-weight-bold">{{model.authorFN || ''}}</span>
+    </div>
+    <div class="fs-3 mb-auto" *ngIf="model.category && model.category.length > 0">
+      <a routerLink="/dashboard/oznamy/{{category | urlEncode}}" class="text-tertiary font-weight-bold mr-1"
+        *ngFor="let category of model.category">#{{category}}</a>
+    </div>
+  </div>
+</article>
+
+<article class="b-article article-vertical mb-6" *ngIf="!(model.openAttachment && model.attachmentUrl.length == 1)">
+  <div class="row">
+    <div class="col-12 col-xl-6">
+      <a routerLink="/dashboard/oznam/{{model.id}}" class="image box-shadow-lg article-actions-on">
+        <span class="article-actions position-absolute top-12 left-12">
+          <span class="e-round-icon text-secondary" preventDefault stopPropagation (click)="editArticle(model.id)"
+            *ngIf="isHR">
+            <i class="icon icon-edit"></i>
+          </span>
+        </span>
+        <img src="./assets/img-placeholder-700x520.png" class="img-fluid">
+        <img [src]="model?.imgUrl || './assets/empty_image.jpg'" class="img-fluid  article-image">
+      </a>
+    </div>
+  </div>
+
+  <div class="content bg-white border-radius-md p-4 p-xl-6 box-shadow-lg d-flex flex-column">
+    <h3 class="fs-6 font-weight-bold mb-2 mt-auto">
+      <a routerLink="/dashboard/oznam/{{model.id}}">{{model.title}}</a>
+    </h3>
+    <div class="my-2 lh-24 perex">{{model.description | urlDecode}}</div>
+    <div class="mb-2">
+      <a routerLink="/dashboard/oznam/{{model.id}}" class="text-gray fs-3 font-weight-bold">{{model.created}}</a>
+      <span class="ml-3 text-gray fs-3 font-weight-bold">{{model.authorFN || ''}}</span>
+    </div>
+    <div class="fs-3 mb-auto" *ngIf="model.category && model.category.length > 0">
+      <a routerLink="/dashboard/oznamy/{{category | urlEncode}}" class="text-tertiary font-weight-bold mr-1"
+        *ngFor="let category of model.category">#{{category}}</a>
+    </div>
+  </div>
+</article>

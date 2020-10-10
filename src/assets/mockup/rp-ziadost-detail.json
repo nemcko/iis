@@ -1,0 +1,19 @@
+{
+    "id": "NT0123456",
+    "author": "Martin Driensky",
+    "authorId": "230",
+    "name": "Chata pod Rysmi",
+    "location": "Tatry",
+    "dateFrom": "1.7.2019",
+    "dateTo": "14.7.2019",
+    "nights": 13,
+    "personsCount": 3,
+    "price": 150,
+    "contributionAmount": 250,
+    "aditionalServices": "vírivka, fit centrum, masáž",
+    "aditionalPersons": "Katarína Jesenská - manželka, Elemíra Jesenská - svokra",
+    "attachments": ["/rp.nsf/prilohy/faktura.png", "/rp.nsf/prilohy/potvrdenie_ubytovania.png", "/rp.nsf/prilohy/doklad_rodinnych_prislusnikov.png"],
+    "reasonForReturn": "Here, I focus on a range of items and features that we use in life without giving them a second thought such as Coca Cola, body muscles and holding ones own breath. Though, most of these notes are not fundamentally necessary, they are such that you can use them for a good laugh, at a drinks party or for picking up women or men.stops the functioning of the heart for a very tiny second.",
+    "status": "DRAFT"
+
+    }

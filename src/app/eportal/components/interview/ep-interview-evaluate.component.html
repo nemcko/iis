@@ -1,0 +1,241 @@
+<ng-container *ngIf="parent.type==='evaluated'">
+    <header classes="toptitle2">
+        <h3>Moje zhodnotenie roka - {{parent?.persdata.personFN}}</h3>
+    </header>
+    <div class="fs-5 pb-4">
+        Pred začiatkom ročného rozhovoru chceme aby si zhodnotil(a) svoj rok. Čo si sa naučila v predchádzajúcom roku a
+        čo
+        čo nové by si sa chcel(a) naučiť v budúcom roku.
+        Ako si myslíš, že si si naplnil(a) ciele na tento rok, ako si sa zlepšil(a) v odborných a osobnostných
+        kompetenciách.
+    </div>
+</ng-container>
+
+<ng-container *ngIf="parent.type==='evaluator'">
+    <header classes="toptitle2">
+        <h3>{{parent?.persdata.personFN}} - hodnotenie</h3>
+    </header>
+    <div class="fs-5 pb-4">
+        Začíname ročný rozhovor, pohodlne sa usaďte a zhodnoťme minulý rok.
+        Teamlíder po rozhovore so zamestnancom vyhodnotí úspešnosť nastavených cieľov a pokrok v rozvoji odborných a
+        osobnostných kompetencií.
+        Následne pristúpia k nastavovaniu cieľov pre budúci rok.
+    </div>
+</ng-container>
+
+<ng-container *ngIf="parent.type==='jointevaluation'">
+    <header classes="toptitle2">
+        <h3>Ročný rozhovor - zhodnotenie - {{parent?.persdata.personFN}}</h3>
+    </header>
+    <div class="fs-5 pb-4">
+        Začíname ročný rozhovor, pohodlne sa usaďte a zhodnoťme minulý rok.
+        Teamlíder po rozhovore so zamestnancom vyhodnotí úspešnosť nastavených cieľov a pokrok v rozvoji odborných a
+        osobnostných kompetencií.
+        Následne pristúpia k nastavovaniu cieľov pre budúci rok.
+    </div>
+</ng-container>
+
+<ng-container *ngIf="!hasTargets">
+    <div class="row">
+        <div class="w-100 px-3 pb-3">
+            Odporúčame Ti definovať 3-5 cieľov na nadchádzajúci rok. S tým, že každý môže mať svoj vlastný deadline v
+            rámci
+            celého obdobia.
+            Výstižne cieľ pomenuj a zároveň vlož text, ktorý ho jednoznačne popíše.
+        </div>
+        <div class="col-12 col-lg-6 mx-3 bg-white p-5 border-radius-md box-shadow-sm clearfix b-ils-info">
+            <div class="row align-items-center">
+                <div class="col-12 col-lg-6 text-center mb-6 order-lg-2">
+                    <img src="assets/ils-table.svg" alt="#" class="img-fluid">
+                </div>
+                <div class="col-12 col-lg-6 px-xl-7 order-lg-1">
+                    <h3 class="text-primary fs-7 font-weight-bold">Na nadchádzajúce obdobie zatiaľ nemáš definované
+                        nijaké
+                        ciele.</h3>
+                    <a [routerLink]="['/portal',parent.idl,'interviews',parent.id,'targets']"
+                        class="btn bg-white box-shadow-md text-secondary text-uppercase fs-5 font-weight-bold px-6 py-2 px-md-6 mt-1 mt-lg-3 d-inline-block">Pridaj
+                        cieľ</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>
+
+
+<ng-container *ngIf="hasTargets">
+    <header classes="header3 mb-3">
+        <h3>Zhodnoť úspešnosť cieľov</h3>
+    </header>
+
+    <div class="row" *ngIf="hasTargets">
+        <div class="col-12 col-lg-6 mb-4" *ngFor="let item of data?.targets || []; let i = index"
+            [ngClass]="{'pr-xl-6': i%2===0}">
+            <div
+                class="bg-white pb-3 pt-6 px-4 border-radius-md box-shadow-sm clearfix d-flex flex-column position-relative">
+
+                <!-- <div *ngIf="parent.type==='evaluator'" class="b-timeline" style="top:0px;height:0px !important;">
+                    <div class="year start" [ngStyle]="{'left': item.merate + '%'}"></div>
+                </div> -->
+
+                <p-slider *ngIf="parent.type==='evaluated'" class="d-inline-block w-100 mb-3 mt-1"
+                    [(ngModel)]="item.merate" [min]="0" [max]="100" [step]="25"></p-slider>
+                <p-slider *ngIf="parent.type==='evaluator'" class="d-inline-block w-100 mb-3 mt-1"
+                    [(ngModel)]="item.tlrate" [min]="0" [max]="100" [step]="25"></p-slider>
+
+
+                <div class="b-timeline mt-3 mb-3" *ngIf="parent.type==='jointevaluation'">
+                    <div class="e-progress-bar blue">
+                        <span [ngStyle]="{'left': item.merate + '%'}"></span>
+                        <span [ngStyle]="{'left': item.tlrate + '%'}"></span>
+                    </div>
+
+                    <div class="year start" [ngStyle]="{'left': item.merate + '%'}">
+                        <div class="title">ZC</div>
+                    </div>
+                    <div class="year end" [ngStyle]="{'left': item.tlrate + '%'}">
+                        <div class="title">TL</div>
+                    </div>
+                </div>
+
+
+                <div *ngIf="parent.type!=='jointevaluation'" class="exslider">
+                    <div class="mark" style="left: 27%;top:42px;"></div>
+                    <div class="mark" style="left: 50%;top:42px;"></div>
+                    <div class="mark" style="left: 74%;top:42px;"></div>
+                </div>
+                <div *ngIf="parent.type==='jointevaluation'" class="exslider">
+                    <div class="mark" style="left: 27%;top:50px;"></div>
+                    <div class="mark" style="left: 50%;top:50px;"></div>
+                    <div class="mark" style="left: 74%;top:50px;"></div>
+                </div>
+
+                <h3 class="font-weight-black text-primary fs-6 mx-3 mb-2">{{item.name}}</h3>
+                <div class="row mx-0">
+                    <div class="col-12 col-lg">Progress:
+                        <strong *ngIf="parent.type!=='jointevaluation'">{{item.merate}}%</strong>
+                        <strong *ngIf="parent.type==='jointevaluation'">{{item.tlrate}}%</strong>
+                    </div>
+                    <div class="col-12 col-lg text-lg-right">Váha cieľa: <strong>{{item.weight}}%</strong></div>
+                </div>
+                <textarea classes="textarea my-3 ml-3 mr-6" style="width:95%;" rows="4" [(ngModel)]="item.desc"
+                    name="desc" *ngIf="parent.type==='evaluated'"></textarea>
+
+                <ng-container *ngIf="parent.type==='evaluator'">
+                    <div class="evaline"></div>
+                    <textarea classes="textarea my-3 ml-3 mr-6" style="width:95%;" rows="4" [(ngModel)]="item.evalnote"
+                        name="evalnote"></textarea>
+                </ng-container>
+
+                <ng-container *ngIf="parent.type==='jointevaluation'">
+                    <div class="evaline"></div>
+                    <h3 class="font-weight-black text-primary fs-6 mx-3 mb-3">Ja</h3>
+
+                    <div class=" row mx-0">
+                        <div class="mx-3">{{item.ratednote}}</div>
+                    </div>
+
+                    <h3 class="font-weight-black text-primary fs-6 mx-3 my-3">Môj team-leader</h3>
+
+                    <div class="row mx-0">
+                        <div class="mx-3">{{item.evalnote}}</div>
+                    </div>
+                    <div class="evaline"></div>
+
+                    <textarea *ngIf="!data.joinDate" classes="textarea my-3 ml-3 mr-6" style="width:95%;" rows="4"
+                        [(ngModel)]="item.jointnote" name="jointnote"></textarea>
+                    <div *ngIf="data.joinDate" classes="text">{{item.jointnote}}</div>
+
+                </ng-container>
+
+            </div>
+        </div>
+    </div>
+</ng-container>
+
+
+<ng-container *ngIf="hasTargets">
+    <header classes="header3">
+        <h3>Kompetencie</h3>
+    </header>
+    <div class="fs-5 pt-3 pb-4">
+        V tejto časti zhodnoť svoje programátorské a soft skilly. <a href="#"
+            class="text-secondary font-weight-bold">Pozri návod na hodnotenie.</a>
+    </div>
+
+    <div class="row" *ngIf="hasCompetences">
+        <div class="col-12 col-lg-6 mb-4" *ngFor="let item of data?.competences || []; let i = index"
+            [ngClass]="{'pr-xl-6': i%2===0}">
+            <div
+                class="bg-white pb-3 pt-6 px-4 border-radius-md box-shadow-sm clearfix d-flex flex-column position-relative">
+                <p-slider *ngIf="parent.type==='evaluated'" class="d-inline-block w-100 mb-3 mt-1"
+                    [(ngModel)]="item.merate" [min]="0" [max]="100" [step]="25"></p-slider>
+                <p-slider *ngIf="parent.type==='evaluator'" class="d-inline-block w-100 mb-3 mt-1"
+                    [(ngModel)]="item.tlrate" [min]="0" [max]="100" [step]="25"></p-slider>
+
+                    <div class="b-timeline mt-3 mb-3" *ngIf="parent.type==='jointevaluation'">
+                        <div class="e-progress-bar blue">
+                            <span [ngStyle]="{'left': item.merate + '%'}"></span>
+                            <span [ngStyle]="{'left': item.tlrate + '%'}"></span>
+                        </div>
+    
+                        <div class="year start" [ngStyle]="{'left': item.merate + '%'}">
+                            <div class="title">ZC</div>
+                        </div>
+                        <div class="year end" [ngStyle]="{'left': item.tlrate + '%'}">
+                            <div class="title">TL</div>
+                        </div>
+                    </div>
+    
+                    <div *ngIf="parent.type!=='jointevaluation'" class="exslider">
+                        <div class="mark" style="left: 27%;top:42px;"></div>
+                        <div class="mark" style="left: 50%;top:42px;"></div>
+                        <div class="mark" style="left: 74%;top:42px;"></div>
+                    </div>
+                    <div *ngIf="parent.type==='jointevaluation'" class="exslider">
+                        <div class="mark" style="left: 27%;top:50px;"></div>
+                        <div class="mark" style="left: 50%;top:50px;"></div>
+                        <div class="mark" style="left: 74%;top:50px;"></div>
+                    </div>
+    
+                <h3 class="font-weight-black text-primary fs-6 mx-3 mb-2">{{item.name}}</h3>
+                <div class="row mx-0">
+                    <div class="mx-3">{{item.desc}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>
+
+<div class="row mt-6" *ngIf="parent.type==='evaluated'||parent.type==='evaluator'">
+    <div class="col-12 col-lg-6 my-4">
+        <header classes="header3 mb-3">
+            <h3>Zhrnutie roka, čo som sa naučil, moje dojmy</h3>
+        </header>
+        <div classes="panel p-6">
+            <textarea classes="textarea2" rows="2" [readonly]="parent.type==='evaluator' ? true : false"
+                [(ngModel)]="data.intention" name="intention"></textarea>
+        </div>
+    </div>
+    <div class="col-12 col-lg-6 my-4">
+        <header classes="header3 mb-3">
+            <h3>Čomu by som sa chcel venovať v najbližšom období</h3>
+        </header>
+        <div classes="panel p-6">
+            <textarea classes="textarea2" rows="2" [readonly]="parent.type==='evaluator' ? true : false"
+                [(ngModel)]="data.nextinten" name="nextinten"></textarea>
+        </div>
+    </div>
+</div>
+
+
+<div classes="footerpanel">
+    <a href="javascript:void(0)" (click)="parent.goToCard()" classes="footerbutton"><i
+            class="fas fa-arrow-left"></i>&nbsp;Späť na zhodnotenie</a>
+
+    <a *ngIf="parent.maySaveData()" href="#" preventDefault (click)="saveData()" classes="footerbutton"><i
+            class="far fa-file"></i>&nbsp;Uložiť
+        ročný rozhovor</a>
+
+    <a href="javascript:void(0)" (click)="parent.goalSetting()" classes="footerbutton"
+        *ngIf="parent.canSetTargets()"><i class="icon icon-doc fs-7"></i>&nbsp;Pokračuj na nastavenie cieľov</a>
+</div>

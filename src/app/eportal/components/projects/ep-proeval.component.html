@@ -1,0 +1,193 @@
+<form>
+    <nav class="nav topnav">
+        <!-- <a [routerLink]="['/portal',idl,'detail']"  class="nav-link pr-0"><i class="fas fa-home"></i></a>  -->
+        <a [routerLink]="['/portal',idl,'projects']" class="nav-link pr-0">Zoznam projektov</a>
+        <a [routerLink]="['/portal',idl,'projects',idp]" class="nav-link px-1"><i
+                class="fas fa-angle-left"></i>&nbsp;{{prodata?.buscaseName}}</a>
+    </nav>
+
+    <header classes="toptitle">
+        <h3>Hodnotenie projektu</h3>
+    </header>
+    <div classes="topbox mb-7">
+        <div>
+            <div classes="topboxfld col-12 col-lg-8">
+                <div class="d-inline-flex ml-3 mt-2">Názov hodnotenia:</div>
+                <div class="flex-fill">
+                    <input *ngIf="usrCtx.isTL(prodata?.leaders) && !data.published" type="text" autocomplete="off"
+                        class="form-control bg-light" [(ngModel)]="data.name" name="name">
+                    <div *ngIf="!usrCtx.isTL(prodata?.leaders) || data.published" classes="htext">{{data.name}}</div>
+                </div>
+            </div>
+            <div classes="topboxfld0 col-12 col-lg-4">
+                <select  *ngIf="usrCtx.isTL(prodata?.leaders) && !data.published" class="bg-light rounded-lg noctrlbox w-100 px-1 noutline" name="evaltype"
+                    [(ngModel)]="data.type">
+                    <option *ngFor="let t of evaltypes">{{t.text}}</option>
+                </select>
+                <div *ngIf="!usrCtx.isTL(prodata?.leaders) || data.published" classes="htext w-100 px-1">{{data.type}}</div>
+            </div>
+        </div>
+    </div>
+
+    <frmtabstrip [data]="tabdata" name="seltab" [(ngModel)]="seltabcode">
+
+        <ng-container *ngIf="!seltabcode">
+            <header classes="sectionpanel">
+                <h3>Slovné zhodnotenie projektu
+                </h3>
+
+                <a #markUsers href="javascript:void(0)" *ngIf="usrCtx.isTL(prodata?.leaders) && !data.published"
+                    [ngStyle]="{'background-color':markedUserColor}" (click)="newEvaluation()"
+                    (mouseenter)="overlayPanel.toggle($event)" class="e-round-icon float-right">
+                    <i class="fas fa-feather-alt fs-7" [ngStyle]="{'color':'silver'}" data-toggle="tooltip"
+                        data-placement="left" title="Vlož hodnotenie pre {{markedUsers.split(', ').join('+')}}">
+                    </i>
+                </a>
+                <p-overlayPanel #overlayPanel>
+                    <div class="overlayPanel">
+                        <div class="e-checkbox" *ngFor="let usr of (tabdata||['']).slice(1)">
+                            <label class="w-100 cursor-pointer my-1">
+                                <input type="checkbox" (click)="markUsers($event,usr.id)">
+                                <span>{{usr.text}}</span>
+                            </label>
+                        </div>
+                    </div>
+                </p-overlayPanel>
+
+            </header>
+            <div class="row">
+                <div class="col-12">
+                    <div classes="themebox">
+                        <h3></h3>
+                        <div>
+                            <p-editor class="w-100" [style]="editorStyle" [(ngModel)]="data.verbeval" name="verbeval"
+                                [readonly]="!usrCtx.isTL(prodata?.leaders) || data.published">
+                                <p-header hidden>
+                                    <span class="ql-formats"></span>
+                                </p-header>
+                            </p-editor>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="mx-5 mt-4 fs-2">
+                        <div *ngFor="let bt of blots | keyvalue" class="text-nowrap d-inline-flex">
+                            <div class="d-flex justify-content-end mb-1 px-1">
+                                <ng-container *ngFor="let mem of bt.value.tabs | keyvalue: personOrder; let i = index">
+                                    <span *ngIf="i>0" [ngStyle]="{'background-color':bt.value.color}"
+                                        class="p-0 m-0">+</span>
+                                    <a class="text-nowrap px-1" href="javascript:void(0)"
+                                        (click)="showMemberOnly(mem.key)"
+                                        [ngStyle]="{'background-color':bt.value.color}">
+                                        {{mem.value}}
+                                    </a>
+                                </ng-container>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </ng-container>
+
+
+        <ng-container *ngIf="seltabcode">
+            <header classes="sectionpanel0">
+                <h3>Hodnotenie team-leadrom</h3>
+            </header>
+            <div class="fs-5 pb-5 text-black-50">
+                Kritériá nedefinujú samotný úspech projektu splnenie jeho cieľov z pohľadu stackholderov.
+                ich dodržiavanie aktívne pomôžu ciele projektu dosiahnuť.
+                Každé kritérium má byť hodnotené stanovením úrovne na stupnici 1-5.
+                <a href="javascript:void(0)" (click)="showInstructions()" class="font-weight-bold text-secondary">Pozri
+                    návod na
+                    hodnotenie</a>
+            </div>
+
+            <div class="row">
+                <div classes="col-12 col-lg-6 mb-4" *ngFor="let item of data?.competences || []; let i = index">
+                    <div
+                        classes="bg-white p-3 border-radius-md box-shadow-sm clearfix h-100 d-flex flex-column position-relative">
+                        <formsli classes="col12 pt-2 pb-0" [min]="0" [max]="5" [step]="1" [runnerX]="'-126px'"
+                            [runnerY]="'-30px'" [runnerUnit]="''"  [disabled]="data?.evaluations[seltabcode].locked || !usrCtx.isTL(prodata?.leaders)"
+                            [(ngModel)]="data?.evaluations[seltabcode]['competences'][item.code]"
+                            name="level{{i}}">
+                            <div class="slider-primary">
+                                <div classes="exslider col12 px-0">
+                                    <div class="mark" style="left: 20%;"></div>
+                                    <div class="mark" style="left: 40%;"></div>
+                                    <div class="mark" style="left: 60%;"></div>
+                                    <div class="mark" style="left: 80%;"></div>
+                                    <div class="font-weight-bold fs-5 mx-3 mt-3 mb-1 text-primary">{{item.name}}</div>
+                                    <div class="fs-5 mx-3 text-justify">{{item.level}} {{item.desc}}</div>
+                                </div>
+                            </div>
+                        </formsli>
+                    </div>
+                </div>
+            </div>
+
+            <header classes="sectionpanel mt-3">
+                <h3>Slovné zhodnotenie člena tímu</h3>
+            </header>
+            <div class="row">
+                <div class="col-12">
+                    <div classes="themebox">
+                        <h3></h3>
+                        <div>
+                            <textarea *ngIf="usrCtx.isTL(prodata?.leaders) && canPublish(seltabcode)" classes="theme fs-6" rows="3"
+                                [(ngModel)]="data?.evaluations[seltabcode]['verbal']"
+                                name="verbal"></textarea>
+
+                            <div *ngIf="!usrCtx.isTL(prodata?.leaders) || !canPublish(seltabcode)" classes="text">{{data.name}}</div>       
+                       </div>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+    </frmtabstrip>
+
+</form>
+
+
+
+<div classes="footerpanel">
+    <a href="#" preventDefault (click)="saveEvaluation(seltabcode,true)" *ngIf="!seltabcode && usrCtx.isTL(prodata?.leaders) && canPublish(seltabcode)"
+        classes="footerbutton"><i class="icon icon-publish fs-7"></i>&nbsp;Publikovať</a>
+
+    <a href="#" preventDefault (click)="saveEvaluation(seltabcode,false)" *ngIf="usrCtx.isTL(prodata?.leaders) && canPublish(seltabcode)"
+        classes="footerbutton"><i class="fas fa-save"></i>&nbsp;Ulož
+        hodnotenie</a>
+
+    <!-- <a [routerLink]="['/portal',idl,'projects',idp]" *ngIf="idl && usrCtx.isTL(prodata?.leaders) && canPublish(seltabcode)" classes="footerbutton"><i
+            class="fas fa-times"></i>&nbsp;Zrušiť zmeny</a> -->
+    <a href="#" preventDefault (click)="goToLastPath()" *ngIf="idl && usrCtx.isTL(prodata?.leaders) && canPublish(seltabcode)" classes="footerbutton"><i
+            class="fas fa-times"></i>&nbsp;Zrušiť zmeny</a>
+</div>
+
+
+<!-- <pre>{{data?.type|json}}</pre> -->
+<!-- <div *ngFor="let color of colors; let i = index" class="p2" [ngStyle]="{'background-color':color.code,'color': 'black'}">
+    {{color.code}} {{color.blotId}}
+</div>
+{{colors.length}} -->
+
+<!-- <pre>{{prodata|json}}</pre> -->
+<!-- <pre>{{markedUsers}} ({{markedUserIds}})  {{this.markedTabs|json}}</pre> -->
+
+<!-- <pre>{{blots|json}}</pre>
+
+<pre>{{getQuillContents()|json}}</pre>
+
+<pre>{{data?.desc}}</pre> -->
+
+
+<!-- <pre>{{getEvalhtml()}}</pre> -->
+
+<!-- <div *ngFor="let item of blots | keyvalue; let i = index" class="p2" [ngStyle]="{'background-color':item.value.color,'color': 'black'}">
+    <pre>{{item.value|json}}</pre>
+</div> -->

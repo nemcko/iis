@@ -1,0 +1,5 @@
+{
+  "actions":[
+    "save", "EDIT", "ACT_ODOSLAT", "ACT_VYJADRENIE", "ACT_UZAVRIET"
+  ]
+}

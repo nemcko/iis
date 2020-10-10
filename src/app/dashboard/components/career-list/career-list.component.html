@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col-12 col-md-10 col-lg-8 mx-auto">
+    <section>
+      <header class="clearfix mb-5">
+        <h3 class="fs-7 font-weight-bold d-inline-block mr-6">Kariéra</h3>
+      </header>
+
+      <div class="b-tree-line">
+        <a *ngFor="let ponuka of ponuky; let i = index" [class]="(i == 0) ? 'cursor-pointer item d-block bg-white p-4 border-radius-md box-shadow-sm mt-0 ml-8' : 'cursor-pointer item d-block bg-white p-4 border-radius-md box-shadow-sm mt-5 ml-8'" preventDefault>
+          <div class="row">
+            <div class="col-12">
+              <div class="fs-6 font-weight-bold text-black">{{ponuka.title}}<span class="float-right text-primary fs-5 ml-3">{{ponuka.reward}}</span></div>
+              <div class="fs-3 mt-1 text-secondary">detail pozície</div>
+            </div>
+          </div>
+        </a>
+        
+      </div>
+    </section>	
+  </div>
+</div>

@@ -1,0 +1,74 @@
+<card-list [title]="'Zamestnanci'" [items]="data" [searchFields]="'personFN,email'">
+    <div role="header">
+        <div class="d-lg-none mt-4">
+            <select #listCtrl class="js-basic-select w-100" (change)="loadData(listCtrl.value)" [value]="type">
+                <option *ngFor="let opt of listOptions" [value]="opt.id">{{opt.name}}</option>
+            </select>
+        </div>
+
+        <div class="mt-4 d-none d-lg-block">
+            <a preventDefault href="javascript:void(0)" *ngFor="let opt of listOptions" (click)="loadData(opt.id)"
+                class="btn bg-white mr-2 text-uppercase fs-5 font-weight-bold px-6 py-2 px-md-6" [appFocus]="'nofocus'"
+                [ngClass]="{'text-primary border': type===opt.id,'text-gray box-shadow-md':type!==opt.id}">{{opt.name}}</a>
+        </div>
+    </div>
+
+    <div role="back">
+        <a [routerLink]="['/portal',this.usrCtx.userId,'detail']"
+            class="btn btn-secondary text-white text-uppercase fs-5 font-weight-bold px-4 px-md-6 mb-3 mb-md-0 back">Späť
+            na moju kartu</a>
+    </div>
+
+
+    <div role="item">
+        <ng-template #templateRef let-item="item" let-keywords="keywords">
+            <div class="bg-white py-4 px-3 border-radius-md box-shadow-sm">
+                <div class="row align-items-center">
+                    <div class="col-12 col-md-4 col-lg-3 col-xl-5 mb-5 mb-md-0">
+                        <user-image [urlImage]="item?.photoref" [cardName]="item?.personFN">
+                        </user-image>
+                    </div>
+                    <div class="col-12 col-md-8 col-lg-9 col-xl-7">
+                        <div class="row no-gutters">
+                            <div class="col overflow-hidden">
+                                <h3 class="fs-6 text-primary font-weight-bold">
+                                    <a [routerLink]="['/portal',item.personID,'detail']">{{item?.personFN}}</a>
+                                </h3>
+                                <div class="font-weight-bold mt-3">{{item?.position}}</div>
+                                <div class="font-weight-bold mt-3">
+                                    <div class="row no-gutters">
+                                        <div class="col-auto pr-2">
+                                            <i class="icon icon-phone text-primary fs-8"></i>
+                                        </div>
+                                        <div class="col">
+                                            <div *ngFor="let phone of (item?.phones||[])">{{phone}}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="font-weight-bold mt-3">
+                                    <div class="row no-gutters">
+                                        <div class="col-auto pr-2">
+                                            <i class="icon icon-email text-primary fs-8"></i>
+                                        </div>
+                                        <div class="col">
+                                            <a [href]="'mailto:'+item?.email" title="#"
+                                                class="text-secondary">{{item?.email}}</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-auto pl-2">
+                                <a href="javascript:void(0)" preventDefault (click)="changeFav($event,item)">
+                                    <i *ngIf="item.fav" class="icon icon-featured fs-8 d-block text-secondary mb-3"></i>
+                                    <i *ngIf="!item.fav"
+                                        class="icon icon-featured-empty fs-8 d-block text-secondary mb-3"></i>
+                                </a>
+                                <i class="icon icon-moji-zamestnanci fs-8 d-block text-orange"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+    </div>
+</card-list>

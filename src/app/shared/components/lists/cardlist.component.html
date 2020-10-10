@@ -1,0 +1,32 @@
+<form class="mb-7 position-relative">
+  <button type="submit" class="submit-left">
+    <i class="icon icon-search"></i>
+  </button>
+
+  <input type="text" placeholder="Vyhľadaj text v zozname" [(ngModel)]="searchText" name="searchText"
+    class="form-control fs-6 font-weight-bold box-shadow-lg border-0 py-5 px-6 h-auto">
+  <ng-content select="div[role=search]"></ng-content>
+</form>
+
+<ng-content select="div[role=right]"></ng-content>
+<div class="row">
+  <div class="col-12 col-md-10 mx-auto">
+    <section class="{{clsInnerPanel}}">
+      <header class="clearfix mb-5">
+        <h3 class="fs-7 font-weight-bold d-inline-block mr-6">{{title}}</h3>
+
+        <ng-content select="div[role=header]"></ng-content>
+      </header>
+
+      <ng-content select="div[role=back]"></ng-content>
+
+      <div class="row d-xl-block clearfix {{clsList}}">
+        <div role="item" *ngFor="let item of (items  | filter : searchFields:searchText) || []; let i = index" class="{{clsItem}} col-12 col-xl-6 mb-4">
+          <ng-template [ngTemplateOutlet]="templateRef" [ngTemplateOutletContext]="{item: item, keywords:keywords}">
+          </ng-template>
+        </div>
+      </div>
+
+    </section>
+  </div>
+</div>

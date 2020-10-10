@@ -1,0 +1,22 @@
+{
+  "usrgrps": [
+    {
+      "id": "",
+      "text": "Všetky skupiny",
+      "havetowrite": false,
+      "canwrite": false
+    },
+    {
+      "id": "FNC911056245716",
+      "text": "Programátor",
+      "havetowrite": false,
+      "canwrite": false
+    },
+    {
+      "id": "FNC911056245717",
+      "text": "Analytik",
+      "havetowrite": false,
+      "canwrite": false
+    }
+  ]
+}

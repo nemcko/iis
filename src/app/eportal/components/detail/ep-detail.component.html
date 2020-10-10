@@ -1,0 +1,390 @@
+<header class="clearfix mb-5">
+  <h3 class="fs-7 font-weight-bold pl-6">Portál zamestnanca - {{data?.persdata.personFN}}</h3>
+</header>
+
+<apptabs>
+
+  <ng-container ngProjectAs="rightside">
+    <a [routerLink]="['/portal',id,'list']" class="text-uppercase font-weight-bold fs-5 text-secondary">Všetci
+      zamestnanci</a>
+  </ng-container>
+
+  <apptab *ngIf="usrCtx.isHR || usrCtx.isSDD" tabTitle="Karta zamestnanca">
+    <div class="row">
+      <ng-container *ngTemplateOutlet="EMPCARDtpl; context: {$implicit:data}"></ng-container>
+
+      <div class="col-12 col-lg-6 pr-xl-6">
+        <ng-container *ngTemplateOutlet="COURSEStpl; context: {items:data?.courses}"></ng-container>
+        <ng-container *ngTemplateOutlet="PROJECTStpl; context: {items:data?.projects}"></ng-container>
+      </div>
+
+      <div class="col-12 col-lg-6 pl-xl-6">
+        <ng-container *ngTemplateOutlet="CERTIFICATEStpl; context: {items:data?.certificates}"></ng-container>
+      </div>
+    </div>
+  </apptab>
+  <apptab *ngIf="usrCtx.isSDD" tabTitle="Hodnotenie" class="w-100">
+    <div class="row">
+      <div class="col-12 col-lg-6 pr-xl-6">
+        <ng-container *ngTemplateOutlet="MEETINGStpl; context: {$implicit:data?.meetings}"></ng-container>
+        <ng-container *ngTemplateOutlet="REVIEWStpl; context: {$implicit:data?.reviews}"></ng-container>
+      </div>
+
+      <div class="col-12 col-lg-6 pr-xl-6">
+        <ng-container *ngTemplateOutlet="EVALUATIONtpl; context: {$implicit:data}"></ng-container>
+        <prolist [datatype]="'card'" [projects]="data?.projects" [portalid]="id" [accdata]="data?.persdata"></prolist>
+      </div>
+    </div>
+  </apptab>
+  <apptab *ngIf="usrCtx.isSDD" tabTitle="Ciele">
+    <ng-container *ngTemplateOutlet="TARGETStpl; context: {$implicit:data}"></ng-container>
+  </apptab>
+  <apptab *ngIf="usrCtx.isSDD" tabTitle="Ročný rozhovor">
+    <ng-container *ngTemplateOutlet="RORtpl; context: {$implicit:data}"></ng-container>
+
+    <div class="row">
+      <div class="col-12 col-lg-6 pr-xl-6">
+        <ng-container *ngTemplateOutlet="MEETINGStpl; context: {$implicit:data?.meetings, showLength:true}">
+        </ng-container>
+      </div>
+      <div class="col-12 col-lg-6 pl-xl-6">
+        <ng-container *ngTemplateOutlet="CLOSEOUTStpl; context: {$implicit:data?.closeouts, showLength:true}">
+        </ng-container>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12 col-lg-6 pr-xl-6">
+        <ng-container *ngTemplateOutlet="COURSEStpl; context: {items:data?.courses, showLength:true}"></ng-container>
+      </div>
+      <div class="col-12 col-lg-6 pl-xl-6">
+        <ng-container *ngTemplateOutlet="CERTIFICATEStpl; context: {items:data?.certificates,showLength:true}">
+        </ng-container>
+      </div>
+    </div>
+  </apptab>
+</apptabs>
+
+<ng-template #EMPCARDtpl let-data>
+  <div class="col-12 col-lg-6 pr-xl-6">
+    <div class="bg-white py-7 px-3 border-radius-md box-shadow-sm">
+      <div class="e-zamestnanec-card user-image-xl-lg">
+        <div class="row align-items-center">
+          <div class="col-12 col-md-auto pl-md-6 pl-lg-6 pl-xl-7 pr-lg-3 pr-xl-5 mb-5 mb-md-0">
+            <user-image [urlImage]="data?.persdata.photoref" [cardName]="data?.persdata.personFN">
+            </user-image>
+          </div>
+          <div class="col-12 col-md">
+            <h3 class="fs-6">Meno: <span class="text-primary font-weight-bold">{{data?.persdata.personFN}}</span>
+            </h3>
+            <div class="fs-6 mt-3">Pozícia: <span class="font-weight-bold">{{data?.persdata.position}}</span></div>
+            <div class="fs-6 mt-3">Divízia: <span
+                class="font-weight-bold">{{data?.persdata.division}}/{{data?.persdata.department}}</span>
+            </div>
+            <div class="fs-6 mt-3">Telefónne čísla: <span class="font-weight-bold">{{data?.persdata.phones}}</span>
+            </div>
+            <div class="fs-6 mt-3">E-mail: <a href="#" title="#"
+                class="font-weight-bold text-secondary">{{data?.persdata.email}}</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-12 col-lg-6 pl-xl-6 mt-4 mt-lg-0">
+    <div class="bg-white p-5 p-lg-7 border-radius-md box-shadow-sm fs-6 article-actions-on position-relative">
+      <div *ngIf="usrCtx.isHR" class="article-actions position-absolute top-12 right-12">
+        <a href="javascript:void(0)" (click)="updPinfo()" class="e-round-icon text-secondary mr-1">
+          <i class="icon icon-edit"></i>
+        </a>
+      </div>
+
+      <div>{{data?.persdata.desc}}</div>
+      <div class="mt-3">Znalosť jazykov: <span class="font-weight-bold">{{data?.persdata.languages}}</span></div>
+    </div>
+  </div>
+
+  <div class="col-12 col-lg-6 pr-xl-6 mt-7">
+    <h3 class="fs-7 font-weight-bold mb-2">Odborné kompetencie</h3>
+    <div class="bg-white py-3 px-5 border-radius-md box-shadow-sm clearfix">
+      <span class="badge badge-pill badge-lg badge-light float-left mr-2 my-1"
+        *ngFor="let item of (data?.profcomps||[])"
+        [ngClass]="{'badge-pink': item.level==3,'badge-green': item.level==2,'badge-blue': item.level==1}">{{item.name}}</span>
+    </div>
+  </div>
+  <div class="col-12 col-lg-6 pl-xl-6 mt-7">
+    <h3 class="fs-7 font-weight-bold mb-2">Osobnostné kompetencie</h3>
+    <div class="bg-white py-3 px-5 border-radius-md box-shadow-sm clearfix">
+      <span class="badge badge-pill badge-lg badge-light float-left mr-2 my-1"
+        *ngFor="let item of (data?.perscomps||[])"
+        [ngClass]="{'badge-pink': item.level==3,'badge-green': item.level==2,'badge-blue': item.level==1}">{{item.name}}</span>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #COURSEStpl let-items let-showLength="showLength">
+  <simple-list [title]="'Školenia'" [items]="data?.courses" [emptyimg]="'assets/ils-designer.svg'"
+    [emptymsg]="'Zatiaľ nemáš pridané žiadne školenia'" [showLength]="showLength">
+
+    <ng-container ngProjectAs="subtitle">
+      <a [hidden]="!usrCtx.isSDD || showLength" href="javascript:void(0)" (click)="infoAddCourse()"
+        class="font-weight-bold text-secondary" data-toggle="modal" data-target="#howToModal"><i
+          class="icon icon-info fs-8 position-relative top-2"></i> Ako pridať školenie</a>
+
+      <a [hidden]="!usrCtx.isHR || showLength" href="javascript:void(0)" (click)="updCourse()"
+        class="font-weight-bold text-secondary">
+        <i class="icon icon-plus-circle fs-8"></i> Pridať nové školenie</a>
+
+      <a [routerLink]="['/portal',id,'courses']" class="float-right text-uppercase font-weight-bold fs-5 text-secondary 
+position-relative top-4">Zobraz všetky</a>
+    </ng-container>
+
+    <ng-template let-item>
+      <div class="fs-5 font-weight-bold article-actions-on position-relative">
+        <div *ngIf="usrCtx.isHR" class="article-actions position-absolute right-0">
+          <a href="javascript:void(0)" (click)="updCourse(item.id)" class="e-round-icon text-secondary mr-0">
+            <i class="icon icon-edit"></i>
+          </a>
+        </div>
+
+        <span *ngIf="usrCtx.isHR" class="text-primary">{{item.name}}</span>
+        <a *ngIf="!usrCtx.isHR" href="javascript:void(0)" (click)="updCourse(item.id)"
+          class="text-primary">{{item.name}}</a>
+        <span class="float-right text-gray fs-3 ml-3">{{item.mandatory}}</span>
+      </div>
+      <div class="fs-3 mt-1">{{item.procdate | date:'dd.MM.yyyy'}} | {{item.place}}</div>
+    </ng-template>
+
+  </simple-list>
+</ng-template>
+
+<ng-template #CERTIFICATEStpl let-items let-showLength="showLength">
+  <simple-list [title]="'Certifikáty'" [items]="data?.certificates" [emptyimg]="'assets/ils-books.svg'"
+    [emptymsg]="'Zatiaľ nemáš pridané žiadne certifikáty'" [showLength]="showLength">
+    <ng-container ngProjectAs="subtitle">
+      <a [hidden]="!usrCtx.isSDD || showLength" href="javascript:void(0)" (click)="infoAddCert()"
+        class="font-weight-bold text-secondary"><i class="icon icon-info fs-8 position-relative top-2"></i> Ako pridať
+        certifikát</a>
+
+      <a [hidden]="!usrCtx.isHR || showLength" href="javascript:void(0)" (click)="updCert()"
+        class="font-weight-bold text-secondary">
+        <i class="icon icon-plus-circle fs-8"></i> Pridať nový certifikát</a>
+
+      <a [routerLink]="['/portal',id,'cert']" class="float-right text-uppercase font-weight-bold fs-5 text-secondary 
+                position-relative top-4">Zobraz všetky</a>
+    </ng-container>
+    <ng-template let-item>
+      <div class="fs-5 font-weight-bold article-actions-on position-relative">
+        <div *ngIf="usrCtx.isHR" class="article-actions position-absolute right-0">
+          <a href="javascript:void(0)" (click)="updCert(item.id)" class="e-round-icon text-secondary mr-0">
+            <i class="icon icon-edit"></i>
+          </a>
+        </div>
+        <span *ngIf="usrCtx.isHR" class="text-primary">{{item.name}}</span>
+        <a *ngIf="!usrCtx.isHR" href="javascript:void(0)" (click)="updCert(item.id)"
+          class="text-primary">{{item.name}}</a>
+        <span class="float-right text-gray fs-3 ml-3">{{item.mandatory}}</span>
+      </div>
+      <div class="fs-3 mt-1">{{item.procdate | date:'dd.MM.yyyy'}} | Platný do:
+        {{item.dateto | date:'dd.MM.yyyy'}}</div>
+    </ng-template>
+  </simple-list>
+</ng-template>
+
+<ng-template #PROJECTStpl let-items let-showLength="showLength">
+  <simple-list [title]="'Projekty'" [items]="data?.projects" [emptyimg]="'assets/ils-table.svg'"
+    [emptymsg]="'Zatiaľ nemáš pridané žiadne projekty'" [showLength]="showLength">
+
+    <ng-container ngProjectAs="subtitle">
+      <a [routerLink]="['/portal',id,'projects']" class="float-right text-uppercase font-weight-bold fs-5 text-secondary 
+position-relative top-4">Zobraz všetky</a>
+    </ng-container>
+    <ng-template let-item>
+      <div class="fs-5 font-weight-bold"><a [routerLink]="['/portal',id,'projects',item?.id]" title="#"
+          class="text-secondary">{{item.projectName}}</a> <span class="ml-2">{{item.position}}</span>
+      </div>
+      <div class="fs-3 mt-1">{{item.datefrom | date:'dd.MM.yyyy'}} -
+        {{item.dateto | date:'dd.MM.yyyy'}}</div>
+    </ng-template>
+  </simple-list>
+</ng-template>
+
+<ng-template #MEETINGStpl let-items let-showLength="showLength">
+  <simple-list [title]="'Stretnutia s členom tímu 1:1'" [items]="data?.meetings" [doneflg]="'published'"
+    [emptyimg]="'assets/ils-table.svg'" [emptymsg]="'Zatiaľ nemáš pridané žiadne stretnutie'" [showLength]="showLength">
+    <ng-container ngProjectAs="subtitle">
+      <a [hidden]="!usrCtx.isTL() || showLength" href="javascript:void(0)"
+        (click)="newMeeting($event,data?.persdata.personID)" class="font-weight-bold text-secondary"><i
+          class="icon icon-plus-circle fs-8 position-relative top-2"></i> Nové stretnutie</a>
+      <a [routerLink]="['/portal',id,'meetings']" class="float-right text-uppercase font-weight-bold fs-5 text-secondary 
+    position-relative top-4">Zobraz všetky</a>
+    </ng-container>
+    <ng-template let-item>
+      <div class="fs-5 font-weight-bold">
+        <a [routerLink]="['/portal',id,'meetings',item.id]" class="text-primary">{{item.name}}</a>
+      </div>
+      <div class="fs-3 mt-1">{{item.procdate | date:'dd.MM.yyyy'}} | {{item.notes}}</div>
+    </ng-template>
+  </simple-list>
+</ng-template>
+
+<ng-template #REVIEWStpl let-items let-showLength="showLength">
+  <simple-list *ngIf="usrCtx.isTL()" [title]="'Code Review'" [items]="data?.reviews" [doneflg]="'published'"
+    [emptyimg]="'assets/ils-designer.svg'" [emptymsg]="'Zatiaľ nemáš žiadne hodnotenie'" [showLength]="showLength">
+    <ng-container ngProjectAs="subtitle">
+      <a [hidden]="!usrCtx.isTL() || showLength" href="javascript:void(0)"
+        (click)="newCodeReview($event,data?.persdata.personID)" class="font-weight-bold text-secondary"><i
+          class="icon icon-plus-circle fs-8 position-relative top-2"></i> Nové Code Review</a>
+      <a [routerLink]="['/portal',id,'reviews']" class="float-right text-uppercase font-weight-bold fs-5 text-secondary 
+    position-relative top-4">Zobraz všetky</a>
+    </ng-container>
+    <ng-template let-item>
+      <div class="fs-5 font-weight-bold"><a [routerLink]="['/portal',id,'reviews',item.id]"
+          class="text-secondary">{{item.name}}</a> <span class="ml-2">{{item.position}}</span>
+      </div>
+      <div class="fs-3 mt-1">{{item.procdate | date:'dd.MM.yyyy'}} | {{item.desc}}</div>
+    </ng-template>
+  </simple-list>
+</ng-template>
+
+<ng-template #EVALUATIONtpl let-items let-showLength="showLength">
+  <section class="mt-8">
+    <header class="clearfix mb-2">
+      <h3 class="fs-7 font-weight-bold d-inline-block mr-3">Výročné rozhovory</h3>
+    </header>
+    <div class="row">
+      <div class="col-12 col-lg-4 mb-4" *ngFor="let item of (data?.targets || []) | keyvalue ; let i = index">
+        <!-- <pre>{{item.value | json}}</pre> -->
+        <div
+          class="bg-white pb-3 pt-5 px-4 border-radius-md box-shadow-sm clearfix h-100 d-flex flex-column position-relative">
+          <div class="e-progress-bar position-absolute top-0 left-0" [cardcolor]="item.value.endlevel" [isTextClass]="false">
+          </div>
+          <div class="mb-8">
+            <h3 class="font-weight-black fs-6 mb-2 text-blue" [cardcolor]="item.value.endlevel">{{item.value.title}}
+            </h3>
+            <ul class="pl-4 font-weight-bold lh-24">
+              <li *ngFor="let itm of (item.value.targets || []).slice(0, 3)">{{itm.name}}</li>
+            </ul>
+          </div>
+          <a [routerLink]="['/portal',id,'interviews',item.value.id,'jointevaluation']" class="font-weight-black text-uppercase mt-auto"
+            [cardcolor]="item.value.endlevel">Zobraz detail</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</ng-template>
+
+<ng-template #TARGETStpl let-data let-showLength="showLength">
+  <level-bar [start]="data?.targets[curryear]?.startlevel||0" [startTitle]="'Začiatok roka'"
+    [end]="data?.targets[curryear]?.endlevel||0" [endTitle]="'Cieľ roka'"></level-bar>
+
+  <header *ngIf="data?.targets[curryear]" class="clearfix mb-2 ">
+    <h3 class="fs-7 font-weight-bold d-inline-block mr-3">Ciele
+      {{data?.targets[curryear].datefrom | date:'MM/yyyy'}}
+      -
+      {{data?.targets[curryear].dateto | date:'MM/yyyy'}}</h3>
+    <a [routerLink]="['/portal',id,'pastgoals']" [queryParams]="{ tab: 'goals' }" class="float-right text-uppercase font-weight-bold fs-5 text-secondary 
+    position-relative top-4">Zobraz ciele z minulých rokov</a>
+  </header>
+
+  <div *ngIf="data?.targets[curryear]" class="row">
+    <div class="col-12 col-lg-6 mb-4"
+      *ngFor="let item of (data?.targets[curryear].targets || []).slice(0, 6); let i = index"
+      [ngClass]="{'pr-xl-6': i%2===0}">
+      <div
+        class="bg-white pb-3 pt-5 px-4 border-radius-md box-shadow-sm clearfix h-100 d-flex flex-column position-relative">
+        <div class="e-progress-bar position-absolute top-0 left-0" [cardcolor]="item.erating" [isTextClass]="false">
+          <span style="width: 100%"></span></div>
+        <h3 class="font-weight-black fs-6 mb-2" [cardcolor]="item.erating">{{item.name}}</h3>
+        <div class="lh-24">{{item.desc}}</div>
+        <div class="row mt-2" [cardcolor]="item.erating">
+          <div class="col-12 col-lg">Progress: <strong>{{item.erating}}%</strong></div>
+          <div class="col-12 col-lg text-lg-center">Deadline:
+            <strong>{{item.deadline | date:'dd.MM.yyyy'}}</strong></div>
+          <div class="col-12 col-lg text-lg-right">Váha cieľu: <strong>{{item.weight}}%</strong></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #RORtpl let-data let-showLength="showLength">
+  <div class="row">
+    <div class="col-12 col-lg-6">
+      <div class="row">
+        <div class="col-12 col-xl-9 mx-auto mt-xl-4">
+          <div class="fs-7 font-weight-bold">
+            <p class="mb-6">Najbližší ročný rozhovor je <span [innerHTML]="rortileleft | safe:'html'"></span>.<br />
+              Prezri si témy <a [routerLink]="['/portal',id,'pastgoals']" [queryParams]="{ tab: 'ror' }" class="text-secondary">minuloročného
+                rozhovoru</a></p>
+            <p *ngIf="!isFinished()" class="mb-6">Aby sme ti uľahčili prípravu na tohtoročný rozhovor, tu sme
+              zosumarizovali, čo sa ti za uplynulý rok podarilo.</p>
+            <a *ngIf="!isFinished()" href="javascript:void(0)" (click)="interview()"
+              class="btn btn-secondary text-white text-uppercase fs-5 font-weight-bold py-2 px-5">Zhodnoť
+              svoj rok</a>
+            <p *ngIf="isFinished()" class="mb-6">Tu je sumár tvojho zhodnotenia, zároveň môžeš vstúpiť do Ročného
+              rozhovoru.</p>
+            <a *ngIf="isFinished()" href="javascript:void(0)" (click)="interview()"
+              class="btn btn-secondary text-white text-uppercase fs-5 font-weight-bold py-2 px-5">Vstúp do ROR</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="d-none d-lg-block col-12 col-lg-6 align-self-end">
+      <img src="assets/ils-table-user.svg" alt="#" class="img-fluid">
+    </div>
+  </div>
+  <level-bar [start]="data?.targets[curryear]?.startlevel||0" [startTitle]="'Začiatok roka'"
+    [end]="data?.targets[curryear]?.endlevel||0" [endTitle]="'Cieľ roka'"></level-bar>
+
+
+  <header *ngIf="data?.targets[curryear]" class="clearfix mb-2 ">
+    <h3 *ngIf="!isFinished()" class="fs-7 font-weight-bold d-inline-block mr-3">Ciele
+      {{data?.targets[curryear].datefrom | date:'MM/yyyy'}}
+      -
+      {{data?.targets[curryear].dateto | date:'MM/yyyy'}}</h3>
+    <h3 *ngIf="isFinished()" class="fs-7 font-weight-bold d-inline-block mr-3">Zhodnotenie úspešnosti cieľov
+      {{data?.targets[curryear].datefrom | date:'MM/yyyy'}}-{{data?.targets[curryear].dateto | date:'MM/yyyy'}}</h3>
+
+    <!-- <a [routerLink]="['/portal',id,'pastgoals']" [queryParams]="{ tab: 'ror' }" class="float-right text-uppercase font-weight-bold fs-5 text-secondary 
+        position-relative top-4">Zobraz ciele z minulých rokov</a> -->
+  </header>
+
+  <div *ngIf="data?.targets[curryear]" class="row">
+    <div class="col-12 col-lg-6 mb-4"
+      *ngFor="let item of (data?.targets[curryear].targets || []).slice(0, 6); let i = index"
+      [ngClass]="{'pr-xl-6': i%2===0}">
+      <div
+        class="bg-white pb-3 pt-5 px-4 border-radius-md box-shadow-sm clearfix h-100 d-flex flex-column position-relative"
+        [cardcolor]="item.erating">
+        <div class="e-progress-bar position-absolute top-0 left-0" [cardcolor]="item.erating" [isTextClass]="false">
+          <span style="width: 100%"></span></div>
+        <h3 class="font-weight-black fs-6 mb-2">{{item.name}}</h3>
+        <div class="row mt-0">
+          <div class="col-12 col-lg">Progress: <strong>{{item.erating}}%</strong></div>
+          <div class="col-12 col-lg text-lg-center">Deadline:
+            <strong>{{item.deadline | date:'dd.MM.yyyy'}}</strong></div>
+          <div class="col-12 col-lg text-lg-right">Váha cieľu: <strong>{{item.weight}}%</strong></div>
+          <div *ngIf="isFinished()" class="col-12 p-3">{{item.jointnote}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #CLOSEOUTStpl let-items let-showLength="showLength">
+  <simple-list [title]="'Uzatvorenia projektov'" [showLength]="true"
+    [items]="data?.closeouts" [doneflg]="'published'">
+
+    <ng-container ngProjectAs="subtitle">
+      <a [routerLink]="['/portal',id,'closeouts']" class="float-right text-uppercase font-weight-bold fs-5 text-secondary 
+position-relative top-4">Zobraz všetky</a>
+    </ng-container>
+    <ng-template let-item>
+      <div class="fs-5 font-weight-bold"><a [routerLink]="['/portal',id,'closeouts',item.id]"
+          class="text-secondary">{{item.name}}</a> <span class="ml-2">{{item.position}}</span>
+      </div>
+      <div class="fs-3 mt-1">{{item.datefrom | date:'dd.MM.yyyy'}} -
+        {{item.dateto | date:'dd.MM.yyyy'}} | {{item.desc}}</div>
+    </ng-template>
+  </simple-list>
+</ng-template>

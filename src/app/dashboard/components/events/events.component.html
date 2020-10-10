@@ -1,0 +1,62 @@
+<!-- SEARCH BOX -->
+<form class="mb-7 position-relative">
+      <button type="submit" class="submit-left">
+            <i class="icon icon-search"></i>
+      </button>
+      <input type="text" autocomplete="off" id="search" name="search" placeholder="Hľadaj v udalostiach"
+            class="form-control fs-6 font-weight-bold box-shadow-lg border-0 py-5 px-6 h-auto" [(ngModel)]="search"
+            (keyup.enter)="loadRecords()">
+</form>
+
+<div class="row">
+      <div class="col-12 col-md-10 col-lg-8 mx-auto">
+            <section class="s-events">
+                  <!-- TITLE -->
+                  <header class="clearfix mb-5">
+                        <h3 class="fs-7 font-weight-bold d-inline-block mr-6">Všetky udalosti</h3>
+                        <a routerLink="/dashboard/oznam-create/{{documentType.ANNOUNCEMENT}}" class="cursor-pointer font-weight-bold text-secondary"><i
+                                    class="icon icon-plus-circle fs-8 position-relative top-2"></i>
+                              Vytvor novú</a>
+                  </header>
+
+                  <a routerLink="/dashboard"
+                        class="btn btn-secondary text-white text-uppercase fs-5 font-weight-bold px-4 px-md-6 mb-3 mb-md-0 back connected">Späť
+                        na prehľad</a>
+
+                  <!-- EVENT ITEMS -->
+                  <div class="b-tree-line">
+
+                        <!-- EVENT ITEM -->
+                        <div *ngFor="let event of eventList; let i = index"
+                              [class]="(i == 0) ? 'item d-block bg-white py-3 px-4 border-radius-md box-shadow-sm mt-0 ml-8' : 'item d-block bg-white py-3 px-4 border-radius-md box-shadow-sm mt-2 ml-8'"
+                              [id]="event.id">
+                              <div class="row">
+                                    <div class="col-12">
+                                          <a routerLink="/dashboard/oznam/{{event.id}}"
+                                                class="d-block text-primary font-weight-bold mb-1">{{event.date}},
+                                                {{event.location}}</a>
+                                          <a routerLink="/dashboard/oznam/{{event.id}}"
+                                                class="d-block fs-6 font-weight-bold text-black">{{event.title}}</a>
+
+                                          <!-- DESCRIPTION -->
+                                          <div class="pt-3" [ngbCollapse]="!isExpanded(event.id)"
+                                                [innerHTML]="event.description | urlDecode">
+
+                                                <div class="e-rte" *ngIf="event.imgUrl">
+                                                      <img [src]="event && event.imgUrl" width="300" alt="#"
+                                                            class="img-fluid ">
+                                                </div>
+                                          </div>
+                                          <a class="cursor-pointer fs-3 mt-1 text-secondary" preventDefault
+                                                (click)="toggleExpanded(event.id)"
+                                                [attr.aria-expanded]="isExpanded(event.id)"
+                                                [attr.aria-controls]="event.id">{{isExpanded(event.id) ? 'skryť popis' :
+'zobraziť popis'}}</a>
+                                    </div>
+                              </div>
+                        </div>
+
+                  </div>
+            </section>
+      </div>
+</div>

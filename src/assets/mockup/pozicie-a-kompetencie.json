@@ -1,0 +1,334 @@
+[
+  {
+    "id":"", "title":"Neurčené",
+    "competence": [
+      {
+        "category": "Osobnostne predpoklady",
+        "type":"PERSONAL",
+        "competence":[
+          {"id": "X0001", "title": "analyticko-koncepčné myslenie (zber info, hľadanie súvislostí, porovnávanie výhod/nevýhod)"},
+          {"id": "X0002", "title": "proaktivita (v riešení problémov, v informovaní, v predchádzaní problémov)"},
+          {"id": "X0003", "title": "orientácia na výsledok (hľadanie možností ako by sa dalo, vytrvalosť, preberanie zodpovednosti za svoje rozhodnutia, doťahovanie úloh, ochota spraviť krok naviac)"},
+          {"id": "X0004", "title": "sebadôvera a osobná integrita (otvorenosť voči spätnej väzbe, priznanie vlastnej chyby, otvorená komunikácia)"},
+          {"id": "X0005", "title": "podpora tímovej spolupráce - efektívna komunikácia, ochota pomôcť, dáva feedback"},
+          {"id": "X0006", "title": "orientácia na rozvoj seba (identifikácia silných/slabých stránok, aktívne učenie sa)"}
+        ]
+      }
+    ]
+  },
+  {
+    "id":"FNC911056245716", "title":"Programátor",
+    "competence": [
+      {
+        "category": "JAVA",
+        "type":"PROFESSIONAL",
+        "competence":[
+          {"id": "B0001", "title": "naming conventions"},
+          {"id": "B0002", "title": "používanie tried"},
+          {"id": "B0003", "title": "stratégie vytvárania objektov"},
+          {"id": "B0004", "title": "OO orientácia ( encapsul., polymor.,overload/override, ...)"},
+          {"id": "B0005", "title": "stratégie pre využívanie static ..."},
+          {"id": "B0006", "title": "praca so String, Array a ArrayList"},
+          {"id": "B0007", "title": "praca s assertami a exceptions"},
+          {"id": "B0008", "title": "IO a NIO"},
+          {"id": "B0009", "title": "generics a collections"},
+          {"id": "B0010", "title": "inner classes"},
+          {"id": "B0011", "title": "threads"},
+          {"id": "B0012", "title": "concurrency (completable futures)"},
+          {"id": "B0013", "title": "unit testing"},
+          {"id": "B0014", "title": "collections streams"},
+          {"id": "B0015", "title": "JDBC"}
+        ]
+      },
+      {
+        "category": "Best practices (Effective Java, Design Patterns, SOLID)",
+        "type": "PROFESSIONAL",
+        "competence":[
+          {"id": "C0001", "title": "Best practices (Effective Java, Design Patterns, SOLID)"}
+        ]
+      },
+      {
+        "category": "HTML/Javascript/Typescript",
+        "type":"PROFESSIONAL",
+        "competence":[
+          {"id": "B0016", "title": "JDBC"},
+          {"id": "B0017", "title": "IIFE"},
+          {"id": "B0018", "title": "používanie tried"},
+          {"id": "B0019", "title": "používanie interfaces"},
+          {"id": "B0020", "title": "stratégie vytvárania objektov"},
+          {"id": "B0021", "title": "OO orientácia (encapsul., polymor.,overload/override, ...)"},
+          {"id": "B0022", "title": "prototypova dedičnosť"},
+          {"id": "B0023", "title": "používanie npm"},
+          {"id": "B0024", "title": "nodejs"},
+          {"id": "B0025", "title": "unit testing"}
+        ]
+      },
+      {
+        "category": "SQL / Datamodeling",
+        "type": "PROFESSIONAL",
+        "competence": [
+          {"id": "C0002", "title": "SQL / Datamodeling"}
+        ]
+      },
+      {
+        "category": "Spring 5",
+        "type":"PROFESSIONAL",
+        "competence":[
+          {"id": "B0026", "title": "Spring Integration"}
+        ]
+      },
+      {
+        "category": "Spring Boot 2",
+        "type":"PROFESSIONAL",
+        "competence":[
+          {"id": "B0027", "title": "Spring Initializr"},
+          {"id": "B0028", "title": "Application Configuration"},
+          {"id": "B0029", "title": "Spring Data JPA"},
+          {"id": "B0030", "title": "JPQL"},
+          {"id": "B0031", "title": "Spring Data REST"},
+          {"id": "B0032", "title": "Spring Data SQL"},
+          {"id": "B0033", "title": "Transaction Management"},
+          {"id": "B0034", "title": "Spring Boot Actuator"},
+          {"id": "B0035", "title": "Spring Cloud Streams"},
+          {"id": "B0036", "title": "RabbitMQ"},
+          {"id": "B0037", "title": "Kafka"},
+          {"id": "B0038", "title": "JWT"},
+          {"id": "B0039", "title": "Spring Security integration"},
+          {"id": "B0040", "title": "Caching - 1st a 2nd level cache"},
+          {"id": "B0041", "title": "Performance tuning (N+1, ...)"}
+        ]
+      },
+      {
+        "category": "Java EE API základy",
+        "type":"PROFESSIONAL",
+        "competence":[
+          {"id": "B0042", "title": "Servlet"},
+          {"id": "B0043", "title": "JPA"},
+          {"id": "B0044", "title": "JAXB/JSON"},
+          {"id": "B0045", "title": "JAXRS/REST"}
+        ]
+      },
+      {
+        "category": "UML",
+        "type":"PROFESSIONAL",
+        "competence":[
+          {"id": "B0046", "title": "UC diagram"},
+          {"id": "B0047", "title": "Class diagram"},
+          {"id": "B0048", "title": "Component"},
+          {"id": "B0049", "title": "Sequence"},
+          {"id": "B0050", "title": "State"}
+        ]
+      },
+      {
+        "category": "Testovanie (Test Manager)",
+        "type": "PROFESSIONAL",
+        "competence": [
+          {"id": "C0003", "title": "Testovanie (Test Manager)"}
+        ]
+      },
+      {
+        "category": "BPMN",
+        "type": "PROFESSIONAL",
+        "competence": [
+          {"id": "B0051", "title": "notácia"},
+          {"id": "B0052", "title": "Camunda"}
+        ]
+      },
+      {
+        "category": "Server-side frontend basics - Servlet API, web.xml",
+        "type": "PROFESSIONAL",
+        "competence": [
+          {"id": "B0053", "title": "Templating stránok - JSP/Thymeleaf, Spring MVC"},
+          {"id": "B0054", "title": "Servlet filters/listeners - na čo sa používajú, praktické skúsenosti"}
+        ]
+      },
+      {
+        "category": "Wicket basics",
+        "type": "PROFESSIONAL",
+        "competence": [
+          {"id": "B0055", "title": "JavaScript based frontend - koncept Single-page application"}
+        ]
+      },
+      {
+        "category": "Angular",
+        "type": "PROFESSIONAL",
+        "competence": [
+          {"id": "B0056", "title": "moduly, základy konfigurácie, assets"},
+          {"id": "B0057", "title": "vývoj Angular komponentov"},
+          {"id": "B0058", "title": "databinding"},
+          {"id": "B0059", "title": "RxJS,Observables, NgRx"},
+          {"id": "B0060", "title": "direktives"},
+          {"id": "B0061", "title": "custom pipes, declarations"},
+          {"id": "B0062", "title": "TD a reactive forms"},
+          {"id": "B0063", "title": "http requests"},
+          {"id": "B0064", "title": "JWT"},
+          {"id": "B0065", "title": "Angular Material"},
+          {"id": "B0066", "title": "Angular Universal (SSR)"},
+          {"id": "B0067", "title": "Angular Animations"},
+          {"id": "B0068", "title": "unit testing"},
+          {"id": "B0069", "title": "performance, change-detection, zones"}
+        ]
+      },
+      {
+        "category": "HTTP basics - header vs body, status codes, content types",
+        "type": "PROFESSIONAL",
+        "competence": [
+          {"id": "B0070", "title": "HTTP basics - header vs body, status codes, content types"}
+        ]
+      },
+      {
+        "category": "HTTP/2 basics",
+        "type": "PROFESSIONAL",
+        "competence": [
+          {"id": "B0071", "title": "HTML/CSS basics, box model"},
+          {"id": "B0072", "title": "CSS preprocessors (SCSS, SASS…)"},
+          {"id": "B0073", "title": "Bootstrap library"},
+          {"id": "B0074", "title": "HTML events, ako ich použiť"}
+        ]
+      },
+      {
+        "category": "Web APIs, základná orientácia",
+        "type": "PROFESSIONAL",
+        "competence": [
+          {"id": "B0075", "title": "Browser event loop, rôzne queues v browser runtime"},
+          {"id": "B0076", "title": "Building/bundling web applications (WebPack a pod.)"}
+        ]
+      },
+      {
+        "category": "Tools",
+        "type": "PROFESSIONAL",
+        "competence": [
+          {"id": "B0077", "title": "Základy OS Windows - šikovnosť pri práci na vývojárskom notebooku."},
+          {"id": "B0078", "title": "Základy OS Linux - šikovnosť pri práci na serveroch."},
+          {"id": "B0079", "title": "textutils/fileutils, grepovanie"},
+          {"id": "B0080", "title": "bash scripting základy"},
+          {"id": "B0081", "title": "presmerovanie stdin/out/err"},
+          {"id": "B0082", "title": "fungovanie filesystému, počítanie referencií súborov"},
+          {"id": "B0083", "title": "Build nástroje"},
+          {"id": "B0084", "title": "Maven basics (dependencies, parent POM)"},
+          {"id": "B0085", "title": "Maven lifecycle"},
+          {"id": "B0086", "title": "Maven vývoj pluginov"},
+          {"id": "B0087", "title": "Filtrovanie resources, profily…"},
+          {"id": "B0088", "title": "Gradle basics (tasks, dependencies)"},
+          {"id": "B0089", "title": "Gradle plugins vývoj (scripted, Java based)"},
+          {"id": "B0090", "title": "Git základy (add, commit, pull, push, clone)"},
+          {"id": "B0091", "title": "práca s remote, vetvami, mergovanie, riešenie konfliktov"},
+          {"id": "B0092", "title": "rebase, krízové situácie, reflog"},
+          {"id": "B0093", "title": "best practices, slušné písanie commit hlášok"},
+          {"id": "B0094", "title": "IDE, základné rozbehanie projektu"},
+          {"id": "B0095", "title": "produktivita: klávesový skill vs myš"},
+          {"id": "B0096", "title": "Ostatné nástroje a techniky"},
+          {"id": "B0097", "title": "regulárne výrazy - základy"},
+          {"id": "B0098", "title": "orientácia medzi basic/extended (BRE/ERE)"},
+          {"id": "B0099", "title": "capture/replace"},
+          {"id": "B0100", "title": "použitie v Jave, grepe, sed, iné editory/IDE"},
+          {"id": "B0101", "title": "SW delivery nástroje (bonus, primárne devops/prevádzka)"},
+          {"id": "B0102", "title": "Nexus či iný repozitár (rozlíšenie development vs release výhodou)"},
+          {"id": "B0103", "title": "GitLab, GitLab CI/CD, GitLab Runner"},
+          {"id": "B0104", "title": "Docker/kontajnerizácia"},
+          {"id": "B0105", "title": "VirtualBox, Vagrant, iná virtualizácia, schopnosť nasimulovať si prostredie"},
+          {"id": "B0106", "title": "použitie v Jave, grepe, sed, iné editory/IDE"}
+        ]
+      },
+      {
+        "category": "Osobnostne predpoklady",
+        "type":"PERSONAL",
+        "competence":[
+          {"id": "X0001", "title": "analyticko-koncepčné myslenie (zber info, hľadanie súvislostí, porovnávanie výhod/nevýhod)"},
+          {"id": "X0002", "title": "proaktivita (v riešení problémov, v informovaní, v predchádzaní problémov)"},
+          {"id": "X0003", "title": "orientácia na výsledok (hľadanie možností ako by sa dalo, vytrvalosť, preberanie zodpovednosti za svoje rozhodnutia, doťahovanie úloh, ochota spraviť krok naviac)"},
+          {"id": "X0004", "title": "sebadôvera a osobná integrita (otvorenosť voči spätnej väzbe, priznanie vlastnej chyby, otvorená komunikácia)"},
+          {"id": "X0005", "title": "podpora tímovej spolupráce - efektívna komunikácia, ochota pomôcť, dáva feedback"},
+          {"id": "X0006", "title": "orientácia na rozvoj seba (identifikácia silných/slabých stránok, aktívne učenie sa)"}
+        ]
+      }
+    ]
+  },
+  {
+    "id":"FNC911056245717", "title":"Analytik",
+    "competence": [
+      {
+        "category": "UML",
+        "type":"PROFESSIONAL",
+        "competence":[
+          {"id": "A10001", "title": "UseCase diagram"},
+          {"id": "A10002", "title": "Package diagram"},
+          {"id": "A10003", "title": "Sequence diagram"},
+          {"id": "A10004", "title": "Activity diagram"},
+          {"id": "A10005", "title": "Class diagram"},
+          {"id": "A10006", "title": "Requirements diagram"},
+          {"id": "A10007", "title": "State diagram"},
+          {"id": "A10008", "title": "Design patterns"}
+        ]
+      },
+      {
+        "category": "BPMN",
+        "type": "PROFESSIONAL",
+        "competence":[
+          {"id": "A20001", "title": "Process diagram"},
+          {"id": "A20002", "title": "Collaboration diagram"}
+        ]
+      },
+      {
+        "category": "SQL",
+        "type":"PROFESSIONAL",
+        "competence":[
+          {"id": "A30001", "title": "pochopenie dátového modelu"},
+          {"id": "A30002", "title": "jednoduché selekty"}
+        ]
+      },
+      {
+        "category": "Archimate",
+        "type": "PROFESSIONAL",
+        "competence": [
+          {"id": "A40001", "title": "motivation aspect"},
+          {"id": "A40002", "title": "business level"},
+          {"id": "A40003", "title": "application level"},
+          {"id": "A40004", "title": "technical level"}
+        ]
+      },
+      {
+        "category": "Nevyhnutné",
+        "type":"PROFESSIONAL",
+        "competence":[
+          {"id": "A50001", "title": "Agile working"},
+          {"id": "A50002", "title": "Business analysis"},
+          {"id": "A50003", "title": "Business improvement process"},
+          {"id": "A50004", "title": "Digital perspective"},
+          {"id": "A50005", "title": "Innovation"},
+          {"id": "A50006", "title": "Requirements definition and management"},
+          {"id": "A50007", "title": "Stakeholder relationship management"},
+          {"id": "A50008", "title": "User focus"}
+        ]
+      },
+      {
+        "category": "Vhodné",
+        "type":"PROFESSIONAL",
+        "competence":[
+          {"id": "A60001", "title": "Business modelling"},
+          {"id": "A60002", "title": "Business process testing"},
+          {"id": "A60003", "title": "Enterprise and business architecture"},
+          {"id": "A60004", "title": "Methods and tools"},
+          {"id": "A60005", "title": "Testing (business analysis)"}
+        ]
+      },
+      {
+        "category": "Tool-y",
+        "type":"PROFESSIONAL",
+        "competence":[
+          {"id": "A70001", "title": "Enterprise Architect"},
+          {"id": "A70002", "title": "Balsamiq Mocups"},
+          {"id": "A70003", "title": "Excel"},
+          {"id": "A70004", "title": "Word"},
+          {"id": "A70005", "title": "PowerPoint"},
+          {"id": "A70006", "title": "Camunda Modeler"},
+          {"id": "A70007", "title": "Archi"},
+          {"id": "A70008", "title": "JIRA"},
+          {"id": "A70009", "title": "WIKI"},
+          {"id": "A70010", "title": "SQLDeveloper"}
+       ]
+      }
+    ]
+  }
+
+]

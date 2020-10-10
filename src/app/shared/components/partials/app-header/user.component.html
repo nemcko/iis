@@ -1,0 +1,15 @@
+<a href="javascript:void(0)" (click)="userOverlay.toggle($event)" class="nav-link text-black font-weight-bold"
+  id="dropdown-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <span class="e-user-avatar"><img [src]="(uzivatel && uzivatel.image) || 'http://placehold.it/24x24'" width="24"
+      height="24" alt="#"></span>
+  <span class="align-middle ml-1">{{uzivatel.fullName}}</span>
+  <i class="icon icon-arrow-down fs-8 position-relative top-4 right-4"></i>
+</a>
+<p-overlayPanel #userOverlay>
+  <div class="dropdown-menu show dropdown-menu-right box-shadow-md border-0 border-radius-sm"
+    aria-labelledby="dropdown-1">
+    <a href="javascript:void(0)" preventDefault (click)="selectMenu(userOverlay,'detail')" class="dropdown-item fs-5 py-1 px-4">Karta zamestnanca</a>
+    <a *ngIf="usrCtx.isTL()"  href="javascript:void(0)" preventDefault (click)="selectMenu(userOverlay,'tlcard')" class="dropdown-item fs-5 py-1 px-4">Karta tímlídera</a>
+    <a  href="javascript:void(0)" preventDefault (click)="selectMenu(userOverlay,'projects')" class="dropdown-item fs-5 py-1 px-4">Zoznam projektov</a>
+  </div>
+</p-overlayPanel>

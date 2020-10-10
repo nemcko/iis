@@ -1,0 +1,86 @@
+<article class="pt-2">
+  <div class="row">
+    <div [class]="(announcement.bigText) ? 'col-12 col-md-10 mx-auto' : 'col-12 col-md-10 col-lg-9 col-xl-8 mx-auto'">
+      <div class="b-article-detail">
+        <header class="article-header mb-6">
+          <div class="position-relative">
+            <!-- Back to listing -->
+            <a class="btn btn-secondary text-white text-uppercase fs-5 font-weight-bold px-4 px-md-6 mb-3 mb-md-0 back"
+              routerLink="/dashboard">Späť na prehľad</a>
+
+            <div class="image box-shadow-lg">
+              <img [src]="'./assets/empty_image.jpg'" alt="#" class="img-fluid"
+                *ngIf="announcement?.imgUrl.length == 0">
+              <img [src]="announcement.imgUrl" alt="#" class="img-fluid" *ngIf="announcement?.imgUrl.length > 0">
+            </div>
+          </div>
+
+          <div class="content" *ngIf="announcement">
+            <div class="row">
+              <div class="col-11 col-xl-9 mx-auto">
+                <div class="bg-white border-radius-md p-4 py-lg-7 px-lg-8 box-shadow-lg position-relative">
+                  <h3 class="fs-7 font-weight-bold mb-2 text-primary">{{announcement?.title || ''}}</h3>
+
+                  <div class="mb-1 text-gray fs-6 font-weight-bold">{{announcement?.created || ''}}
+                    {{announcement?.authorFN || ''}}</div>
+                  <div class="fs-6 mb-2">
+                    <a routerLink="/dashboard/oznamy/{{category | urlEncode}}" 
+                        class="cursor-pointer text-tertiary font-weight-bold mr-1"
+                        *ngFor="let category of announcement.category">#{{category}}</a>
+                  </div>
+                  <div class="fs-5 mt-4">
+                    <span *ngIf="isHR && announcement.confirmReading">Počet otvorení oznamu:
+                      <span class="text-primary font-weight-bold">{{announcement.numberOpen}}</span>
+                      <span class="text-gray mx-1">|</span>
+                      Počet používateľov, ktorí otvorili oznam:
+                      <span class="text-primary font-weight-bold">{{announcement.numberUsers}}</span>
+                    </span>
+                    <span class="text-gray mx-1"
+                      *ngIf="announcement?.privileges.includes('CAN_EDIT') && isHR && announcement.confirmReading">|</span>
+                    <a routerLink="/dashboard/oznam-edit/{{announcement.id}}" class="text-secondary font-weight-bold"
+                      *ngIf="announcement?.privileges.includes('CAN_EDIT')">upraviť</a>
+                    <span class="text-gray mx-1"
+                      *ngIf="announcement?.privileges.includes('CAN_ARCHIVE') && isHR && announcement?.privileges.includes('CAN_EDIT')">|</span>
+                    <a preventDefault (click)="toArchive()" class="text-secondary font-weight-bold"
+                      *ngIf="announcement?.privileges.includes('CAN_ARCHIVE')">archivovať</a>
+
+                  </div>
+
+                  <!-- Vote up/down -->
+                  <app-voting [oznamId]="announcementId"></app-voting>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <div class="row">
+          <div [class]="(announcement.bigText) ? 'col-12' : 'col-11 col-xl-9 mx-auto'">
+            <!-- Content -->
+            <div class="bg-white bg-white border-radius-md p-4 p-lg-8 box-shadow-lg e-rte"
+              [innerHTML]="announcement.content | keepHtml" *ngIf="announcement">
+              <!-- TODO: Editor elements -->
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+          <div [class]="(announcement.bigText) ? 'col-12' : 'col-11 col-xl-9 mx-auto'">
+
+          <!-- More articles -->
+          <hr class="my-7" />
+          <app-more-articles [parentId]="announcementId" [category]="announcement.category" *ngIf="announcement">
+          </app-more-articles>
+          <hr class="mt-5 mb-7" />
+
+          <!-- forum -->
+          <app-forum [oznamId]="announcementId"></app-forum>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>

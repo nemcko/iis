@@ -1,0 +1,214 @@
+<article>
+  <form name="requestForm" #requestForm="ngForm" (ngSubmit)="save(requestForm.form, 'save')">
+    <div class="row mt-7">
+      <div class="col-12 col-md-10 col-lg-9 col-xl-8 mx-auto">
+        <header class="clearfix mb-5">
+          <h3 *ngIf="request.author.length > 0" class="fs-7 font-weight-bold d-inline-block mr-6">Žiadosť o príspevok - {{request.author}}</h3>
+          <h3 *ngIf="request?.author?.length <= 0" class="fs-7 font-weight-bold d-inline-block mr-6">Žiadosť o príspevok</h3>
+          <!-- <h3 class="fs-7 font-weight-bold d-inline-block mr-6">Úprava konceptu žiadosti o príspevok</h3> -->
+        </header>
+        <!-- NAZOV REKREACNEHO ZARIADENIA -->
+        <div class="form-group">
+          <label class="cursor-pointer w-100">
+            <span class="d-block fs-6 mb-2 ml-2"><strong>Názov rekreačného zariadenia</strong></span>
+            <input placeholder="Chata pod Rysmi" class="form-control border-0 fs-6 box-shadow-sm py-4 px-6 h-auto"
+              [(ngModel)]="request.name" name="name" #name="ngModel" required autocomplete="off">
+            <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert alert-danger text-white">
+              <div *ngIf="name['errors'].required">Názov zariadenia je povinný údaj.</div>
+            </div>
+          </label>
+        </div>
+        <!-- MIESTO REKREACIE -->
+        <div class="form-group">
+          <label class="cursor-pointer w-100">
+            <span class="d-block fs-6 mb-2 ml-2"><strong>Miesto rekreácie</strong></span>
+            <input placeholder="Lokalita" class="form-control border-0 fs-6 box-shadow-sm py-4 px-6 h-auto"
+              [(ngModel)]="request.location" name="location" #location="ngModel" required autocomplete="off">
+            <div *ngIf="location.invalid && (location.dirty || location.touched)" class="alert alert-danger text-white">
+              <div *ngIf="location['errors'].required">Miesto rekreácie je povinný údaj.</div>
+            </div>
+          </label>
+        </div>
+
+        <div class="row">
+          <!-- DATUM PRICHODU -->
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="form-group">
+              <label class="cursor-pointer w-100">
+                <span class="d-block fs-6 mb-2 ml-2"><strong>Dátum príchodu</strong></span>
+                <input placeholder="DD.MM.RRRR"
+                  class="form-control border-0 fs-6 box-shadow-sm py-4 px-6 h-auto js-datetime-picker"
+                  a2e-datetimepicker [(ngModel)]="modelDateFrom" [options]="datePickerOptionsFrom"
+                  (blur)="dateFromChange(dateFrom.value)" name="dateFrom" autocomplete="off" #dateFrom="ngModel"
+                  required>
+                <div *ngIf="dateFrom.invalid && (dateFrom.dirty || dateFrom.touched)"
+                  class="alert alert-danger text-white">
+                  <div *ngIf="dateFrom['errors'].required">Dátum príchodu je povinný údaj.</div>
+                </div>
+              </label>
+            </div>
+          </div>
+          <!-- DATUM ODCHODU -->
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="form-group">
+              <label class="cursor-pointer w-100">
+                <span class="d-block fs-6 mb-2 ml-2"><strong>Dátum odchodu</strong></span>
+                <input placeholder="DD.MM.RRRR"
+                  class="form-control border-0 fs-6 box-shadow-sm py-4 px-6 h-auto js-datetime-picker"
+                  a2e-datetimepicker [ngModel]="modelDateTo" [options]="datePickerOptionsTo"
+                  (blur)="dateToChange(dateTo.value)" name="dateTo" autocomplete="off" #dateTo="ngModel" required>
+                <div *ngIf="dateTo.invalid && (dateTo.dirty || dateTo.touched)" class="alert alert-danger text-white">
+                  <div *ngIf="dateTo['errors'].required">Dátum odchodu je povinný údaj.</div>
+                </div>
+              </label>
+            </div>
+          </div>
+          <!-- CELKOVA CENA -->
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="form-group">
+              <label class="cursor-pointer w-100">
+                <span class="d-block fs-6 mb-2 ml-2"><strong>Celková cena</strong></span>
+                <input placeholder="EUR" class="form-control border-0 fs-6 box-shadow-sm py-4 px-6 h-auto" type="number"
+                  [(ngModel)]="request.price" name="price" #price="ngModel" required min="1" autocomplete="off">
+                <div *ngIf="price.invalid && (price.dirty || price.touched)" class="alert alert-danger text-white">
+                  <div *ngIf="price['errors']?.required">Cena je povinný údaj.</div>
+                  <div *ngIf="price['errors']?.min">Cena musí byť číslo väčšie ako 0.</div>
+                </div>
+              </label>
+            </div>
+          </div>
+          <!-- POCET OSOB -->
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="form-group">
+              <label class="cursor-pointer w-100">
+                <span class="d-block fs-6 mb-2 ml-2"><strong>Počet osôb</strong></span>
+                <input placeholder="" class="form-control border-0 fs-6 box-shadow-sm py-4 px-6 h-auto" type="number"
+                  [(ngModel)]="request.personsCount" name="personsCount" #personsCount="ngModel" required min="1"
+                  autocomplete="off">
+                <div *ngIf="personsCount.invalid && (personsCount.dirty || personsCount.touched)"
+                  class="alert alert-danger text-white">
+                  <div *ngIf="personsCount['errors']?.required">Počet osôb je povinný údaj.</div>
+                  <div *ngIf="personsCount['errors']?.min">Počet osôb musí byť číslo väčšie ako 0.</div>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <hr class="mb-5" />
+
+        <!-- DOPLNKOVE SLUZBY -->
+        <div class="form-group">
+          <label class="cursor-pointer w-100">
+            <span class="d-block fs-6 mb-2 ml-2"><strong>Doplnkové služby zahrnuté v celkovej cene pobytu</strong>
+              (jednotlivé položky oddeľuj čiarkou)</span>
+            <textarea rows="2" placeholder="Wellness, masáž"
+              class="form-control border-0 fs-6 box-shadow-sm lh-22 py-4 px-6" maxlength="300" data-autoresize
+              [(ngModel)]="request.aditionalServices" name="aditionalServices" #aditionalServices="ngModel"
+              autocomplete="off"></textarea>
+          </label>
+        </div>
+
+        <hr class="mb-5" />
+
+        <!-- DALSIE OSOBY -->
+        <div class="form-group">
+          <label class="cursor-pointer w-100">
+            <span class="d-block fs-6 mb-2 ml-2"><strong>Ďalšie osoby</strong> (meno osoby a svoj vzťah k nej,
+              jednotlivé osoby oddeľuj čiarkou)</span>
+            <textarea rows="2" placeholder="Elvíra Machová - partnerka, Ján Mach - syn"
+              class="form-control border-0 fs-6 box-shadow-sm lh-22 py-4 px-6" maxlength="300" data-autoresize
+              [(ngModel)]="request.aditionalPersons" name="aditionalPersons" #aditionalPersons="ngModel"
+              autocomplete="off" [required]="request.personsCount && request.personsCount > 1"></textarea>
+            <div *ngIf="aditionalPersons.invalid && (aditionalPersons.dirty || aditionalPersons.touched)"
+              class="alert alert-danger text-white">
+              <div *ngIf="aditionalPersons['errors']?.required">Vyplňte prosím ďalšie osoby.</div>
+            </div>
+          </label>
+        </div>
+
+        <hr class="mb-5" />
+
+        <!-- PRILOHY -->
+        <span class="d-block fs-6 mb-2 ml-2"><strong>Príloha</strong> (faktúra).</span>
+        <!-- <span *ngIf="templateRequestURL?.length > 0" class="fs-6 mb-2 ml-2">Stiahnite si <strong><a href="{{templateRequestURL}}" target="_blank" class="text-secondary">vzorovú žiadosť</a></strong> o rekreačný poukaz.</span> -->
+        <div class="row">
+          <div class="col-12">
+            <div class="form-group">
+              <div class="bg-white box-shadow-sm p-3 border-radius-md">
+
+                <div class="dropzone d-flex align-items-center" [dropzone]="fileUploadConfig"
+                  (error)="fileUploadError($event)" (success)="fileUploadSuccess($event)">
+                  <div class="dz-message text-center w-100 font-weight-bold text-primary m-0">
+                    <i class="icon icon-add-photo fs-8 mb-2 d-block text-black"></i>
+                    Presuňte súbor priamo sem<br /> alebo <span class="text-secondary">kliknutím
+                      nahrajte</span>.
+                  </div>
+                </div>
+
+                <div *ngIf="request.attachments?.length > 0">
+                  <span *ngFor="let attachment of request.attachments" class="tag-item mt-2">
+                    <a [href]="attachment" target="_blank" title="Zobraziť prílohu">{{attachment | filename}}</a>&nbsp;
+                    <a class="remove-button" (click)="removeAttachment(attachment)" title="Odstrániť prílohu">×</a>
+                  </span>
+                </div>
+                <div *ngIf="request.attachments?.length === 0" class="alert alert-danger text-white">
+                  <div>Vložte prosím požadované prílohy.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="e-checkbox mb-4">
+          <label class="w-100 cursor-pointer">
+            <input type="checkbox" [(ngModel)]="request.accepted" name="accept">
+            <span>Čestne prehlasujem, že osoby, ktoré sú v mnou priloženom účtovnom doklade zahrnuté, žijú so mnou v spoločnej domácnosti.</span>
+          </label>
+        </div>
+
+      </div>
+    </div>
+  </form>
+</article>
+
+<!-- akcie k ziadosti -->
+<!-- <div class="b-article-detail-footer px-7 py-3 py-md-5 preloader-on" *ngIf="isFormReady"> -->
+<div class="b-article-detail-footer">
+  <div class="preloader-on">
+    <app-loader-block key="wf_voucher_loader"></app-loader-block>
+    <div class="px-7 py-3 py-md-5">
+      <div *ngIf="isFormReady">
+        <!-- ULOZ ZIADOST -->
+        <span *ngIf="wfActions.includes(voucherRequestWFActions.SAVE)">
+          <a href="#" preventDefault (click)="save(requestForm.form, voucherRequestWFActions.SAVE)"
+            class="font-weight-bold text-uppercase text-secondary">
+            <i class="icon icon-save fs-8 align-middle position-relative bottom-2"></i> Uložiť
+          </a>
+          <span class="mx-1 text-gray">|</span>
+        </span>
+
+        <!-- ODOSLI NA SCHVALENIE -->
+        <span *ngIf="wfActions.includes(voucherRequestWFActions.SEND_TO_HR)">
+          <a href="#" preventDefault (click)="save(requestForm.form, voucherRequestWFActions.SEND_TO_HR)"
+            class="font-weight-bold text-uppercase text-secondary">
+            <i class="icon icon-mail-send fs-8 align-middle position-relative bottom-2"></i> Odoslať
+          </a>
+          <span class="mx-1 text-gray">|</span>
+        </span>
+
+        <!-- ODSTRANIT ZIADOST -->
+        <span *ngIf="wfActions.includes(voucherRequestWFActions.DELETE)">
+          <a href="#" preventDefault (click)="removeRequest()" class="font-weight-bold text-uppercase text-secondary">
+            <i class="icon icon-trash fs-8 align-middle position-relative bottom-2"></i> Odstrániť žiadosť
+          </a>
+          <span class="mx-1 text-gray">|</span>
+        </span>
+
+        <a href="#" preventDefault (click)="resetChanges()" class="font-weight-bold text-uppercase text-secondary">
+          <i class="icon icon-close fs-8 align-middle position-relative bottom-2"></i> Zrušiť zmeny
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

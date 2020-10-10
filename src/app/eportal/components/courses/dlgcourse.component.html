@@ -1,0 +1,45 @@
+<appdlg #dlg [title]="title">
+  <form classes="dlg_form mb-6">
+    <formrow>
+      <formfld classes="col12" [label]="'Názov školenia'">
+        <input *ngIf="usrCtx.isHR" id="certname" classes="input" [appFocus] name="name" [(ngModel)]="data.name">
+        <div *ngIf="!usrCtx.isHR" classes="text">{{data.name}}</div>
+      </formfld>
+    </formrow>
+
+    <formrow>
+      <formfld classes="col66" [label]="'Adresát'">
+        <input *ngIf="usrCtx.isHR" classes="input" name="personFN" [(ngModel)]="data.personFN">
+        <div *ngIf="!usrCtx.isHR" classes="text">{{data.personFN}}</div>
+      </formfld>
+
+      <formfld classes="col66" [label]="'Konanie školenia'">
+        <input *ngIf="usrCtx.isHR" classes="input" name="place" [(ngModel)]="data.place">
+        <div *ngIf="!usrCtx.isHR" classes="text">{{data.place}}</div>
+      </formfld>
+    </formrow>
+
+    <formrow>
+      <formfld classes="col66" [label]="'Povinné / Nepovinné'">
+        <input *ngIf="usrCtx.isHR" classes="input" name="mandatory" [(ngModel)]="data.mandatory">
+        <div *ngIf="!usrCtx.isHR" classes="text">{{data.mandatory}}</div>
+      </formfld>
+
+      <formfld classes="col66" [label]="'Deň konania školenia'">
+        <input *ngIf="usrCtx.isHR" classes="date" a2e-datetimepicker classes="input" name="procdate" [(ngModel)]="data.procdate" [options]="datePickerOptions">
+        <div *ngIf="!usrCtx.isHR" classes="text">{{data.procdate | date:'dd.MM.yyyy'}}</div>
+      </formfld>
+    </formrow>
+
+  </form>
+
+  <div classes="dlg_footer">
+    <button *ngIf="usrCtx.isHR" classes="dlg_ok" (click)="save()">Uložiť záznam</button>
+    <button *ngIf="usrCtx.isHR" classes="dlg_cancel" (click)="dlg.close()">Zrušiť</button>
+    <button *ngIf="!usrCtx.isHR" classes="dlg_cancel" (click)="dlg.close()">Návrat</button>
+  </div>
+
+  <!-- <pre>{{wgroupusers|json}}</pre> -->
+
+
+</appdlg>

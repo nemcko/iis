@@ -1,0 +1,156 @@
+<section>
+  <header class="clearfix mb-2">
+    <h3 class="fs-6 font-weight-bold d-inline-block mr-6">Komentáre</h3>
+  </header>
+
+
+  <!-- FORUM MAIN TOPIC FORM -->
+  <form class="my-4 position-relative" #newTopicForm="ngForm" name="newTopicForm">
+    <button type="submit" class="submit-right right-24 text-secondary" (click)="createForumTopic(newTopicForm)">
+      <i class="icon icon-mail-send"></i>
+    </button>
+    <textarea rows="1" placeholder="Tvoj komentár" class="form-control fs-5 box-shadow-sm lh-22 p-6" data-autoresize
+      #newTopic name="newTopic" [ngModel]="newTopic.value"></textarea>
+  </form>
+
+  <!-- FORUM LIST -->
+  <section *ngIf="prispevky?.length > 0">
+
+    <!-- FORUM TOPICS -->
+    <div *ngFor="let topic of prispevky">
+      <div class="bg-white p-6 border-radius-md box-shadow-sm mb-2" *ngIf="topic">
+
+        <!-- TOPIC - READ MODE -->
+        <div class="row" *ngIf="editableItem != 'editTopic-' + (topic.id || '')">
+          <!-- AUTHOR ICON -->
+          <div class="col-auto">
+            <span class="e-user-avatar"><img [src]="(topic && topic.imgUrl) || 'http://placehold.it/40x40'" width="40"
+                alt="#"></span>
+          </div>
+          <div class="col">
+            <!-- CONTENT -->
+            <div class="fs-5">
+              <p class="mb-0" [innerHTML]="topic.description | crlf | urlDecode"></p>
+            </div>
+            <!-- SUPPLEMENTARY INFO / ACTIONS -->
+            <div class="text-gray fs-3 font-weight-bold mt-1">
+              {{topic.author}} <span class="d-inline-block mx-1">|</span> {{topic.modified}} <span
+                class="d-inline-block mx-1">|</span>
+              <a class="cursor-pointer text-secondary"
+              preventDefault
+                (click)="editableItem = 'newResponse-' + topic.id">odpovedať</a>
+              <span *ngIf="topic.privileges.includes('CAN_EDIT')">
+                <span class="d-inline-block mx-1">|</span>
+                <a class="cursor-pointer text-secondary"
+                preventDefault
+                  (click)="editableItem = 'editTopic-' + topic.id">upraviť</a>
+              </span>
+            </div>
+            <!-- TOGGLE RESPONSES -->
+            <a *ngIf="topic.responses.length > 0" class="cursor-pointer text-secondary fs-3 d-inline-block mt-1" preventDefault
+              (click)="toggleCollapsed('parent-' + topic.id)"
+              [attr.aria-expanded]="!isCollapsed('parent-' + topic.id)" [attr.aria-controls]="'parent-' + topic.id">{{isCollapsed('parent-' + topic.id) ? 'zobraziť odpovede' :
+              'skryť odpovede'}}</a>
+          </div>
+        </div>
+
+        <!-- TOPIC - EDIT MODE -->
+        <div class="row" *ngIf="editableItem == 'editTopic-' + (topic.id || '')">
+          <div class="col-12">
+            <form class="position-relative" #editTopicForm="ngForm" name="editTopicForm">
+              <div class="submit-right right-24 text-center">
+                <button type="submit" class="text-secondary cursor-pointer border-0 bg-none p-0"
+                  (click)="updateForumTopic(editTopicForm, topic.id)">
+                  <i class="icon icon-mail-send"></i>
+                </button>
+                <a title="Zavrieť" class="icon icon-close d-block text-secondary mt-1" preventDefault
+                  (click)="editableItem = ''"></a>
+              </div>
+              <textarea rows="4" placeholder="Tvoj komentár" class="form-control fs-5 box-shadow-sm lh-22 p-6"
+                data-autoresize #editTopic [ngModel]="topic.description | urlDecode" name="editTopic"></textarea>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- FORUM RESPONSES -->
+      <div *ngIf="topic.responses.length > 0 || editableItem == 'newResponse-' + (topic.id || '')"
+        class="b-tree-line first-line-on pl-7" id="parent-{{topic.id}}"
+        [ngbCollapse]="isCollapsed('parent-' + topic.id)">
+
+        <!-- NEW RESPONSE FORM -->
+        <div class="item bg-white mb-2 ml-8" *ngIf="editableItem == 'newResponse-' + (topic.id || '')">
+          <div class="row">
+            <div class="col-12">
+              <form class="position-relative" #newResponseForm="ngForm" name="newResponseForm">
+                <div class="submit-right right-24 text-center">
+                  <button type="submit" class="text-secondary cursor-pointer border-0 bg-none p-0"
+                    (click)="createResponse(newResponseForm, topic.id)">
+                    <i class="icon icon-mail-send"></i>
+                  </button>
+                  <a title="Zavrieť" class="icon icon-close d-block text-secondary mt-1" preventDefault
+                    (click)="editableItem = ''"></a>
+                </div>
+                <textarea rows="1" placeholder="Tvoja odpoveď" class="form-control fs-5 box-shadow-sm lh-22 p-6"
+                  data-autoresize #newResponse name="newResponse" [ngModel]="newResponse.value"></textarea>
+              </form>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- RESPONSES TO PARENT TOPIC-->
+        <div *ngFor="let response of topic.responses"
+          [class]="(editableItem != 'editResponse-' + response.id) ? 'item bg-white p-6 border-radius-md box-shadow-sm mb-2 ml-8' : 'item bg-white mb-2 ml-8'">
+          <!-- RESPONSE - READ MODE -->
+          <div class="row" *ngIf="editableItem != 'editResponse-' + response.id">
+            <!-- AUTHOR ICON -->
+            <div class="col-auto">
+              <span class="e-user-avatar"><img [src]="(response && response.imgUrl) || 'http://placehold.it/40x40'"
+                  width="40" alt="#"></span>
+            </div>
+            <div class="col">
+              <!-- CONTENT -->
+              <div class="fs-5">
+                <p class="mb-0" [innerHTML]="response.description | crlf | urlDecode"></p>
+              </div>
+              <!-- SUPPLEMENTARY INFO / ACTIONS -->
+              <div class="text-gray fs-3 font-weight-bold mt-1">
+                {{response.author}} <span class="d-inline-block mx-1">|</span> {{response.modified}} <span
+                  *ngIf="response.privileges.includes('CAN_EDIT')">
+                  <span class="d-inline-block mx-1">|</span>
+                  <a class="cursor-pointer text-secondary" preventDefault
+                    (click)="editableItem = 'editResponse-' + response.id">upraviť</a>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- RESPONSE - EDIT MODE -->
+          <div class="row" *ngIf="editableItem == 'editResponse-' + response.id">
+            <div class="col-12">
+              <form class="position-relative" #editResponseForm="ngForm" name="editResponseForm">
+                <div class="submit-right right-24 text-center">
+                  <button type="submit" class="text-secondary cursor-pointer border-0 bg-none p-0"
+                    (click)="updateResponse(editResponseForm, topic.id, response.id)">
+                    <i class="icon icon-mail-send"></i>
+                  </button>
+                  <a title="Zavrieť" class="icon icon-close d-block text-secondary mt-1" preventDefault
+                    (click)="editableItem = ''"></a>
+                </div>
+                <textarea rows="4" placeholder="Tvoja odpoveď" class="form-control fs-5 box-shadow-sm lh-22 p-6"
+                  data-autoresize #editResponse name="editResponse"
+                  [ngModel]="response.description | urlDecode"></textarea>
+              </form>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</section>

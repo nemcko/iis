@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="152px" height="146px" viewBox="0 0 152 146" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>undraw_files1_9ool</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50.0009871%" y1="100%" x2="50.0009871%" y2="0%" id="linearGradient-1">
+            <stop stop-color="#808080" stop-opacity="0.25" offset="1%"></stop>
+            <stop stop-color="#808080" stop-opacity="0.12" offset="54%"></stop>
+            <stop stop-color="#808080" stop-opacity="0.1" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="100%" x2="50%" y2="0%" id="linearGradient-2">
+            <stop stop-color="#B3B3B3" stop-opacity="0.25" offset="0%"></stop>
+            <stop stop-color="#B3B3B3" stop-opacity="0.1" offset="54%"></stop>
+            <stop stop-color="#B3B3B3" stop-opacity="0.05" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50.0009871%" y1="100%" x2="50.0009871%" y2="0%" id="linearGradient-3">
+            <stop stop-color="#808080" stop-opacity="0.25" offset="1%"></stop>
+            <stop stop-color="#808080" stop-opacity="0.12" offset="54%"></stop>
+            <stop stop-color="#808080" stop-opacity="0.1" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="100.011179%" x2="50%" y2="0%" id="linearGradient-4">
+            <stop stop-color="#B3B3B3" stop-opacity="0.25" offset="0%"></stop>
+            <stop stop-color="#B3B3B3" stop-opacity="0.1" offset="54%"></stop>
+            <stop stop-color="#B3B3B3" stop-opacity="0.05" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="49.9990129%" y1="100%" x2="49.9990129%" y2="0%" id="linearGradient-5">
+            <stop stop-color="#808080" stop-opacity="0.25" offset="1%"></stop>
+            <stop stop-color="#808080" stop-opacity="0.12" offset="54%"></stop>
+            <stop stop-color="#808080" stop-opacity="0.1" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="49.9938748%" y1="100%" x2="49.9938748%" y2="0%" id="linearGradient-6">
+            <stop stop-color="#B3B3B3" stop-opacity="0.25" offset="0%"></stop>
+            <stop stop-color="#B3B3B3" stop-opacity="0.1" offset="54%"></stop>
+            <stop stop-color="#B3B3B3" stop-opacity="0.05" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Rodný-list-projektu---koncept" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="07.1-C-Pridané-hodnotenie-default-neuverejnené" transform="translate(-824.000000, -164.000000)" fill-rule="nonzero">
+            <g id="Dokumentácie" transform="translate(800.000000, 96.000000)">
+                <g id="dokumentácia">
+                    <g id="undraw_files1_9ool" transform="translate(24.000000, 68.000000)">
+                        <polygon id="Path" fill="url(#linearGradient-1)" points="94.5114444 145.210749 0 145.210749 0 35.4471562 14.2799961 19.6109708 94.5114444 19.6109708"></polygon>
+                        <polygon id="Path" fill="#FAFAFA" points="93.0522836 141.872592 1.67001131 141.872592 1.67001131 36.3036201 15.4760601 21.0719974 93.0522836 21.0719974"></polygon>
+                        <rect id="Rectangle" fill="#E0E0E0" x="10.5910438" y="34.1111471" width="44.5193293" height="7.51038604"></rect>
+                        <rect id="Rectangle" fill="#E0E0E0" x="10.6806086" y="54.6625489" width="32.6239974" height="7.51038604"></rect>
+                        <rect id="Rectangle" fill="#51CCCC" x="10.6806086" y="85.5400317" width="73.1782161" height="27.5393261"></rect>
+                        <rect id="Rectangle" fill="#F5F5F5" x="67.2762655" y="34.2156395" width="16.5825592" height="7.51038604"></rect>
+                        <rect id="Rectangle" fill="#F5F5F5" x="67.2762655" y="45.9001208" width="16.5825592" height="7.51038604"></rect>
+                        <polygon id="Path" fill="url(#linearGradient-2)" points="16.8997681 21.0719974 16.8997681 37.7627808 1.67001131 37.7627808 1.67001131 36.3036201 15.4387414 21.0719974"></polygon>
+                        <polygon id="Path" fill="#EEEEEE" points="1.63269262 36.3036201 15.4387414 21.0719974 15.4387414 36.3036201"></polygon>
+                        <polygon id="Path" fill="url(#linearGradient-3)" points="123.511797 134.778309 29.0003528 134.778309 29.0003528 25.0147168 43.2803489 9.18039735 123.511797 9.18039735"></polygon>
+                        <polygon id="Path" fill="#FAFAFA" points="122.052636 131.440152 30.6703641 131.440152 30.6703641 25.8711807 44.4764129 10.6395581 122.052636 10.6395581"></polygon>
+                        <rect id="Rectangle" fill="#E0E0E0" x="39.5913965" y="23.6805737" width="44.5193293" height="7.51038604"></rect>
+                        <rect id="Rectangle" fill="#E0E0E0" x="39.6809614" y="44.2301095" width="32.6239974" height="7.51038604"></rect>
+                        <rect id="Rectangle" fill="#4DBBBB" x="39.6809614" y="75.1094582" width="73.1782161" height="27.5393261"></rect>
+                        <rect id="Rectangle" fill="#F5F5F5" x="96.2766183" y="23.7850661" width="16.5825592" height="7.51038604"></rect>
+                        <rect id="Rectangle" fill="#F5F5F5" x="96.2766183" y="35.4676815" width="16.5825592" height="7.51038604"></rect>
+                        <polygon id="Path" fill="url(#linearGradient-4)" points="45.9001208 10.6395581 45.9001208 27.3303415 30.6703641 27.3303415 30.6703641 25.8711807 44.4390942 10.6395581"></polygon>
+                        <polygon id="Path" fill="#EEEEEE" points="30.6330454 25.8711807 44.4390942 10.6395581 44.4390942 25.8711807"></polygon>
+                        <polygon id="Path" fill="url(#linearGradient-5)" points="151.887062 125.599778 57.3756175 125.599778 57.3756175 15.8361854 71.6537477 0 151.887062 0"></polygon>
+                        <polygon id="Path" fill="#FFFFFF" points="150.426035 122.261621 59.0437629 122.261621 59.0437629 16.6907834 72.8516776 1.46102665 150.426035 1.46102665"></polygon>
+                        <rect id="Rectangle" fill="#E0E0E0" x="67.9666613" y="14.5001764" width="44.5193293" height="7.51038604"></rect>
+                        <rect id="Rectangle" fill="#E0E0E0" x="68.0562261" y="35.0515781" width="32.6239974" height="7.51038604"></rect>
+                        <rect id="Rectangle" fill="#57B99B" x="68.0562261" y="65.9290609" width="73.1782161" height="27.5393261"></rect>
+                        <rect id="Rectangle" fill="#E0E0E0" x="124.651883" y="14.6046687" width="16.5825592" height="7.51038604"></rect>
+                        <rect id="Rectangle" fill="#E0E0E0" x="124.651883" y="26.2872841" width="16.5825592" height="7.51038604"></rect>
+                        <rect id="Rectangle" fill="#E0E0E0" x="124.651883" y="37.9717655" width="16.5825592" height="7.51038604"></rect>
+                        <polygon id="Path" fill="url(#linearGradient-6)" points="74.2753856 1.46102665 74.2753856 18.15181 59.0437629 18.15181 59.0437629 16.6907834 72.8143589 1.46102665"></polygon>
+                        <polygon id="Path" fill="#EEEEEE" points="59.0064442 16.6907834 72.8143589 1.46102665 72.8143589 16.6907834"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,53 @@
+<!-- Search -->
+<form class="mb-7 position-relative">
+  <button type="submit" class="submit-left">
+    <i class="icon icon-search"></i>
+  </button>
+  <input type="text" autocomplete="off" id="search" name="search" placeholder="Hľadaj v hodnoteniach"
+    class="form-control fs-6 font-weight-bold box-shadow-lg border-0 py-5 px-6 h-auto" [(ngModel)]="search"
+    (keyup.enter)="loadRecords()">
+</form>
+
+<div class="row">
+  <div class="col-12 col-md-10 col-lg-8 mx-auto">
+    <section class="s-ratings">
+      <header class="clearfix mb-5">
+        <h3 class="fs-7 font-weight-bold d-inline-block mr-6">Ročné rozhovory so zamestnancami</h3>
+        <!-- <a routerLink="/ror/rating-create" class="font-weight-bold text-secondary"><i
+            class="icon icon-plus-circle fs-8 position-relative top-2"></i> Vytvor nový</a> -->
+      </header>
+
+      <div class="b-tree-line">
+
+        <div *ngFor="let item of ratings; let i = index"
+          [class]="(i == 0) ? 'item d-block bg-white py-3 px-4 border-radius-md box-shadow-sm mt-0 ml-8' : 'item d-block bg-white py-3 px-4 border-radius-md box-shadow-sm mt-4 ml-8'">
+
+          <div class="row">
+            <div class="col-2 d-flex align-items-center border-right-md-on">
+              <span class="text-primary">{{item.dateMeeting}}</span>
+            </div>
+            <div class="col-3 d-flex align-items-center border-right-md-on">
+              <span class="font-weight-bold text-black">{{item.ratedUserFN}}</span>
+            </div>
+            <div class="col-4 d-flex align-items-center border-right-md-on">
+              <span class="text-gray mr-2">Hodnotí:</span>
+              <span class="font-weight-bold text-tertiary">
+                {{item.managerFN}}</span>
+            </div>
+            <div class="col-2 d-flex align-items-center border-right-md-on">
+              <span [class]="statusColorList[item.status]">{{statusListDesc[item.status]}}</span>
+            </div>
+            <div class="col-1 d-flex align-items-center ">
+              <a [routerLink]="(item.status == statusList.DRAFT) ? '/ror/rating-edit/' + item.id : '/ror/rating/' + item.id"
+                class="text-secondary fs-8">
+                <i [class]="(item.status == statusList.DRAFT) ? 'icon icon-edit' : 'icon icon-doc'"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+  </div>
+</div>

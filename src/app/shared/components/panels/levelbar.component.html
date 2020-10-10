@@ -1,0 +1,22 @@
+<ng-content></ng-content>
+<div class="bg-white py-8 px-6 border-radius-md box-shadow-sm mb-8 mt-5 mt-lg-0">
+  <div class="b-timeline my-1 my-lg-3 mx-lg-3">
+    <div class="e-progress-bar pink-light">
+      <span style="width: 45%;"></span>
+      <span style="width: 38%;"></span>
+    </div>
+
+    <div *ngIf="startTitle" class="year start" [ngStyle]="{'left': start + '%'}">
+      <div class="title">{{startTitle}}</div>
+    </div>
+    <div *ngIf="endTitle" class="year end" [ngStyle]="{'left': end + '%'}">
+      <div class="title">{{endTitle}}</div>
+    </div>
+
+    <div class="level active" style="left: 0;" data-toggle="tooltip" data-placement="top" title="Štart"><div class="title d-none d-lg-block">Štart</div></div>
+    <div class="level active" style="left: 25%;" data-toggle="tooltip" data-placement="top" title="Junior"><div class="title d-none d-lg-block">Junior</div></div>
+    <div class="level" style="left: 50%;" data-toggle="tooltip" data-placement="top" title="Medior"><div class="title d-none d-lg-block">Medior</div></div>
+    <div class="level" style="left: 75%;" data-toggle="tooltip" data-placement="top" title="Senior"><div class="title d-none d-lg-block">Senior</div></div>
+    <div class="level" style="left: 100%;" data-toggle="tooltip" data-placement="top" title="Expert"><div class="title d-none d-lg-block">Expert</div></div>
+  </div>
+</div>

@@ -1,0 +1,44 @@
+[
+    {
+        "title": "IIS portál",
+        "cls": "icon icon-dashboard",
+        "link": "",
+        "route": "/dashboard"
+    },
+    {
+        "title": "Dovolenky",
+        "cls": "icon icon-dovolenky",
+        "link": "iis/hr/dovolenky.nsf",
+        "route":""
+    },
+    {
+        "title": "Obchodné aktivity",
+        "cls": "icon icon-oa",
+        "link": "iis/obchod/oang.nsf",
+        "route":""
+    },
+    {
+        "title": "MRP",
+        "cls": "icon icon-mrp",
+        "link": "iis/obchod/mrp.nsf",
+        "route":""
+    },
+    {
+        "title": "Pracovné cesty",
+        "cls": "icon icon-pracovne-cesty",
+        "link": "iis/appl/pracesty.nsf",
+        "route":""
+    },
+    {
+        "title": "Podklady na IFA",
+        "cls": "icon icon-ifa",
+        "link": "iis/obchod/ifa.nsf",
+        "route":""
+    },
+    {
+        "title": "Rekreačné poukazy",
+        "cls": "icon icon-dovolenky",
+        "link": "",
+        "route": "/holiday-voucher"
+    }
+]

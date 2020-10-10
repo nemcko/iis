@@ -1,0 +1,16 @@
+{
+    "fullName": "Maruška Tomáš",
+    "positionKey": "POS945690924485",
+    "userName": "cn=Maruska Tomas/ou=PosAm Bratislava",
+    "userId": "247",
+    "roles": [
+        "[*Manager]",
+        "[*HR]",
+        "[DSV]",
+        "[Teamleader]",
+        "[Referent]",
+        "[Debug]"
+    ],
+    "access": "manager",
+    "image": "https://dev9ba01.posam.sk/iis/hr/photoman.nsf/img/87/$file/87.jpg"
+}

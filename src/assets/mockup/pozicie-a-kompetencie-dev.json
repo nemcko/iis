@@ -1,0 +1,156 @@
+[
+  {
+    "id":"", "title":"Neurčené",
+    "competence": [
+      {
+        "category": "Osobnostne predpoklady",
+        "type":"PERSONAL",
+        "competence":[
+          {"id": "X0001", "title": "analyticko-koncepčné myslenie (zber info, hľadanie súvislostí, porovnávanie výhod/nevýhod)"},
+          {"id": "X0002", "title": "proaktivita (v riešení probémov, v informovaní, v predchádzaní problémov)"},
+          {"id": "X0003", "title": "orientácia na výsledok (hľadanie možností ako by sa dalo, vytrvalosť, preberanie zodpovednosti za svoje rozhodnutia, doťahovanie úloh, ochota spraviť krok naviac)"},
+          {"id": "X0004", "title": "sebadôvera a osobná integrita (otvorenosť voči spätnej väzbe, priznanie vlastnej chyby, otvorená komunikácia)"},
+          {"id": "X0005", "title": "podpora tímovej spolupráce - efektívna komunikácia, ochota pomôcť, dáva feedback"},
+          {"id": "X0006", "title": "orientácia na rozvoj seba (identifikácia silných/slabých stránok, aktívne učenie sa)"}
+        ]
+      }
+    ]
+  },
+  {
+    "id":"POS123456", "title":"Programátor JAVA",
+    "competence": [
+      {
+        "category": "JAVA",
+        "type":"PROFESSIONAL",
+        "competence":[
+          {"id": "B0001", "title": "naming conventions"},
+          {"id": "B0002", "title": "používanie tried"},
+          {"id": "B0003", "title": "stratégie vytvárania objektov"},
+          {"id": "B0004", "title": "OO orientácia ( encapsul., polymor.,overload/override, ...)"},
+          {"id": "B0005", "title": "stratégie pre využívanie static ..."},
+          {"id": "B0006", "title": "praca so String, Array a ArrayList"},
+          {"id": "B0007", "title": "praca s assertami a exceptions"},
+          {"id": "B0008", "title": "IO a NIO"},
+          {"id": "B0009", "title": "generics a collections"},
+          {"id": "B0010", "title": "inner classes"},
+          {"id": "B0011", "title": "threads"},
+          {"id": "B0012", "title": "concurrency (completable futures)"},
+          {"id": "B0013", "title": "unit testing"},
+          {"id": "B0014", "title": "collections streams"},
+          {"id": "B0015", "title": "JDBC"}
+        ]
+      },
+      {
+        "category": "Spring 5",
+        "type":"PROFESSIONAL",
+        "competence":[
+          {"id": "B0026", "title": "Spring Integration"}
+        ]
+      },
+      {
+        "category": "Spring Boot 2",
+        "type":"PROFESSIONAL",
+        "competence":[
+          {"id": "B0027", "title": "Spring Initializr"},
+          {"id": "B0028", "title": "Application Configuration"},
+          {"id": "B0029", "title": "Spring Data JPA"},
+          {"id": "B0030", "title": "JPQL"},
+          {"id": "B0031", "title": "Spring Data REST"},
+          {"id": "B0032", "title": "Spring Data SQL"},
+          {"id": "B0033", "title": "Transaction Management"},
+          {"id": "B0034", "title": "Spring Boot Actuator"},
+          {"id": "B0035", "title": "Spring Cloud Streams"},
+          {"id": "B0036", "title": "RabbitMQ"},
+          {"id": "B0037", "title": "Kafka"},
+          {"id": "B0038", "title": "JWT"},
+          {"id": "B0039", "title": "Spring Security integration"},
+          {"id": "B0040", "title": "Caching - 1st a 2nd level cache"},
+          {"id": "B0041", "title": "Performance tuning (N+1, ...)"}
+        ]
+      },
+      {
+        "category": "Java EE API základy",
+        "type":"PROFESSIONAL",
+        "competence":[
+          {"id": "B0042", "title": "Servlet"},
+          {"id": "B0043", "title": "JPA"},
+          {"id": "B0044", "title": "JAXB/JSON"},
+          {"id": "B0045", "title": "JAXRS/REST"}
+        ]
+      },
+      {
+        "category": "Osobnostne predpoklady",
+        "type":"PERSONAL",
+        "competence":[
+          {"id": "X0001", "title": "analyticko-koncepčné myslenie (zber info, hľadanie súvislostí, porovnávanie výhod/nevýhod)"},
+          {"id": "X0002", "title": "proaktivita (v riešení probémov, v informovaní, v predchádzaní problémov)"},
+          {"id": "X0003", "title": "orientácia na výsledok (hľadanie možností ako by sa dalo, vytrvalosť, preberanie zodpovednosti za svoje rozhodnutia, doťahovanie úloh, ochota spraviť krok naviac)"},
+          {"id": "X0004", "title": "sebadôvera a osobná integrita (otvorenosť voči spätnej väzbe, priznanie vlastnej chyby, otvorená komunikácia)"},
+          {"id": "X0005", "title": "podpora tímovej spolupráce - efektívna komunikácia, ochota pomôcť, dáva feedback"},
+          {"id": "X0006", "title": "orientácia na rozvoj seba (identifikácia silných/slabých stránok, aktívne učenie sa)"}
+        ]
+      }
+    ]
+  },
+  {
+    "id":"POS123457", "title":"Programátor UI",
+    "competence": [
+      {
+        "category": "HTML/Javascript/Typescript",
+        "type":"PROFESSIONAL",
+        "competence":[
+          {"id": "B0016", "title": "JDBC"},
+          {"id": "B0017", "title": "IIFE"},
+          {"id": "B0018", "title": "používanie tried"},
+          {"id": "B0019", "title": "používanie interfaces"},
+          {"id": "B0020", "title": "stratégie vytvárania objektov"},
+          {"id": "B0021", "title": "OO orientácia (encapsul., polymor.,overload/override, ...)"},
+          {"id": "B0022", "title": "prototypova dedičnosť"},
+          {"id": "B0023", "title": "používanie npm"},
+          {"id": "B0024", "title": "nodejs"},
+          {"id": "B0025", "title": "unit testing"}
+        ]
+      },
+      {
+        "category": "Osobnostne predpoklady",
+        "type":"PERSONAL",
+        "competence":[
+          {"id": "X0001", "title": "analyticko-koncepčné myslenie (zber info, hľadanie súvislostí, porovnávanie výhod/nevýhod)"},
+          {"id": "X0002", "title": "proaktivita (v riešení probémov, v informovaní, v predchádzaní problémov)"},
+          {"id": "X0003", "title": "orientácia na výsledok (hľadanie možností ako by sa dalo, vytrvalosť, preberanie zodpovednosti za svoje rozhodnutia, doťahovanie úloh, ochota spraviť krok naviac)"},
+          {"id": "X0004", "title": "sebadôvera a osobná integrita (otvorenosť voči spätnej väzbe, priznanie vlastnej chyby, otvorená komunikácia)"},
+          {"id": "X0005", "title": "podpora tímovej spolupráce - efektívna komunikácia, ochota pomôcť, dáva feedback"},
+          {"id": "X0006", "title": "orientácia na rozvoj seba (identifikácia silných/slabých stránok, aktívne učenie sa)"}
+        ]
+      }
+    ]
+  },
+  {
+    "id":"POS123458", "title":"Analytik",
+    "competence": [
+      {
+        "category": "UML",
+        "type":"PROFESSIONAL",
+        "competence":[
+          {"id": "B0046", "title": "UC diagram"},
+          {"id": "B0047", "title": "Class diagram"},
+          {"id": "B0048", "title": "Component"},
+          {"id": "B0049", "title": "Sequence"},
+          {"id": "B0050", "title": "State"}
+        ]
+      },
+      {
+        "category": "Osobnostne predpoklady",
+        "type":"PERSONAL",
+        "competence":[
+          {"id": "X0001", "title": "analyticko-koncepčné myslenie (zber info, hľadanie súvislostí, porovnávanie výhod/nevýhod)"},
+          {"id": "X0002", "title": "proaktivita (v riešení probémov, v informovaní, v predchádzaní problémov)"},
+          {"id": "X0003", "title": "orientácia na výsledok (hľadanie možností ako by sa dalo, vytrvalosť, preberanie zodpovednosti za svoje rozhodnutia, doťahovanie úloh, ochota spraviť krok naviac)"},
+          {"id": "X0004", "title": "sebadôvera a osobná integrita (otvorenosť voči spätnej väzbe, priznanie vlastnej chyby, otvorená komunikácia)"},
+          {"id": "X0005", "title": "podpora tímovej spolupráce - efektívna komunikácia, ochota pomôcť, dáva feedback"},
+          {"id": "X0006", "title": "orientácia na rozvoj seba (identifikácia silných/slabých stránok, aktívne učenie sa)"}
+        ]
+      }
+    ]
+  }
+]

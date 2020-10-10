@@ -1,0 +1,26 @@
+<!-- Header -->
+<header class="s-header">
+  <nav class="navbar navbar-expand-sm pr-3 pr-sm-6">
+
+    <!-- Logo -->
+    <a class="font-weight-bold fs-8" routerLink="/dashboard" >iis</a>
+
+    <!-- Toggler button -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="icon icon-menu"></i>
+    </button>
+    
+    <!-- Collapse -->
+    <div class="collapse navbar-collapse" id="navbar-collapse">
+      
+      <app-applications [listStyle]="'navbar'"></app-applications>
+      
+      <!-- Navbar -->
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown">
+          <app-user></app-user>
+        </li>
+      </ul>      
+    </div>
+  </nav>
+</header>

@@ -1,0 +1,40 @@
+<h3 *ngIf="toptitle" class="fs-7 font-weight-bold d-inline-block mr-6 mb-7">{{toptitle}}</h3>
+
+<form class="mb-7 position-relative">
+  <button type="submit" class="submit-left">
+    <i class="icon icon-search"></i>
+  </button>
+
+  <input type="text" placeholder="Vyhľadaj text v zozname" #term (keyup)="search(term.value)" value=""
+    class="form-control fs-6 font-weight-bold box-shadow-lg border-0 py-4 px-6 h-auto">
+  <ng-content select="div[role=search]"></ng-content>
+</form>
+
+<ng-content select="div[role=right]"></ng-content>
+
+<div class="{{clsOuterRow}}">
+  <div class="{{clsOuterPanel}}">
+    <section class="{{clsInnerPanel}}">
+      <header class="clearfix mb-4">
+        <h3 *ngIf="title" class="fs-7 font-weight-bold d-inline-block mr-6">{{title}}</h3>
+
+        <ng-content select="div[role=header]"></ng-content>
+      </header>
+
+      <ng-content select="div[role=back]"></ng-content>
+
+      <div class="row d-xl-block clearfix {{clsList}}">
+        <div role="item" *ngFor="let item of items$ | async; let i = index"
+          class="{{clsItem}} {{clsItemCols}} mb-4">
+          <ng-template [ngTemplateOutlet]="templateRef" [ngTemplateOutletContext]="{item: item, keywords:keywords}">
+          </ng-template>
+        </div>
+      </div>
+
+    </section>
+  </div>
+</div>
+
+<pagination [total]="total$ | async" [page]="page" [numPages]="numPages" (goTo)="goToPage($event)" [params]="{q: terms}"></pagination>
+
+<!-- {{reqtime}} -->

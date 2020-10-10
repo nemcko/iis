@@ -1,0 +1,22 @@
+<section>
+  <header class="clearfix mb-2">
+    <h3 class="fs-6 font-weight-bold d-inline-block mr-6">Otázka pre HR</h3>
+  </header>
+
+  <div
+    class="bg-white p-4 text-center min-height-230 border-radius-md box-shadow-lg d-flex align-items-center justify-content-center article-actions-on position-relative">
+    <div class="content w-100">
+      <form class="position-relative" #formQuestionHR="ngForm" name="formQuestionHR">
+        <textarea rows="6" #questionHR name="questionHR" id="questionHR"
+          placeholder="Ak máš akékoľvek otázky, neváhaj ich položiť priamo sem, my ich určite dostaneme k správnemu adresátovi a ty dostaneš svoju odpoveď e-mailom."
+          class="form-control fs-6 box-shadow-sm lh-22 py-3 px-3" data-autoresize
+          [ngModel]="questionHR.value"></textarea>
+
+        <button type="submit" class="bg-none text-secondary border-0 mt-3 fs-5 font-weight-bold outline-0"
+          (click)="setQuestionHR(formQuestionHR)">
+          <i class="icon icon-mail-send mr-1 fs-6"></i> Odošli otázku
+        </button>
+      </form>
+    </div>
+  </div>
+</section>

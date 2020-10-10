@@ -1,0 +1,19 @@
+<section *ngIf="events">
+  <header class="clearfix mb-2">
+    <h3 class="fs-6 font-weight-bold d-inline-block mr-6">Nadchádzajúce udalosti</h3>
+    <a routerLink="/dashboard/events"  class="float-right text-uppercase font-weight-bold fs-3 text-secondary position-relative top-1">Zobraz
+      všetky</a>
+  </header>
+
+  <div class="b-tree-line">
+    <a *ngFor="let item of events; let i = index;" routerLink="/dashboard/oznam/{{item.id}}"  [class]="(i==0) ? 'item d-block bg-white py-3 px-4 border-radius-md box-shadow-sm mt-0 ml-8' : 'item d-block bg-white py-3 px-4 border-radius-md box-shadow-sm mt-2 ml-8'">
+      <span class="row">
+        <span class="col-12">
+          <div class="text-secondary font-weight-bold mb-2">{{item.title}}</div>
+          <div class="fs-3 text-black">{{item.date}}</div>
+        </span>
+      </span>
+
+    </a>
+  </div>
+</section>

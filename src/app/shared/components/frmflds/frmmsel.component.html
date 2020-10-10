@@ -1,0 +1,16 @@
+<div class="form-group mb-1">
+  <label class="cursor-pointer w-100">
+    <span *ngIf="label" classes="label">{{label}}</span>
+    <p-multiSelect #wdg classes="select" [options]="options" [(ngModel)]="value" [defaultLabel]="''"
+      [maxSelectedLabels]="20" [name]="name" (click)="doClick()">
+      <ng-template let-selitems pTemplate="selectedItems">
+        <span class="border border-secondary rounded mr-2 p-1" style="text-transform: none;"
+          *ngFor="let selitem of selitems">{{ getLabel(selitem) }} </span>
+      </ng-template>
+      <p-footer classes="multiselect_hdr">
+        <button classes="multiselect_clear" appFocus (click)="clearValue(wdg)">Vymazať označené</button>
+        <button classes="multiselect_ok" (click)="save($event)">Potvrdiť výber</button>
+      </p-footer>
+    </p-multiSelect>
+  </label>
+</div>

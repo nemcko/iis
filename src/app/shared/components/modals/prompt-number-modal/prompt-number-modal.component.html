@@ -1,0 +1,38 @@
+<div class="modal-header align-items-center pl-7 pb-0">
+  <h5 class="modal-title m-0 fs-6 font-weight-bold">{{dialogData.title || ''}}</h5>
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="cancel()">
+    <i class="icon icon-close fs-9 text-secondary"></i>
+  </button>
+</div>
+<div class="modal-body px-6 pt-2">
+  <div class="px-2">
+    <div *ngIf="dialogData?.subTitle" class="font-weight-bold fs-6 text-primary mb-3">{{dialogData.subTitle}}</div>
+    <div *ngIf="dialogData?.message" class="fs-6">
+        <p *ngFor="let msg of dialogData.message">{{msg}}</p>
+    </div>
+    
+  </div>
+  <form class="position-relative">
+    <input 
+      [placeholder]="dialogData.placeholder" 
+      class="form-control border-0 fs-6 box-shadow-sm py-4 px-6 h-auto" 
+      type="number" 
+      [value]="dialogData.value"
+      [(ngModel)]="dialogData.value" 
+      name="prompt" 
+      id="prompt" 
+      #prompt="ngModel" 
+      [min]="dialogData.minValue" 
+      [max]="dialogData.maxValue" 
+      autocomplete="off">
+    <div *ngIf="prompt.invalid && (prompt.dirty || prompt.touched) && ((dialogData.minValue!=null && dialogData.minValue !== undefined) || dialogData.maxValue)" class="alert alert-danger text-white">
+      <div *ngIf="prompt['errors']?.min && dialogData.minValue!=null && dialogData.minValue !== undefined">Hodnota musí byť číslo väčšie alebo rovné {{dialogData.minValue}}.</div>
+      <div *ngIf="prompt['errors']?.max && dialogData.maxValue">Hodnota musí byť číslo menšie alebo rovné {{dialogData.maxValue}}.</div>
+    </div>
+  </form>
+</div>
+
+<div class="modal-footer justify-content-end pb-5 px-5">
+  <button type="button" class="btn bg-white box-shadow-md mx-2 text-secondary text-uppercase fs-5 font-weight-bold px-6 py-2 px-md-6" (click)="ok(prompt.value)">{{dialogData.ok}}</button>
+  <button type="button" class="btn bg-white box-shadow-md mx-2 text-primary text-uppercase fs-5 font-weight-bold px-6 py-2 px-md-6" data-dismiss="modal" (click)="cancel()">{{dialogData.cancel}}</button>
+</div>

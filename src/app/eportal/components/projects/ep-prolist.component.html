@@ -1,0 +1,78 @@
+<ng-container *ngIf="!projects">
+    <header class="clearfix mb-2">
+        <h3 class="fs-7 font-weight-bold d-inline-block mr-3">Hodnotenie projektu</h3>
+        <!-- <a [routerLink]="['/portal',idl,'project',id,'evaluations','E001']" -->
+        <a *ngIf="(data||[]) && (data||[]).length && usrCtx.isTL(accdata)"  href="javascript:void(0)" (click)="addProEval($event)"
+            class="float-right font-weight-bold fs-5 text-secondary"><i
+                class="icon icon-plus-circle fs-8 position-relative top-2"></i> Pridaj hodnotenie projektu</a>
+    </header>
+
+
+    <ng-container *ngIf="(data||[]) && (data||[]).length==0">
+        <div class="bg-white py-5 py-lg-8 p-5 border-radius-md box-shadow-sm clearfix d-flex">
+            <div class="row align-data-center my-2">
+                <div class="col-12 col-lg-6 text-center mb-6 mb-lg-0 order-lg-2">
+                    <img src="assets/ils-designer.svg" alt="#" class="img-fluid">
+                </div>
+                <div class="col-12 col-lg-6 px-xl-7 order-lg-1">
+                    <h3 class="text-primary fs-7 font-weight-bold">Zatiaľ nemáš pridané žiadne hodnotenia projektu</h3>
+                    <a href="#" title="#" class="font-weight-bold text-secondary mt-1 mt-lg-3 d-inline-block"><i
+                            class="icon icon-plus-circle fs-8 position-relative top-2"></i> Pridaj hodnotenie
+                        projektu</a>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+
+    <ng-container *ngIf="loading$ | async as data; else loading">
+        <ng-container *ngTemplateOutlet="protemp; context: {$implicit:data, idp:idp, id: id}"></ng-container>
+    </ng-container>
+</ng-container>
+
+<ng-container *ngIf="projects">
+    <header class="clearfix mb-2">
+        <h3 class="fs-7 font-weight-bold d-inline-block mt-2 mr-3">Hodnotenia v projektoch</h3>
+        <a [routerLink]="['/portal',id,'projects']" [queryParams]="{ tab: 'eval' }" class="float-right text-uppercase font-weight-bold fs-5 text-secondary position-relative top-4">Zobraz všetky</a>   
+    </header>
+
+    <ng-container *ngIf="loading$ | async as data; else loading">
+        <ng-container *ngTemplateOutlet="protemp; context: {$implicit:data, idp:idp, id: id}"></ng-container>
+    </ng-container>
+</ng-container>
+
+<ng-template #protemp let-data let-idp="idp" let-id="id">
+    <a [routerLink]="['/portal',id,'project',item.idp,'evaluations',item.id]" [queryParams]="{ tab: 'eval' }"
+        *ngFor="let item of (data || []); let i = index">
+        <div [ngClass]="{'border border-green-light': item?.published}"
+            class="bg-white pb-4 pt-3 px-4 mb-3 border-radius-md box-shadow-sm clearfix d-flex flex-column position-relative">
+            <div *ngIf="!item?.published" class="e-progress-bar blue position-absolute top-0 left-0"><span
+                    [ngStyle]="{'width': getProgressPerc(item)}"></span></div>
+            <div *ngIf="item?.published" class="e-progress-bar green-light position-absolute top-0 left-0"></div>
+            <div class="text-right text-primary fs-3">{{item?.type}}</div>
+            <h3 class="font-weight-bold fs-6 mb-4 text-blue">{{item?.name}}</h3>
+
+            <div class="mb-4">
+                <span
+                    [ngClass]="{'badge-green': item?.published,'badge-outline-blue': item?.locked && !item?.published,'badge-outline-orange': !item?.locked }"
+                    class="badge badge-pill badge-lg badge-light float-left mr-2 my-1 fs-3 px-3">Hodnotenie
+                    projektu</span>
+
+                <span *ngFor="let mem of (item?.members || []); let j = index"
+                    [ngClass]="{'badge-green': item?.published,'badge-outline-blue': isMemberLocked(item,mem) && !item?.published,'badge-outline-orange': !isMemberLocked(item,mem)}"
+                    class="badge badge-pill badge-lg badge-light float-left mr-2 my-1 fs-3 px-3">{{mem?.personFN}}</span>
+            </div>
+
+            <div class="row text-blue">
+                <div class="col-12 col-lg-auto">Začiatok hodnotenia: <strong
+                        class="font-weight-black">{{item?.procdate | date:'dd.MM.yyyy'}}</strong>
+                </div>
+                <div class="col-12 col-lg-auto">Projekt hodnotil: <strong
+                        class="font-weight-black">{{item?.evaluator.personFN}}</strong></div>
+                <div class="col-12 col-lg text-lg-right">Progress: <strong
+                        class="font-weight-black">{{getProgress(item)| number:'2.'}}%</strong></div>
+            </div>
+        </div>
+    </a>
+</ng-template>
+
+<ng-template #loading>Načítavam údaje...</ng-template>

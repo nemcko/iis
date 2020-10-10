@@ -1,0 +1,17 @@
+<section *ngIf="ponuky">
+  <header class="clearfix mb-2">
+    <h3 class="fs-6 font-weight-bold d-inline-block mr-6">Kariéra</h3>
+    <a [href]="serverUrl + pathUchadzaci +'/pozicie.xsp'" class="float-right text-uppercase font-weight-bold fs-3 text-secondary position-relative top-1" target="kariera">Zobraz všetky</a>
+  </header>
+
+  <a *ngFor="let item of ponuky; let i = index;" [href]="serverUrl + pathUchadzaci + '/pozicia.xsp?docId=' + item.id" target="kariera" [class]="(i==0) ? 'd-block bg-white p-4 border-radius-md box-shadow-sm mt-0 lh-19':'d-block bg-white p-4 border-radius-md box-shadow-sm mt-0 lh-19 mt-2'">
+    <span class="row">
+      <span class="col-12">
+        <div class="text-secondary font-weight-bold mb-2">{{item.title}}</div>
+        <div class="fs-3 text-black">{{item.reward}}</div>
+      </span>
+    </span>
+
+  </a>
+
+</section>

@@ -1,0 +1,186 @@
+{
+  "id": "PR00000C8A",
+  "op": "JEDNOTNÝ SYSTÉM ŘÍZENÍ OSÁDEK V TERÉNU",
+  "opId": "PR18CEZ-0003",
+  "project": "JSROT Realizácia",
+  "projectId": "PNSOV-B9RDFN",
+  "customer": "ČEZ, a.s.",
+  "customerId": "ORG3589631756421991",
+  "createdDate": "16.6.2019",
+  "finishDate": "16.6.2020",
+  "projMngr1st": {
+    "personUN": "cn=Fleischman Rony/ou=PosAm Bratislava",
+    "personFN": "Fleischman Rony",
+    "personId": "247"
+  },
+  "projMngr2nd": null,
+  "keywords": "JSROT,1st",
+  "documentation": [],
+  "kickoff": [],
+  "closeout": [],
+  "lessonsLearned": [],
+  "wageRequest": [],
+  "codeReview": [
+    {
+      "id": "RC00000D4A",
+      "evalDate": "15.3.2019",
+      "evalName": "JSROT Realizácia 1.fáza"
+    },
+    {
+      "id": "RC00000D4B",
+      "evalDate": "15.4.2019",
+      "evalName": "JSROT Realizácia 2.fáza"
+    },
+    {
+      "id": "RC00000D4C",
+      "evalDate": "15.6.2019",
+      "evalName": "JSROT Realizácia 3.fáza"
+    }
+  ],
+  "projectReview": [
+    {
+      "id": "RU00000D4D",
+      "evalDate": "1.5.2019",
+      "evalName": "Review JSROT 1.fáza"
+    },
+    {
+      "id": "RU00000D4E",
+      "evalDate": "10.5.2019",
+      "evalName": "Review JSROT 2.fáza"
+    },
+    {
+      "id": "RU00000D4C",
+      "evalDate": "15.6.2019",
+      "evalName": "Review JSROT 3.fáza"
+    }
+  ],
+  "teamleader": [
+    {
+      "id": "TL00000D4A",
+      "evalDate": "15.3.2019",
+      "evalName": "DCOM - DB Sharding",
+      "ratedUser": "Maruška Tomáš"
+    }
+  ],
+  "access": {
+    "41": {
+      "user": {
+        "personFN": "Jašek Zdeno",
+        "personId": "41"
+      },
+      "acc": {
+        "read": false,
+        "full": true
+      }
+    },
+    "87": {
+      "user": {
+        "personFN": "Maruška Tomáš",
+        "personId": "87"
+      },
+      "acc": {
+        "read": true,
+        "full": false
+      }
+    },
+    "230": {
+      "user": {
+        "personFN": "Driensky Martin",
+        "personId": "230"
+      },
+      "acc": {
+        "read": true,
+        "full": false
+      }
+    },
+    "247": {
+      "user": {
+        "personFN": "Fleischman Rony",
+        "personId": "247"
+      },
+      "acc": {
+        "read": false,
+        "full": true
+      }
+    },
+    "248": {
+      "user": {
+        "personFN": "Nemčko Miloš",
+        "personId": "248"
+      },
+      "acc": {
+        "read": true,
+        "full": false
+      }
+    },
+    "249": {
+      "user": {
+        "personFN": "Gašparík Michal",
+        "personId": "249"
+      },
+      "acc": {
+        "read": true,
+        "full": false
+      }
+    },
+    "428": {
+      "user": {
+        "personFN": "Šteffel Peter",
+        "personId": "428"
+      },
+      "acc": {
+        "read": true,
+        "full": false
+      }
+    }
+  },
+  "readers": [
+    {
+      "personUN": "cn=Maruska Tomas/ou=PosAm Bratislava",
+      "personFN": "Maruška Tomáš",
+      "personId": "87"
+    },
+    {
+      "personUN": "cn=Fleischman Rony/ou=PosAm Bratislava",
+      "personFN": "Fleischman Rony",
+      "personId": "247"
+    }
+  ],
+  "teamLeaders": [
+    {
+      "personFN": "Jašek Zdeno",
+      "personId": "41",
+      "pckgName": "Mobilná aplikácia",
+      "pckgId": "WJPAL-B9SF7U"
+    },
+    {
+      "personFN": "Fleischman Rony",
+      "personId": "247",
+      "pckgName": "Centrálna aplikácia",
+      "pckgId": "WJPAL-B9SF7F"
+    }
+  ],
+  "milestones": [
+    {
+      "code": "MS0001",
+      "seq": 1,
+      "name": "Stretnutie s klientom a informovanie o stave projektu",
+      "type": "E",
+      "date": "1.4.2019"
+    },
+    {
+      "code": "MS0002",
+      "seq": 2,
+      "name": "Prezentácia navrhnutého riešenia",
+      "type": "E",
+      "date": "5.6.2019"
+    },
+    {
+      "code": "MS0003",
+      "seq": 3,
+      "name": "Stretnutie realizačného tímu v Tatrách",
+      "type": "I",
+      "date": "29.8.2019"
+    }
+  ]
+}

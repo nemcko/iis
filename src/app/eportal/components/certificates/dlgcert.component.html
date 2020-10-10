@@ -1,0 +1,83 @@
+<appdlg #dlg [title]="title">
+  <form classes="dlg_form">
+
+    <formrow>
+      <formfld classes="col66" [label]="'Názov certifikátu'">
+        <input *ngIf="usrCtx.isHR" id="certname" classes="input" [appFocus] name="name" [(ngModel)]="data.name">
+        <div *ngIf="!usrCtx.isHR" id="certname" classes="text">{{data.name}}</div>
+      </formfld>
+      <formfld classes="col66" [label]="'Číslo certifikátu'">
+        <input *ngIf="usrCtx.isHR" classes="input" name="certnr" [(ngModel)]="data.certnr">
+        <div *ngIf="!usrCtx.isHR" classes="text">{{data.certnr}}</div>
+      </formfld>
+    </formrow>
+
+    <formrow>
+      <formfld classes="col66" [label]="'Certifikát vydal'">
+        <input *ngIf="usrCtx.isHR" classes="input" name="publish" [(ngModel)]="data.publish">
+        <div *ngIf="!usrCtx.isHR" classes="text">{{data.publish}}</div>
+      </formfld>
+      <formfld classes="col66" [label]="'Držiteľ certifikátu'">
+        <input *ngIf="usrCtx.isHR" classes="input" name="holder" [(ngModel)]="data.holder">
+        <div *ngIf="!usrCtx.isHR" classes="text">{{data.holder}}</div>
+      </formfld>
+    </formrow>
+
+    <formrow>
+      <formfld classes="col66" [label]="'Typ certifikátu'">
+        <input *ngIf="usrCtx.isHR" classes="input" name="cetype" [(ngModel)]="data.cetype">
+        <div *ngIf="!usrCtx.isHR" classes="text">{{data.cetype}}</div>
+      </formfld>
+      <formfld classes="col66" [label]="'Jazyk certifikátu'">
+        <input *ngIf="usrCtx.isHR" classes="input" name="lng" [(ngModel)]="data.lng">
+        <div *ngIf="!usrCtx.isHR" classes="text">{{data.lng}}</div>
+      </formfld>
+    </formrow>
+
+    <formrow>
+      <formfld classes="col66" [label]="'Dátum vydania'">
+        <input *ngIf="usrCtx.isHR" classes="date" a2e-datetimepicker name="datefrom" [(ngModel)]="data.datefrom"
+          [options]="datePickerOptions">
+        <div *ngIf="!usrCtx.isHR" classes="text">{{data.datefrom | date:'dd.MM.yyyy'}}</div>
+      </formfld>
+      <formfld classes="col66" [label]="'Platnosť certifikátu'">
+        <input *ngIf="usrCtx.isHR" classes="date" a2e-datetimepicker name="dateto" [(ngModel)]="data.dateto"
+          [options]="datePickerOptions">
+        <div *ngIf="!usrCtx.isHR" classes="text">{{data.dateto | date:'dd.MM.yyyy'}}</div>
+      </formfld>
+    </formrow>
+
+    <formrow [label]="'Certifikát'">
+      <formbox *ngIf="usrCtx.isHR" classes="w100 box">
+        <div classes="dropzone" action="/upload">
+          <div><i class="icon icon-add-photo fs-8 mb-2 d-block text-black"></i>
+            Presuňte súbor priamo sem<br /> alebo <span class="text-secondary">kliknutím nahrajte</span>.
+          </div>
+        </div>
+        <span class="tag-item mt-2">faktura.jpg <a class="remove-button">×</a></span>
+      </formbox>
+      <formfld *ngIf="!usrCtx.isHR" classes="w100 px-3">
+        <span class="px-2 mt-2 rounded border border-dark">faktura.jpg</span>
+      </formfld>
+
+    </formrow>
+
+    <formrow>
+      <formfld classes="col12" [label]="'Popis certifikátu'">
+        <textarea *ngIf="usrCtx.isHR" classes="textarea" rows="5" name="desc" [(ngModel)]="data.desc"></textarea>
+        <div *ngIf="!usrCtx.isHR" classes="text">{{data.desc}}</div>
+      </formfld>
+    </formrow>
+
+  </form>
+
+  <div classes="dlg_footer">
+    <button *ngIf="usrCtx.isHR" classes="dlg_ok" (click)="save()">Uložiť certifikát</button>
+    <button *ngIf="usrCtx.isHR" classes="dlg_cancel" (click)="dlg.close()">Zrušiť</button>
+    <button *ngIf="!usrCtx.isHR" classes="dlg_cancel" (click)="dlg.close()">Návrat</button>
+  </div>
+
+  <!-- <pre>{{wgroupusers|json}}</pre> -->
+
+
+</appdlg>

@@ -1,0 +1,9 @@
+<div class="form-group mb-1">
+  <label class="cursor-pointer w-100">
+    <span *ngIf="label" classes="label">{{label}}</span>
+    <p-slider classes="d-inline-block col12 px-1" [(ngModel)]="value" [min]="min" [max]="max" [step]="step" [disabled]="disabled"
+      [extooltip]="weight" stickTo=".ui-slider-handle" [runnerX]="runnerX" [runnerY]="runnerY" tooltipPosition="bottom">
+    </p-slider>
+    <ng-content></ng-content>
+  </label>
+</div>

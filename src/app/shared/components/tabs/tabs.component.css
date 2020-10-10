@@ -1,0 +1,23 @@
+.tabnoactive {
+  background: #fbfbfb;
+  color:lightgray !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+.tabactive {
+  /* background: #fbfbfb; */
+  background: white;
+  color:#3b6997;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
+}
+
+.apptabs {
+  background: white;
+  border-radius: 10px;
+  position: relative;
+  z-index: 1; 
+}
+
+.apptab {
+  width: 100% !important;
+}

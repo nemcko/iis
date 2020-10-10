@@ -1,0 +1,88 @@
+<!-- Search -->
+<form class="mb-7 position-relative">
+  <button type="submit" class="submit-left">
+    <i class="icon icon-search"></i>
+  </button>
+  <input type="text" autocomplete="off" id="search" name="search" placeholder="Hľadaj v žiadostiach"
+    class="form-control fs-6 font-weight-bold box-shadow-lg border-0 py-5 px-6 h-auto" [(ngModel)]="search"
+    (keyup.enter)="loadRecords()">
+  <!-- TODO: Submit -->
+</form>
+
+<article class="pt-2">
+  <div class="row">
+    <div class="col-12 col-md-10 col-lg-9 col-xl-8 mx-auto">
+      <header class="clearfix mb-5">
+        <h3 class="fs-7 font-weight-bold d-inline-block mr-6">Rekreačné poukazy</h3>
+        
+        <!-- FILTER BY STATUS -->
+        <div class="dropdown float-right position-relative top-1">
+          <div class="float-right b-sections-dropdown">
+            <p-multiSelect 
+              [options]="categoryList" 
+              [(ngModel)]="selectedCategories" 
+              [filter]="true"
+              [defaultLabel]="'Všetky stavy'"
+              (onChange)=loadRecords()>
+            </p-multiSelect>
+          </div>
+        </div>
+      </header>
+
+      <div class="b-article-detail">
+
+        <div class="b-tree-line" *ngIf="requestList && requestList.length > 0">
+
+          <div *ngFor="let item of requestList; let i = index"
+            [class]="(i === 0) ? 'item d-block bg-white py-3 px-4 border-radius-md box-shadow-sm mt-0 ml-8' : 'item d-block bg-white py-3 px-4 border-radius-md box-shadow-sm mt-4 ml-8'">
+            <div class="row" *ngIf="item">
+              <!-- ziadatel o prispevok -->
+              <div class="d-flex align-items-center col-12 col-md-6 col-lg-4 col-xxl-2 border-right-xxl-on">
+                <span [class]="(item.status == statusList.DRAFT) ? 'text-gray d-flex align-items-center w-100' : 'font-weight-bold d-flex align-items-center w-100'">
+                  <span class="mr-3">{{item.author}}</span>
+                </span>
+              </div>
+                
+              <!-- datum a miesto dovolenky -->
+              <div class="d-flex align-items-center col-12 col-md-6 col-lg-4 border-right-xxl-on">
+                <span [class]="(item.status == statusList.DRAFT) ? 'text-gray d-flex align-items-center w-100' : 'font-weight-bold d-flex align-items-center w-100'">
+                  <span [class]="(item.status == statusList.DRAFT) ? 'mr-3' : 'text-secondary mr-3'">{{item.holidayDate}}</span>
+                  <span class="text-truncate" placement="top" [ngbTooltip]="item.location">{{item.location | empty}}</span>
+                </span>
+              </div>
+
+              <!-- vyska prispevku -->
+              <div *ngIf="item.status == statusList.DRAFT" class="d-flex align-items-center col-12 col-md-6 col-lg-4 col-xxl border-right-xxl-on">
+                <span class="text-gray">Výška príspevku: {{item.contributionAmount | number | mena:'€' | empty }}</span>
+              </div>
+              <div *ngIf="item.status != statusList.DRAFT && item.status != statusList.DECLINED" class="d-flex align-items-center col-12 col-md-6 col-lg-4 col-xxl border-right-xxl-on">
+                <span class="mr-1">Výška príspevku:</span> <span class="font-weight-bold text-primary">{{item.contributionAmount | number | mena:'€' | empty }}</span>
+              </div>
+              <div *ngIf="item.status == statusList.DECLINED" class="d-flex align-items-center col-12 col-md-6 col-lg-4 col-xxl border-right-xxl-on">
+                <span class="text-gray">Výška príspevku: <strong>{{item.contributionAmount | number | mena:'€' | empty }}</strong></span>
+              </div>
+
+              <!-- stav a datum modifikacie -->
+              <div *ngIf="item.status == statusList.DRAFT" class="d-flex align-items-center col-12 col-md-8 col-xxl-3 border-right-xxl-on">
+                <strong>{{statusListDesc[item.status]}}</strong> <span class="ml-1">({{item.modified}})</span>
+              </div>
+              <div *ngIf="item.status != statusList.DRAFT" class="d-flex align-items-center col-12 col-md-8 col-xxl-3 border-right-xxl-on">
+                  <span [class]="statusColorList[item.status] + ' font-weight-bold'">{{statusListDesc[item.status]}}</span> <span class="text-gray ml-1">({{item.modified}})</span>
+                </div>
+
+              <!-- linka na dokument -->
+              <div class="d-flex align-items-center col-12 col-md-6 col-lg-auto">
+                <a [routerLink]="(item.status == statusList.DRAFT) ? '/holiday-voucher/voucher-edit/' + item.id : '/holiday-voucher/voucher/' + item.id" class="fs-8 text-secondary">
+                  <i [class]="(item.status == statusList.DRAFT) ? 'icon icon-edit' : 'icon icon-doc'"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</article>

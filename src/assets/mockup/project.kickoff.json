@@ -1,0 +1,35 @@
+{
+  "id": "PR00000C8A",
+  "op": "JEDNOTNÝ SYSTÉM ŘÍZENÍ OSÁDEK V TERÉNU",
+  "opId": "PR18CEZ-0003",
+  "project": "JSROT Realizácia",
+  "projectId": "PNSOV-B9RDFN",
+  "customer": "ČEZ, a.s.",
+  "customerId": "ORG3589631756421991",
+  "createdDate": "16.6.2019",
+  "finishDate": "16.6.2020",
+  "projMngr1st": {
+    "personUN": "cn=Fleischman Rony/ou=PosAm Bratislava",
+    "personFN": "Fleischman Rony",
+    "personId": "247"
+  },
+  "projMngr2nd": null,
+  "keywords": "JSROT,1st",
+  "participants": [
+    {
+      "personUN": "cn=Gasparik Michal/ou=PosAm Bratislava",
+      "personFN": "Gašparík Michal",
+      "personId": "249"
+    },
+    {
+      "personUN": "cn=Jasek Zdeno/ou=PosAm Bratislava",
+      "personFN": "Jašek Zdeno",
+      "personId": "41"
+    },
+    {
+      "personUN": "cn=Nemcko Milos/ou=PosAm Bratislava",
+      "personFN": "Nemčko Miloš",
+      "personId": "248"
+    }
+  ]
+}

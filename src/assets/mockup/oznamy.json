@@ -1,0 +1,722 @@
+[
+    {
+        "id": "NT00000D4A",
+        "title": "TESTÍK",
+        "created": "13.12.2018",
+        "description": "Ut condimentum mattis bibendum. Sed elementum porttitor metus eget facilisis. Sed a mattis ligula. Ut sit amet magna laoreet...",
+        "category": [
+            "Interná správa"
+        ],
+        "imgUrl": "",
+        "openAttachment": false,
+        "authorFN": "Lex Barker",
+        "attachmentUrl": []
+    },
+    {
+        "id": "NT00000DAE",
+        "title": "Bez názvu",
+        "created": "13.12.2018",
+        "description": "Ut condimentum mattis bibendum. Sed elementum porttitor metus eget facilisis. Sed a mattis ligula. Ut sit amet magna laoreet...",
+        "category": [
+            "Application Delivery & Virtualization info",
+            "HR",
+            "Kultúra",
+            "Microsoft info"
+        ],
+        "imgUrl": "",
+        "openAttachment": true,
+        "authorFN": "Pierre Brice",
+        "attachmentUrl": ["/iis/appl/oznamy.nsf/id/atTMAA-B8YEC8/$File/IMG_2963-m.jpg?Open"]
+    },
+    {
+        "id": "NT00000DDA",
+        "title": "TEST AK",
+        "created": "18. 10. 2018",
+        "description": "Ut condimentum mattis bibendum. Sed elementum porttitor metus eget facilisis. Sed a mattis ligula. Ut sit amet magna laoreet...",
+        "category": [
+            "Interná správa"
+        ],
+        "imgUrl": "",
+        "openAttachment": false,
+        "authorFN": "Gojko Mitic",
+        "attachmentUrl": []
+    },
+    {
+        "id": "NT00000DD6",
+        "title": "TEST MAJO",
+        "created": "18. 10. 2018",
+        "description": "Ut condimentum mattis bibendum. Sed elementum porttitor metus eget facilisis. Sed a mattis ligula. Ut sit amet magna laoreet...",
+        "category": [
+            "Interná správa"
+        ],
+        "imgUrl": "",
+        "openAttachment": false,
+        "authorFN": "Lex Luther",
+        "attachmentUrl": []
+    },
+    {
+        "id": "NT00000DBA",
+        "title": "Test kalendaroveho oneho",
+        "created": "03. 10. 2018",
+        "description": "Ut condimentum mattis bibendum. Sed elementum porttitor metus eget facilisis. Sed a mattis ligula. Ut sit amet magna laoreet...",
+        "category": [
+            "Interná správa"
+        ],
+        "imgUrl": "",
+        "openAttachment": false,
+        "authorFN": "Zajko Bojko",
+        "attachmentUrl": []
+    },
+    {
+        "id": "NT00000CCA",
+        "title": "Motokáry",
+        "created": "02. 11. 2017",
+        "description": "Ut condimentum mattis bibendum. Sed elementum porttitor metus eget facilisis. Sed a mattis ligula. Ut sit amet magna laoreet...",
+        "category": [
+            "HR"
+        ],
+        "imgUrl": "",
+        "openAttachment": false,
+        "authorFN": "Fantomas",
+        "attachmentUrl": []
+    },
+    {
+        "id": "NT00000D06",
+        "title": "Test newslettera",
+        "created": "01. 03. 2017",
+        "description": "Ut condimentum mattis bibendum. Sed elementum porttitor metus eget facilisis. Sed a mattis ligula. Ut sit amet magna laoreet...",
+        "category": [
+            "Interná správa"
+        ],
+        "imgUrl": "",
+        "openAttachment": false,
+        "authorFN": "Helena Bonham Carter",
+        "attachmentUrl": []
+    },
+    {
+        "id": "NT00000CC6",
+        "title": "Koncert: Hudba bez bariér",
+        "created": "11. 04. 2016",
+        "description": "Ut condimentum mattis bibendum. Sed elementum porttitor metus eget facilisis. Sed a mattis ligula. Ut sit amet magna laoreet...",
+        "category": [
+            "Kultúra"
+        ],
+        "imgUrl": "",
+        "openAttachment": false,
+        "authorFN": "Lex Barker",
+        "attachmentUrl": []
+    },
+    {
+        "id": "NT00000CC2",
+        "title": "Vedeli ste, že...",
+        "created": "30. 03. 2016",
+        "description": "Ut condimentum mattis bibendum. Sed elementum porttitor metus eget facilisis. Sed a mattis ligula. Ut sit amet magna laoreet...",
+        "category": [
+            "Firemné akcie"
+        ],
+        "imgUrl": "",
+        "openAttachment": false,
+        "authorFN": "Fibonnaci",
+        "attachmentUrl": []
+    },
+    {
+        "id": "NT00000CBE",
+        "title": "Poukázanie 2% z daní",
+        "created": "30. 03. 2016",
+        "description": "Ut condimentum mattis bibendum. Sed elementum porttitor metus eget facilisis. Sed a mattis ligula. Ut sit amet magna laoreet...",
+        "category": [
+            "HR"
+        ],
+        "imgUrl": "",
+        "openAttachment": false,
+        "attachmentUrl": []
+    },
+    {
+        "id": "NT00000CBA",
+        "title": "Výročná správa 2015",
+        "created": "24. 03. 2016",
+        "description": "Ut condimentum mattis bibendum. Sed elementum porttitor metus eget facilisis. Sed a mattis ligula. Ut sit amet magna laoreet...",
+        "category": [
+            "Interná správa"
+        ],
+        "imgUrl": "",
+        "openAttachment": false,
+        "attachmentUrl": []
+    },
+    {
+        "id": "NT00000CB6",
+        "title": "Nastavenie stoličiek",
+        "created": "24. 03. 2016",
+        "description": "Ut condimentum mattis bibendum. Sed elementum porttitor metus eget facilisis. Sed a mattis ligula. Ut sit amet magna laoreet...",
+        "category": [
+            "HR"
+        ],
+        "imgUrl": "",
+        "openAttachment": false,
+        "attachmentUrl": []
+    },
+    {
+        "id": "NT00000CB2",
+        "title": "Brigádnička na recepciu",
+        "created": "23. 03. 2016",
+        "description": "Ut condimentum mattis bibendum. Sed elementum porttitor metus eget facilisis. Sed a mattis ligula. Ut sit amet magna laoreet...",
+        "category": [
+            "HR"
+        ],
+        "imgUrl": "",
+        "openAttachment": false,
+        "attachmentUrl": []
+    },
+    {
+        "id": "NT00000CAE",
+        "title": "Hlas experta - Ako sa na Slovensku nakupujú IT služby?",
+        "created": "18. 03. 2016",
+        "description": "Ut condimentum mattis bibendum. Sed elementum porttitor metus eget facilisis. Sed a mattis ligula. Ut sit amet magna laoreet...",
+        "category": [
+            "Interná správa"
+        ],
+        "imgUrl": "",
+        "openAttachment": false,
+        "attachmentUrl": []
+    },
+    {
+        "id": "NT00000CA6",
+        "title": "Vedeli ste, že...",
+        "created": "17. 03. 2016",
+        "description": "Ut condimentum mattis bibendum. Sed elementum porttitor metus eget facilisis. Sed a mattis ligula. Ut sit amet magna laoreet...",
+        "category": [
+            "Firemné akcie"
+        ],
+        "imgUrl": "",
+        "openAttachment": false,
+        "attachmentUrl": []
+    },
+    {
+        "id": "NT00000CAA",
+        "title": "Tatra banka ocenila PosAm ako Dodávateľa roka 2015",
+        "created": "15. 03. 2016",
+        "description": "Ut condimentum mattis bibendum. Sed elementum porttitor metus eget facilisis. Sed a mattis ligula. Ut sit amet magna laoreet...",
+        "category": [
+            "Interná správa"
+        ],
+        "imgUrl": "",
+        "openAttachment": false,
+        "attachmentUrl": []
+    },
+    {
+        "id": "NT00000CA2",
+        "title": "Našim posamáckym dámam, ženám, dievčatám prajeme všetko najlepšie ku dňu žien",
+        "created": "08. 03. 2016",
+        "description": "Ut condimentum mattis bibendum. Sed elementum porttitor metus eget facilisis. Sed a mattis ligula. Ut sit amet magna laoreet...",
+        "category": [
+            "Interná správa"
+        ],
+        "imgUrl": "",
+        "openAttachment": false,
+        "attachmentUrl": []
+    },
+    {
+        "id": "NT00000C9E",
+        "title": "SÚŤAŽ: Vytvor nové logo pre Servio",
+        "created": "04. 03. 2016",
+        "description": "Ut condimentum mattis bibendum. Sed elementum porttitor metus eget facilisis. Sed a mattis ligula. Ut sit amet magna laoreet...",
+        "category": [
+            "Firemné akcie"
+        ],
+        "imgUrl": "",
+        "openAttachment": false,
+        "attachmentUrl": []
+    },
+    {
+        "id": "NT00000C9A",
+        "title": "Dochádzkový terminál na pobočkách",
+        "created": "01. 03. 2016",
+        "description": "Ut condimentum mattis bibendum. Sed elementum porttitor metus eget facilisis. Sed a mattis ligula. Ut sit amet magna laoreet...",
+        "category": [
+            "Interná správa"
+        ],
+        "imgUrl": "",
+        "openAttachment": false,
+        "attachmentUrl": []
+    },
+    {
+        "id": "NT00000C96",
+        "title": "Raňajky v PosAm-e",
+        "created": "17. 02. 2016",
+        "description": "Ut condimentum mattis bibendum. Sed elementum porttitor metus eget facilisis. Sed a mattis ligula. Ut sit amet magna laoreet...",
+        "category": [
+            "HR"
+        ],
+        "imgUrl": "",
+        "openAttachment": false,
+        "attachmentUrl": []
+    },
+    {
+        "id": "NT00000C92",
+        "title": "Ceny PHM klesajú rýchlo, v PosAme ešte rýchlejšie",
+        "created": "12. 02. 2016",
+        "description": "Ut condimentum mattis bibendum. Sed elementum porttitor metus eget facilisis. Sed a mattis ligula. Ut sit amet magna laoreet...",
+        "category": [
+            "Interná správa"
+        ],
+        "imgUrl": "",
+        "openAttachment": false,
+        "attachmentUrl": []
+    },
+    {
+        "id": "NT00000C8E",
+        "title": "Šport a relax",
+        "created": "11. 02. 2016",
+        "description": "Ut condimentum mattis bibendum. Sed elementum porttitor metus eget facilisis. Sed a mattis ligula. Ut sit amet magna laoreet...",
+        "category": [
+            "HR"
+        ],
+        "imgUrl": "",
+        "openAttachment": false,
+        "attachmentUrl": []
+    },
+    {
+        "id": "NT00000C8A",
+        "title": "Organizačná zmena na Obchodnej divízii",
+        "created": "09. 02. 2016",
+        "description": "Ut condimentum mattis bibendum. Sed elementum porttitor metus eget facilisis. Sed a mattis ligula. Ut sit amet magna laoreet...",
+        "category": [
+            "HR"
+        ],
+        "imgUrl": "",
+        "openAttachment": false,
+        "attachmentUrl": []
+    },
+    {
+        "id": "NT00000C6E",
+        "title": "Mikuláš 2015 - prieskum spokojnosti, fotografie",
+        "created": "08. 02. 2016",
+        "description": "Ut condimentum mattis bibendum. Sed elementum porttitor metus eget facilisis. Sed a mattis ligula. Ut sit amet magna laoreet...",
+        "category": [
+            "Firemné akcie"
+        ],
+        "imgUrl": "",
+        "openAttachment": false,
+        "attachmentUrl": []
+    },
+    {
+        "id": "NT00000C86",
+        "title": "Super dobra kava a caj pre vsetkych - Part. 2",
+        "created": "08. 02. 2016",
+        "description": "Ut condimentum mattis bibendum. Sed elementum porttitor metus eget facilisis. Sed a mattis ligula. Ut sit amet magna laoreet...",
+        "category": [
+            "HR"
+        ],
+        "imgUrl": "",
+        "openAttachment": false,
+        "attachmentUrl": []
+    },
+    {
+        "id": "NT00000C82",
+        "title": "Super dobrá káva a čaj pre všetkých  :-)",
+        "created": "05. 02. 2016",
+        "description": "Ut condimentum mattis bibendum. Sed elementum porttitor metus eget facilisis. Sed a mattis ligula. Ut sit amet magna laoreet...",
+        "category": [
+            "HR"
+        ],
+        "imgUrl": "",
+        "openAttachment": false,
+        "attachmentUrl": []
+    },
+    {
+        "id": "NT00000C7E",
+        "title": "Prenesené hodiny zo Servio do Planview",
+        "created": "29. 01. 2016",
+        "description": "Ut condimentum mattis bibendum. Sed elementum porttitor metus eget facilisis. Sed a mattis ligula. Ut sit amet magna laoreet...",
+        "category": [
+            "PlanView"
+        ],
+        "imgUrl": "",
+        "openAttachment": false,
+        "attachmentUrl": []
+    },
+    {
+        "id": "NT00000C7A",
+        "title": "Novoročná aukcia dvoch notebookov práve začala",
+        "created": "21. 01. 2016",
+        "description": "Ut condimentum mattis bibendum. Sed elementum porttitor metus eget facilisis. Sed a mattis ligula. Ut sit amet magna laoreet...",
+        "category": [
+            "HR"
+        ],
+        "imgUrl": "",
+        "openAttachment": false,
+        "attachmentUrl": []
+    },
+    {
+        "id": "NT00000C72",
+        "title": "Voľné pracovné pozície v našej firme - 1/2016",
+        "created": "21. 01. 2016",
+        "description": "Ut condimentum mattis bibendum. Sed elementum porttitor metus eget facilisis. Sed a mattis ligula. Ut sit amet magna laoreet...",
+        "category": [
+            "Interná správa"
+        ],
+        "imgUrl": "",
+        "openAttachment": false,
+        "attachmentUrl": []
+    },
+    {
+        "id": "NT00000C76",
+        "title": "SFH zima 2016",
+        "created": "20. 01. 2016",
+        "description": "Ut condimentum mattis bibendum. Sed elementum porttitor metus eget facilisis. Sed a mattis ligula. Ut sit amet magna laoreet...",
+        "category": [
+            "HR"
+        ],
+        "imgUrl": "",
+        "openAttachment": false,
+        "attachmentUrl": []
+    },
+    {
+        "id": "NT00000C5A",
+        "title": "test povodne data",
+        "created": "20. 01. 2016",
+        "description": "Ut condimentum mattis bibendum. Sed elementum porttitor metus eget facilisis. Sed a mattis ligula. Ut sit amet magna laoreet...",
+        "category": [
+            "Interná správa"
+        ],
+        "imgUrl": "",
+        "openAttachment": false,
+        "attachmentUrl": []
+    },
+    {
+        "id": "NT00000C56",
+        "title": "TEST XPPPPs",
+        "created": "20. 01. 2016",
+        "description": "Ut condimentum mattis bibendum. Sed elementum porttitor metus eget facilisis. Sed a mattis ligula. Ut sit amet magna laoreet...",
+        "category": [
+            "Interná správa"
+        ],
+        "imgUrl": "",
+        "openAttachment": false,
+        "attachmentUrl": []
+    },
+    {
+        "id": "NT00000C4E",
+        "title": "test LN",
+        "created": "20. 01. 2016",
+        "description": "Ut condimentum mattis bibendum. Sed elementum porttitor metus eget facilisis. Sed a mattis ligula. Ut sit amet magna laoreet...",
+        "category": [
+            "Vzdelávanie a HR"
+        ],
+        "imgUrl": "",
+        "openAttachment": false,
+        "attachmentUrl": []
+    },
+    {
+        "id": "NT00000C4A",
+        "title": "ttttttttttteeeeeeeeeeeeeeeettttttttttttt",
+        "created": "20. 01. 2016",
+        "description": "Ut condimentum mattis bibendum. Sed elementum porttitor metus eget facilisis. Sed a mattis ligula. Ut sit amet magna laoreet...",
+        "category": [
+            "Interná správa"
+        ],
+        "imgUrl": "",
+        "openAttachment": false,
+        "attachmentUrl": []
+    },
+    {
+        "id": "NT00000BC6",
+        "title": "test",
+        "created": "21. 03. 2013",
+        "description": "Ut condimentum mattis bibendum. Sed elementum porttitor metus eget facilisis. Sed a mattis ligula. Ut sit amet magna laoreet...",
+        "category": [
+            "Interná správa"
+        ],
+        "imgUrl": "",
+        "openAttachment": false,
+        "attachmentUrl": []
+    },
+    {
+        "id": "NT00000BC2",
+        "title": "test a este dlhsi nadpis",
+        "created": "20. 03. 2013",
+        "description": "Ut condimentum mattis bibendum. Sed elementum porttitor metus eget facilisis. Sed a mattis ligula. Ut sit amet magna laoreet...",
+        "category": [
+            "Interná správa"
+        ],
+        "imgUrl": "",
+        "openAttachment": false,
+        "attachmentUrl": []
+    },
+    {
+        "id": "NT00000BBE",
+        "title": "TEST D",
+        "created": "19. 03. 2013",
+        "description": "Ut condimentum mattis bibendum. Sed elementum porttitor metus eget facilisis. Sed a mattis ligula. Ut sit amet magna laoreet...",
+        "category": [
+            "Interná správa"
+        ],
+        "imgUrl": "",
+        "openAttachment": false,
+        "attachmentUrl": []
+    },
+    {
+        "id": "NT00000BBA",
+        "title": "TEST C",
+        "created": "19. 03. 2013",
+        "description": "Ut condimentum mattis bibendum. Sed elementum porttitor metus eget facilisis. Sed a mattis ligula. Ut sit amet magna laoreet...",
+        "category": [
+            "Interná správa"
+        ],
+        "imgUrl": "",
+        "openAttachment": false,
+        "attachmentUrl": []
+    },
+    {
+        "id": "NT00000BB6",
+        "title": "TEST B",
+        "created": "19. 03. 2013",
+        "description": "Ut condimentum mattis bibendum. Sed elementum porttitor metus eget facilisis. Sed a mattis ligula. Ut sit amet magna laoreet...",
+        "category": [
+            "Interná správa"
+        ],
+        "imgUrl": "",
+        "openAttachment": false,
+        "attachmentUrl": []
+    },
+    {
+        "id": "NT00000BB2",
+        "title": "test A",
+        "created": "19. 03. 2013",
+        "description": "Ut condimentum mattis bibendum. Sed elementum porttitor metus eget facilisis. Sed a mattis ligula. Ut sit amet magna laoreet...",
+        "category": [
+            "Interná správa"
+        ],
+        "imgUrl": "",
+        "openAttachment": false,
+        "attachmentUrl": []
+    },
+    {
+        "id": "NT00000BAE",
+        "title": "TEST pre Fera",
+        "created": "18. 03. 2013",
+        "description": "Ut condimentum mattis bibendum. Sed elementum porttitor metus eget facilisis. Sed a mattis ligula. Ut sit amet magna laoreet...",
+        "category": [
+            "Interná správa"
+        ],
+        "imgUrl": "",
+        "openAttachment": false,
+        "attachmentUrl": []
+    },
+    {
+        "id": "NT00000BAA",
+        "title": "TEST 16",
+        "created": "18. 03. 2013",
+        "description": "Ut condimentum mattis bibendum. Sed elementum porttitor metus eget facilisis. Sed a mattis ligula. Ut sit amet magna laoreet...",
+        "category": [
+            "Interná správa"
+        ],
+        "imgUrl": "",
+        "openAttachment": false,
+        "attachmentUrl": []
+    },
+    {
+        "id": "NT00000BA6",
+        "title": "TEST 15",
+        "created": "18. 03. 2013",
+        "description": "Ut condimentum mattis bibendum. Sed elementum porttitor metus eget facilisis. Sed a mattis ligula. Ut sit amet magna laoreet...",
+        "category": [
+            "Interná správa"
+        ],
+        "imgUrl": "",
+        "openAttachment": false,
+        "attachmentUrl": []
+    },
+    {
+        "id": "NT00000BA2",
+        "title": "test 14",
+        "created": "18. 03. 2013",
+        "description": "Ut condimentum mattis bibendum. Sed elementum porttitor metus eget facilisis. Sed a mattis ligula. Ut sit amet magna laoreet...",
+        "category": [
+            "Interná správa"
+        ],
+        "imgUrl": "",
+        "openAttachment": false,
+        "attachmentUrl": []
+    },
+    {
+        "id": "NT00000B9E",
+        "title": "test 13",
+        "created": "14. 03. 2013",
+        "description": "Ut condimentum mattis bibendum. Sed elementum porttitor metus eget facilisis. Sed a mattis ligula. Ut sit amet magna laoreet...",
+        "category": [
+            "Interná správa"
+        ],
+        "imgUrl": "",
+        "openAttachment": false,
+        "attachmentUrl": []
+    },
+    {
+        "id": "NT00000B9A",
+        "title": "test 12",
+        "created": "14. 03. 2013",
+        "description": "Ut condimentum mattis bibendum. Sed elementum porttitor metus eget facilisis. Sed a mattis ligula. Ut sit amet magna laoreet...",
+        "category": [
+            "Interná správa"
+        ],
+        "imgUrl": "",
+        "openAttachment": false,
+        "attachmentUrl": []
+    },
+    {
+        "id": "NT00000B96",
+        "title": "test 11",
+        "created": "14. 03. 2013",
+        "description": "Ut condimentum mattis bibendum. Sed elementum porttitor metus eget facilisis. Sed a mattis ligula. Ut sit amet magna laoreet...",
+        "category": [
+            "Interná správa"
+        ],
+        "imgUrl": "",
+        "openAttachment": false,
+        "attachmentUrl": []
+    },
+    {
+        "id": "NT00000B92",
+        "title": "test 10",
+        "created": "14. 03. 2013",
+        "description": "Ut condimentum mattis bibendum. Sed elementum porttitor metus eget facilisis. Sed a mattis ligula. Ut sit amet magna laoreet...",
+        "category": [
+            "Interná správa"
+        ],
+        "imgUrl": "",
+        "openAttachment": false,
+        "attachmentUrl": []
+    },
+    {
+        "id": "NT00000B8E",
+        "title": "test9",
+        "created": "14. 03. 2013",
+        "description": "Ut condimentum mattis bibendum. Sed elementum porttitor metus eget facilisis. Sed a mattis ligula. Ut sit amet magna laoreet...",
+        "category": [
+            "Interná správa"
+        ],
+        "imgUrl": "",
+        "openAttachment": false,
+        "attachmentUrl": []
+    },
+    {
+        "id": "NT00000B8A",
+        "title": "test8",
+        "created": "14. 03. 2013",
+        "description": "Ut condimentum mattis bibendum. Sed elementum porttitor metus eget facilisis. Sed a mattis ligula. Ut sit amet magna laoreet...",
+        "category": [
+            "Interná správa"
+        ],
+        "imgUrl": "",
+        "openAttachment": false,
+        "attachmentUrl": []
+    },
+    {
+        "id": "NT00000B86",
+        "title": "test 7",
+        "created": "14. 03. 2013",
+        "description": "Ut condimentum mattis bibendum. Sed elementum porttitor metus eget facilisis. Sed a mattis ligula. Ut sit amet magna laoreet...",
+        "category": [
+            "Interná správa"
+        ],
+        "imgUrl": "",
+        "openAttachment": false,
+        "attachmentUrl": []
+    },
+    {
+        "id": "NT00000B82",
+        "title": "test6",
+        "created": "14. 03. 2013",
+        "description": "Ut condimentum mattis bibendum. Sed elementum porttitor metus eget facilisis. Sed a mattis ligula. Ut sit amet magna laoreet...",
+        "category": [
+            "Interná správa"
+        ],
+        "imgUrl": "",
+        "openAttachment": false,
+        "attachmentUrl": []
+    },
+    {
+        "id": "NT00000B7E",
+        "title": "test5",
+        "created": "14. 03. 2013",
+        "description": "Ut condimentum mattis bibendum. Sed elementum porttitor metus eget facilisis. Sed a mattis ligula. Ut sit amet magna laoreet...",
+        "category": [
+            "Interná správa"
+        ],
+        "imgUrl": "",
+        "openAttachment": false,
+        "attachmentUrl": []
+    },
+    {
+        "id": "NT00000B7A",
+        "title": "test 4",
+        "created": "14. 03. 2013",
+        "description": "Ut condimentum mattis bibendum. Sed elementum porttitor metus eget facilisis. Sed a mattis ligula. Ut sit amet magna laoreet...",
+        "category": [
+            "Interná správa"
+        ],
+        "imgUrl": "",
+        "openAttachment": false,
+        "attachmentUrl": []
+    },
+    {
+        "id": "NT00000B76",
+        "title": "test obrazku 3",
+        "created": "14. 03. 2013",
+        "description": "Ut condimentum mattis bibendum. Sed elementum porttitor metus eget facilisis. Sed a mattis ligula. Ut sit amet magna laoreet...",
+        "category": [
+            "Interná správa"
+        ],
+        "imgUrl": "",
+        "openAttachment": false,
+        "attachmentUrl": []
+    },
+    {
+        "id": "NT00000B72",
+        "title": "Test s obrazkom 2",
+        "created": "14. 03. 2013",
+        "description": "Ut condimentum mattis bibendum. Sed elementum porttitor metus eget facilisis. Sed a mattis ligula. Ut sit amet magna laoreet...",
+        "category": [
+            "Interná správa"
+        ],
+        "imgUrl": "",
+        "openAttachment": false,
+        "attachmentUrl": []
+    },
+    {
+        "id": "NT00000B6E",
+        "title": "Test notifikacie s obsahom",
+        "created": "14. 03. 2013",
+        "description": "Ut condimentum mattis bibendum. Sed elementum porttitor metus eget facilisis. Sed a mattis ligula. Ut sit amet magna laoreet...",
+        "category": [
+            "Interná správa"
+        ],
+        "imgUrl": "",
+        "openAttachment": false,
+        "attachmentUrl": []
+    },
+    {
+        "id": "NT00000B12",
+        "title": "afa dfasdfa fasd fasdf asfdasdfasdf",
+        "created": "14. 02. 2013",
+        "description": "Ut condimentum mattis bibendum. Sed elementum porttitor metus eget facilisis. Sed a mattis ligula. Ut sit amet magna laoreet...",
+        "category": [
+            "Interná správa"
+        ],
+        "imgUrl": "",
+        "openAttachment": false,
+        "attachmentUrl": []
+    },
+    {
+        "id": "NT00000AE6",
+        "title": "jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj",
+        "created": "22. 01. 2013",
+        "description": "Ut condimentum mattis bibendum. Sed elementum porttitor metus eget facilisis. Sed a mattis ligula. Ut sit amet magna laoreet...",
+        "category": [
+            "Interná správa"
+        ],
+        "imgUrl": "",
+        "openAttachment": false,
+        "attachmentUrl": []
+    }
+]

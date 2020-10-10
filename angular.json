@@ -1,0 +1,212 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "iis": {
+      "root": "",
+      "sourceRoot": "src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/iis",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "src/tsconfig.app.json",
+            "assets": [
+              "src/favicon.png",
+              "src/assets"
+            ],
+            "styles": [
+              "node_modules/ngx-toastr/toastr.css",
+              "src/styles.css",
+              "src/assets/styles/all.css",
+              "node_modules/quill/dist/quill.core.css",
+              "node_modules/quill/dist/quill.snow.css"
+            ],
+            "scripts": [
+              "node_modules/jquery/dist/jquery.js",
+              "node_modules/tinymce/tinymce.js",
+              "node_modules/tinymce/themes/modern/theme.js",
+              "node_modules/tinymce/plugins/image/plugin.js",
+              "node_modules/tinymce/plugins/imagetools/plugin.js",
+              "node_modules/tinymce/plugins/link/plugin.js",
+              "node_modules/tinymce/plugins/textcolor/plugin.js",
+              "node_modules/tinymce/plugins/paste/plugin.js",
+              "node_modules/tinymce/plugins/table/plugin.js",
+              "node_modules/tinymce/plugins/lists/plugin.js",
+              "node_modules/tinymce/plugins/code/plugin.js",
+              "node_modules/tinymce/plugins/media/plugin.js",
+              "node_modules/tinymce/plugins/noneditable/plugin.js",
+              "src/assets/scripts/tinymce/langs/sk.js",
+              "node_modules/moment/min/moment-with-locales.js",
+              "node_modules/select2/dist/js/select2.full.js",
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.js",          
+              "node_modules/eonasdan-bootstrap-datetimepicker/src/js/bootstrap-datetimepicker.js",
+              "node_modules/quill/dist/quill.js",
+              "src/assets/scripts/app.new.js"
+            ]
+          },
+          "configurations": {
+            "iis": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.iis.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            },
+            "iis-test": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.iis-test.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            },
+            "iis-dev": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.iis-dev.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "iis:build",
+            "proxyConfig": "proxy.conf.json"
+          },
+          "configurations": {
+            "iis": {
+              "browserTarget": "iis:build:production",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.iis.ts"
+                }
+              ]
+            },
+            "iis-dev": {
+              "browserTarget": "iis:build:dev",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.iis-dev.ts"
+                }
+              ]
+            },
+            "iis-test": {
+              "browserTarget": "iis:build:test",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.iis-test.ts"
+                }
+              ]
+            }
+            
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "iis:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "src/test.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "src/tsconfig.spec.json",
+            "karmaConfig": "src/karma.conf.js",
+            "styles": [
+              "src/styles.css"
+            ],
+            "scripts": [],
+            "assets": [
+              "src/favicon.png",
+              "src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "src/tsconfig.app.json",
+              "src/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "iis-e2e": {
+      "root": "e2e/",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "e2e/protractor.conf.js",
+            "devServerTarget": "iis:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "iis:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "iis"
+}

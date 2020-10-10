@@ -1,0 +1,27 @@
+<!-- Search -->
+<form class="mb-7 position-relative">
+  <button type="submit" class="submit-left">
+    <i class="icon icon-search"></i>
+  </button>
+  <input type="text" autocomplete="off" id="search" name="search" placeholder="Hľadaj v príspevkoch" class="form-control fs-6 font-weight-bold box-shadow-lg border-0 py-5 px-6 h-auto" [(ngModel)]="search" (keyup.enter)="loadRecords()">
+</form>
+
+<!-- News -->
+<section>
+  <header class="clearfix mb-2">
+    <h3 class="fs-6 font-weight-bold d-inline-block mr-6">PosAm novinky</h3>
+    <a routerLink="/dashboard/oznam-create/{{documentType.ANNOUNCEMENT}}"  class="font-weight-bold text-secondary"><i class="icon icon-plus-circle fs-8 position-relative top-1"></i> Vytvor nový</a>
+
+    <a routerLink="/dashboard/oznamy"  class="float-right text-uppercase font-weight-bold fs-3 text-secondary position-relative top-1">Zobraz všetky</a>
+  </header>
+
+  <div class="row">
+        
+    <div class="col-12 col-md-6" app-widget-announcements-detail *ngFor="let oznam of oznamy; let i = index" [model]="oznam" ></div>
+  
+  </div>
+  <div class="text-center mt-2">
+    <a routerLink="/dashboard/oznamy" class="text-uppercase font-weight-bold fs-3 text-secondary">Zobraz všetky</a>
+  </div>
+
+</section>

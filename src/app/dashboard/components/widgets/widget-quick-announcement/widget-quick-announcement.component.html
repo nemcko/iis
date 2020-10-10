@@ -1,0 +1,24 @@
+<section>
+  <header class="clearfix mb-2">
+    <h3 class="fs-6 font-weight-bold d-inline-block mr-6">Rýchly oznam</h3>
+  </header>
+
+  <div class="bg-white p-4 text-center min-height-230 border-radius-md box-shadow-lg d-flex align-items-center justify-content-center article-actions-on position-relative">
+    <div class="content w-100">
+      <a routerLink="/dashboard/oznam/{{rychlyOznam?.id}}" *ngIf="rychlyOznam">
+        <h3 class="fs-6 font-weight-bold lh-22">{{rychlyOznam.title}}</h3>
+      </a>
+      <div *ngIf="isHR" class="article-actions position-absolute top-12 right-12">
+          <a routerLink="/dashboard/oznam-create/{{documentType.QUICK_ANNOUNCEMENT}}" class="e-round-icon text-secondary mr-1">
+            <i class="icon icon-plus-circle"></i>
+          </a>
+          <a routerLink="/dashboard/oznam-edit/{{rychlyOznam?.id}}" class="e-round-icon text-secondary mr-1" *ngIf="rychlyOznam">
+            <i class="icon icon-edit"></i>
+          </a>
+          <a routerLink="/dashboard/rychle-oznamy" class="e-round-icon text-secondary">
+            <i class="icon icon-list"></i>
+          </a>
+        </div>
+    </div>
+  </div>
+</section>

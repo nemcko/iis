@@ -1,0 +1,12 @@
+<div class="{{contentBackground}}" style="border-radius: 8px !important;">
+	<div class="modal-header align-items-center position-relative py-7">
+	    <h5 class="fs-6 text-center font-weight-bold w-100 px-8">{{title}}</h5>
+	    <button type="button" class="close position-absolute top-0 right-0 m-0" data-dismiss="modal" aria-label="Close"
+	        (click)="close()" [appFocus]="'blur'">
+	        <i class="icon icon-close fs-9 text-secondary"></i>
+	    </button>
+	</div>
+	<div class="modal-body px-6 py-0">
+	    <ng-content></ng-content>
+	</div>
+</div>

@@ -1,0 +1,37 @@
+[
+  {
+    "id": "NT00000D4A",
+    "dateReview": "2.3.2019",
+    "ratedUserFN": "Driensky Martin",
+    "managerFN": "Jašek Zdeno",
+    "status": "DRAFT"
+  },
+  {
+    "id": "NT00000D4B",
+    "dateReview": "5.3.2019",
+    "ratedUserFN": "Šteffel Peter",
+    "managerFN": "Jašek Zdeno",
+    "status": "FINAL"
+  },
+  {
+    "id": "NT00000D4C",
+    "dateReview": "15.3.2019",
+    "ratedUserFN": "Boledovič Dušan",
+    "managerFN": "Jašek Zdeno",
+    "status": "DRAFT"
+  },
+  {
+    "id": "NT00000D4D",
+    "dateReview": "3.4.2019",
+    "ratedUserFN": "Maruška Tomáš",
+    "managerFN": "Jašek Zdeno",
+    "status": "FINAL"
+  },
+  {
+    "id": "NT00000D4E",
+    "dateReview": "13.5.2019",
+    "ratedUserFN": "Gašparík Michal",
+    "managerFN": "Rovňan Ivan",
+    "status": "FINAL"
+  }
+]

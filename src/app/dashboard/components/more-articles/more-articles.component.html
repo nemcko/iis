@@ -1,0 +1,11 @@
+<section *ngIf="oznamy?.length > 0">
+    <header class="clearfix mb-2">
+      <h3 class="fs-6 font-weight-bold d-inline-block mr-6">Tiež by Ťa mohlo zaujímať</h3>
+    </header>
+
+    <div class="row">
+      
+      <div class="col-12 col-md-6" app-widget-announcements-detail *ngFor="let oznam of oznamy; let i = index" [model]="oznam" ></div>
+
+    </div>
+  </section>

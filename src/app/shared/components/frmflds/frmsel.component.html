@@ -1,0 +1,7 @@
+<div class="form-group mb-1">
+  <label class="cursor-pointer w-100">
+    <span *ngIf="label" classes="label">{{label}}</span>
+    <select2 classes="notSelect2box" [data]="data" [value]="value" [cssImport]="true" [options]="options" (valueChanged)="changed($event)">
+    </select2>
+  </label>
+</div>

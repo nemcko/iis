@@ -1,0 +1,41 @@
+<section class="mt-8">
+  <ng-container *ngIf="(items||[]) && (items||[]).length==0">
+    <header class="clearfix mb-2">
+      <h3 class="fs-7 font-weight-bold d-inline-block mr-3">{{title}}</h3>
+    </header>
+
+    <div class="bg-white p-5 border-radius-md box-shadow-sm clearfix b-ils-info">
+      <div class="row align-items-center">
+        <div *ngIf="emptyimg"  class="col-12 col-lg-6 text-center mb-6 order-lg-2">
+          <img src="{{emptyimg}}" alt="#" class="img-fluid">
+        </div>
+        <div class="col-12 col-lg-6 px-xl-7 order-lg-1">
+          <h3 class="text-primary fs-7 font-weight-bold">{{emptymsg}}</h3>
+          <a *ngIf="infomsg" href="#" title="#" class="font-weight-bold text-secondary mt-1 mt-lg-3 d-inline-block" data-toggle="modal"
+            data-target="#howToModal"><i class="icon icon-info fs-8 position-relative top-2"></i> {{infonew}}</a>
+          <a *ngIf="newmsg" href="#" title="#" class="font-weight-bold text-secondary mt-1 mt-lg-3 d-inline-block"><i class="icon icon-info fs-8 position-relative top-2"></i> {{newmsg}}</a>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+
+
+  <ng-container *ngIf="(items||[]) && (items||[]).length">
+    <header class="clearfix mb-2">
+      <h3 class="fs-7 font-weight-bold d-inline-block mr-3">{{title}}<span *ngIf="showLength"> ({{(items || []).length}})</span></h3>
+      <!-- <a *ngIf="infomsg && showLength"  href="#" title="#" class="font-weight-bold text-secondary" data-toggle="modal" data-target="#howToModal"><i class="icon icon-info fs-8 position-relative top-2"></i> {{infomsg}}</a>      -->
+      <!-- <a *ngIf="newmsg"  href="#" title="#" class="font-weight-bold text-secondary"><i class="icon icon-plus-circle fs-8 position-relative top-2"></i> {{newmsg}}</a>                                  -->
+      <ng-content select="subtitle"></ng-content>
+    </header>
+    <div class="b-tree-line">
+      <div role="item" *ngFor="let item of (items || []).slice(0, 5); let i = index"
+        class="item d-block bg-white p-4 border-radius-md box-shadow-sm mt-0 ml-8" [ngClass]="{'mt-0': !i, 'mt-2':i,'done': doneflg && item[doneflg]}">
+        <div class="row">
+          <div class="col-12">
+            <ng-template [ngTemplateOutlet]="templateRef" [ngTemplateOutletContext]="{$implicit: item}"></ng-template>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</section>

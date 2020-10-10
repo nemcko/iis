@@ -1,0 +1,42 @@
+[
+    {
+        "id": "prMDRY-B8AFXY",
+        "oznamId": "NT00000CBA",
+        "oznamName": "Výročná správa 2015",
+        "oznamCreated": "24. 03. 2016 11:43:16",
+        "modified": "10. 01. 2019 12:53:30",
+        "pocet": 1
+    },
+    {
+        "id": "prMDRY-B89L76",
+        "oznamId": "NT00000DD6",
+        "oznamName": "TEST MAJO",
+        "oznamCreated": "18. 10. 2018 13:55:46",
+        "modified": "09. 01. 2019 16:29:49",
+        "pocet": 12
+    },
+    {
+        "id": "prTMAA-B89KM6",
+        "oznamId": "NT00000CCA",
+        "oznamName": "Motokáry",
+        "oznamCreated": "02. 11. 2017 09:12:01",
+        "modified": "09. 01. 2019 16:01:16",
+        "pocet": 3
+    },
+    {
+        "id": "prTMAA-B89BQL",
+        "oznamId": "NT00000CB6",
+        "oznamName": "Nastavenie stoličiek",
+        "oznamCreated": "24. 03. 2016 07:01:16",
+        "modified": "09. 01. 2019 09:16:55",
+        "pocet": 6
+    },
+    {
+        "id": "prMDRY-B88G9H",
+        "oznamId": "NT00000C96",
+        "oznamName": "Raňajky v PosAm-e",
+        "oznamCreated": "17. 02. 2016 10:26:46",
+        "modified": "08. 01. 2019 13:08:47",
+        "pocet": 5
+    }
+]

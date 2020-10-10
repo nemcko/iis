@@ -1,0 +1,57 @@
+<article class="b-article mb-6 article-actions-on" *ngIf="model.openAttachment && model.attachmentUrl.length == 1">
+  <a [href]="model.attachmentUrl[0]" class="image box-shadow-lg">
+    <span class="article-actions position-absolute top-12 left-12">
+      <span class="e-round-icon text-secondary" preventDefault stopPropagation (click)="editArticle(model.id)"
+        *ngIf="isHR">
+        <i class="icon icon-edit"></i>
+      </span>
+    </span>
+    <img src="./assets/img-placeholder-700x520.png" class="img-fluid">
+    <img [src]="model?.imgUrl || './assets/empty_image.jpg'" class="img-fluid article-image">
+  </a>
+
+  <div class="content bg-white border-radius-md p-4 box-shadow-lg">
+    <h3 class="fs-6 font-weight-bold mb-1">
+      <a [href]="model.attachmentUrl[0]" title="">{{model.title}}</a>
+    </h3>
+    <div class="mb-1">
+      <a [href]="model.attachmentUrl[0]" class="text-gray fs-3 font-weight-bold">{{model.created}}</a>
+      <span class="ml-3 text-gray fs-3 font-weight-bold">{{model.authorFN || ''}}</span>
+    </div>
+    <div class="fs-3" *ngIf="model.category && model.category.length > 0">
+      <span *ngFor="let category of model.category">
+        <a routerLink="/dashboard/oznamy/{{category | urlEncode}}"
+          class="text-tertiary font-weight-bold mr-1">#{{category}}</a>
+        </span>
+    </div>
+  </div>
+</article>
+
+<article class="b-article mb-6 article-actions-on" *ngIf="!(model.openAttachment && model.attachmentUrl.length == 1)">
+  <a routerLink="/dashboard/oznam/{{model.id}}" class="image box-shadow-lg">
+    <span class="article-actions position-absolute top-12 left-12">
+      <span class="e-round-icon text-secondary" preventDefault stopPropagation (click)="editArticle(model.id)"
+        *ngIf="isHR">
+        <i class="icon icon-edit"></i>
+      </span>
+    </span>
+    <img src="./assets/img-placeholder-700x520.png" class="img-fluid">
+    <img [src]="model?.imgUrl || './assets/empty_image.jpg'" class="img-fluid article-image">
+  </a>
+
+  <div class="content bg-white border-radius-md p-4 box-shadow-lg">
+    <h3 class="fs-6 font-weight-bold mb-1">
+      <a routerLink="/dashboard/oznam/{{model.id}}" title="">{{model.title}}</a>
+    </h3>
+    <div class="mb-1">
+      <a routerLink="/dashboard/oznam/{{model.id}}" class="text-gray fs-3 font-weight-bold">{{model.created}}</a>
+      <span class="ml-3 text-gray fs-3 font-weight-bold">{{model.authorFN || ''}}</span>
+    </div>
+    <div class="fs-3" *ngIf="model.category && model.category.length > 0">
+      <span *ngFor="let category of model.category">
+        <a routerLink="/dashboard/oznamy/{{category | urlEncode}}"
+          class="text-tertiary font-weight-bold mr-1">#{{category}}</a>
+        </span>
+    </div>
+  </div>
+</article>

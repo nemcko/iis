@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-12 col-lg-auto">
+    <div class="d-lg-none mb-4">
+      <select class="js-basic-select w-100" data-live-search="false">
+        <option *ngFor="let tab of tabs" (click)="selectTab(tab)" [class.active]="tab.active">{{tab.title}}</option>
+      </select>
+    </div>
+
+    <div class="d-none d-lg-block mt-4 pl-6 position-relative top-3">
+      <div
+        class="btn mr-2 tabactive text-uppercase fs-5 font-weight-black px-6 py-2 px-md-6"
+        *ngFor="let tab of tabs" (click)="selectTab(tab)"
+        [ngClass]="{'tabnoactive': !tab.active}">{{tab.title}}</div>
+    </div>
+  </div>
+
+  <div class="col align-self-end mb-2 ml-auto text-right">
+      <ng-content select="rightside"></ng-content>
+  </div> 
+
+</div>
+
+
+<div classes="w100 apptabs px-3 py-4 p-md-6 box-shadow-md" >
+  <ng-content></ng-content>
+</div>

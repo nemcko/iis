@@ -1,0 +1,18 @@
+<appdlg #dlg [title]="'Spravovať team'">
+  <div classes="dlg_form">
+
+
+    <formrow>
+      <formselusers classes="col12" [options]="options" [(ngModel)]="data.team"></formselusers>
+    </formrow>
+
+<!-- <pre>{{data.team|json}}</pre> -->
+
+  </div>
+
+  <div classes="dlg_footer">
+    <button classes="dlg_ok" (click)="save()">Pridať</button>
+    <button classes="dlg_cancel" (click)="dlg.close()">Zrušiť</button>
+  </div>
+
+</appdlg>

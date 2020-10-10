@@ -1,0 +1,356 @@
+[
+  {
+    "id": "RC00000D41",
+    "evalName": "JSROT Realizácia 1.fáza",
+    "keywords": "JSROT,1st",
+    "evalDate": "5.3.2019",
+    "ratedUser": "Maruška Tomáš",
+    "teamLeader": "Fleischman Rony",
+    "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec mollis purus, a volutpat tortor. Vestibulum consectetur ex purus. Integer laoreet sollicitudin nibh hendrerit suscipit. Mauris placerat massa ligula, eget pulvinar neque egestas sed. Integer sit amet neque vitae libero dapibus vestibulum. In massa quam, iaculis id diam pellentesque, fringilla auctor erat. Aenean nisl odio, gravida id lectus ac, convallis pellentesque odio. Ut congue tellus non dolor pretium pharetra.",
+    "status": "DRAFT",
+    "themes": [
+      {
+        "code": "CR0001",
+        "type": "CR",
+        "title": "Dodržiavanie best practicies (napr. dĺžky tried a metód,  použitie rozhodovacích blokov, ...)",
+        "active": false,
+        "desc": "Donec vitae massa tempor urna aliquam bibendum in eget odio. Praesent eget est pellentesque, laoreet neque id, porttitor ligula. Nullam euismod venenatis ipsum semper congue. Aenean a orci laoreet, aliquam urna et, aliquet odio. Praesent efficitur in leo nec egestas. Donec facilisis et sapien ut consequat. Nunc at euismod nunc, vitae porttitor nisi. Nullam tincidunt semper nibh. Donec non ligula vel nibh tempor suscipit. In feugiat hendrerit ante ut porta. Sed sed tortor condimentum, dapibus nisi dapibus, tincidunt lorem.",
+        "notice": "",
+        "rating": 0
+      },
+      {
+        "code": "CR0002",
+        "type": "CR",
+        "title": "SOLID princíp",
+        "active": true,
+        "desc": "Maecenas non odio ut mi ultrices blandit at eget eros. Etiam iaculis fermentum nisl, porta tempus sem varius non. Nullam a auctor libero. Vivamus vestibulum, nisl et porta tempus, nisi libero sodales libero, vel gravida nisi justo nec nisi. Suspendisse pretium ligula sed elit venenatis imperdiet. Aenean laoreet id lorem sit amet sollicitudin. Nunc nisi diam, ornare id urna non, tempor tincidunt felis. Morbi diam metus, sollicitudin quis dictum et, commodo in diam. Curabitur quis ligula vitae odio egestas tincidunt. Phasellus imperdiet maximus aliquet. Integer elit elit, finibus at felis nec, sodales tincidunt lacus.",
+        "notice": "",
+        "rating": 0
+      }
+    ]
+  },
+  {
+    "id": "RC00000D42",
+    "evalName": "JSROT Realizácia 2.fáza",
+    "keywords": "JSROT,2st",
+    "evalDate": "2.3.2019",
+    "ratedUser": "Maruška Tomáš",
+    "teamLeader": "Fleischman Rony",
+    "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec mollis purus, a volutpat tortor. Vestibulum consectetur ex purus. Integer laoreet sollicitudin nibh hendrerit suscipit. Mauris placerat massa ligula, eget pulvinar neque egestas sed. Integer sit amet neque vitae libero dapibus vestibulum. In massa quam, iaculis id diam pellentesque, fringilla auctor erat. Aenean nisl odio, gravida id lectus ac, convallis pellentesque odio. Ut congue tellus non dolor pretium pharetra.",
+    "status": "DRAFT",
+    "themes": [
+      {
+        "code": "CR0004",
+        "type": "CR",
+        "title": "Oddelenie domény od infraštruktúrnej a aplikačnej vrstvy",
+        "active": true,
+        "desc": "",
+        "notice": "",
+        "rating": 0
+      },
+      {
+        "code": "CR0005",
+        "type": "CR",
+        "title": "Logovanie a error handling (Či logujeme dôležité veci)",
+        "active": true,
+        "desc": "",
+        "notice": "",
+        "rating": 0
+      },
+      {
+        "code": "CR0008",
+        "type": "CR",
+        "title": "Iné",
+        "active": true,
+        "desc": "Nullam eros urna, gravida nec viverra et, semper sit amet lectus. Quisque sagittis lectus non ante ultricies, ut mollis nisi pretium. Ut dui risus, tempus egestas semper ac, vulputate sit amet velit. Phasellus eget magna a mi porttitor rhoncus ac sed turpis. Suspendisse cursus luctus lectus, at accumsan justo rhoncus sed. Integer congue nisi sit amet velit tincidunt, in placerat lectus semper.",
+        "notice": "",
+        "rating": 0
+      },
+      {
+        "code": "CR0009",
+        "type": "CR",
+        "title": "UseCase diagram",
+        "active": false,
+        "desc": "",
+        "notice": "",
+        "rating": 0
+      },
+      {
+        "code": "CR0010",
+        "type": "CR",
+        "title": "Package diagram",
+        "active": true,
+        "desc": "",
+        "notice": "",
+        "rating": 0
+      }
+    ]
+  },
+  {
+    "id": "RC00000D43",
+    "evalName": "JSROT Realizácia 3.fáza",
+    "keywords": "JSROT,3st",
+    "evalDate": "5.3.2019",
+    "ratedUser": "Maruška Tomáš",
+    "teamLeader": "Fleischman Rony",
+    "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec mollis purus, a volutpat tortor. Vestibulum consectetur ex purus. Integer laoreet sollicitudin nibh hendrerit suscipit. Mauris placerat massa ligula, eget pulvinar neque egestas sed. Integer sit amet neque vitae libero dapibus vestibulum. In massa quam, iaculis id diam pellentesque, fringilla auctor erat. Aenean nisl odio, gravida id lectus ac, convallis pellentesque odio. Ut congue tellus non dolor pretium pharetra.",
+    "status": "DRAFT",
+    "themes": [
+      {
+        "code": "CR0004",
+        "type": "CR",
+        "title": "Oddelenie domény od infraštruktúrnej a aplikačnej vrstvy",
+        "active": true,
+        "desc": "",
+        "notice": "",
+        "rating": 0
+      },
+      {
+        "code": "CR0007",
+        "type": "CR",
+        "title": "Štruktúra/Packaging kódu",
+        "active": true,
+        "desc": "",
+        "notice": "",
+        "rating": 0
+      },
+      {
+        "code": "CR0010",
+        "type": "CR",
+        "title": "Package diagram",
+        "active": true,
+        "desc": "",
+        "notice": "",
+        "rating": 0
+      },
+      {
+        "code": "CR0011",
+        "type": "CR",
+        "title": "Sequence diagram",
+        "active": false,
+        "desc": "",
+        "notice": "",
+        "rating": 0
+      },
+      {
+        "code": "CR0012",
+        "type": "CR",
+        "title": "Activity diagram",
+        "active": false,
+        "desc": "Nullam eros urna, gravida nec viverra et, semper sit amet lectus. Quisque sagittis lectus non ante ultricies, ut mollis nisi pretium. Ut dui risus, tempus egestas semper ac, vulputate sit amet velit. Phasellus eget magna a mi porttitor rhoncus ac sed turpis. Suspendisse cursus luctus lectus, at accumsan justo rhoncus sed. Integer congue nisi sit amet velit tincidunt, in placerat lectus semper.",
+        "notice": "",
+        "rating": 0
+      }
+    ]
+  },
+  {
+    "id": "RC00000D44",
+    "evalName": "JSROT Realizácia 1.fáza",
+    "keywords": "1st",
+    "evalDate": "15.3.2019",
+    "ratedUser": "Maruška Tomáš",
+    "teamLeader": "Fleischman Rony",
+    "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec mollis purus, a volutpat tortor. Vestibulum consectetur ex purus. Integer laoreet sollicitudin nibh hendrerit suscipit. Mauris placerat massa ligula, eget pulvinar neque egestas sed. Integer sit amet neque vitae libero dapibus vestibulum. In massa quam, iaculis id diam pellentesque, fringilla auctor erat. Aenean nisl odio, gravida id lectus ac, convallis pellentesque odio. Ut congue tellus non dolor pretium pharetra.",
+    "status": "DRAFT",
+    "themes": [
+      {
+        "code": "CR0011",
+        "type": "CR",
+        "title": "Sequence diagram",
+        "active": false,
+        "desc": "",
+        "notice": "",
+        "rating": 0
+      },
+      {
+        "code": "CR0012",
+        "type": "CR",
+        "title": "Activity diagram",
+        "active": false,
+        "desc": "Nullam eros urna, gravida nec viverra et, semper sit amet lectus. Quisque sagittis lectus non ante ultricies, ut mollis nisi pretium. Ut dui risus, tempus egestas semper ac, vulputate sit amet velit. Phasellus eget magna a mi porttitor rhoncus ac sed turpis. Suspendisse cursus luctus lectus, at accumsan justo rhoncus sed. Integer congue nisi sit amet velit tincidunt, in placerat lectus semper.",
+        "notice": "",
+        "rating": 0
+      }
+    ]
+  },
+  {
+    "id": "RC00000D45",
+    "evalName": "JSROT Realizácia 1.fáza",
+    "keywords": "1st",
+    "evalDate": "15.3.2019",
+    "ratedUser": "Nemčko Miloš",
+    "teamLeader": "Fleischman Rony",
+    "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec mollis purus, a volutpat tortor. Vestibulum consectetur ex purus. Integer laoreet sollicitudin nibh hendrerit suscipit. Mauris placerat massa ligula, eget pulvinar neque egestas sed. Integer sit amet neque vitae libero dapibus vestibulum. In massa quam, iaculis id diam pellentesque, fringilla auctor erat. Aenean nisl odio, gravida id lectus ac, convallis pellentesque odio. Ut congue tellus non dolor pretium pharetra.",
+    "status": "DRAFT",
+    "themes": [
+      {
+        "code": "CR0001",
+        "type": "CR",
+        "title": "Dodržiavanie best practicies (napr. dĺžky tried a metód,  použitie rozhodovacích blokov, ...)",
+        "active": false,
+        "desc": "Donec vitae massa tempor urna aliquam bibendum in eget odio. Praesent eget est pellentesque, laoreet neque id, porttitor ligula. Nullam euismod venenatis ipsum semper congue. Aenean a orci laoreet, aliquam urna et, aliquet odio. Praesent efficitur in leo nec egestas. Donec facilisis et sapien ut consequat. Nunc at euismod nunc, vitae porttitor nisi. Nullam tincidunt semper nibh. Donec non ligula vel nibh tempor suscipit. In feugiat hendrerit ante ut porta. Sed sed tortor condimentum, dapibus nisi dapibus, tincidunt lorem.",
+        "notice": "",
+        "rating": 0
+      },
+      {
+        "code": "CR0002",
+        "type": "CR",
+        "title": "SOLID princíp",
+        "active": true,
+        "desc": "Maecenas non odio ut mi ultrices blandit at eget eros. Etiam iaculis fermentum nisl, porta tempus sem varius non. Nullam a auctor libero. Vivamus vestibulum, nisl et porta tempus, nisi libero sodales libero, vel gravida nisi justo nec nisi. Suspendisse pretium ligula sed elit venenatis imperdiet. Aenean laoreet id lorem sit amet sollicitudin. Nunc nisi diam, ornare id urna non, tempor tincidunt felis. Morbi diam metus, sollicitudin quis dictum et, commodo in diam. Curabitur quis ligula vitae odio egestas tincidunt. Phasellus imperdiet maximus aliquet. Integer elit elit, finibus at felis nec, sodales tincidunt lacus.",
+        "notice": "",
+        "rating": 0
+      },
+      {
+        "code": "CR0003",
+        "type": "CR",
+        "title": "Self-documenting kód/Čitateľnosť kódu (napr. Naming ...)",
+        "active": true,
+        "desc": "Nunc congue ipsum orci, ac fermentum augue vulputate a. Mauris et orci lobortis, fringilla diam ac, scelerisque ligula. Nulla vestibulum laoreet enim, non tincidunt augue hendrerit mollis. Sed vitae lacus orci. Etiam eu lectus tellus. Pellentesque augue ante, ultricies vel tempus id, accumsan ut justo. Morbi bibendum nibh non nibh faucibus vulputate. Fusce in eros at massa posuere faucibus sed vel libero.",
+        "notice": "",
+        "rating": 0
+      },
+      {
+        "code": "CR0004",
+        "type": "CR",
+        "title": "Oddelenie domény od infraštruktúrnej a aplikačnej vrstvy",
+        "active": true,
+        "desc": "",
+        "notice": "",
+        "rating": 0
+      },
+      {
+        "code": "CR0005",
+        "type": "CR",
+        "title": "Logovanie a error handling (Či logujeme dôležité veci)",
+        "active": true,
+        "desc": "",
+        "notice": "",
+        "rating": 0
+      },
+      {
+        "code": "CR0006",
+        "type": "CR",
+        "title": "Zmysluplné Unit testy (Nie len pokrytie)",
+        "active": true,
+        "desc": "",
+        "notice": "",
+        "rating": 0
+      },
+      {
+        "code": "CR0007",
+        "type": "CR",
+        "title": "Štruktúra/Packaging kódu",
+        "active": true,
+        "desc": "",
+        "notice": "",
+        "rating": 0
+      },
+      {
+        "code": "CR0008",
+        "type": "CR",
+        "title": "Iné",
+        "active": true,
+        "desc": "Nullam eros urna, gravida nec viverra et, semper sit amet lectus. Quisque sagittis lectus non ante ultricies, ut mollis nisi pretium. Ut dui risus, tempus egestas semper ac, vulputate sit amet velit. Phasellus eget magna a mi porttitor rhoncus ac sed turpis. Suspendisse cursus luctus lectus, at accumsan justo rhoncus sed. Integer congue nisi sit amet velit tincidunt, in placerat lectus semper.",
+        "notice": "",
+        "rating": 0
+      },
+      {
+        "code": "CR0009",
+        "type": "CR",
+        "title": "UseCase diagram",
+        "active": false,
+        "desc": "",
+        "notice": "",
+        "rating": 0
+      },
+      {
+        "code": "CR0010",
+        "type": "CR",
+        "title": "Package diagram",
+        "active": true,
+        "desc": "",
+        "notice": "",
+        "rating": 0
+      },
+      {
+        "code": "CR0011",
+        "type": "CR",
+        "title": "Sequence diagram",
+        "active": false,
+        "desc": "",
+        "notice": "",
+        "rating": 0
+      },
+      {
+        "code": "CR0012",
+        "type": "CR",
+        "title": "Activity diagram",
+        "active": false,
+        "desc": "Nullam eros urna, gravida nec viverra et, semper sit amet lectus. Quisque sagittis lectus non ante ultricies, ut mollis nisi pretium. Ut dui risus, tempus egestas semper ac, vulputate sit amet velit. Phasellus eget magna a mi porttitor rhoncus ac sed turpis. Suspendisse cursus luctus lectus, at accumsan justo rhoncus sed. Integer congue nisi sit amet velit tincidunt, in placerat lectus semper.",
+        "notice": "",
+        "rating": 0
+      }
+    ]
+  },
+  {
+    "id": "RC00000D46",
+    "evalName": "JSROT Realizácia 1.fáza",
+    "keywords": "1st",
+    "evalDate": "3.4.2019",
+    "ratedUser": "Maruška Tomáš",
+    "teamLeader": "Fleischman Rony",
+    "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec mollis purus, a volutpat tortor. Vestibulum consectetur ex purus. Integer laoreet sollicitudin nibh hendrerit suscipit. Mauris placerat massa ligula, eget pulvinar neque egestas sed. Integer sit amet neque vitae libero dapibus vestibulum. In massa quam, iaculis id diam pellentesque, fringilla auctor erat. Aenean nisl odio, gravida id lectus ac, convallis pellentesque odio. Ut congue tellus non dolor pretium pharetra.",
+    "status": "DRAFT",
+    "themes": [
+      {
+        "code": "CR0011",
+        "type": "CR",
+        "title": "Sequence diagram",
+        "active": false,
+        "desc": "",
+        "notice": "",
+        "rating": 0
+      },
+      {
+        "code": "CR0012",
+        "type": "CR",
+        "title": "Activity diagram",
+        "active": false,
+        "desc": "Nullam eros urna, gravida nec viverra et, semper sit amet lectus. Quisque sagittis lectus non ante ultricies, ut mollis nisi pretium. Ut dui risus, tempus egestas semper ac, vulputate sit amet velit. Phasellus eget magna a mi porttitor rhoncus ac sed turpis. Suspendisse cursus luctus lectus, at accumsan justo rhoncus sed. Integer congue nisi sit amet velit tincidunt, in placerat lectus semper.",
+        "notice": "",
+        "rating": 0
+      }
+    ]
+  },
+  {
+    "id": "RC00000D47",
+    "evalName": "JSROT Realizácia 1.fáza",
+    "keywords": "1st",
+    "evalDate": "13.5.2019",
+    "ratedUser": "Maruška Tomáš",
+    "teamLeader": "Jašek Zdeno",
+    "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec mollis purus, a volutpat tortor. Vestibulum consectetur ex purus. Integer laoreet sollicitudin nibh hendrerit suscipit. Mauris placerat massa ligula, eget pulvinar neque egestas sed. Integer sit amet neque vitae libero dapibus vestibulum. In massa quam, iaculis id diam pellentesque, fringilla auctor erat. Aenean nisl odio, gravida id lectus ac, convallis pellentesque odio. Ut congue tellus non dolor pretium pharetra.",
+    "status": "DRAFT",
+    "themes": [
+      {
+        "code": "CR0001",
+        "type": "CR",
+        "title": "Dodržiavanie best practicies (napr. dĺžky tried a metód,  použitie rozhodovacích blokov, ...)",
+        "active": false,
+        "desc": "Donec vitae massa tempor urna aliquam bibendum in eget odio. Praesent eget est pellentesque, laoreet neque id, porttitor ligula. Nullam euismod venenatis ipsum semper congue. Aenean a orci laoreet, aliquam urna et, aliquet odio. Praesent efficitur in leo nec egestas. Donec facilisis et sapien ut consequat. Nunc at euismod nunc, vitae porttitor nisi. Nullam tincidunt semper nibh. Donec non ligula vel nibh tempor suscipit. In feugiat hendrerit ante ut porta. Sed sed tortor condimentum, dapibus nisi dapibus, tincidunt lorem.",
+        "notice": "",
+        "rating": 0
+      },
+      {
+        "code": "CR0011",
+        "type": "CR",
+        "title": "Sequence diagram",
+        "active": false,
+        "desc": "",
+        "notice": "",
+        "rating": 0
+      }
+    ]
+  }
+]

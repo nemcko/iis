@@ -1,0 +1,5 @@
+<div *ngIf="!err" class="e-user-image" [ngStyle]="{'width.px': imgsize,'height.px': imgsize, 'margin-left':'auto', 'margin-right':'auto'}">
+  <img src="{{urlImage}}" alt="#" (error)="updatePanel($event)" [ngStyle]="{'width.px': imgsize,'height.px': imgsize}">
+</div>
+<div *ngIf="err" class="e-user-initials" [ngClass]="currColor"
+  [ngStyle]="{'width.px': imgsize,'height.px': imgsize,'fontSize.px': ifontsize}">{{initials}}</div>

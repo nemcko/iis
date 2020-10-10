@@ -1,0 +1,43 @@
+<!-- SEARCH BOX -->
+<form class="mb-7 position-relative">
+  <button type="submit" class="submit-left">
+    <i class="icon icon-search"></i>
+  </button>
+  <input type="text" autocomplete="off" id="search" name="search" placeholder="Hľadaj v rýchlych oznamoch"
+    class="form-control fs-6 font-weight-bold box-shadow-lg border-0 py-5 px-6 h-auto" [(ngModel)]="search"
+    (keyup.enter)="loadRecords()">
+</form>
+
+<div class="row">
+  <div class="col-12 col-md-10 col-lg-8 mx-auto">
+    <section class="s-events">
+      <!-- TITLE -->
+      <header class="clearfix mb-5">
+        <h3 class="fs-7 font-weight-bold d-inline-block mr-6">Všetky rýchle oznamy</h3>
+      </header>
+
+      <a routerLink="/dashboard"
+        class="btn btn-secondary text-white text-uppercase fs-5 font-weight-bold px-4 px-md-6 mb-3 mb-md-0 back">Späť na
+        prehľad</a>
+
+      <!-- EVENT ITEMS -->
+      <div class="b-tree-line">
+
+        <!-- EVENT ITEM -->
+        <div *ngFor="let item of itemsList; let i = index"
+          [class]="(i == 0) ? 'item d-block bg-white py-3 px-4 border-radius-md box-shadow-sm mt-0 ml-8' : 'item d-block bg-white py-3 px-4 border-radius-md box-shadow-sm mt-6 ml-8'">
+          <div class="row">
+            <div class="col-12">
+              <a routerLink="/dashboard/oznam/{{item.id}}" class="d-block text-primary font-weight-bold mb-1">
+                <!-- <span class="d-block text-primary font-weight-bold mb-1">{{item.created}}, {{item.authorFN}}</span> -->
+                <span class="d-block fs-6 text-black">{{item.title}}</span>
+                <!-- <span class="d-block fs-6 text-black">{{item.description}}</span> -->
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </div>
+</div>

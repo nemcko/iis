@@ -1,0 +1,46 @@
+<appdlg #dlg [title]="'Editácia profilových informácií'">
+  <div classes="dlg_form">
+
+    <formrow>
+      <formfld classes="col12" [label]="'Edituj profilové informácie'">
+        <textarea classes="textarea" rows="4" [(ngModel)]="description"></textarea>
+      </formfld>
+    </formrow>
+
+    <formrow>
+      <formmsel classes="col12" [label]="'Pridaj jazyky'" [options]="lngs" [(ngModel)]="languages"></formmsel>
+    </formrow>
+
+    <formrow *ngIf="!docname" [label]="'Sem nahraj dokument CV vo formáte pdf,word'">
+      <formbox classes="w100 box noctrlbox">
+        <div classes="dropzone" [dropzone]="documentUploadConfig" (error)="documentUploadError($event)"
+          (success)="documentUploadSuccess($event)">
+          <div><i class="icon icon-add-photo fs-8 mb-2 d-block text-black"></i>
+            Presuňte súbor priamo sem<br /> alebo <span class="text-secondary">kliknutím nahrajte</span>.
+          </div>
+        </div>
+      </formbox>
+    </formrow>
+
+    <formrow *ngIf="docname" [label]="'Dokument CV'">
+      <formbox classes="w100 box noctrlbox">
+        <div>
+          <span class="tag-item mt-2">
+            <!-- <a [href]="attachment" target="_blank" title="Zobraziť dokument">{{docname}}</a> -->
+            {{docname}}
+            &nbsp;
+            <a class="remove-button" (click)="documentDelete()" title="Odstrániť dokument">×</a>
+          </span>
+        </div>
+      </formbox>
+    </formrow>
+
+
+  </div>
+
+  <div classes="dlg_footer">
+    <button classes="dlg_ok" (click)="save()">Pridať</button>
+    <button classes="dlg_cancel" (click)="dlg.close()">Zrušiť</button>
+  </div>
+
+</appdlg>

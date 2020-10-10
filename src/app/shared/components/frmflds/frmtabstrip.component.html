@@ -1,0 +1,26 @@
+<div class="form-group mb-0">
+  <span *ngIf="label" classes="label">{{label}}</span>
+  <pre>{{scrollLeft}}</pre>
+
+  <div #tabstrip class="tabstrip" (window:resize)="onTabsResized($event)">
+    <div class="leftsidpanel hidesb">
+      <div class="panelbtn border-1 box-shadow-sm px-1 py-2" (click)="scrollToLeft(this)"><i
+          class="fas fa-angle-left fs-7"></i></div>
+    </div>
+    <div class="rightsidepanel hidesb">
+      <div class="panelbtn border-1 box-shadow-sm px-1 py-2" (click)="scrollToRight(this)"><i
+          class="fas fa-angle-right fs-7"></i></div>
+    </div>
+    <ng-container *ngFor="let tab of data || []; let i = index">
+      <input type="radio" name="tabstrip" [id]="'tabstrip'+i" [checked]="value===tab.id?'checked':undefined">
+      <label for="{{'tabstrip'+i}}" (click)="value=tab.id" (dblclick)="selectTab($event,tab)">
+        <span>{{tab.text}}</span>
+        <span class="tabstripmark" *ngIf="!tab.disabled" (click)="unselectTab($event,tab)"></span>
+      </label>
+    </ng-container>
+  </div>
+
+  <div class="tabsbody" [ngStyle]="{'border-top-left-radius': !seltab?'0':'8px'}">
+    <ng-content></ng-content>
+  </div>
+</div>

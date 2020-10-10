@@ -1,0 +1,81 @@
+<form>
+    <header classes="toptitle">
+        <h3>Close-out hodnotenie</h3>
+    </header>
+
+    <div classes="topbox mb-3">
+        <div>
+            <div classes="topboxfld col-12 col-lg-4 pt-2">
+                <span>Zamestnanec:</span>
+                <b>{{data?.evaluated?.personFN}}</b>
+            </div>
+            <div classes="topboxfld col-12 col-lg-8">
+                <div class="d-inline-flex mt-2">Názov hodnotenia:</div>
+                <div class="flex-fill">
+                    <input *ngIf="!data.published" type="text" autocomplete="off" class="form-control bg-light" [(ngModel)]="data.name"
+                        name="name">
+                    <div *ngIf="data.published" classes="htext">{{data.name}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fs-5 pb-3 text-black-50">
+        Kritériá nedefinujú samotný úspech projektu splnenie jeho cieľov z pohľadu stackholderov.
+        ich dodržiavanie aktívne pomôžu ciele projektu dosiahnuť.
+        Každé kritérium má byť hodnotené stanovením úrovne na stupnici 1-5.
+        <a href="javascript:void(0)" (click)="showInstructions()" class="font-weight-bold text-secondary">Pozri návod na
+            hodnotenie</a>
+    </div>
+
+
+    <header classes="sectionpanel">
+        <h3>Hodnotenie zamestnanca team-leadrom</h3>
+    </header>
+
+    <div class="row">
+        <div classes="col-12 col-lg-6 mb-4" *ngFor="let item of data?.themes || []; let i = index">
+            <div
+                classes="bg-white p-3 border-radius-md box-shadow-sm clearfix h-100 d-flex flex-column position-relative">
+
+                <formsli classes="col12 pt-2 pb-0" [min]="0" [max]="5" [step]="1" [runnerX]="'-100px'" [disabled]="data.published"
+                    [runnerY]="'-30px'" [runnerUnit]="''" [(ngModel)]="item.level" name="level{{i}}">
+                    <div class="slider-primary">
+                        <div classes="exslider col12 px-0">
+                            <div class="mark" style="left: 20%;"></div>
+                            <div class="mark" style="left: 40%;"></div>
+                            <div class="mark" style="left: 60%;"></div>
+                            <div class="mark" style="left: 80%;"></div>
+                            <div class="font-weight-bold fs-5 mx-3 mt-3 mb-1 text-primary">{{item.name}}</div>
+                            <div class="fs-5 mx-3 text-justify">{{item.level}} {{item.desc}}</div>
+                        </div>
+                    </div>
+                </formsli>
+            </div>
+        </div>
+    </div>
+
+    <header classes="sectionpanel mt-3">
+        <h3>Slovné zhodnotenie zamestnanca</h3>
+    </header>
+    <div class="row">
+        <div class="col-12">
+            <div classes="themebox">
+                <h3></h3>
+                <div>
+                    <textarea *ngIf="!data.published" classes="theme fs-6" rows="3" [(ngModel)]="data.desc" name="desc"></textarea>
+                    <div *ngIf="data.published" classes="text">{{data.desc}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<div classes="footerpanel">
+    <a href="#" preventDefault (click)="goToLastPath()" classes="footerbutton"><i
+        class="fas fa-arrow-left"></i>&nbsp;Návrat</a>
+
+    <a href="#" preventDefault (click)="saveData(true)" *ngIf="!data.published" classes="footerbutton"><i
+            class="icon icon-publish fs-7"></i>&nbsp;Publikovať</a>
+
+    <a href="#" preventDefault (click)="saveData()" *ngIf="!data.published" classes="footerbutton"><i class="far fa-file"></i>&nbsp;Ulož
+        hodnotenie</a>
+</div>

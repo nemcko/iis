@@ -1,0 +1,104 @@
+<div class="row">
+  <div class="col-12 col-md-10 col-lg-8 mx-auto">
+    <section class="s-events">
+      <header class="clearfix mb-5">
+        <h3 class="fs-7 font-weight-bold d-inline-block mr-6">Detail žiadosti o príspevok na rekreáciu -
+          {{voucherRequest.author}} (nárok na {{voucherContribution}} EUR)</h3>
+      </header>
+
+      <a routerLink="/holiday-voucher/vouchers"
+        class="btn btn-secondary text-white text-uppercase fs-5 font-weight-bold px-4 px-md-6 mb-3 mb-md-0 back">Späť na
+        prehľad</a>
+
+      <div class="d-block bg-white p-6 border-radius-md box-shadow-sm mt-0 position-relative mb-6">
+        <div class="row align-items-center">
+          <div class="col-12 col-md fs-7">
+            Stav žiadosti:
+            <!-- nazov stavu s farebnym odlisenim -->
+            <span
+              [class]="statusColorList[voucherRequest.status] + ' font-weight-bold text-uppercase'">{{statusListDesc[voucherRequest.status]}}</span>&nbsp;
+            <!-- ak je to vratene - odkazeme na dovod zamietnutia -->
+            <span *ngIf="voucherRequest?.status == statusList.RETURNED" class="text-gray fs-6">(pozri dôvod vrátenia
+              a prepracuj žiadosť)</span>
+            <span *ngIf="voucherRequest?.status == statusList.DECLINED" class="text-gray fs-6">(pozri dôvod zamietnutia
+              žiadosti)</span>
+          </div>
+          <!-- zobrazenie tlacidla na pracu so ziadostou - zamietnuta|prepracuj, koncept|uprav, -->
+          <div class="col-12 col-md-auto fs-7 mt-3 mt-md-0 preloader-on">
+            <app-loader-block key="wf_voucher_loader"></app-loader-block>
+            <!-- <div *ngIf="wfActions?.length > 0"> -->
+                <div>
+              <!-- UPRAVIT -->
+              <a *ngIf="wfActions.includes(voucherRequestWFActions.EDIT)"
+                [routerLink]="'/holiday-voucher/voucher-edit/' + voucherRequest.id"
+                class="btn btn-secondary text-white text-uppercase fs-5 font-weight-bold py-3 px-4 px-md-6 mr-2">Upraviť
+                žiadosť</a>
+
+              <!-- SCHVALIT -->
+              <a *ngIf="wfActions.includes(voucherRequestWFActions.ACCEPT) && voucherContributionAllowed > 0" href="#" preventDefault
+                (click)="acceptRequest()"
+                class="btn btn-primary text-white text-uppercase fs-5 font-weight-bold py-3 px-4 px-md-6 mr-2">Schváliť</a>
+
+              <!-- VYPLATIT -->
+              <a *ngIf="wfActions.includes(voucherRequestWFActions.PAY)" href="#" preventDefault (click)="payRequest()"
+                class="btn btn-tertiary text-white text-uppercase fs-5 font-weight-bold py-3 px-4 px-md-6 mr-2">Vyplatiť</a>
+
+              <!-- PREPRACOVAT -->
+              <a *ngIf="wfActions.includes(voucherRequestWFActions.RETURN)" href="#" preventDefault
+                (click)="returnRequest()"
+                class="btn btn-danger text-white text-uppercase fs-5 font-weight-bold py-3 px-4 px-md-6 mr-2">Prepracovať</a>
+
+              <!-- ZAMIETNUT -->
+              <a *ngIf="wfActions.includes(voucherRequestWFActions.RETURN)" href="#" preventDefault
+                (click)="declineRequest()"
+                class="btn btn-danger text-white text-uppercase fs-5 font-weight-bold py-3 px-4 px-md-6 mr-2">Zamietnuť</a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="d-block bg-white p-6 border-radius-md box-shadow-sm mt-6">
+        <div class="row">
+          <div class="col-12 fs-7">
+            <div>Dátum od-do: <span
+                class="font-weight-bold text-primary">{{voucherRequest.dateFromTo}}</span>&nbsp;<span
+                class="text-gray fs-6">({{voucherRequest.nights | noci}})</span></div>
+            <div class="mt-3">Názov rekreačného zariadenia: <span
+                class="font-weight-bold text-primary">{{voucherRequest.name}}</span></div>
+            <div class="mt-3">Lokalita: <span class="font-weight-bold text-primary">{{voucherRequest.location}}</span>
+            </div>
+            <div class="mt-3">Počet osôb: <span
+                class="font-weight-bold text-primary">{{voucherRequest.personsCount | osoby}}</span></div>
+            <div class="mt-3">Celková cena rekreácie: <span
+                class="font-weight-bold text-primary">{{voucherRequest.price}} EUR</span>&nbsp;<span
+                class="text-gray fs-6">(cena vrátane doplnkových služieb poskytovaných týmto zariadením)</span></div>
+            <div class="mt-3">Výška príspevku: <span
+                class="font-weight-bold text-primary">{{voucherRequest.contributionAmount}} EUR</span></div>
+
+            <hr class="my-5" />
+
+            <div *ngIf="voucherRequest?.attachments && voucherRequest?.attachments.length > 0" class="mt-3">Prílohy:
+              <span *ngFor="let attachment of voucherRequest.attachments; let i = index">
+                <span class="font-weight-bold" *ngIf="i > 0">, </span>
+                <a [href]="attachment" class="font-weight-bold text-secondary">{{attachment | filename}}</a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="d-block bg-white p-6 border-radius-md box-shadow-sm mt-6"
+        *ngIf="(voucherRequest.status==statusList.DECLINED || voucherRequest.status==statusList.RETURNED) && voucherRequest.reasonForReturn?.length > 0">
+        <div class="row">
+          <div class="col-12">
+            <div class="fs-7 mb-3">Dôvod vrátenia</div>
+            <div class="fs-6">
+              <p [innerHTML]="voucherRequest.reasonForReturn | crlf"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+[
+    {
+        "id": "FU123",
+        "text": "Prenos kódu do DB"
+    },
+    {
+        "id": "FU456",
+        "text": "Generovanie užívateľov v NAB"
+    },
+    {
+        "id": "FU789",
+        "text": "Nasadenie do pilotnej prevádzky"
+    },
+    {
+        "id": "FU147",
+        "text": "Odovzdanie aplikacie do ostrej prevádzky"
+    },
+    {
+        "id": "FU123456",
+        "text": "Modul riadenia projektov - backendova knižnica"
+    }
+]

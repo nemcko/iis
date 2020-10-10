@@ -1,0 +1,346 @@
+<article>
+	<div class="row">
+		<div class="col-12 col-md-auto fs-7 font-weight-bold">{{formTitle}}</div>
+		<div *ngIf="oznam.confirmReading" class="col-12 position-relative top-4 col-md-auto fs-6">Počet otvorení
+			oznamu: <span class="font-weight-medium text-primary">{{oznam?.numberOpen}}</span></div>
+		<div *ngIf="oznam.confirmReading" class="col-12 position-relative top-4 col-md-auto fs-6">Počet
+			používateľov, ktorí otvorili oznam: <span class="font-weight-medium text-primary">{{oznam?.numberUsers}}</span>
+		</div>
+		<div class="col-12 position-relative top-4 col-md-auto fs-6" *ngIf="oznam?.created">Dátum publikácie: <span
+				class="font-weight-medium">{{oznam?.created}}</span></div>
+	</div>
+
+	<form name="oznamForm" #oznamForm="ngForm" (ngSubmit)="onSave(oznamForm.form.valid, 'save')">
+
+		<hr class="my-5" />
+
+		<div class="row mt-7">
+
+			<!-- ostatne udaje -->
+			<div class="col-12 col-lg-8">
+				<!-- nazov -->
+				<div class="form-group">
+					<label class="cursor-pointer w-100">
+						<span class="d-block fs-6 mb-2 ml-2" *ngIf="oznam.docType != documentTypes.QUESTION"><strong>Názov
+								príspevku</strong>
+							(max. 160 znakov)</span>
+						<span class="d-block fs-6 mb-2 ml-2" *ngIf="oznam.docType == documentTypes.QUESTION"><strong>Znenie
+								otázky</strong> (max.
+							160 znakov)</span>
+						<input [placeholder]="(oznam.docType == documentTypes.QUESTION) ? 'Znenie otázky':'Názov príspevku'"
+							class="form-control border-0 fs-6 box-shadow-sm py-4 px-6 h-auto" maxlength="160"
+							[(ngModel)]="oznam.title" name="title" #oznamTitle="ngModel" required minlength="5" autocomplete="off">
+						<div *ngIf="oznamTitle.invalid && (oznamTitle.dirty || oznamTitle.touched)"
+							class="alert alert-danger text-white">
+							<div *ngIf="oznamTitle['errors'].required">Názov je povinný údaj.</div>
+							<div *ngIf="oznamTitle['errors'].minlength">Názov musí mať aspoň 5 znakov.</div>
+						</div>
+					</label>
+				</div>
+
+				<!-- anotacia -->
+				<div class="form-group"
+					*ngIf="!(oznam.docType == documentTypes.QUESTION || oznam.docType == documentTypes.QUICK_ANNOUNCEMENT)">
+					<label class="cursor-pointer w-100">
+						<span class="d-block fs-6 mb-2 ml-2"><strong>Anotácia</strong> (krátky text výstižne
+							popisujúci oznam; max. 300 znakov)</span>
+						<textarea rows="1" placeholder="Krátky text popisujúci oznam"
+							class="form-control border-0 fs-6 box-shadow-sm lh-22 py-4 px-6" maxlength="300" data-autoresize
+							[(ngModel)]="oznam.description" name="description" #oznamDescription="ngModel" required minlength="5"
+							autocomplete="off">
+								</textarea>
+						<div *ngIf="oznamDescription.invalid && (oznamDescription.dirty || oznamDescription.touched)"
+							class="alert alert-danger text-white">
+							<div *ngIf="oznamDescription['errors'].required">Anotácia je povinný údaj.</div>
+							<div *ngIf="oznamDescription['errors'].minlength">Anotácia musí mať aspoň 5 znakov.
+							</div>
+						</div>
+					</label>
+				</div>
+
+				<!-- text prispevku - editor -->
+				<div class="form-group" [ngStyle]="{'visibility': (isAnnouncement) ? 'visible' : 'hidden' }">
+					<div class="w-100 e-editor">
+						<span class="d-block fs-6 mb-2 ml-2"><strong>Text príspevku</strong></span>
+						<editor [init]="editorParams" [(ngModel)]="oznam.content" name="oznamContent" #oznamContent="ngModel">
+						</editor>
+
+					</div>
+				</div>
+			</div>
+			<div class="col-12 col-lg-4">
+				<!-- AUTOR -->
+				<div class="form-group mb-6" ng-controller="SelectCtrl" *ngIf="isHR">
+					<span class="d-block fs-6 mb-2 ml-2"><strong>Autor</strong></span>
+
+					<!-- SELECTED AUTHOR -->
+					<select2 *ngIf="authorList" [data]="authorList" [value]="defaultAuthor.id" [cssImport]="true"
+						[options]="options" (valueChanged)="addAuthor($event)">
+					</select2>
+				</div>
+
+				<!-- DATUM ZVEREJNENIA -->
+				<div class="form-group">
+					<label class="cursor-pointer w-100">
+						<span class="d-block fs-6 mb-2 ml-2"><strong>Dátum a čas publikovania</strong></span>
+						<div class="row">
+							<div class="col-6">
+								<input class="form-control border-0 fs-6 box-shadow-sm py-4 px-6 h-auto" a2e-datetimepicker
+									[(ngModel)]="modelDatePublishing" [options]="datePickerOptions"
+									(blur)="dateChange(datePublishing.value)" name="datePublishing" autocomplete="off" #datePublishing>
+								<span class="input-group-addon d-none">
+									<span class="icon"></span>
+								</span>
+							</div>
+
+							<div class="col-6">
+								<div class="row m-0 p-0">
+									<div class="col-5 px-0">
+										<input class="form-control border-0 fs-6 box-shadow-sm py-4 px-3 h-auto" [(ngModel)]="modelHourPublishing"
+										min="0" max="23" type="number" #hourPublishing autocomplete="off" name="hourPublishing" (change)="timeChange($event)">
+									</div>
+									<span class="fs-6 col-auto px-2 my-auto">:</span>
+									<div class="col-5 px-0">
+										<input class="form-control border-0 fs-6 box-shadow-sm h-auto py-4 px-3" [(ngModel)]="modelMinutePublishing"
+										min="0" max="45" step="15" type="number" #minutePublishing autocomplete="off"
+										name="minutePublishing" (change)="timeChange($event)">
+									</div>
+								</div>
+							</div>
+
+						</div>
+
+					</label>
+
+				</div>
+
+				<!-- RECIPIENTS -->
+				<div class="form-group mb-6" ng-controller="SelectCtrl">
+					<span class="d-block fs-6 mb-2 ml-2"><strong>Príjemca</strong> (skupiny alebo
+						jednotlivci)</span>
+
+					<!-- RECIPIENT TYPE -->
+					<div class="row b-tabs mx-0 mb-1 text-center fs-5 font-weight-bold text-uppercase">
+						<!-- Utvary -->
+						<span *ngIf="currentCollectionType === recipientsCollectionTypes.UNITS"
+							class="col py-3 px-6 item active">{{recipientsCollectionTypeDesc[recipientsCollectionTypes.UNITS]}}</span>
+						<a *ngIf="currentCollectionType != recipientsCollectionTypes.UNITS" preventDefault
+							(click)="setCollectionType(recipientsCollectionTypes.UNITS)"
+							class="col py-3 px-6 item">{{recipientsCollectionTypeDesc[recipientsCollectionTypes.UNITS]}}</a>
+
+						<!-- Timy -->
+
+						<span *ngIf="currentCollectionType === recipientsCollectionTypes.TEAMS"
+							class="col py-3 px-6 item active">{{recipientsCollectionTypeDesc[recipientsCollectionTypes.TEAMS]}}</span>
+						<a *ngIf="currentCollectionType != recipientsCollectionTypes.TEAMS" preventDefault
+							(click)="setCollectionType(recipientsCollectionTypes.TEAMS)"
+							class="col py-3 px-6 item">{{recipientsCollectionTypeDesc[recipientsCollectionTypes.TEAMS]}}</a>
+
+						<!-- Funkcie -->
+
+						<span *ngIf="currentCollectionType === recipientsCollectionTypes.FUNCTIONS"
+							class="col py-3 px-6 item active">{{recipientsCollectionTypeDesc[recipientsCollectionTypes.FUNCTIONS]}}</span>
+						<a *ngIf="currentCollectionType != recipientsCollectionTypes.FUNCTIONS" preventDefault
+							(click)="setCollectionType(recipientsCollectionTypes.FUNCTIONS)"
+							class="col py-3 px-6 item">{{recipientsCollectionTypeDesc[recipientsCollectionTypes.FUNCTIONS]}}</a>
+
+					</div>
+
+					<!-- SELECTED RECIPIENTS -->
+					<div class="mb-1" *ngIf="oznam.recipients.length > 0">
+						<span class="tag-item" *ngFor="let recipient of oznam.recipients">{{recipient.text}} <a
+								class="remove-button" (click)="removeRecipient(recipient)">×</a></span>
+					</div>
+
+					<select2 [data]="currentCollection" [cssImport]="true" [options]="options"
+						(valueChanged)="addRecipient($event)">
+					</select2>
+
+				</div>
+
+				<div class="form-group" *ngIf="isAnnouncement">
+					<!-- odoslat notifikaciu -->
+					<div class="e-checkbox mb-4">
+						<label class="w-100 cursor-pointer">
+							<input type="checkbox" [(ngModel)]="oznam.sendNotification" name="sendNotification">
+							<span>Odoslať notifikáciu</span>
+						</label>
+					</div>
+					<!-- potvrdenie o precitani -->
+					<div class="e-checkbox mb-4">
+						<label class="w-100 cursor-pointer">
+							<input type="checkbox" [(ngModel)]="oznam.confirmReading" name="confirmReading">
+							<span>Obdržať potvrdenie o prečítaní</span>
+						</label>
+					</div>
+					<!-- chcem siroky obsah -->
+					<div class="e-checkbox mb-4">
+						<label class="w-100 cursor-pointer">
+							<input type="checkbox" [(ngModel)]="oznam.bigText" name="widePage">
+							<span>Zobraziť ako široký obsah</span>
+						</label>
+					</div>
+					<!-- otvorit prilohu automaticky -->
+					<div class="e-checkbox mb-6">
+						<label class="w-100 cursor-pointer">
+							<input type="checkbox" [(ngModel)]="oznam.openAttachment" name="openAttachment"
+								(change)="checkAttachment()">
+							<span>Automaticky otvoriť priložený objekt</span>
+						</label>
+					</div>
+
+					<!-- priloha -->
+					<span class="d-block fs-6 mb-2 ml-2"><strong>Priložený objekt</strong> (súbory,
+						maximálna veľkosť 10MB)</span>
+
+					<div *ngIf="oznam.attachmentUrl?.length > 0">
+						<span class="d-block fs-6 mb-2 ml-2" *ngFor="let attachment of oznam.attachmentUrl">
+							<a [href]="attachment" target="_blank" class="font-weight-bold text-secondary"
+								title="Zobraziť náhľad">{{attachment | filename}}</a>
+							<a class="font-weight-bold text-secondary text-right cursor-pointer"
+								(click)="removeAttachment(attachmentTypes.FILE, attachment)" title="Odstrániť prílohu"><i
+									class="icon icon-trash fs-8 align-middle position-relative bottom-2"></i></a>
+						</span>
+					</div>
+
+					<div class="bg-white box-shadow-sm p-3 border-radius-md">
+
+						<div class="dropzone d-flex align-items-center" [dropzone]="fileUploadConfig"
+							(error)="fileUploadError($event)" (success)="fileUploadSuccess($event)">
+							<div class="dz-message text-center w-100 font-weight-bold text-primary m-0">
+								<i class="icon icon-add-photo fs-8 mb-2 d-block text-black"></i>
+								Presuňte súbor priamo sem<br /> alebo <span class="text-secondary">kliknutím
+									nahrajte</span>.
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+				<hr *ngIf="isAnnouncement" />
+
+				<!-- zobbrazit v kalendari udalosti -->
+				<div class="form-group my-6" *ngIf="isAnnouncement">
+					<div class="e-checkbox">
+						<label class="w-100 cursor-pointer">
+							<input type="checkbox" [(ngModel)]="oznam.calendarShowCompany" name="calendarShowCompany">
+							<span>Je to udalosť, zobraziť v kalendári akcií a udalostí</span>
+						</label>
+					</div>
+				</div>
+
+				<!-- zaciatok udalosti -->
+				<div class="form-group" *ngIf="oznam.calendarShowCompany && isAnnouncement">
+					<label class="cursor-pointer w-100">
+						<span class="d-block fs-6 mb-2 ml-2"><strong>Začiatok udalosti</strong></span>
+						<input class="form-control border-0 fs-6 box-shadow-sm py-4 px-6 h-auto" a2e-datetimepicker
+							[(ngModel)]="modelCalendarFrom" [options]="datePickerOptionsFrom"
+							(blur)="dateFromChange(calendarFrom.value)" name="calendarFrom" autocomplete="off" #calendarFrom>
+						<span class="input-group-addon d-none">
+							<span class="icon"></span>
+						</span>
+					</label>
+				</div>
+
+				<!-- koniec udalosti -->
+				<div class="form-group" *ngIf="oznam.calendarShowCompany && isAnnouncement">
+					<label class="cursor-pointer w-100">
+						<span class="d-block fs-6 mb-2 ml-2"><strong>Koniec udalosti</strong></span>
+						<input class="form-control border-0 fs-6 box-shadow-sm py-4 px-6 h-auto" a2e-datetimepicker
+							[ngModel]="modelCalendarTo" [options]="datePickerOptionsTo" (blur)="dateToChange(calendarTo.value)"
+							name="calendarTo" autocomplete="off" #calendarTo>
+						<span class="input-group-addon d-none">
+							<span class="icon"></span>
+						</span>
+					</label>
+				</div>
+
+				<!-- nazov -->
+				<div class="form-group" *ngIf="oznam.calendarShowCompany && isAnnouncement">
+					<label class="cursor-pointer w-100">
+						<span class="d-block fs-6 mb-2 ml-2"><strong>Miesto konania</strong></span>
+						<input placeholder="" class="form-control border-0 fs-6 box-shadow-sm py-4 px-6 h-auto" maxlength="50"
+							[(ngModel)]="oznam.calendarPlace" name="calendarPlace" #oznamMiesto="ngModel" autocomplete="off">
+					</label>
+				</div>
+
+				<!-- zobrazit v osobnom kalendari -->
+				<div class="e-checkbox mb-4" *ngIf="oznam.calendarShowCompany && isAnnouncement">
+					<label class="w-100 cursor-pointer">
+						<input type="checkbox" [(ngModel)]="oznam.calendarShowPersonal" name="calendarShowPersonal">
+						<span>Zobraziť v osobnom kalendári</span>
+					</label>
+				</div>
+
+				<hr />
+
+				<!-- kategorie -->
+				<div class="form-group mt-6 e-tags-input" ng-controller="TagsCtrl">
+					<span class="d-block fs-6 mb-2 ml-2"><strong>Kategórie</strong> (tagy označujúce charakter
+						oznamu)</span>
+
+					<tag-input #category [(ngModel)]="oznam.category" name="category" [clearOnBlur]="true"
+						placeholder="zadajte kategóriu" [modelAsStrings]="true">
+						<tag-input-dropdown [autocompleteItems]="oznamyCategories" [minimumTextLength]="0"
+							[showDropdownIfEmpty]="true">
+						</tag-input-dropdown>
+					</tag-input>
+
+				</div>
+
+				<!-- titulny obrazok -->
+				<div class="form-group mt-6">
+					<span class="d-block fs-6 mb-2 ml-2"><strong>Hlavný obrázok</strong> (obrázok, ktorý sa
+						zobrazí v hlavičke,
+						používajte rozmery 1000x480 px, maximálna veľkosť 2MB)</span>
+
+					<span class="d-block fs-6 mb-2 ml-2" *ngIf="oznam.imgUrl?.length > 0">
+						<a [href]="oznam.imgUrl" target="_blank" class="font-weight-bold text-secondary"
+							title="Zobraziť náhľad">{{oznam.imgUrl | filename}}</a>
+						<a class="font-weight-bold text-secondary text-right cursor-pointer"
+							(click)="removeAttachment(attachmentTypes.IMAGE)" title="Odstrániť prílohu"><i
+								class="icon icon-trash fs-8 align-middle position-relative bottom-2"></i></a>
+					</span>
+
+					<div class="bg-white box-shadow-sm p-3 border-radius-md">
+
+						<div class="dropzone d-flex align-items-center" [dropzone]="imageUploadConfig"
+							(error)="imageUploadError($event)" (success)="imageUploadSuccess($event)">
+							<div class="dz-message text-center w-100 font-weight-bold text-primary m-0">
+								<i class="icon icon-add-photo fs-8 mb-2 d-block text-black"></i>
+								Presuňte súbor priamo sem<br /> alebo <span class="text-secondary">kliknutím
+									nahrajte</span>.
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+</article>
+
+<!-- akcie k oznamu -->
+<div class="b-article-detail-footer px-7 py-3 py-md-5">
+	<a preventDefault (click)="onSave(oznamForm.form.valid, 'publish')"
+		class="cursor-pointer font-weight-bold text-uppercase text-secondary"
+		*ngIf="oznam.privileges?.includes('CAN_PUBLISH') && oznam.draft">
+		<i class="icon icon-publish fs-8 align-middle position-relative bottom-2"></i> Publikovať
+	</a>
+	<span class="ml-2 mr-1 d-inline-block text-gray position-relative bottom-1"
+		*ngIf="oznam.privileges?.includes('CAN_PUBLISH') && oznam.draft">|</span>
+	<a preventDefault (click)="onSave(oznamForm.form.valid, 'save')"
+		class="cursor-pointer font-weight-bold text-uppercase text-secondary"
+		*ngIf="oznam.privileges?.includes('CAN_EDIT')">
+		<i class="icon icon-save fs-8 align-middle position-relative bottom-2"></i> <span
+			[innerText]="(oznam.draft) ? 'Uložiť koncept' : 'Uložiť' "></span>
+	</a>
+	<span class="ml-2 mr-1 d-inline-block text-gray position-relative bottom-1"
+		*ngIf="oznam.privileges?.includes('CAN_EDIT')">|</span>
+	<a preventDefault class="cursor-pointer font-weight-bold text-uppercase text-secondary" (click)="preview()">
+		<i class="icon icon-nahlad fs-8 align-middle position-relative bottom-2"></i> Náhľad
+	</a>
+	<span class="ml-2 mr-1 d-inline-block text-gray position-relative bottom-1">|</span>
+	<a preventDefault class="cursor-pointer font-weight-bold text-uppercase text-secondary" (click)="resetChanges()">
+		<i class="icon icon-trash fs-8 align-middle position-relative bottom-2"></i> Zahodiť zmeny
+	</a>
+</div>

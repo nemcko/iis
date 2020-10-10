@@ -1,0 +1,90 @@
+{
+    "id": "RT0123456",
+    "dateMeeting": "13.5.2019",
+    "ratedUser": "_cn=Maruska Tomas/ou=PosAm Bratislava",
+    "ratedUserFN": "Maruška Tomáš",
+    "ratedUserPositionKey": "POS123457",
+    "ratedUserPositionDesc": "Programátor UI",
+    "status": "DRAFT",
+    "competencesPersonal": null,
+    "competencesProfessional": [
+        {
+            "category": "HTML/Javascript/Typescript",
+            "competenceList": [
+                {
+                    "id": "B0016",
+                    "title": "JDBC",
+                    "type": "PROFESSIONAL",
+                    "rating": "1"
+                },
+                {
+                    "id": "B0017",
+                    "title": "IIFE",
+                    "type": "PROFESSIONAL",
+                    "rating": "2"
+                },
+                {
+                    "id": "B0018",
+                    "title": "používanie tried",
+                    "type": "PROFESSIONAL",
+                    "rating": "3"
+                },
+                {
+                    "id": "B0019",
+                    "title": "používanie interfaces",
+                    "type": "PROFESSIONAL",
+                    "rating": "1"
+                },
+                {
+                    "id": "B0020",
+                    "title": "stratégie vytvárania objektov",
+                    "type": "PROFESSIONAL",
+                    "rating": "2"
+                },
+                {
+                    "id": "B0021",
+                    "title": "OO orientácia (encapsul., polymor.,overload/override, ...)",
+                    "type": "PROFESSIONAL",
+                    "rating": "3"
+                },
+                {
+                    "id": "B0022",
+                    "title": "prototypova dedičnosť",
+                    "type": "PROFESSIONAL",
+                    "rating": "1"
+                },
+                {
+                    "id": "B0023",
+                    "title": "používanie npm",
+                    "type": "PROFESSIONAL",
+                    "rating": "2"
+                },
+                {
+                    "id": "B0024",
+                    "title": "nodejs",
+                    "type": "PROFESSIONAL",
+                    "rating": "3"
+                },
+                {
+                    "id": "B0025",
+                    "title": "unit testing",
+                    "type": "PROFESSIONAL",
+                    "rating": "2"
+                }
+            ]
+        }
+    ],
+    "tasks": [
+        
+    ],
+    "yearSummary": "Vivamus tincidunt placerat ultrices. Curabitur vel magna est. Curabitur hendrerit diam non nibh auctor, non condimentum lorem rhoncus. Maecenas tincidunt dui a justo dignissim dignissim quis vehicula odio. Vivamus dignissim, est sed gravida mattis, massa dolor mollis diam, in viverra mi tellus id ante. Nulla eget mauris feugiat, eleifend risus a, efficitur est. Vivamus pretium, purus quis euismod dapibus, mauris arcu imperdiet neque, vitae pretium metus nisl sit amet nunc. Maecenas aliquam congue ullamcorper. Aliquam pharetra scelerisque sapien id ullamcorper. Duis a nibh metus. Vivamus blandit metus ac orci consequat, vel lacinia justo imperdiet. Quisque a nulla dignissim, placerat tellus vel, ullamcorper nisi.",
+    "nextDevelopment": "Donec purus felis, accumsan congue nisi ut, tempus fringilla turpis. Curabitur sed eros massa. Ut eu tristique magna. Sed sed justo nisi. Sed a felis lacinia, congue augue nec, iaculis odio. Nullam eros urna, gravida nec viverra et, semper sit amet lectus. Quisque sagittis lectus non ante ultricies, ut mollis nisi pretium. Ut dui risus, tempus egestas semper ac, vulputate sit amet velit. Phasellus eget magna a mi porttitor rhoncus ac sed turpis. Suspendisse cursus luctus lectus, at accumsan justo rhoncus sed. Integer congue nisi sit amet velit tincidunt, in placerat lectus semper. Maecenas porttitor aliquam massa. Ut faucibus nulla at velit mattis egestas. Fusce feugiat velit arcu, id pharetra nibh congue aliquet. Curabitur non nulla velit.",
+    "recommendation": "Nullam eros urna, gravida nec viverra et, semper sit amet lectus. Quisque sagittis lectus non ante ultricies, ut mollis nisi pretium. Ut dui risus, tempus egestas semper ac, vulputate sit amet velit. Phasellus eget magna a mi porttitor rhoncus ac sed turpis. Suspendisse cursus luctus lectus, at accumsan justo rhoncus sed. Integer congue nisi sit amet velit tincidunt, in placerat lectus semper.",
+    "finalEvaluationUser": "Nunc congue ipsum orci, ac fermentum augue vulputate a. Mauris et orci lobortis, fringilla diam ac, scelerisque ligula. Nulla vestibulum laoreet enim, non tincidunt augue hendrerit mollis. Sed vitae lacus orci. Etiam eu lectus tellus. Pellentesque augue ante, ultricies vel tempus id, accumsan ut justo. Morbi bibendum nibh non nibh faucibus vulputate. Fusce in eros at massa posuere faucibus sed vel libero.",
+    "finalEvaluationManager": "Maecenas non odio ut mi ultrices blandit at eget eros. Etiam iaculis fermentum nisl, porta tempus sem varius non. Nullam a auctor libero. Vivamus vestibulum, nisl et porta tempus, nisi libero sodales libero, vel gravida nisi justo nec nisi. Suspendisse pretium ligula sed elit venenatis imperdiet. Aenean laoreet id lorem sit amet sollicitudin. Nunc nisi diam, ornare id urna non, tempor tincidunt felis. Morbi diam metus, sollicitudin quis dictum et, commodo in diam. Curabitur quis ligula vitae odio egestas tincidunt. Phasellus imperdiet maximus aliquet. Integer elit elit, finibus at felis nec, sodales tincidunt lacus.",
+    "notesUser": "Donec vitae massa tempor urna aliquam bibendum in eget odio. Praesent eget est pellentesque, laoreet neque id, porttitor ligula. Nullam euismod venenatis ipsum semper congue. Aenean a orci laoreet, aliquam urna et, aliquet odio. Praesent efficitur in leo nec egestas. Donec facilisis et sapien ut consequat. Nunc at euismod nunc, vitae porttitor nisi. Nullam tincidunt semper nibh. Donec non ligula vel nibh tempor suscipit. In feugiat hendrerit ante ut porta. Sed sed tortor condimentum, dapibus nisi dapibus, tincidunt lorem.",
+    "notesManager": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec mollis purus, a volutpat tortor. Vestibulum consectetur ex purus. Integer laoreet sollicitudin nibh hendrerit suscipit. Mauris placerat massa ligula, eget pulvinar neque egestas sed. Integer sit amet neque vitae libero dapibus vestibulum. In massa quam, iaculis id diam pellentesque, fringilla auctor erat. Aenean nisl odio, gravida id lectus ac, convallis pellentesque odio. Ut congue tellus non dolor pretium pharetra.",
+    "managerFN": "Fleischman Rony",
+    "managerKey": "POS945690924485",
+    "manager": "cn=Fleischman Rony/ou=PosAm Bratislava"
+}

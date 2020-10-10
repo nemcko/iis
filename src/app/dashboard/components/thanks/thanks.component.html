@@ -1,0 +1,81 @@
+<!-- SEARCH BOX -->
+<form class="mb-7 position-relative">
+  <button type="submit" class="submit-left">
+    <i class="icon icon-search"></i>
+  </button>
+  <input type="text" autocomplete="off" id="search" name="search" placeholder="Hľadaj v poďakovaniach"
+    class="form-control fs-6 font-weight-bold box-shadow-lg border-0 py-5 px-6 h-auto" [(ngModel)]="search"
+    (keyup.enter)="loadRecords()">
+</form>
+
+<div class="row">
+  <div class="col-12 col-md-10 col-lg-8 mx-auto">
+    <section class="s-events">
+      <!-- TITLE -->
+      <header class="clearfix mb-5">
+        <h3 class="fs-7 font-weight-bold d-inline-block mr-6">Všetky poďakovania</h3>
+      </header>
+
+      <a routerLink="/dashboard"
+        class="btn btn-secondary text-white text-uppercase fs-5 font-weight-bold px-4 px-md-6 mb-3 mb-md-0 back">Späť na
+        prehľad</a>
+
+      <!-- EVENT ITEMS -->
+      <div class="b-tree-line">
+
+        <div class="item d-block bg-white py-3 px-4 border-radius-md box-shadow-sm mt-0 ml-8">
+          <div class="row">
+            <div class="col-12">
+              <form class="position-relative" #thanksForm="ngForm" name="thanksForm">
+                <div class="submit-right right-24 text-center">
+                  <button type="submit" class="text-secondary cursor-pointer border-0 bg-none p-0"
+                    (click)="setThanks(thanksForm)">
+                    <i class="icon icon-mail-send"></i>
+                  </button>
+                </div>
+                <textarea rows="1" placeholder="Tu môžeš poďakovať" class="form-control fs-5 box-shadow-sm lh-22 p-6"
+                  data-autoresize #thanks [ngModel]="thanks.value" name="thanks"></textarea>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- EVENT ITEM -->
+        <div *ngFor="let thanks of thanksList; let i = index"
+          class="item d-block bg-white py-3 px-4 border-radius-md box-shadow-sm mt-6 ml-8">
+          <!-- READ BLOK -->
+          <div class="row" *ngIf="editableItem != 'edit-' + thanks.id">
+            <div class="col-12">
+              <span class="d-block text-primary font-weight-bold mb-1">{{thanks.created}}, {{thanks.authorFN}}
+                <span *ngIf="thanks.author == user.userName">
+                  <span class="d-inline-block mx-1 text-gray">|</span><a class="cursor-pointer text-secondary"
+                  preventDefault (click)="editableItem = 'edit-' + thanks.id">upraviť</a>
+                  <span class="d-inline-block mx-1 text-gray">|</span><a class="cursor-pointer text-secondary"
+                  preventDefault (click)="removeThanks(thanks.id)">odstrániť</a>
+                </span>
+              </span>
+              <span class="d-block fs-6 text-black">{{thanks.title | urlDecode}}</span>
+            </div>
+          </div>
+
+          <!-- EDIT BLOK -->
+          <div class="row" *ngIf="editableItem == 'edit-' + thanks.id">
+            <div class="col-12">
+                <form class="position-relative" #editThanksForm="ngForm" name="editThanksForm">
+                    <div class="submit-right right-24 text-center">
+                      <button type="submit" class="text-secondary cursor-pointer border-0 bg-none p-0"
+                        (click)="updateThanks(editThanksForm, thanks.id)">
+                        <i class="icon icon-mail-send"></i>
+                      </button>
+                    </div>
+                    <textarea rows="2" placeholder="Tu môžeš poďakovať" class="form-control fs-5 box-shadow-sm lh-22 p-6"
+                      data-autoresize #editThanks [ngModel]="thanks.title | urlDecode" name="editThanks"></textarea>
+                  </form>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </div>
+</div>

@@ -1,0 +1,66 @@
+{
+  "id": "CP00000C8A",
+  "dateReview":"16.6.2019",
+  "functionalUnitId":"FU123456",
+  "functionalUnitName":"Modul riadenia projektov - backendova knižnica",
+  "projectId": "PNSOV-B9RDFN",
+  "projectName": "JSROT Realizácia",
+  "customerId": "ORG3589631756421991",
+  "customerName": "ČEZ, a.s.",
+  "opId": "PR18CEZ-0003",
+  "opName": "JEDNOTNÝ SYSTÉM ŘÍZENÍ OSÁDEK V TERÉNU",
+  "ratedUser": {
+    "personUN": "cn=Maruska Tomas/ou=PosAm Bratislava",
+    "personFN": "Maruška Tomáš",
+    "personId": "87"
+  },
+  "teamLeader": {
+    "personUN" : "cn=Fleischman Rony/ou=PosAm Bratislava",
+    "personFN": "Fleischman Rony",
+    "personId": "247"
+  },
+  "themes": [
+    {
+      "title": "Dodržiavanie best practicies (napr. dĺžky tried a metód,  použitie rozhodovacích blokov, ...)",
+      "rating": 50,
+      "description": "Donec vitae massa tempor urna aliquam bibendum in eget odio. Praesent eget est pellentesque, laoreet neque id, porttitor ligula. Nullam euismod venenatis ipsum semper congue. Aenean a orci laoreet, aliquam urna et, aliquet odio. Praesent efficitur in leo nec egestas. Donec facilisis et sapien ut consequat. Nunc at euismod nunc, vitae porttitor nisi. Nullam tincidunt semper nibh. Donec non ligula vel nibh tempor suscipit. In feugiat hendrerit ante ut porta. Sed sed tortor condimentum, dapibus nisi dapibus, tincidunt lorem."
+    },
+    {
+      "title": "SOLID princíp",
+      "rating": 80,
+      "description": "Maecenas non odio ut mi ultrices blandit at eget eros. Etiam iaculis fermentum nisl, porta tempus sem varius non. Nullam a auctor libero. Vivamus vestibulum, nisl et porta tempus, nisi libero sodales libero, vel gravida nisi justo nec nisi. Suspendisse pretium ligula sed elit venenatis imperdiet. Aenean laoreet id lorem sit amet sollicitudin. Nunc nisi diam, ornare id urna non, tempor tincidunt felis. Morbi diam metus, sollicitudin quis dictum et, commodo in diam. Curabitur quis ligula vitae odio egestas tincidunt. Phasellus imperdiet maximus aliquet. Integer elit elit, finibus at felis nec, sodales tincidunt lacus."
+    },
+    {
+      "title": "Self-documenting kód/Čitateľnosť kódu (napr. Naming ...)",
+      "rating": 90,
+      "description": "Nunc congue ipsum orci, ac fermentum augue vulputate a. Mauris et orci lobortis, fringilla diam ac, scelerisque ligula. Nulla vestibulum laoreet enim, non tincidunt augue hendrerit mollis. Sed vitae lacus orci. Etiam eu lectus tellus. Pellentesque augue ante, ultricies vel tempus id, accumsan ut justo. Morbi bibendum nibh non nibh faucibus vulputate. Fusce in eros at massa posuere faucibus sed vel libero."
+    },
+    {
+      "title": "Oddelenie domény od infraštruktúrnej a aplikačnej vrstvy",
+      "rating": 30,
+      "description": "Nullam eros urna, gravida nec viverra et, semper sit amet lectus. Quisque sagittis lectus non ante ultricies, ut mollis nisi pretium. Ut dui risus, tempus egestas semper ac, vulputate sit amet velit. Phasellus eget magna a mi porttitor rhoncus ac sed turpis. Suspendisse cursus luctus lectus, at accumsan justo rhoncus sed. Integer congue nisi sit amet velit tincidunt, in placerat lectus semper."
+    },
+    {
+      "title": "Logovanie a error handling (Či logujeme dôležité veci)",
+      "rating": 30,
+      "description": "Nullam eros urna, gravida nec viverra et, semper sit amet lectus. Quisque sagittis lectus non ante ultricies, ut mollis nisi pretium. Ut dui risus, tempus egestas semper ac, vulputate sit amet velit. Phasellus eget magna a mi porttitor rhoncus ac sed turpis. Suspendisse cursus luctus lectus, at accumsan justo rhoncus sed. Integer congue nisi sit amet velit tincidunt, in placerat lectus semper."
+    },
+    {
+      "title": "Zmysluplné Unit testy (Nie len pokrytie)",
+      "rating": 30,
+      "description": "Nullam eros urna, gravida nec viverra et, semper sit amet lectus. Quisque sagittis lectus non ante ultricies, ut mollis nisi pretium. Ut dui risus, tempus egestas semper ac, vulputate sit amet velit. Phasellus eget magna a mi porttitor rhoncus ac sed turpis. Suspendisse cursus luctus lectus, at accumsan justo rhoncus sed. Integer congue nisi sit amet velit tincidunt, in placerat lectus semper."
+    },
+    {
+      "title": "Štruktúra/Packaging kódu",
+      "rating": 30,
+      "description": "Nullam eros urna, gravida nec viverra et, semper sit amet lectus. Quisque sagittis lectus non ante ultricies, ut mollis nisi pretium. Ut dui risus, tempus egestas semper ac, vulputate sit amet velit. Phasellus eget magna a mi porttitor rhoncus ac sed turpis. Suspendisse cursus luctus lectus, at accumsan justo rhoncus sed. Integer congue nisi sit amet velit tincidunt, in placerat lectus semper."
+    },
+    {
+      "title": "Iné",
+      "rating": 30,
+      "description": "Nullam eros urna, gravida nec viverra et, semper sit amet lectus. Quisque sagittis lectus non ante ultricies, ut mollis nisi pretium. Ut dui risus, tempus egestas semper ac, vulputate sit amet velit. Phasellus eget magna a mi porttitor rhoncus ac sed turpis. Suspendisse cursus luctus lectus, at accumsan justo rhoncus sed. Integer congue nisi sit amet velit tincidunt, in placerat lectus semper."
+    }
+  ],
+  "title": "Ako sme to robili",
+  "status": "DRAFT"
+}

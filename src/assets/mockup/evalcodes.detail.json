@@ -1,0 +1,139 @@
+{
+  "review": {
+    "id": "RC00000D4A",
+    "evalDate": "15.3.2019",
+    "evalName": "JEDNOTNÝ SYSTÉM ŘÍZENÍ OSÁDEK V TERÉNU",
+    "project": "JSROT Realizácia",
+    "projectId": "PNSOV-B9RDFN",
+    "customer": "ČEZ, a.s.",
+    "customerId": "ORG3589631756421991",
+    "createdDate": "16.6.2019",
+    "finishDate": "16.6.2020",
+    "projMngr1st": {
+      "personUN": "cn=Fleischman Rony/ou=PosAm Bratislava",
+      "personFN": "Fleischman Rony",
+      "personId": "247"
+    },
+    "projMngr2nd": null,
+    "keywords": "JSROT,1st",
+    "teamLeaders": [
+      {
+        "personUN": "cn=Fleischman Rony/ou=PosAm Bratislava",
+        "personFN": "Fleischman Rony",
+        "personId": "247"
+      }
+    ],
+    "items": [
+      {
+        "theme": {
+          "code": "CR0001",
+          "type": "CR",
+          "usrgrps": [
+            "FNC911056245716"
+          ],
+          "title": "Dodržiavanie best practicies (napr. dĺžky tried a metód,  použitie rozhodovacích blokov, ...)",
+          "active": false,
+          "desc": "Donec vitae massa tempor urna aliquam bibendum in eget odio. Praesent eget est pellentesque, laoreet neque id, porttitor ligula. Nullam euismod venenatis ipsum semper congue. Aenean a orci laoreet, aliquam urna et, aliquet odio. Praesent efficitur in leo nec egestas. Donec facilisis et sapien ut consequat. Nunc at euismod nunc, vitae porttitor nisi. Nullam tincidunt semper nibh. Donec non ligula vel nibh tempor suscipit. In feugiat hendrerit ante ut porta. Sed sed tortor condimentum, dapibus nisi dapibus, tincidunt lorem.",
+          "notice": "",
+          "rating": 0
+        },
+        "personnel": {
+          "249": {
+            "personUN": "cn=Gasparik Michal/ou=PosAm Bratislava",
+            "personFN": "Gašparík Michal",
+            "personId": "249"
+          },
+          "87": {
+            "personUN": "cn=Maruska Tomas/ou=PosAm Bratislava",
+            "personFN": "Maruška Tomáš",
+            "personId": "87"
+          }
+        }
+      }
+    ],
+    "summary": "",
+    "status": "DRAFT"
+  },
+  "teamLeaders": [
+    {
+      "text": "Driensky Martin",
+      "id": "297"
+    },
+    {
+      "text": "Šteffel Peter",
+      "id": "654"
+    }
+  ],
+  "access": {
+    "41": {
+      "user": {
+        "personFN": "Jašek Zdeno",
+        "personId": "41"
+      },
+      "acc": {
+        "read": false,
+        "full": true
+      }
+    },
+    "87": {
+      "user": {
+        "personFN": "Maruška Tomáš",
+        "personId": "87"
+      },
+      "acc": {
+        "read": true,
+        "full": false
+      }
+    },
+    "230": {
+      "user": {
+        "personFN": "Driensky Martin",
+        "personId": "230"
+      },
+      "acc": {
+        "read": true,
+        "full": false
+      }
+    },
+    "247": {
+      "user": {
+        "personFN": "Fleischman Rony",
+        "personId": "247"
+      },
+      "acc": {
+        "read": false,
+        "full": true
+      }
+    },
+    "248": {
+      "user": {
+        "personFN": "Nemčko Miloš",
+        "personId": "248"
+      },
+      "acc": {
+        "read": true,
+        "full": false
+      }
+    },
+    "249": {
+      "user": {
+        "personFN": "Gašparík Michal",
+        "personId": "249"
+      },
+      "acc": {
+        "read": true,
+        "full": false
+      }
+    },
+    "428": {
+      "user": {
+        "personFN": "Šteffel Peter",
+        "personId": "428"
+      },
+      "acc": {
+        "read": true,
+        "full": false
+      }
+    }
+  }
+}

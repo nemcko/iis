@@ -1,0 +1,42 @@
+[
+    {
+        "personUN": "cn=Maruska Tomas/ou=PosAm Bratislava",
+        "personFN": "Maruška Tomáš",
+        "personId": "87"
+    },
+    {
+        "personUN": "cn=Fleischman Rony/ou=PosAm Bratislava",
+        "personFN": "Fleischman Rony",
+        "personId": "247"
+    },
+    {
+        "personUN": "cn=Driensky Martin/ou=PosAm Bratislava",
+        "personFN": "Driensky Martin",
+        "personId": "230"
+    },
+    {
+        "personUN": "cn=Steffel Peter/ou=PosAm Bratislava",
+        "personFN": "Šteffel Peter",
+        "personId": "428"
+    },
+    {
+        "personUN": "cn=Gasparik Michal/ou=PosAm Bratislava",
+        "personFN": "Gašparík Michal",
+        "personId": "249"
+    },
+    {
+        "personUN": "cn=Jasek Zdeno/ou=PosAm Bratislava",
+        "personFN": "Jašek Zdeno",
+        "personId": "41"
+    },
+    {
+        "personUN": "cn=Nemcko Milos/ou=PosAm Bratislava",
+        "personFN": "Nemčko Miloš",
+        "personId": "248"
+    },
+    {
+        "personUN": "cn=Belovic Dusan/ou=PosAm Bratislava",
+        "personFN": "Boledovič Dušan",
+        "personId": "24"
+    }
+]

@@ -1,0 +1,243 @@
+/* You can add global styles to this file, and also import other style files */
+/* @import './assets/styles/app.css';*/
+.ml-9 {
+  margin-left: 46px !important;
+}
+
+.text-list::before {
+  content: ", ";
+}
+.text-list:first-of-type::before {
+  content: "";
+}
+
+input[a2e-datetimepicker] {
+  max-height: 54px;
+}
+
+.striped > .row:nth-child(even) {
+  background: transparent;
+}
+
+.striped > .row:nth-child(odd) {
+  background: #eee;
+}
+
+.odd {
+  background: #eee;
+}
+
+.text-formated {
+  white-space: pre-line;
+}
+
+
+.dlgopen {
+  animation-name: dlgopen;
+  overflow-y: hidden;
+  animation-duration: 0.3s;
+}
+
+@keyframes dlgopen {
+  0%   {
+    top: -100%;
+    transition: all 0.3s ease-out;
+}
+  100% {
+    top: 0px;
+    transition: all 0.3s ease-out;
+}}
+
+
+.dlgclose {
+  animation-name: dlgclose;
+  overflow-y: hidden;
+  animation-duration: 0.3s;
+}
+
+@keyframes dlgclose {
+  0% {
+    opacity: 1;
+    top: 0px;
+    transition: all 0.2s linear;
+}
+100%   {
+  opacity: 0;
+  top: -100%;
+  transition: all 0.2s linear;
+}
+
+}
+
+.addonfld1, .addonfld2  {
+  position:absolute; 
+  top: 2.5em;
+  float: right; 
+  display: flex;
+  flex-direction: row; 
+  z-index: 200;
+}
+
+.addonfld1 {
+  left:calc(100% - 48px); 
+}
+
+.addonfld2 {
+  left:calc(100% - 82px); 
+  width: 64px;
+  display: flex; 
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.noctrlbox {
+  border-radius: 8px; 
+  border: 1px solid #a8a8a8 !important;
+}
+
+.robox, .rotext {
+  cursor: default !important;
+  border-radius: 8px; 
+  border: 0 !important;
+  background-color: #e9ecef !important;
+}
+.robox {
+  min-height: 54px;
+}
+
+.rotext {
+  min-height: 32px;
+}
+
+.ctrlbox {
+  border-radius: 8px; 
+  border: 1px solid #3b6997 !important;
+}
+
+input:not(:focus), textarea:not(:focus) {
+  border: 1px solid #a8a8a8 !important;
+}
+
+input:focus, textarea:focus {
+  border: 1px solid #3b6997 !important;
+}
+
+@font-face {
+  font-family: 'ok';
+  src:  url('/assets/fonts/ok.eot?3amh2g');
+  src:  url('/assets/fonts/ok.eot?3amh2g#iefix') format('embedded-opentype'),
+    url('/assets/fonts/ok.ttf?3amh2g') format('truetype'),
+    url('/assets/fonts/ok.woff?3amh2g') format('woff'),
+    url('/assets/fonts/ok.svg?3amh2g#ok') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+.noutline {
+  outline: none !important;
+}
+
+.icon-checkmark {
+  font-family: 'ok' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: 400 !important;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-checkmark:before {
+  content: "\ea10";
+}
+
+.exslider {
+  display: inline-block;
+  /* position: relative; */
+  top:-4px;
+  position:absolute;
+  height:0;
+  width:100%;
+  left:0px;
+} 
+
+.exslider .mark
+{
+  display: block;
+  position: absolute;
+  height: 0px;
+  padding: 0px;
+}
+
+.exslider .mark:before 
+{
+  content: '';
+  display: block;
+  position: absolute;
+  top:-10px;
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  width: 4px;
+  height: 8px;
+  background: #fff;
+}
+
+.levelslider {
+  position: relative;
+  top: 65px;
+  margin-left: 40px;
+  margin-right: 150px;
+}
+
+.evaline {
+  background-color: rgba(0, 0, 0, 0.10);  
+  height:1px;
+  margin-top: 12px; 
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-bottom: 12px; 
+}
+
+.topnav {
+  position: relative;
+  top: -18px;
+  left:-12px;
+}
+
+/* .topnav:first-child {
+  padding-left: 0px;
+  padding-right: 0px;
+} */
+
+  .multiselectsubitem {
+    margin-left: 26px;
+  }
+
+
+/* 
+#editor-container {
+  outline: none !important;
+  border-radius: 8px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.04), 0 4px 4px rgba(0, 0, 0, 0.08) !important;
+  border: 1px solid #a8a8a8 !important;
+  padding: 8px;
+  width: 100% !important;
+  min-height: 375px;
+  height: auto !important;
+}
+   */
+
+.ql-container {
+  font-size: 16px !important;
+}
+
+.userblock {
+  /* display: inline-block;   */
+  border-radius: 4px;
+  outline: none;
+  padding: 0 2px; 
+  font-size: 16px;
+}

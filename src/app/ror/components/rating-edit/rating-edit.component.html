@@ -1,0 +1,426 @@
+<article>
+  <div class="row">
+    <div class="col-12 fs-7 font-weight-bold">Ročný rozhovor</div>
+  </div>
+
+  <hr class="my-5" />
+
+  <form name="ratingForm" #ratingForm="ngForm">
+
+    <div *ngIf="isFormReady">
+
+    <!-- 1. HLAVICKA -->
+    <div class="row mt-7">
+      <div class="col-6">
+        <label class="w-100">
+          <span class="d-block fs-6 mb-2 ml-2"><strong>Hodnotí</strong></span>
+          <input class="form-control border-0 fs-6 box-shadow-sm py-4 px-4 h-auto" readonly
+            value="{{rating.managerFN}}">
+        </label>
+      </div>
+      <div class="col-3"></div>
+      <div class="col-3">
+        <label class="w-100">
+          <span class="d-block fs-6 mb-2 ml-2"><strong>Dátum stretnutia</strong></span>
+          <input placeholder="DD.MM.RRRR"
+            class="form-control border-0 fs-6 box-shadow-sm py-4 px-4 h-auto js-datetime-picker" a2e-datetimepicker
+            [(ngModel)]="modelDate" [options]="datePickerOptions" (blur)="dateChange(dateMeeting.value)"
+            name="dateMeeting" autocomplete="off" #dateMeeting [readonly]="!editableSections.includes(ratingFormSections.HEADER)">
+        </label>
+      </div>
+    </div>
+
+    <div class="row mt-7">
+      <div class="col-6">
+        <label class="w-100">
+          <span class="d-block fs-6 mb-2 ml-2"><strong>Hodnotený zamestnanec</strong></span>
+          <input class="form-control border-0 fs-6 box-shadow-sm py-4 px-4 h-auto" readonly
+            value="{{rating.ratedUserFN}}">
+          <!-- <select2 *ngIf="ratedUser && isManager" [data]="userList" [value]="ratedUser.id" [cssImport]="true"
+            [options]="options" (valueChanged)="changeUser($event)">
+          </select2>
+          <input *ngIf="!isManager" class="form-control border-0 fs-6 box-shadow-sm py-4 px-4 h-auto" type="text"
+            readonly [value]="rating.ratedUserFN"> -->
+        </label>
+      </div>
+      <div class="col-6">
+        <label class="w-100">
+          <span class="d-block fs-6 mb-2 ml-2"><strong>Pracovná pozícia</strong></span>
+          <select2 *ngIf="editableSections.includes(ratingFormSections.HEADER)" [data]="positionList" [value]="ratedUserPosition.id"
+            [cssImport]="true" [options]="options" (valueChanged)="changePosition($event)">
+          </select2>
+          <input *ngIf="!editableSections.includes(ratingFormSections.HEADER)" class="form-control border-0 fs-6 box-shadow-sm py-4 px-4 h-auto" type="text"
+            readonly [value]="rating.ratedUserPositionDesc">
+        </label>
+      </div>
+    </div>
+
+    <hr class="mt-7" />
+
+    <!-- 2. CIELE, ULOHY, PROJEKTY -->
+    <div class="row mt-5" *ngIf="rating.status != ratingStatusList.DRAFT">
+      <div class="col-12">
+        <span class="d-block fs-6 mb-2 ml-2">
+          <strong>Ciele na najbližší rok</strong>
+          <a class="ml-4 font-weight-bold text-secondary cursor-pointer" preventDefault (click)="addTask()" *ngIf="editableSections.includes(ratingFormSections.TASKS)">
+            <i class="icon icon-plus-circle fs-8 position-relative top-2"></i> Pridaj cieľ
+          </a>
+        </span>
+        <span class="d-block fs-6 mb-2 ml-2">
+          Odporúčame Ti definovať 4-5 cieľov na nadchádzajúci rok. Každý môže mať svoj vlastný termín v rámci celého
+          obdobia. Výstižne cieľ pomenuj a zároveň vlož text, ktorý ho jednoznačne popíše.
+        </span>
+      </div>
+    </div>
+
+    <div *ngIf="!rating?.tasks && rating.status != ratingStatusList.DRAFT"
+      class="row mt-3 ml-0 py-4 form-control text-center border-0 box-shadow-sm h-auto justify-content-center">
+      <strong class="fs-6 lh-22 py-4 d-block" style="height: 60px;">Na nadchádzajúce obdobie zatiaľ nemáš definované
+        nijaké ciele.</strong>
+      <a href="#" class="btn btn-white text-primary fs-6 font-weight-bold text-uppercase px-5" preventDefault
+        (click)="addTask()" *ngIf="editableSections.includes(ratingFormSections.TASKS)">Pridaj cieľ</a>
+    </div>
+
+    <!-- riadok cielov -->
+    <div *ngIf="rating?.tasks && rating.status != ratingStatusList.DRAFT">
+      <div *ngFor="let task of rating.tasks; let i = index"
+        [class]="(i == 0) ? 'row pt-0 pb-6 border-bottom' : 'row py-6 border-bottom'">
+        <div class="col-12">
+          <label class="w-100">
+            <span class="d-block fs-6 mb-2 ml-2"><strong>Názov cieľa</strong></span>
+            <input class="form-control border-0 fs-6 box-shadow-sm py-4 px-4 h-auto"
+              placeholder="Zadaj názov, ktorý najvýstižnejšie popisuje cieľ" [(ngModel)]="task.title"
+              name="taskTitle-{{i}}" autocomplete="off" [readonly]="!editableSections.includes(ratingFormSections.TASKS)">
+          </label>
+        </div>
+
+        <div class="col-12 mt-4">
+          <label class="w-100">
+            <span class="d-block fs-6 mb-2 ml-2"><strong>Detail cieľa</strong></span>
+            <textarea class="form-control border-0 fs-6 box-shadow-sm py-4 px-4 h-auto"
+              placeholder="Detailný popis práce, z ktorej vyplýva dosiahnutie cieľa..." [(ngModel)]="task.description"
+              name="taskDescription-{{i}}" autocomplete="off" rows="3" [readonly]="!editableSections.includes(ratingFormSections.TASKS)">
+                </textarea>
+          </label>
+        </div>
+
+        <div class="col-2 mt-4">
+          <!-- <div class="row">
+                  <div class="col-6"> -->
+          <label class="w-100">
+            <span class="d-block fs-6 mb-2 ml-2"><strong>Váha cieľa</strong></span>
+            <input class="form-control border-0 fs-6 box-shadow-sm py-4 px-4 h-auto" placeholder="%" type="number"
+              [(ngModel)]="task.weight" name="taskWeight-{{i}}" autocomplete="off" min="0" max="100" step="10"
+              (change)="checkMinMaxValue($event)" [readonly]="!editableSections.includes(ratingFormSections.TASKS)">
+          </label>
+          <!-- </div>
+  
+                  <div class="col-6">
+                    <input class="form-control border-0 fs-6 box-shadow-sm py-4 px-4 h-auto" placeholder="%" type="number"
+                      [(ngModel)]="task.rating" name="taskRating-{{i}}" autocomplete="off" min="0" max="100"
+                      (change)="checkMinMaxValue($event)">
+                  </div>
+                </div> -->
+
+        </div>
+
+        <div class="col-2 mt-4">
+          <label class="w-100">
+            <span class="d-block fs-6 mb-2 ml-2"><strong>Termín splnenia</strong></span>
+            <input placeholder="DD.MM.RRRR"
+              class="form-control border-0 fs-6 box-shadow-sm py-4 px-4 h-auto js-datetime-picker" a2e-datetimepicker
+              [ngModel]="task.deadline" (blur)="task.deadline = $event.target.value" [options]="datePickerOptions"
+              name="taskDeadline-{{i}}" autocomplete="off" [readonly]="!editableSections.includes(ratingFormSections.TASKS)">
+          </label>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- 3.a. KOMPETENCIE ODBORNE -->
+    <div class="row mt-7" *ngIf="rating?.competencesProfessional && rating.competencesProfessional.length > 0">
+      <div class="col-12">
+
+        <div class="row">
+          <div class="col-8">
+            <span class="d-block fs-6 ml-2"><strong>Kompetencie - Odborné</strong></span>
+            <span class="d-block fs-6 mb-2 ml-2"><strong>Popis</strong></span>
+          </div>
+
+          <div class="col-4">
+            <span class="d-block fs-6 mb-2 ml-2 mt-6"><strong>Hodnotenie</strong></span>
+          </div>
+        </div>
+
+        <!-- riadok kompetencii odborných -->
+        <div>
+          <div *ngFor="let area of rating.competencesProfessional">
+            <div class="row mt-2">
+              <div class="col-12">
+                <span class="d-block fs-6 mb-2 ml-2 text-primary"><strong>{{area.category}}</strong></span>
+              </div>
+            </div>
+            <div *ngFor="let item of area.competenceList; let i = index" [class]="(i === 0) ? 'row mt-0' : 'row mt-2'">
+              <div class="col-8">
+                <input class="form-control border-0 fs-6 box-shadow-sm py-4 px-4 h-auto" [value]="item.title" readonly>
+              </div>
+
+              <div class="col-4">
+                <div class="row mt-4">
+                  <!-- checkbox na zadanie hodnotenia -->
+                  <div class="col-2" *ngFor="let hodnotenie of hodnotenia; let j = index">
+                    <div class="e-checkbox mb-4">
+                      <label class="w-100 cursor-pointer" placement="top" [ngbTooltip]="hodnotenie['text']"
+                        container="body">
+                        <input type="checkbox" [checked]="item.rating==hodnotenie['id']" [value]="hodnotenie['id']"
+                          name="rating-professional-{{i}}-{{j}}" (change)="toggleRating(item, hodnotenie['id'])"
+                          [disabled]="!editableSections.includes(ratingFormSections.COMPETENCE)">
+                        <span><strong>{{hodnotenie['id']}}</strong></span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3.b. KOMPETENCIE OSOBNOSTNE -->
+    <div class="row mt-7" *ngIf="rating?.competencesPersonal && rating.competencesPersonal.length > 0">
+      <div class="col-12">
+
+        <div class="row">
+          <div class="col-8">
+            <label class="w-100">
+              <span class="d-block fs-6 ml-2"><strong>Kompetencie - Osobnostné</strong></span>
+              <span class="d-block fs-6 mb-2 ml-2"><strong>Popis</strong></span>
+            </label>
+          </div>
+          <div class="col-4">
+            <label class="w-100">
+              <span class="d-block fs-6 mb-2 ml-2 mt-6"><strong>Hodnotenie</strong></span>
+            </label>
+          </div>
+        </div>
+
+        <!-- prvy riadok kompetencii osobnostnych -->
+        <div>
+          <div *ngFor="let area of rating.competencesPersonal">
+            <div class="row mt-2">
+              <div class="col-12">
+                <span class="d-block fs-6 mb-2 ml-2 text-primary"><strong>{{area.category}}</strong></span>
+              </div>
+            </div>
+            <div *ngFor="let item of area.competenceList; let i = index" [class]="(i === 0) ? 'row mt-0' : 'row mt-2'">
+
+              <div class="col-8">
+                <input class="form-control border-0 fs-6 box-shadow-sm py-4 px-4 h-auto" [value]="item.title" readonly>
+              </div>
+
+
+              <div class="col-4">
+                <div class="row mt-4">
+
+                  <!-- checkbox na zadanie hodnotenia -->
+                  <div class="col-2" *ngFor="let hodnotenie of hodnotenia; let j = index">
+                    <div class="e-checkbox mb-4">
+                      <label class="w-100 cursor-pointer" placement="top" [ngbTooltip]="hodnotenie['text']"
+                        container="body">
+                        <input type="checkbox" [checked]="item.rating==hodnotenie['id']" [value]="hodnotenie['id']"
+                          name="rating-personal-{{i}}-{{j}}" (change)="toggleRating(item, hodnotenie['id'])"
+                          [disabled]="!editableSections.includes(ratingFormSections.COMPETENCE)">
+                        <span><strong>{{hodnotenie['id']}}</strong></span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. ROZVOJ ZAMESTNANCA -->
+    <div class="row mt-7">
+      <div class="col-12">
+
+        <div class="row mt-6">
+          <div class="col-12">
+            <label class="w-100">
+              <span class="d-block fs-6 ml-2"><strong>Príprava na ročný rozhovor</strong></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="row mt-6">
+          <div class="col-12">
+            <label class="w-100">
+              <span class="d-block fs-6 mb-2 ml-2"><strong>Zhrnutie roka - čo som sa naučil, čo som dosiahol,
+                  dojmy...</strong></span>
+              <textarea rows="5" [(ngModel)]="rating.yearSummary" name="yearSummary" #yearSummary autocomplete="off"
+                placeholder="" class="form-control border-0 fs-6 box-shadow-sm lh-22 py-4 px-4" data-autoresize
+                [readonly]="!editableSections.includes(ratingFormSections.PREPARATION)"></textarea>
+            </label>
+          </div>
+        </div>
+
+        <div class="row mt-6">
+          <div class="col-12">
+            <label class="w-100">
+              <span class="d-block fs-6 mb-2 ml-2"><strong>Čomu sa chcem venovať, čo sa chcem naučiť v blízkej
+                  dobe...</strong></span>
+              <textarea rows="5" [(ngModel)]="rating.nextDevelopment" name="nextDevelopmentv" #nextDevelopment
+                autocomplete="off" placeholder="" class="form-control border-0 fs-6 box-shadow-sm lh-22 py-4 px-4"
+                data-autoresize [readonly]="!editableSections.includes(ratingFormSections.PREPARATION)"></textarea>
+            </label>
+          </div>
+        </div>
+
+        <div class="row mt-6">
+          <div class="col-12">
+            <label class="w-100">
+              <span class="d-block fs-6 mb-2 ml-2"><strong>Čo ako zamestnanec navrhujem zlepšiť vo firme/v mojom
+                  tíme...</strong></span>
+              <textarea rows="5" [(ngModel)]="rating.recommendation" name="recommendation" #recommendation
+                autocomplete="off" placeholder="" class="form-control border-0 fs-6 box-shadow-sm lh-22 py-4 px-4"
+                data-autoresize [readonly]="!editableSections.includes(ratingFormSections.PREPARATION)"></textarea>
+            </label>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 5. ZAVERECNE ZHODNOTENIE -->
+    <div class="row mt-7" *ngIf="rating.status != ratingStatusList.DRAFT">
+      <div class="col-12">
+
+        <div class="row mt-6">
+          <div class="col-12">
+            <label class="w-100">
+              <span class="d-block fs-6 ml-2"><strong>Krátke zhodnotenie ročného rozhovoru</strong></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="row mt-6">
+          <div class="col-12">
+            <label class="w-100">
+              <span class="d-block fs-6 mb-2 ml-2"><strong>Vstup od nadriadeného</strong></span>
+              <textarea rows="5" [(ngModel)]="rating.finalEvaluationManager" name="finalEvaluationManager"
+                #finalEvaluationManager
+                placeholder="Slovné zhodnotenie zamestnanca v oblasti výkonu, kompetencií, doporučenie v čom pokračovať, čo prípadne zmeniť, čo prestať robiť..."
+                class="form-control border-0 fs-6 box-shadow-sm lh-22 py-4 px-4" data-autoresize
+                [readonly]="!isManager || !editableSections.includes(ratingFormSections.EVALUATION)"></textarea>
+            </label>
+          </div>
+        </div>
+
+        <div class="row mt-6">
+          <div class="col-12">
+            <label class="w-100">
+              <span class="d-block fs-6 mb-2 ml-2"><strong>Vstup od zamestnanca</strong></span>
+              <textarea rows="5" [(ngModel)]="rating.finalEvaluationUser" name="finalEvaluationUser"
+                #finalEvaluationUser autocomplete="off"
+                placeholder="S čím som za uplynulé obdobie spokojný/á, čo si prajem zmeniť, odkaz manažmentu, návrhy na zlepšenie, bariéry pre lepší pracovný výkon..."
+                class="form-control border-0 fs-6 box-shadow-sm lh-22 py-4 px-4" data-autoresize
+                [readonly]="!isRatedPerson || !editableSections.includes(ratingFormSections.EVALUATION)"></textarea>
+            </label>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 6. Poznámky -->
+    <div class="row mt-7">
+      <div class="col-12">
+
+        <div class="row mt-6" *ngIf="isRatedPerson">
+          <div class="col-12">
+            <label class="w-100">
+              <span class="d-block fs-6 mb-2 ml-2"><strong>Moje poznámky</strong></span>
+              <textarea rows="5" [(ngModel)]="rating.notesUser" name="notesUser" #notesUser
+                placeholder="Napíšte si sem vlastné poznámky, toto bude viditeľné iba pre Vás."
+                class="form-control border-0 fs-6 box-shadow-sm lh-22 py-4 px-4" data-autoresize [readonly]="!editableSections.includes(ratingFormSections.NOTES)"></textarea>
+            </label>
+          </div>
+        </div>
+
+        <div class="row mt-6" *ngIf="isManager">
+          <div class="col-12">
+            <label class="w-100">
+              <span class="d-block fs-6 mb-2 ml-2"><strong>Moje poznámky</strong></span>
+              <textarea rows="5" [(ngModel)]="rating.notesManager" name="notesManager" #notesManager autocomplete="off"
+                placeholder="Napíšte si sem vlastné poznámky, toto bude viditeľné iba pre Vás."
+                class="form-control border-0 fs-6 box-shadow-sm lh-22 py-4 px-4" data-autoresize [readonly]="!editableSections.includes(ratingFormSections.NOTES)"></textarea>
+            </label>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+  </form>
+</article>
+
+<!-- akcie k ziadosti -->
+<div class="b-article-detail-footer">
+  <div class="preloader-on">
+    <app-loader-block key="wf_voucher_loader"></app-loader-block>
+    <div class="px-7 py-3 py-md-5">
+      <div *ngIf="isFormReady">
+
+        <!-- ULOZ -->
+        <span *ngIf="wfActions.includes(ratingWFActions.SAVE)">
+          <a href="#" preventDefault (click)="save(ratingForm.form, ratingWFActions.SAVE)"
+            class="font-weight-bold text-uppercase text-secondary">
+            <i class="icon icon-save fs-8 align-middle position-relative bottom-2"></i> Uložiť
+          </a>
+          <span class="mx-1 text-gray">|</span>
+        </span>
+
+        <!-- ODOSLI ZAMESTNANCOVI -->
+        <span *ngIf="wfActions.includes(ratingWFActions.SEND_TO_RATED)">
+          <a href="#" preventDefault (click)="save(ratingForm.form, ratingWFActions.SEND_TO_RATED)"
+            class="font-weight-bold text-uppercase text-secondary br-1 d-inline-block">
+            <i class="icon icon-mail-send fs-8 align-middle position-relative bottom-2"></i> Odoslať hodnotenému
+          </a>
+          <span class="mx-1 text-gray">|</span>
+        </span>
+
+        <!-- ODOSLI NADRIADENEMU -->
+        <span *ngIf="wfActions.includes(ratingWFActions.SEND_TO_MANAGER)">
+          <a href="#" preventDefault (click)="save(ratingForm.form, ratingWFActions.SEND_TO_MANAGER)"
+            class="font-weight-bold text-uppercase text-secondary br-1">
+            <i class="icon icon-mail-send fs-8 align-middle position-relative bottom-2"></i> Odoslať nadriadenému
+          </a>
+          <span class="mx-1 text-gray">|</span>
+        </span>
+
+        <!-- UZAVRI ROZHOVOR -->
+        <span *ngIf="wfActions.includes(ratingWFActions.FINALIZE_RATING)">
+          <a href="#" preventDefault (click)="save(ratingForm.form, ratingWFActions.FINALIZE_RATING)"
+            class="font-weight-bold text-uppercase text-secondary br-1">
+            <i class="icon icon-mail-send fs-8 align-middle position-relative bottom-2"></i> Uzavrieť rozhovor
+          </a>
+          <span class="mx-1 text-gray">|</span>
+        </span>
+
+        <!-- ZRUS ZMENY -->
+        <span>
+          <a href="#" preventDefault (click)="resetChanges()" class="font-weight-bold text-uppercase text-secondary">
+            <i class="icon icon-close fs-8 align-middle position-relative bottom-2"></i> Zrušiť zmeny
+          </a>
+        </span>
+      </div>
+    </div>
+  </div>
+
+</div>

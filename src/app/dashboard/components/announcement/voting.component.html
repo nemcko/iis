@@ -1,0 +1,10 @@
+<div class="votes">
+  <span [class]="(isLikeAllowed) ? 'e-round-icon text-secondary size-md d-block position-relative': 'e-round-icon text-secondary size-md d-block position-relative bg-secondary'" [ngStyle]="{'cursor': (isLikeAllowed) ? 'pointer': ''}" (click)="setVote(votingTypes.LIKE)">
+    <i [class]="(isLikeAllowed) ? 'icon icon-thumb-up text-gray' : 'icon icon-thumb-up text-white'"></i>
+    <span [class]="(isLikeAllowed) ? 'badge badge-secondary text-white fs-2' : 'badge bg-white text-secondary fs-2'">{{voting?.likes}}</span>
+  </span>
+  <span [class]="(isDislikeAllowed) ? 'e-round-icon size-md d-block position-relative mt-2': 'e-round-icon size-md d-block position-relative mt-2 bg-tertiary'" [ngStyle]="{'cursor': (isDislikeAllowed) ? 'pointer': ''}" (click)="setVote(votingTypes.DISLIKE)">
+    <i [class]="(isDislikeAllowed) ? 'icon icon-thumb-down text-gray' : 'icon icon-thumb-down text-white'"></i>
+    <span [class]="(isDislikeAllowed) ? 'badge badge-tertiary text-white fs-2': 'badge bg-white text-tertiary fs-2'">{{voting?.dislikes}}</span>
+  </span>
+</div>

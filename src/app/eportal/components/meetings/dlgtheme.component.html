@@ -1,0 +1,29 @@
+<appdlg #dlg [title]="'Pridaj novú tému rozhovoru do stretnutia 1:1'">
+  <form classes="dlg_form">
+
+    <formrow>
+      <formsel classes="col12" [label]="'Vyber si zo zoznamu tém'" [data]="data" 
+      [(ngModel)]="theme" name="theme"></formsel>
+    </formrow>
+    <formrow>
+      <div *ngIf="!newTheme">
+        <a href="javascript:void(0)" class="font-weight-bold text-secondary mx-5" (click)="newTheme=true;">Vytvor si
+          vlastnú tému</a>
+      </div>
+      <formfld *ngIf="newTheme" classes="col12" [label]="'Vytvor si vlastnú tému'">
+        <input classes="inputaddon notInputbox" placeholder="Nová téma" [(ngModel)]="ntheme" name="ntheme" autocomplete="off">
+        <div class="addonfld2">
+          <div class="p-2 text-secondary" (click)="addTheme($event);" *ngIf="ntheme"><i class="icon-checkmark text-secondary fs-6"></i></div>
+          <div class="p-2 text-secondary" (click)="newTheme=false;"><i class="icon icon-close text-secondary fs-6"></i></div>
+        </div>
+      </formfld>
+    </formrow>
+
+  </form>
+
+  <div classes="dlg_footer">
+    <button classes="dlg_ok" (click)="save()">Ulož</button>
+    <button classes="dlg_cancel" (click)="dlg.close()">Zruš</button>
+  </div>
+
+</appdlg>

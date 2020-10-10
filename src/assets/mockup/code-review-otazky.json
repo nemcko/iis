@@ -1,0 +1,12 @@
+{
+  "questions":[
+    "Dodržiavanie best practicies (napr. dĺžky tried a metód,  použitie rozhodovacích blokov, ...)",
+    "SOLID princíp",
+    "Self-documenting kód/Čitateľnosť kódu (napr. Naming ...)",
+    "Oddelenie domény od infraštruktúrnej a aplikačnej vrstvy",
+    "Logovanie a error handling (Či logujeme dôležité veci)",
+    "Zmysluplné Unit testy (Nie len pokrytie)",
+    "Štruktúra/Packaging kódu",
+    "Iné"
+  ]
+}

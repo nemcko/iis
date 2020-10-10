@@ -1,0 +1,82 @@
+<!-- Search -->
+<form class="mb-7 position-relative">
+  <button type="submit" class="submit-left">
+    <i class="icon icon-search"></i>
+  </button>
+  <input type="text" autocomplete="off" id="search" name="search" placeholder="Hľadaj v otázkach"
+    class="form-control fs-6 font-weight-bold box-shadow-lg border-0 py-5 px-6 h-auto" [(ngModel)]="search"
+    (keyup.enter)="loadRecords()">
+</form>
+
+<article class="pt-2">
+  <div class="row">
+    <div class="col-12 col-md-10 col-lg-9 col-xl-8 mx-auto">
+      <div class="b-article-detail">
+        <header class="article-header mb-6">
+          <div class="position-relative">
+            <!-- Back to listing -->
+            <a routerLink="/holiday-voucher/vouchers"
+              class="btn btn-secondary text-white text-uppercase fs-5 font-weight-bold px-4 px-md-6 mb-3 mb-md-0 back">Späť
+              na poukazy</a>
+
+            <div class="image box-shadow-lg">
+              <img src="./assets/rp_skrinky.jpg" alt="#" class="img-fluid ">
+            </div>
+          </div>
+
+          <div class="content">
+            <div class="row">
+              <div class="col-11 col-xl-9 mx-auto">
+                <div class="bg-white border-radius-md p-4 py-lg-7 px-lg-8 box-shadow-lg position-relative text-center">
+                  <h3 class="fs-7 mb-2">
+                    Rekreačné poukazy:
+                    <span class="font-weight-bold text-primary">Často kladené otázky</span>
+                  </h3>
+                  <a href="#" data-toggle="modal" class="font-weight-bold text-secondary" (click)="addQuestion()">
+                    <i class="icon icon-otazka fs-8 position-relative top-2"></i> Polož otázku
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+
+
+      </div>
+
+      <div class="row">
+        <div class="col-11 col-xl-9 mx-auto">
+          <section>
+
+            <!-- Q1 -->
+            <div *ngFor="let item of faqList; let i = index">
+              <div class="bg-white p-6 border-radius-md box-shadow-sm mb-2">
+                <div class="row">
+                  <div class="col-auto text-primary font-weight-bold pr-0">{{i + 1}}.</div>
+                  <div class="col">
+                    <div>{{item?.question}}</div>
+                    <a preventDefault href="#" class="text-secondary fs-3 d-inline-block mt-1"
+                      (click)="toggleExpanded(item?.id)" [attr.aria-expanded]="isExpanded(item?.id)"
+                      [attr.aria-controls]="item?.id">{{!isExpanded(item?.id) ? 'zobraziť odpoveď' : 'skryť odpoveď'}}</a>
+                  </div>
+                </div>
+              </div>
+              <div class="b-tree-line first-line-on pl-7" [ngbCollapse]="!isExpanded(item?.id)">
+                <div class="item bg-white p-6 border-radius-md box-shadow-sm mb-2 ml-8">
+                  <div class="row">
+                    <div class="col">
+                      <div class="font-weight-bold" [innerHTML]="item?.answer | crlf"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>

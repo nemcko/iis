@@ -1,0 +1,105 @@
+{
+  "themes": [
+    {
+      "code": "CR0001",
+      "type": "CR",
+      "usrgrps": ["FNC911056245716"],
+      "title": "Dodržiavanie best practicies (napr. dĺžky tried a metód,  použitie rozhodovacích blokov, ...)",
+      "active": false,
+      "desc": "Donec vitae massa tempor urna aliquam bibendum in eget odio. Praesent eget est pellentesque, laoreet neque id, porttitor ligula. Nullam euismod venenatis ipsum semper congue. Aenean a orci laoreet, aliquam urna et, aliquet odio. Praesent efficitur in leo nec egestas. Donec facilisis et sapien ut consequat. Nunc at euismod nunc, vitae porttitor nisi. Nullam tincidunt semper nibh. Donec non ligula vel nibh tempor suscipit. In feugiat hendrerit ante ut porta. Sed sed tortor condimentum, dapibus nisi dapibus, tincidunt lorem."
+    },
+    {
+      "code": "CR0002",
+      "type": "CR",
+      "usrgrps": ["FNC911056245716"],
+      "title": "SOLID princíp",
+      "active": true,
+      "desc": "Maecenas non odio ut mi ultrices blandit at eget eros. Etiam iaculis fermentum nisl, porta tempus sem varius non. Nullam a auctor libero. Vivamus vestibulum, nisl et porta tempus, nisi libero sodales libero, vel gravida nisi justo nec nisi. Suspendisse pretium ligula sed elit venenatis imperdiet. Aenean laoreet id lorem sit amet sollicitudin. Nunc nisi diam, ornare id urna non, tempor tincidunt felis. Morbi diam metus, sollicitudin quis dictum et, commodo in diam. Curabitur quis ligula vitae odio egestas tincidunt. Phasellus imperdiet maximus aliquet. Integer elit elit, finibus at felis nec, sodales tincidunt lacus."
+    },
+    {
+      "code": "CR0003",
+      "type": "CR",
+      "usrgrps": ["FNC911056245716"],
+      "title": "Self-documenting kód/Čitateľnosť kódu (napr. Naming ...)",
+      "active": true,
+      "desc": "Nunc congue ipsum orci, ac fermentum augue vulputate a. Mauris et orci lobortis, fringilla diam ac, scelerisque ligula. Nulla vestibulum laoreet enim, non tincidunt augue hendrerit mollis. Sed vitae lacus orci. Etiam eu lectus tellus. Pellentesque augue ante, ultricies vel tempus id, accumsan ut justo. Morbi bibendum nibh non nibh faucibus vulputate. Fusce in eros at massa posuere faucibus sed vel libero."
+    },
+    {
+      "code": "CR0004",
+      "type": "CR",
+      "usrgrps": ["FNC911056245716"],
+      "title": "Oddelenie domény od infraštruktúrnej a aplikačnej vrstvy",
+      "active": true,
+      "desc": ""
+    },
+    {
+      "code": "CR0005",
+      "type": "CR",
+      "usrgrps": ["FNC911056245716"],
+      "title": "Logovanie a error handling (Či logujeme dôležité veci)",
+      "active": true,
+      "desc": ""
+    },
+    {
+      "code": "CR0006",
+      "type": "CR",
+      "usrgrps": ["FNC911056245716"],
+      "title": "Zmysluplné Unit testy (Nie len pokrytie)",
+      "active": true,
+      "desc": ""
+    },
+    {
+      "code": "CR0007",
+      "type": "CR",
+      "usrgrps": ["FNC911056245716"],
+      "title": "Štruktúra/Packaging kódu",
+      "active": true,
+      "desc": ""
+    },
+    {
+      "code": "CR0008",
+      "type": "CR",
+      "usrgrps": ["FNC911056245716","FNC911056245717"],
+      "title": "Iné",
+      "active": true,
+      "desc": "Nullam eros urna, gravida nec viverra et, semper sit amet lectus. Quisque sagittis lectus non ante ultricies, ut mollis nisi pretium. Ut dui risus, tempus egestas semper ac, vulputate sit amet velit. Phasellus eget magna a mi porttitor rhoncus ac sed turpis. Suspendisse cursus luctus lectus, at accumsan justo rhoncus sed. Integer congue nisi sit amet velit tincidunt, in placerat lectus semper."
+    },
+
+    {
+      "code": "CR0009",
+      "type": "CR",
+      "usrgrps": ["FNC911056245717"],
+      "title": "UseCase diagram",
+      "active": false,
+      "desc": ""
+    },
+    {
+      "code": "CR0010",
+      "type": "CR",
+      "usrgrps": ["FNC911056245717"],
+      "title": "Package diagram",
+      "active": true,
+      "desc": ""
+    },
+    {
+      "code": "CR0011",
+      "type": "CR",
+      "usrgrps": ["FNC911056245717"],
+      "title": "Sequence diagram",
+      "active": false,
+      "desc": ""
+    },
+    {
+      "code": "CR0012",
+      "type": "CR",
+      "usrgrps": ["FNC911056245717"],
+      "title": "Activity diagram",
+      "active": false,
+      "desc": "Nullam eros urna, gravida nec viverra et, semper sit amet lectus. Quisque sagittis lectus non ante ultricies, ut mollis nisi pretium. Ut dui risus, tempus egestas semper ac, vulputate sit amet velit. Phasellus eget magna a mi porttitor rhoncus ac sed turpis. Suspendisse cursus luctus lectus, at accumsan justo rhoncus sed. Integer congue nisi sit amet velit tincidunt, in placerat lectus semper."
+    }
+
+
+
+
+  ]
+}

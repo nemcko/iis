@@ -1,0 +1,55 @@
+<appdlg #dlg [title]="'Pridanie nového cieľa'">
+  <form classes="dlg_form">
+
+    <formrow>
+      <formfld classes="col12" [label]="'Názov cieľa'">
+        <input classes="input" required autocomplete="off" [appFocus] [(ngModel)]="data.name" name="name"
+          placeholder="Zadaj názov, ktorý najvýstižnejšie popisuje cieľ">
+      </formfld>
+    </formrow>
+
+    <formrow>
+      <formfld classes="col12" [label]="'Detail cieľa'">
+        <textarea classes="textarea" rows="4" required [(ngModel)]="data.desc" name="desc"
+          placeholder="Detail popisu práce z ktorej vyplýva dosiahnutie cieľa"></textarea>
+      </formfld>
+    </formrow>
+
+    <formrow>
+      <formfld classes="col12">
+        <formsli classes="col12" [label]="['Váha cieľa: ' + data.weight + '%']" [step]="25" [(ngModel)]="data.weight"
+          name="deadline">
+          <div class="slider-primary">
+            <div classes="exslider col12 px-1">
+              <div class="mark" style="left: 25%;"></div>
+              <div class="mark" style="left: 50%;"></div>
+              <div class="mark" style="left: 75%;"></div>
+
+              <span class="float-none">0</span>
+              <span class="float-right">100</span>
+            </div>
+          </div>
+        </formsli>
+      </formfld>
+    </formrow>
+
+    <formrow>
+      <formfld classes="col12" [label]="'Deadline'">
+        <input #datepicker classes="date" a2e-datetimepicker required [(ngModel)]="data.deadline" name="deadline"
+          [options]="datePickerOptions" placeholder="Dátum, keď by mal byť cieľ úspešne nosiahnutý">
+          <div class="addonfld1">
+            <div class="p-2" (click)="showDatepicker();"><i class="fas fa-calendar-alt text-secondary fs-6"></i></div>
+          </div>  
+      </formfld>
+    </formrow>
+
+  </form>
+
+  <div classes="dlg_footer">
+    <button classes="dlg_ok" (click)="save()">Pridať</button>
+    <button classes="dlg_cancel" (click)="dlg.close()">Zrušiť</button>
+  </div>
+
+  <!-- <pre>{{wgroupusers|json}}</pre> -->
+
+</appdlg>

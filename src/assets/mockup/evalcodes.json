@@ -1,0 +1,72 @@
+[
+  {
+    "id": "RC00000D41",
+    "evalName": "JSROT Realizácia 1.fáza",
+    "keywords": "JSROT,1st",
+    "evalDate": "5.3.2019",
+    "ratedUser": "Maruška Tomáš",
+    "teamLeader": "Fleischman Rony",
+    "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec mollis purus, a volutpat tortor. Vestibulum consectetur ex purus. Integer laoreet sollicitudin nibh hendrerit suscipit. Mauris placerat massa ligula, eget pulvinar neque egestas sed. Integer sit amet neque vitae libero dapibus vestibulum. In massa quam, iaculis id diam pellentesque, fringilla auctor erat. Aenean nisl odio, gravida id lectus ac, convallis pellentesque odio. Ut congue tellus non dolor pretium pharetra.",
+    "status": "DRAFT"
+  },
+  {
+    "id": "RC00000D42",
+    "evalName": "JSROT Realizácia 2.fáza",
+    "keywords": "JSROT,2st",
+    "evalDate": "2.3.2019",
+    "ratedUser": "Maruška Tomáš",
+    "teamLeader": "Fleischman Rony",
+    "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec mollis purus, a volutpat tortor. Vestibulum consectetur ex purus. Integer laoreet sollicitudin nibh hendrerit suscipit. Mauris placerat massa ligula, eget pulvinar neque egestas sed. Integer sit amet neque vitae libero dapibus vestibulum. In massa quam, iaculis id diam pellentesque, fringilla auctor erat. Aenean nisl odio, gravida id lectus ac, convallis pellentesque odio. Ut congue tellus non dolor pretium pharetra.",
+    "status": "DRAFT"
+  },
+  {
+    "id": "RC00000D43",
+    "evalName": "JSROT Realizácia 3.fáza",
+    "keywords": "JSROT,3st",
+    "evalDate": "5.3.2019",
+    "ratedUser": "Maruška Tomáš",
+    "teamLeader": "Fleischman Rony",
+    "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec mollis purus, a volutpat tortor. Vestibulum consectetur ex purus. Integer laoreet sollicitudin nibh hendrerit suscipit. Mauris placerat massa ligula, eget pulvinar neque egestas sed. Integer sit amet neque vitae libero dapibus vestibulum. In massa quam, iaculis id diam pellentesque, fringilla auctor erat. Aenean nisl odio, gravida id lectus ac, convallis pellentesque odio. Ut congue tellus non dolor pretium pharetra.",
+    "status": "DRAFT"
+  },
+  {
+    "id": "RC00000D44",
+    "evalName": "JSROT Realizácia 1.fáza",
+    "keywords": "1st",
+    "evalDate": "15.3.2019",
+    "ratedUser": "Maruška Tomáš",
+    "teamLeader": "Fleischman Rony",
+    "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec mollis purus, a volutpat tortor. Vestibulum consectetur ex purus. Integer laoreet sollicitudin nibh hendrerit suscipit. Mauris placerat massa ligula, eget pulvinar neque egestas sed. Integer sit amet neque vitae libero dapibus vestibulum. In massa quam, iaculis id diam pellentesque, fringilla auctor erat. Aenean nisl odio, gravida id lectus ac, convallis pellentesque odio. Ut congue tellus non dolor pretium pharetra.",
+    "status": "DRAFT"
+  },
+  {
+    "id": "RC00000D45",
+    "evalName": "JSROT Realizácia 1.fáza",
+    "keywords": "1st",
+    "evalDate": "15.3.2019",
+    "ratedUser": "Nemčko Miloš",
+    "teamLeader": "Fleischman Rony",
+    "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec mollis purus, a volutpat tortor. Vestibulum consectetur ex purus. Integer laoreet sollicitudin nibh hendrerit suscipit. Mauris placerat massa ligula, eget pulvinar neque egestas sed. Integer sit amet neque vitae libero dapibus vestibulum. In massa quam, iaculis id diam pellentesque, fringilla auctor erat. Aenean nisl odio, gravida id lectus ac, convallis pellentesque odio. Ut congue tellus non dolor pretium pharetra.",
+    "status": "DRAFT"
+  },
+  {
+    "id": "RC00000D46",
+    "evalName": "JSROT Realizácia 1.fáza",
+    "keywords": "1st",
+    "evalDate": "3.4.2019",
+    "ratedUser": "Maruška Tomáš",
+    "teamLeader": "Fleischman Rony",
+    "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec mollis purus, a volutpat tortor. Vestibulum consectetur ex purus. Integer laoreet sollicitudin nibh hendrerit suscipit. Mauris placerat massa ligula, eget pulvinar neque egestas sed. Integer sit amet neque vitae libero dapibus vestibulum. In massa quam, iaculis id diam pellentesque, fringilla auctor erat. Aenean nisl odio, gravida id lectus ac, convallis pellentesque odio. Ut congue tellus non dolor pretium pharetra.",
+    "status": "DRAFT"
+  },
+  {
+    "id": "RC00000D47",
+    "evalName": "JSROT Realizácia 1.fáza",
+    "keywords": "1st",
+    "evalDate": "13.5.2019",
+    "ratedUser": "Maruška Tomáš",
+    "teamLeader": "Jašek Zdeno",
+    "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec mollis purus, a volutpat tortor. Vestibulum consectetur ex purus. Integer laoreet sollicitudin nibh hendrerit suscipit. Mauris placerat massa ligula, eget pulvinar neque egestas sed. Integer sit amet neque vitae libero dapibus vestibulum. In massa quam, iaculis id diam pellentesque, fringilla auctor erat. Aenean nisl odio, gravida id lectus ac, convallis pellentesque odio. Ut congue tellus non dolor pretium pharetra.",
+    "status": "DRAFT"
+  }
+]

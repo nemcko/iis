@@ -1,0 +1,33 @@
+<nav class="navigation d-sm-none" *ngIf="aplikacieList && listStyle == 'navbar'">
+    <span *ngFor="let aplikacia of aplikacieList">
+  <a *ngIf="aplikacia.link.length > 0" [href]="aplikacia.link" [title]="aplikacia.title" target="_blank" class="d-block mb-4">
+    <i [ngClass]="aplikacia.cls"></i>{{aplikacia.title}}
+  </a>
+  <a *ngIf="aplikacia.route.length > 0" [routerLink]="aplikacia.route" routerLinkActive="active" [title]="aplikacia.title" class="d-block mb-4">
+      <i [ngClass]="aplikacia.cls"></i>{{aplikacia.title}}
+    </a>
+  </span>
+  <!-- TODO: Active item -->
+</nav>
+
+<aside [class]="(panelExpanded) ? 's-aside aside-open' : 's-aside'" *ngIf="aplikacieList && listStyle == 'aside'">
+  <div *ngFor="let aplikacia of aplikacieList">
+    <div class="d-block" [ngStyle]="{'background-color': aplikacia?.bgc}">
+      <a *ngIf="aplikacia.link.length > 0" [href]="aplikacia.link" [title]="aplikacia.title" target="_blank"
+        class="d-block">
+        <i [ngClass]="aplikacia.cls"></i><span class="mt-1">{{aplikacia.title}}</span>
+      </a>
+      <a *ngIf="aplikacia.route.length > 0" [routerLink]="aplikacia.route" [title]="aplikacia.title"
+        routerLinkActive="active" class="d-block">
+        <i [ngClass]="aplikacia.cls"></i><span class="mt-1">{{aplikacia.title}}</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- TODO: Active item -->
+
+  <!-- togler icon -->
+  <a class="mt-auto toggler js-toggle-aside" (click)="togglePanel()" *ngIf="aplikacieList && listStyle == 'aside'">
+    <i class="icon icon-expand"></i>
+  </a>
+</aside>

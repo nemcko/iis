@@ -1,0 +1,46 @@
+<appdlg #dlg [title]="'Návod na hodnotenie'">
+
+
+  <div class="row">
+    <div class="col-2 font-weight-bold text-primary">Úroveň 1:</div>
+    <div class="col-10">
+      <b>kompetencia nie je pozorovateľná</b>&nbsp;|&nbsp;
+      Správanie uplatňujúce kompetenciu sa doposiaľ neprejavilo, prípade iba výnimočne.
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-2 font-weight-bold text-primary">Úroveň 2:</div>
+    <div class="col-10">
+      <b>málo rozvinuté prejavy kompetencie</b>&nbsp;|&nbsp;
+      Deklaruje všeobecnú potrebu uplatňovať prejavy kompetencie. Správanie uplatňujúce kompetenciu je na nízkej úrovni (nedôsledné, uplatňované útržkovito a pod.). Je potrebné zlepšenie.
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-2 font-weight-bold text-primary">Úroveň 3:</div>
+    <div class="col-10">
+      <b>štandartná úroveň prejavu kompetencie</b>&nbsp;|&nbsp;
+      Demonštruje kompetenciu ako reakciu na podnety zvonku, či situácie, ktoré vyžadujú uplatnenie kompetencie. Používanie kompetencie je na dobrej, štandardnej úrovni.
+      Prejav správania je dobrý, vyskytuje sa často a spĺňa očakávania.
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-2 font-weight-bold text-primary">Úroveň 4:</div>
+    <div class="col-10">
+      <b>kompetencia je silnou stránkou</b>&nbsp;|&nbsp;
+      Kompetenciu využíva aj v prípade, že situácia ju priamo nevyžaduje (nie je zjavný podnet). Navyše, prejavy kompetencie sú kvalitatívne na vyššej úrovni
+      (použitie kompetencie je komplexnejšie, dôslednejšie z hľadiska riešenej úlohy). Prejav správania je veľmi dobrý a často prekračuje očakávania.
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-2 font-weight-bold text-primary">Úroveň 5:</div>
+    <div class="col-10">
+      <b>kompetencia je silnou stránkou a navyše podporuje prejavy kompetencie u iných</b>&nbsp;|&nbsp;
+      Motivuje a povzbudzuje používanie kompetencie aj u iných. Prípadne zavádza kompetenciu do života tímu a firmy prostredníctvom zavádzania postupov, ktoré
+      podporujú používanie kompetencie druhým. Prejav správania je excelentný a sústavne prekračuje očakávania.
+    </div>
+  </div>
+
+  <div classes="dlg_footer d-flex justify-content-center mt-3">
+    <button classes="dlg_cancel" (click)="dlg.close()">Ok</button>
+  </div>
+</appdlg>

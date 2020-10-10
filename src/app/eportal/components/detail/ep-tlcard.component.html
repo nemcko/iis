@@ -1,0 +1,71 @@
+<header class="clearfix mb-5">
+    <h3 class="fs-7 font-weight-bold">{{data?.department}}</h3>
+</header>
+
+<div class="row">
+    <div class="col-12 col-lg-6 mb-6" *ngFor="let item of data?.members || []; let i = index">
+        <div class="bg-white pt-7 pb-6 px-3 border-radius-md box-shadow-sm">
+            <div class="e-zamestnanec-card user-image-xl-lg">
+                <div class="row">
+                    <div class="col-12 col-xl-4 mb-2">
+                        <user-image [urlImage]="item?.photoref" [cardName]="item?.personFN">
+                        </user-image>
+                    </div>
+                    <div class="col-12 col-md">
+                        <h3 class="fs-6">Meno: <span class="text-primary font-weight-bold">{{item?.personFN}}</span></h3>
+                        <div class="fs-6 mt-1 mt-md-3">Pozícia: <span class="font-weight-bold">{{item?.position}}</span>
+                        </div>
+                        <div class="fs-6 mt-1 mt-md-3">Divízia: <span class="font-weight-bold">{{item?.division}}</span>
+                        </div>
+                        <div class="fs-6 mt-1 mt-md-3">Telefónne čísla: 
+                            <span class="font-weight-bold text-nowrap text-black pr-1" *ngFor="let phone of (item?.phones||[])">{{phone}}</span>
+                        </div>
+                        <div class="fs-6 mt-1 mt-md-3">E-mail: 
+                            <a href="#" title="#" class="font-weight-bold text-secondary">{{item?.email}}</a>               
+                        <div class="fs-5 mt-2 mt-md-5">
+                            <div class="row">
+                                <div class="col-12 col-md-auto text-md-right rating-actions-on py-1 pr-4">
+                                    <div class="row">
+                                        <div class="col-12 col-md-auto">
+                                            <div class="row no-gutters flex-md-column">
+                                                <div class="col-auto col-md-12 font-weight-bold mr-1 mr-md-0">1:1
+                                                    meeting<span class="d-md-none">:</span></div>
+                                                <div class="col-auto col-md-12">{{item?.datmeeting | date:'dd.MM.yyyy'}}</div>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="col-12 col-md-auto font-weight-bold rating-actions meeting-actions align-items-center left">
+                                            <a href="javascript:void(0)" (click)="newMeeting($event,item.personID)"  
+                                                class="d-flex text-secondary flex-row flex-md-column align-items-center ml-2 ml-md-0">
+                                                <i class="icon icon-plus-circle fs-8 mr-1"></i> Pridať 1:1 meeting
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div
+                                    class="col-12 col-md-auto rating-actions-on py-1 pr-4 pl-md-4 border-md-left border-gray-light">
+                                    <div class="row">
+                                        <div class="col-12 col-md-auto">
+                                            <div class="row no-gutters flex-md-column">
+                                                <div class="col-auto col-md-12 font-weight-bold mr-1 mr-md-0">Code
+                                                    Review<span class="d-md-none">:</span></div>
+                                                <div class="col-auto col-md-12">{{item?.datreview | date:'dd.MM.yyyy'}}</div>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="col-12 col-md-auto font-weight-bold rating-actions meeting-actions align-items-center right">
+                                            <a href="javascript:void(0)" (click)="newCodeReview($event,item.personID)" 
+                                                class="d-flex text-secondary flex-row flex-md-column align-items-center ml-2 ml-md-0">
+                                                <i class="icon icon-plus-circle fs-8 mr-1"></i> Pridať code review
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

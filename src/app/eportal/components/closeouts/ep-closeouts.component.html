@@ -1,0 +1,54 @@
+<search-list #searchlist [toptitle]="'Uzatvorenia projektov'" [limit]="10" [numPages]="5" [clsOuterRow]="'row ml-9'"
+    [clsOuterPanel]="'col-12'" [clsItemCols]="'col-12'" [clsList]="'b-tree-line'" [clsInnerPanel]="'s-events'"
+    [searchFields]="'personFN,email'">
+
+    <div role="header">
+        <div class="row mt-1 px-3">
+            <div class="col-2">
+                <div class="text-truncate font-weight-bold">Názov projektu</div>
+            </div>
+            <div class="col-2">
+                <div class="text-truncate font-weight-bold">Funkcia</div>
+            </div>
+            <div class="col-2">
+                <div class="text-truncate font-weight-bold">Dátum od</div>
+            </div>
+            <div class="col-2">
+                <div class="text-truncate font-weight-bold">Dátum do</div>
+            </div>
+            <div class="col-4">
+                <div class="text-truncate font-weight-bold">Popis</div>
+            </div>
+        </div>
+    </div>
+
+    <div role="back">
+        <a href="javascript:void(0)" (click)="goToLastPath()"
+            class="btn btn-secondary text-white text-uppercase fs-5 font-weight-bold px-4 px-md-6 mb-3 mb-md-0 back">Predošlá&nbsp;&nbsp;stránka</a>
+    </div>
+
+    <div role="item">
+        <ng-template #templateRef let-item="item" let-keywords="keywords">
+            <div class="bg-white py-4 px-3 border-radius-md box-shadow-sm" style="height:54px">
+                <div class="row">
+                    <div class="col-2">
+                        <a [routerLink]="['/portal',id,'closeouts',item?.id]"
+                            class="text-truncate text-secondary font-weight-bold">{{item?.name}}</a>
+                    </div>
+                    <div class="col-2">
+                        <div class="text-truncate text-primary font-weight-bold">{{item?.position}}</div>
+                    </div>
+                    <div class="col-2">
+                        <div class="text-truncate text-gray">{{item?.datefrom | date:'dd.MM.yyyy'}}</div>
+                    </div>
+                    <div class="col-2">
+                        <div class="text-truncate text-gray">{{item?.dateto | date:'dd.MM.yyyy'}}</div>
+                    </div>
+                    <div class="col-4">
+                        <div class="text-truncate text-gray">{{item?.desc}}</div>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+    </div>
+</search-list>

@@ -1,0 +1,19 @@
+<section>
+  <header class="clearfix mb-2">
+    <h3 class="fs-6 font-weight-bold d-inline-block mr-6">Diskusia k príspevkom</h3>
+
+    <span *ngIf="currentSortType == sortTypeList.DATE_DESCENDING" class="float-right text-uppercase font-weight-bold fs-3 position-relative top-1">
+        <span>najnovšie</span> | 
+        <a class="text-secondary cursor-pointer" (click)="changeSortType(sortTypeList.TOP)">top</a>
+    </span>
+    
+    <span *ngIf="currentSortType == sortTypeList.TOP" class="float-right text-uppercase font-weight-bold fs-3 position-relative top-1">
+        <a class="text-secondary cursor-pointer" (click)="changeSortType(sortTypeList.DATE_DESCENDING)">najnovšie</a> |
+        <span>top</span>
+    </span>
+
+  </header>
+
+  <app-widget-forum-detail [sortType]="currentSortType"></app-widget-forum-detail>
+
+</section>

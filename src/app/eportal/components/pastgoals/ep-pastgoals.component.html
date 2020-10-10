@@ -1,0 +1,161 @@
+<div class="w-page-content mx-auto">
+    <div class="row">
+        <div class="col-12 col-md-10 col-lg-8 mx-auto">
+            <section class="s-ciele-minule">
+                <header class="clearfix mb-5">
+                    <h3 class="fs-7 font-weight-bold d-inline-block mr-6">Ciele z uplynulých rokov</h3>
+                </header>
+
+
+
+                <a href="#" preventDefault (click)="goToLastPath()"
+                    class="btn btn-secondary text-white text-uppercase fs-5 font-weight-bold px-4 px-md-6 mb-3 mb-md-0 back">Späť
+                    na kartu</a>
+
+                <ng-container *ngFor="let item of (data | keyvalue); let idx = index">
+                    <ng-container *ngIf="curryear!==item.key">
+                        <div class="bg-white p-4 border-radius-md box-shadow-sm mb-3">
+                            <div><span class="font-weight-bold text-primary fs-7">{{item.key}}</span> <span
+                                    class="fs-6 ml-1">({{item.value?.datefrom | date:'dd.MM.yyyy'}} -
+                                    {{item.value?.dateto | date:'dd.MM.yyyy'}})</span></div>
+                            <a class="text-secondary fs-3 d-inline-block mt-1" href="javascript:void(0)"
+                                (click)="expand(idx)">zobraziť
+                                <span *ngIf="!isSel(idx)">&nbsp;viac</span>
+                                <span *ngIf="isSel(idx)">&nbsp;menej</span>
+                            </a>
+                        </div>
+                        <div *ngIf="isSel(idx)" class="b-tree-line first-line-on pl-7 mb-6">
+                            <div *ngFor="let goal of item.value.targets; let i = index"
+                                class="item d-block bg-white p-6 border-radius-md box-shadow-sm ml-8 fs-6"
+                                [ngClass]="{'mt-0': !i,'mt-3':i}">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="d-block text-primary font-weight-bold mb-1">{{goal.name}}</div>
+                                        <div class="row fs-5">
+                                            <div class="col-6">Splnené na: <strong>{{goal.erating}}%</strong></div>
+                                            <div class="col-6 text-right">Váha cieľa: <strong>{{goal.weight}}%</strong>
+                                            </div>
+                                        </div>
+
+                                        <hr class="my-3" />
+
+                                        <div class="font-weight-bold text-primary mb-1 mt-4">Ja</div>
+                                        <div>{{goal.ratednote}}</div>
+
+                                        <div class="font-weight-bold text-primary mb-1 mt-4">Môj team-leader</div>
+                                        <div>{{goal.evalnote}}</div>
+
+                                        <div class="font-weight-bold text-primary mb-1 mt-4">Spoločný záver</div>
+                                        <div>{{goal.jointnote}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </ng-container>
+                </ng-container>
+
+
+
+
+                <!-- 
+                <div class="bg-white p-4 border-radius-md box-shadow-sm mb-3">
+                    <div><span class="font-weight-bold text-primary fs-7">2018</span> <span class="fs-6 ml-1">(1.3.2018
+                            - 31.1.2019)</span></div>
+                    <a href="#" title="#" class="text-secondary fs-3 d-inline-block mt-1">zobraziť menej</a>
+                </div>
+
+                <div class="b-tree-line first-line-on pl-7 mb-6">
+                    <div class="item d-block bg-white p-6 border-radius-md box-shadow-sm mt-0 ml-8 fs-6">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="d-block text-primary font-weight-bold mb-1">Zlepšiť Angular na 80% </div>
+                                <div class="row fs-5">
+                                    <div class="col-6">Splnené na: <strong>60%</strong></div>
+                                    <div class="col-6 text-right">Váha cieľa: <strong>20%</strong></div>
+                                </div>
+
+                                <hr class="my-3" />
+
+                                <div class="font-weight-bold text-primary mb-1 mt-4">Ja</div>
+                                <div>Tu už aj mám nejaké poznámky. lobortis. Maecenas sed diam eget risus varius blandit
+                                    sit amet non magna. Aenean lacinia bibendum nulla sed consectetur. Cras mattis
+                                    consectetur purus sit amet fermentum.</div>
+
+                                <div class="font-weight-bold text-primary mb-1 mt-4">Môj team-leader</div>
+                                <div>Maecenas sed diam eget.</div>
+
+                                <div class="font-weight-bold text-primary mb-1 mt-4">Spoločný záver</div>
+                                <div>Tu už aj mám nejaké poznámky. lobortis. Maecenas sed diam eget risus varius blandit
+                                    sit amet non magna. Aenean lacinia bibendum nulla sed consectetur. Cras mattis
+                                    consectetur purus sit amet fermentum.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item d-block bg-white p-6 border-radius-md box-shadow-sm mt-3 ml-8 fs-6">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="d-block text-primary font-weight-bold mb-1">Zlepšiť Angular na 80% </div>
+                                <div class="row fs-5">
+                                    <div class="col-6">Splnené na: <strong>60%</strong></div>
+                                    <div class="col-6 text-right">Váha cieľa: <strong>20%</strong></div>
+                                </div>
+
+                                <hr class="my-3" />
+
+                                <div class="font-weight-bold text-primary mb-1 mt-4">Ja</div>
+                                <div>Tu už aj mám nejaké poznámky. lobortis. Maecenas sed diam eget risus varius blandit
+                                    sit amet non magna. Aenean lacinia bibendum nulla sed consectetur. Cras mattis
+                                    consectetur purus sit amet fermentum.</div>
+
+                                <div class="font-weight-bold text-primary mb-1 mt-4">Môj team-leader</div>
+                                <div>Maecenas sed diam eget.</div>
+
+                                <div class="font-weight-bold text-primary mb-1 mt-4">Spoločný záver</div>
+                                <div>Tu už aj mám nejaké poznámky. lobortis. Maecenas sed diam eget risus varius blandit
+                                    sit amet non magna. Aenean lacinia bibendum nulla sed consectetur. Cras mattis
+                                    consectetur purus sit amet fermentum.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item d-block bg-white p-6 border-radius-md box-shadow-sm mt-3 ml-8 fs-6">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="d-block text-primary font-weight-bold mb-1">Zlepšiť Angular na 80% </div>
+                                <div class="row fs-5">
+                                    <div class="col-6">Splnené na: <strong>60%</strong></div>
+                                    <div class="col-6 text-right">Váha cieľa: <strong>20%</strong></div>
+                                </div>
+
+                                <hr class="my-3" />
+
+                                <div class="font-weight-bold text-primary mb-1 mt-4">Ja</div>
+                                <div>Tu už aj mám nejaké poznámky. lobortis. Maecenas sed diam eget risus varius blandit
+                                    sit amet non magna. Aenean lacinia bibendum nulla sed consectetur. Cras mattis
+                                    consectetur purus sit amet fermentum.</div>
+
+                                <div class="font-weight-bold text-primary mb-1 mt-4">Môj team-leader</div>
+                                <div>Maecenas sed diam eget.</div>
+
+                                <div class="font-weight-bold text-primary mb-1 mt-4">Spoločný záver</div>
+                                <div>Tu už aj mám nejaké poznámky. lobortis. Maecenas sed diam eget risus varius blandit
+                                    sit amet non magna. Aenean lacinia bibendum nulla sed consectetur. Cras mattis
+                                    consectetur purus sit amet fermentum.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-4 border-radius-md box-shadow-sm mb-3 mt-6">
+                    <div><span class="font-weight-bold text-primary fs-7">2017</span> <span class="fs-6 ml-1">(1.3.2018
+                            - 31.1.2019)</span></div>
+                    <a href="#" title="#" class="text-secondary fs-3 d-inline-block mt-1">zobraziť viac</a>
+                </div>
+
+                <div class="bg-white p-4 border-radius-md box-shadow-sm mb-3 mt-6">
+                    <div><span class="font-weight-bold text-primary fs-7">2016</span> <span class="fs-6 ml-1">(1.3.2018
+                            - 31.1.2019)</span></div>
+                    <a href="#" title="#" class="text-secondary fs-3 d-inline-block mt-1">zobraziť viac</a>
+                </div> -->
+            </section>
+        </div>
+    </div>

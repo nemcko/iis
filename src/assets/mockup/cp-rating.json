@@ -1,0 +1,32 @@
+{
+  "id": "CP00000C8A",
+  "projectName": "JSROT Realizácia",
+  "customerName": "ČEZ, a.s.",
+  "opName": "JEDNOTNÝ SYSTÉM ŘÍZENÍ OSÁDEK V TERÉNU",
+  "ratedUserFN": "Driensky Martin",
+  "teamLeaderFN": "Fleischman Rony",
+  "themes": [
+    {
+      "title": "Proaktívny a samostatný prístup k riešeniu úloh – návrhy na zlepšenia, upozorňovanie na riziká",
+      "rating": 50,
+      "description": "Donec vitae massa tempor urna aliquam bibendum in eget odio. Praesent eget est pellentesque, laoreet neque id, porttitor ligula. Nullam euismod venenatis ipsum semper congue. Aenean a orci laoreet, aliquam urna et, aliquet odio. Praesent efficitur in leo nec egestas. Donec facilisis et sapien ut consequat. Nunc at euismod nunc, vitae porttitor nisi. Nullam tincidunt semper nibh. Donec non ligula vel nibh tempor suscipit. In feugiat hendrerit ante ut porta. Sed sed tortor condimentum, dapibus nisi dapibus, tincidunt lorem."
+    },
+    {
+      "title": "Kvalita práce – zapríčinenie problému s dopadom na výstupy projektu daného funkčného celku (budget, kvalita, harmonogram).",
+      "rating": 80,
+      "description": "Maecenas non odio ut mi ultrices blandit at eget eros. Etiam iaculis fermentum nisl, porta tempus sem varius non. Nullam a auctor libero. Vivamus vestibulum, nisl et porta tempus, nisi libero sodales libero, vel gravida nisi justo nec nisi. Suspendisse pretium ligula sed elit venenatis imperdiet. Aenean laoreet id lorem sit amet sollicitudin. Nunc nisi diam, ornare id urna non, tempor tincidunt felis. Morbi diam metus, sollicitudin quis dictum et, commodo in diam. Curabitur quis ligula vitae odio egestas tincidunt. Phasellus imperdiet maximus aliquet. Integer elit elit, finibus at felis nec, sodales tincidunt lacus."
+    },
+    {
+      "title": "Dodržiavanie termínov čiastkových úloh – meškanie bez dostatočného zdôvodnenia, resp. bez avizovania vopred",
+      "rating": 90,
+      "description": "Nunc congue ipsum orci, ac fermentum augue vulputate a. Mauris et orci lobortis, fringilla diam ac, scelerisque ligula. Nulla vestibulum laoreet enim, non tincidunt augue hendrerit mollis. Sed vitae lacus orci. Etiam eu lectus tellus. Pellentesque augue ante, ultricies vel tempus id, accumsan ut justo. Morbi bibendum nibh non nibh faucibus vulputate. Fusce in eros at massa posuere faucibus sed vel libero."
+    },
+    {
+      "title": "Priebežné vykazovanie výkonov – ideálne na dennej báze, minimálne na konci pracovného týdžňa (piatok)",
+      "rating": 30,
+      "description": "Nullam eros urna, gravida nec viverra et, semper sit amet lectus. Quisque sagittis lectus non ante ultricies, ut mollis nisi pretium. Ut dui risus, tempus egestas semper ac, vulputate sit amet velit. Phasellus eget magna a mi porttitor rhoncus ac sed turpis. Suspendisse cursus luctus lectus, at accumsan justo rhoncus sed. Integer congue nisi sit amet velit tincidunt, in placerat lectus semper."
+    }
+  ],
+  "summary": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec mollis purus, a volutpat tortor. Vestibulum consectetur ex purus. Integer laoreet sollicitudin nibh hendrerit suscipit. Mauris placerat massa ligula, eget pulvinar neque egestas sed. Integer sit amet neque vitae libero dapibus vestibulum. In massa quam, iaculis id diam pellentesque, fringilla auctor erat. Aenean nisl odio, gravida id lectus ac, convallis pellentesque odio. Ut congue tellus non dolor pretium pharetra.",
+  "status": "DRAFT"
+}

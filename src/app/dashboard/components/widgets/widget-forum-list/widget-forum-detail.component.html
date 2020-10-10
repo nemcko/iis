@@ -1,0 +1,11 @@
+<div class="bg-white p-6 border-radius-md box-shadow-lg">
+
+  <div *ngFor="let item of forumSumar; let i = index" [class]="(i == 0) ? 'mt-0':'mt-6'">
+    <h3 class="fs-5 font-weight-bold"><a routerLink="/dashboard/oznam/{{item.oznamId}}"  class="text-secondary text-truncate d-inline-block max-w-100 pr-3 position-relative">{{item.oznamName}}</a></h3>
+    <div class="text-gray fs-3 font-weight-bold">
+      Téma aktívna od {{item.oznamCreated}} <span class="d-inline-block mx-1">|</span> Najnovší príspevok
+      {{item.modified}} <span class="d-inline-block mx-1">|</span><span [innerText]="item.pocet + ((item.pocet > 4) ? ' komentárov ' : (item.pocet == 1) ? ' komentár ': ' komentáre ') + 'k článku'"></span>
+    </div>
+  </div>
+
+</div>

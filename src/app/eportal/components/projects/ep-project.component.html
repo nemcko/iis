@@ -1,0 +1,156 @@
+<nav class="nav topnav">
+    <a [routerLink]="['/portal',idl,'projects']" class="nav-link active"><i class="fas fa-angle-left"></i>&nbsp;Zoznam
+        projektov</a>
+</nav>
+
+<div class="row">
+    <div class="col-12 col-lg-6 pr-xl-6">
+        <header class="clearfix mb-2">
+            <h3 class="fs-7 font-weight-bold">{{data?.buscaseName}}</h3>
+        </header>
+
+        <div class="bg-white py-2 px-5 border-radius-md box-shadow-sm font-weight-bold">
+            <div class="fs-6 my-2">
+                <span class="text-primary">Projekt:</span> {{data?.projectName}}
+            </div>
+            <div class="fs-6 my-2">
+                <span class="text-primary">Projekt ID:</span> {{data?.projectId}}
+            </div>
+            <div class="fs-6 my-2">
+                <span class="text-primary">Zákazník:</span> {{data?.customerName}}
+            </div>
+            <div class="fs-6 my-2">
+                <span class="text-primary">Obchodný projekt:</span> {{data?.buscaseName}}
+            </div>
+            <div class="fs-6 my-2">
+                <span class="text-primary">Názov Rodného Listu:</span> {{data?.birthCertName}}
+            </div>
+            <div class="fs-6 my-2">
+                <span class="text-primary">Dátum vytvorenia / ukončenia:</span> {{data?.datefrom | date:'dd.MM.yyyy'}} /
+                {{data?.dateto | date:'dd.MM.yyyy'}}
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-lg-6 pl-xl-6 mt-7 mt-lg-0">
+        <div class="row h-sm-100">
+            <div class="col-12 col-sm-4 h-100 d-flex flex-column mb-5 mb-sm-0">
+                <header class="clearfix mb-2">
+                    <h3 class="fs-7 font-weight-bold">Dokumentácia</h3>
+                </header>
+
+                <a href="javascript:void(0)"
+                    class="bg-white py-8 px-2 py-md-5 border-radius-md box-shadow-sm h-100 d-flex justify-content-center">
+                    <img src="assets/ils-files.svg" alt="#" class="img-fluid">
+                </a>
+            </div>
+            <div class="col-12 col-sm-4 h-100 d-flex flex-column mb-5 mb-sm-0">
+                <header class="clearfix mb-2">
+                    <h3 class="fs-7 font-weight-bold">Začiatočné stretnutie</h3>
+                </header>
+
+                <a href="javascript:void(0)"
+                    class="bg-white py-8 px-2 py-md-5 border-radius-md box-shadow-sm h-100 d-flex justify-content-center">
+                    <img src="assets/il-scrum-board.svg" alt="#" class="img-fluid">
+                </a>
+            </div>
+            <div class="col-12 col-sm-4 h-100 d-flex flex-column mb-5 mb-sm-0">
+                <header class="clearfix mb-2">
+                    <h3 class="fs-7 font-weight-bold">Konečné stretnutie</h3>
+                </header>
+
+                <a href="javascript:void(0)"
+                    class="bg-white py-8 px-2 py-md-5 border-radius-md box-shadow-sm h-100 d-flex justify-content-center">
+                    <img src="assets/ils-project-completed.svg" alt="#" class="img-fluid">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-7">
+    <div class="col-12 col-lg-6 pr-xl-6 mb-4">
+        <header class="clearfix mb-2">
+            <h3 class="fs-7 font-weight-bold d-inline-block mr-3">Zloženie tímu</h3>
+        </header>
+
+        <h4 class="font-weight-bold text-primary mb-5 fs-6">
+            <span>Tímlídri:</span>
+            <a *ngIf="usrCtx.isTL(data?.leaders)" href="javascript:void(0)" (click)="manageTeam()" class="float-right font-weight-bold fs-5 text-secondary"><i
+                class="icon icon-edit fs-8 position-relative top-0"></i> Spravovať team</a>
+        </h4>
+
+        <div class="bg-white py-4 px-6 border-radius-md box-shadow-sm mb-2" *ngFor="let item of data?.leaders || []; let i = index">
+            <div class="e-zamestnanec-card user-image-sm">
+                <div class="row align-items-center">
+                    <div class="col-auto">
+                        <user-image [urlImage]="item?.photoref" [imgsize]="64" [ifontsize]="36" [cardName]="item?.personFN">
+                        </user-image>
+                    </div>
+                    <div class="col">
+                        <div class="fs-7 text-primary font-weight-bold">{{item?.personFN}}</div>
+                        <div>Teamleader, <strong>{{getWorktime(item)}}</strong></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h4 class="font-weight-bold text-primary mt-6 mb-5 fs-6">
+            <span>Tím:</span>
+        </h4>
+        <div class="bg-white py-4 px-6 border-radius-md box-shadow-sm mb-2 rating-actions-on" *ngFor="let item of data?.members || []; let i = index">
+            <div class="e-zamestnanec-card user-image-sm">
+                <div class="row align-items-center">
+                    <div class="col-auto">
+                        <div class="e-user-image">
+                            <user-image [urlImage]="item?.photoref" [imgsize]="64" [ifontsize]="36" [cardName]="item?.personFN">
+                            </user-image>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="row align-items-center">
+                            <div class="col-12 col-xl">
+                                <div class="fs-7 text-primary font-weight-bold">{{item?.personFN}}</div>
+                                <div>Software Engineer, <strong>{{getWorktime(item)}}</strong></div>
+                            </div>
+                            <div class="col-12 col-xl-auto text-primary fs-4 fs-md-16 mt-2 mt-xl-0">
+                                <div class="row flex-xl-column">
+                                    <div class="col-auto my-1">
+                                        <i class="icon icon-console fs-8 position-relative top-2 mr-2"></i> {{item?.datelastReview | date:'dd.MM.yyyy'}}
+                                    </div>
+                                    <div class="col-auto my-1">
+                                        <i class="icon icon-language fs-8 position-relative top-2 mr-2"></i> {{item?.datelastMeeting | date:'dd.MM.yyyy'}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div *ngIf="usrCtx.isTL(data?.leaders)" class="rating-actions align-items-center justify-content-center">
+                <div class="row text-nowrap">
+                    <div class="col-12 col-md-auto">
+                        <a href="javascript:void(0)" (click)="newCodeReview($event,item.personID)" class="font-weight-bold fs-5 text-secondary d-inline-block my-1"><i
+                                class="icon icon-plus-circle fs-8 position-relative top-2"></i> Pridať code
+                            review</a><br />
+                        <a href="javascript:void(0)" (click)="newMeeting($event,item.personID)"  class="font-weight-bold fs-5 text-secondary d-inline-block my-1"><i
+                                class="icon icon-plus-circle fs-8 position-relative top-2"></i> Pridať 1:1 meeting</a>
+                    </div>
+                    <div class="col-12 col-md-auto">
+                        <a href="javascript:void(0)" (click)="gotoLastReview($event,item)" class="font-weight-bold fs-5 text-secondary d-inline-block my-1"><i
+                                class="icon icon-console fs-8 position-relative top-2"></i> Pozrieť posledné code
+                            review</a><br />
+                        <a href="javascript:void(0)" (click)="gotoPersCard($event,item)" class="font-weight-bold fs-5 text-secondary d-inline-block my-1"><i
+                                class="icon icon-card-info fs-8 position-relative top-2"></i> Prejsť do karty
+                            zamestnanca</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-lg-6 pl-xl-6 mb-4">
+        <prolist [datatype]="'project'" [projectid]="id" [portalid]="idl" [accdata]="data?.leaders"></prolist>
+    </div>
+</div>
+

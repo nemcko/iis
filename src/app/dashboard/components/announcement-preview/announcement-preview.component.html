@@ -1,0 +1,43 @@
+<article class="pt-2">
+  <div class="row">
+    <div [class]="(oznam.bigText) ? 'col-12 col-md-10' : 'col-12 col-md-10 col-lg-9 col-xl-8 mx-auto'">
+      <div class="b-article-detail">
+        <header class="article-header mb-6">
+          <div class="position-relative">
+            <div class="image box-shadow-lg">
+              <img [src]="'./assets/empty_image.jpg'" alt="#" class="img-fluid"
+                *ngIf="oznam && (oznam.imgUrl.length == 0)">
+              <img [src]="oznam.imgUrl" alt="#" class="img-fluid" *ngIf="oznam && (oznam.imgUrl.length > 0)">
+            </div>
+          </div>
+
+          <div class="content">
+            <div class="row">
+                <div [class]="(oznam.bigText) ? 'col-12' : 'col-11 col-xl-9 mx-auto'">
+                <div class="bg-white border-radius-md p-4 py-lg-7 px-lg-8 box-shadow-lg position-relative">
+                  <h3 class="fs-7 font-weight-bold mb-2 text-primary">{{oznam.title}}</h3>
+                  <div class="mb-1 text-gray fs-6 font-weight-bold">{{oznam.created}} {{oznam.authorFN}}</div>
+                  <div class="fs-6">
+                    <a class="cursor-pointer text-tertiary font-weight-bold mr-1"
+                      *ngFor="let category of oznam.category">#{{category}}</a>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <div class="row">
+            <div [class]="(oznam.bigText) ? 'col-12' : 'col-11 col-xl-9 mx-auto'">
+            <!-- Content -->
+            <div class="bg-white bg-white border-radius-md p-4 p-lg-8 box-shadow-lg e-rte"
+              [innerHTML]="oznam.content | keepHtml">
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>

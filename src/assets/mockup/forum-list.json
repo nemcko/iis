@@ -1,0 +1,72 @@
+[
+    {
+        "id": "NT00000F92",
+        "parentId": "",
+        "oznamId": "NT00000DD6",
+        "modified": "07. 01. 2019 14:38:58",
+        "imgUrl": "https://dev9ba01.posam.sk/iis/hr/photoman.nsf/img/230/$file/230.jpg",
+        "privileges": [],
+        "author": "Driensky Martin",
+        "description": "Lorem%20ipsum%20dolor%20sit%20amet%2C%20consectetur%20adipiscing%20elit%2C%20sed%20do%20eiusmod%20tempor%20incididunt%20ut%20labore%20et%20dolore%20magna%20aliqua.-tu je enter-%0d%0a%20Ut%20enim%20ad%20minim%20veniam%2C%20quis%20nostrud%20exercitation%20ullamco%20laboris%20nisi%20ut%20aliquip%20ex%20ea%20commodo%20consequat.%20Duis%20aute%20irure%20dolor%20in%20reprehenderit%20in%20voluptate%20velit%20esse%20cillum%20dolore%20eu%20fugiat%20nulla%20pariatur.%20Excepteur%20sint%20occaecat%20cupidatat%20non%20proident%2C%20sunt%20in%20culpa%20qui%20officia%20deserunt%20mollit%20anim%20id%20est%20laborum.%20",
+        "responses":[
+            {
+                "id": "NT00000FAA",
+                "parentId": "NT00000F92",
+                "oznamId": "NT00000DD6",
+                "modified": "07. 01. 2019 13:48:09",
+                "imgUrl": "https://dev9ba01.posam.sk/iis/hr/photoman.nsf/img/230/$file/230.jpg",
+                "privileges": [
+                    "CAN_EDIT"
+                ],
+                "author": "Driensky Martin",
+                "description": "Contrary%20to%20popular%20belief%2C%20Lorem%20Ipsum%20is%20not%20simply%20random%20text.%20It%20has%20roots%20in%20a%20piece%20of%20classical%20Latin%20literature%20from%2045%20BC%2C%20making%20it%20over%202000%20years%20old."
+            }
+        ]
+    },
+    {
+        "id": "NT00000F93",
+        "parentId": "",
+        "oznamId": "NT00000DD6",
+        "modified": "07. 01. 2019 13:46:18",
+        "imgUrl": "https://dev9ba01.posam.sk/iis/hr/photoman.nsf/img/230/$file/230.jpg",
+        "privileges": [],
+        "author": "Driensky Martin",
+        "description": "Lorem%20ipsum%20dolor%20sit%20amet%2C%20consectetur%20adipiscing%20elit%2C%20sed%20do%20eiusmod%20tempor%20incididunt%20ut%20labore%20et%20dolore%20magna%20aliqua.%20Ut%20enim%20ad%20minim%20veniam%2C%20quis%20nostrud%20exercitation%20ullamco%20laboris%20nisi%20ut%20aliquip%20ex%20ea%20commodo%20consequat.%20Duis%20aute%20irure%20dolor%20in%20reprehenderit%20in%20voluptate%20velit%20esse%20cillum%20dolore%20eu%20fugiat%20nulla%20pariatur.%20Excepteur%20sint%20occaecat%20cupidatat%20non%20proident%2C%20sunt%20in%20culpa%20qui%20officia%20deserunt%20mollit%20anim%20id%20est%20laborum.%20",
+        "responses":[]
+    },
+    {
+        "id": "NT00000F8A",
+        "parentId": "",
+        "oznamId": "NT00000DD6",
+        "modified": "07. 01. 2019 13:47:39",
+        "imgUrl": "https://dev9ba01.posam.sk/iis/hr/photoman.nsf/img/87/$file/87.jpg",
+        "privileges": [
+            "CAN_EDIT"
+        ],
+        "author": "Maruška Tomáš",
+        "description": "Making%20your%20own%20computer%20from%20scratch%20is%20not%20only%20fun%20to%20do%20but%20cheaper%20as%20well.%20You%20can%20get%20to%20choose%20the%20parts%20you%20want%20to%20use%20on%20your%20PC.%20This%20gives%20you%20the%20control%20in%20balancing%20the%20price%20and%20the%20quality%20of%20your%20newly%20assembled%20PC.%20Before%20we%20show%20you%20the%20steps%2C%20here%20are%20the%20necessary%20parts%20of%20the%20computer%20that%20you%20need%20to%20buy.%20",
+        "responses":[
+            {
+                "id": "NT00000F9E",
+                "parentId": "NT00000F8A",
+                "oznamId": "NT00000DD6",
+                "modified": "07. 01. 2019 13:48:09",
+                "imgUrl": "https://dev9ba01.posam.sk/iis/hr/photoman.nsf/img/230/$file/230.jpg",
+                "privileges": [],
+                "author": "Driensky Martin",
+                "description": "Contrary%20to%20popular%20belief%2C%20Lorem%20Ipsum%20is%20not%20simply%20random%20text.%20It%20has%20roots%20in%20a%20piece%20of%20classical%20Latin%20literature%20from%2045%20BC%2C%20making%20it%20over%202000%20years%20old."
+            },
+            {
+                "id": "NT00000F9A",
+                "parentId": "NT00000F8A",
+                "oznamId": "NT00000DD6",
+                "modified": "07. 01. 2019 13:49:21",
+                "imgUrl": "https://dev9ba01.posam.sk/iis/hr/photoman.nsf/img/98/$file/98.jpg",
+                "privileges": [],
+                "author": "Šefčík Marián",
+                "description": "This%20gives%20you%20the%20control%20in%0a%0d%0dbalancing%20the%20price%20and%20the%20quality%20of%20your%20PC.%20"
+            }
+        ]
+    }
+    
+]

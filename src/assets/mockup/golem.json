@@ -1,0 +1,903 @@
+{
+    "USERS": [
+        {
+            "id": "cn=Driensky Martin/ou=PosAm Bratislava",
+            "text": "Driensky Martin",
+            "personId": "230"
+        },
+        {
+            "id": "cn=Fleischman Rony/ou=PosAm Bratislava",
+            "text": "Fleischman Rony",
+            "personId": "247"
+        },
+        {
+            "id": "cn=Maruska Tomas/ou=PosAm Bratislava",
+            "text": "Maruška Tomáš",
+            "personId": "87"
+        },
+        {
+            "id": "cn=Steffel Peter/ou=PosAm Bratislava",
+            "text": "Šteffel Peter",
+            "personId": "428"
+        }
+    ],
+    "TEAMS": [
+        {
+            "id": "OANG_CONTROLLING",
+            "text": "Controlling"
+        },
+        {
+            "id": "TEAM_ACCOUNTANTS",
+            "text": "eProcurement - Účtovníci"
+        },
+        {
+            "id": "HR_Uchadzaci",
+            "text": "HR Uchádzači"
+        },
+        {
+            "id": "ZMLUVY_OOPP",
+            "text": "JAVYS - zmluvy OOPP"
+        },
+        {
+            "id": "MRP_RIS_PM",
+            "text": "MRP – RIS Projektový manažér"
+        },
+        {
+            "id": "eOBJ_NAKUPCOVIA",
+            "text": "Nákupcovia v aplikácii Žiadanky a objednávky"
+        },
+        {
+            "id": "OANG_BA",
+            "text": "OANG - Banky"
+        },
+        {
+            "id": "OANG_FaP",
+            "text": "OANG - Financie a poisťovne"
+        },
+        {
+            "id": "MSEK-9ZJHNZ",
+            "text": "OANG PM POOL"
+        },
+        {
+            "id": "OANG_PR",
+            "text": "OANG - Priemysel"
+        },
+        {
+            "id": "OANG_TaM",
+            "text": "OANG - Telco a Media"
+        },
+        {
+            "id": "OANG_VS",
+            "text": "OANG - Verejná správa"
+        },
+        {
+            "id": "OANG",
+            "text": "Obchodné aktivity NG - prístupy"
+        },
+        {
+            "id": "MRP_WORK_SPONZOR",
+            "text": "Riaditelia divízií a OS (MRP)"
+        }
+    ]
+    ,
+    
+    "FUNCTIONS": [
+        {
+            "id": "FNC744111049076",
+            "text": "Account manažér"
+        },
+        {
+            "id": "FNC620522783174",
+            "text": "Administrátor"
+        },
+        {
+            "id": "FNC200462634701",
+            "text": "Administrátor virtualizačnej platformy"
+        },
+        {
+            "id": "FNC585634466123",
+            "text": "Administrátor zálohovania"
+        },
+        {
+            "id": "FNC909385017149",
+            "text": "Analytik"
+        },
+        {
+            "id": "FNC330792369692",
+            "text": "Aplikačná podpora"
+        },
+        {
+            "id": "FNC914561785957",
+            "text": "Architekt"
+        },
+        {
+            "id": "FNC051085040267",
+            "text": "Asistent"
+        },
+        {
+            "id": "FNC005688747806",
+            "text": "Bezpečnostný správca"
+        },
+        {
+            "id": "FNC879763373526",
+            "text": "Bezpečnostný technik"
+        },
+        {
+            "id": "FNC050049647000",
+            "text": "Business Development Manager"
+        },
+        {
+            "id": "FNC641548453909",
+            "text": "Colný deklarant"
+        },
+        {
+            "id": "FNC352623663104",
+            "text": "Controlling manažér"
+        },
+        {
+            "id": "FNC556191611066",
+            "text": "Databázový administrátor"
+        },
+        {
+            "id": "FNC750493943988",
+            "text": "Dispečér"
+        },
+        {
+            "id": "FNC614467591407",
+            "text": "Finančný riaditeľ"
+        },
+        {
+            "id": "FNC077865974883",
+            "text": "Generálny riaditeľ"
+        },
+        {
+            "id": "FNC078307071764",
+            "text": "Hlavný účtovník"
+        },
+        {
+            "id": "FNC331892012534",
+            "text": "Interný auditor"
+        },
+        {
+            "id": "FNC874946207687",
+            "text": "Interný projektový manažér"
+        },
+        {
+            "id": "FNC230137394162",
+            "text": "Key Account Manager"
+        },
+        {
+            "id": "FNC878461663272",
+            "text": "Konzultant"
+        },
+        {
+            "id": "FNC766853425035",
+            "text": "Manažér kvality"
+        },
+        {
+            "id": "FNC331055288533",
+            "text": "Marketing"
+        },
+        {
+            "id": "FNC065252429661",
+            "text": "Nákupca"
+        },
+        {
+            "id": "FNC006250809196",
+            "text": "Obchodník"
+        },
+        {
+            "id": "FNC851487907596",
+            "text": "Odborný riaditeľ"
+        },
+        {
+            "id": "FNC709055586321",
+            "text": "Operátor dohľadového centra"
+        },
+        {
+            "id": "FNC825063424378",
+            "text": "Operátor kontaktného centra"
+        },
+        {
+            "id": "FNC559488585430",
+            "text": "Personalista"
+        },
+        {
+            "id": "FNC001786602778",
+            "text": "Pracovník 1. úrovne podpory"
+        },
+        {
+            "id": "FNC056039607938",
+            "text": "Prijímací technik"
+        },
+        {
+            "id": "FNC130373943849",
+            "text": "Problem Manager"
+        },
+        {
+            "id": "FNC762554475716",
+            "text": "Produktový manažér"
+        },
+        {
+            "id": "FNC911056245716",
+            "text": "Programátor‚ Programátor"
+        },
+        {
+            "id": "FNC313543546449",
+            "text": "Projektový manažér"
+        },
+        {
+            "id": "FNC458731178717",
+            "text": "Prokurista"
+        },
+        {
+            "id": "FNC078428686196",
+            "text": "QA"
+        },
+        {
+            "id": "FNC730195294225",
+            "text": "Recepčná"
+        },
+        {
+            "id": "FNC218394708750",
+            "text": "Referent pre dopravu"
+        },
+        {
+            "id": "FNC002316168579",
+            "text": "Referent pre poistenie"
+        },
+        {
+            "id": "FNC464012855150",
+            "text": "Riaditeľ divízie"
+        },
+        {
+            "id": "FNC853261493307",
+            "text": "Riaditeľ divízie organizácie a riadenia"
+        },
+        {
+            "id": "FNC680386248413",
+            "text": "Riaditeľ interného informačného systému"
+        },
+        {
+            "id": "FNC216941974292",
+            "text": "Riaditeľ ľudských zdrojov"
+        },
+        {
+            "id": "FNC685743557771",
+            "text": "Riaditeľ obchodnej divízie"
+        },
+        {
+            "id": "FNC027907932181",
+            "text": "Riaditeľ pobočky"
+        },
+        {
+            "id": "FNC556183088822",
+            "text": "Riaditeľ projektovej kancelárie"
+        },
+        {
+            "id": "FNC738394643416",
+            "text": "Riaditeľ realizačnej divízie"
+        },
+        {
+            "id": "FNC041593929268",
+            "text": "Riaditeľ úseku ekonomiky a financií"
+        },
+        {
+            "id": "FNC311474906144",
+            "text": "Service Delivery Manager"
+        },
+        {
+            "id": "FNC225840937343",
+            "text": "Service Level Manager"
+        },
+        {
+            "id": "FNC250041841187",
+            "text": "Service Quality Manager"
+        },
+        {
+            "id": "FNC846069186256",
+            "text": "Servisný technik"
+        },
+        {
+            "id": "FNC762586848206",
+            "text": "Skladník"
+        },
+        {
+            "id": "FNC145078552982",
+            "text": "Správca budovy"
+        },
+        {
+            "id": "FNC731699971076",
+            "text": "Správca fyzickej bezpečnosti"
+        },
+        {
+            "id": "FNC202358959724",
+            "text": "Správca rizikových analýz"
+        },
+        {
+            "id": "FNC827411093750",
+            "text": "Školiteľ"
+        },
+        {
+            "id": "FNC572023351045",
+            "text": "Špecialista pre technický rozvoj"
+        },
+        {
+            "id": "FNC742278102299",
+            "text": "Špeditér"
+        },
+        {
+            "id": "FNC707021194105",
+            "text": "Tím líder"
+        },
+        {
+            "id": "FNC375567926920",
+            "text": "TPSE"
+        },
+        {
+            "id": "FNC230752054717",
+            "text": "Účtovník"
+        },
+        {
+            "id": "FNC402143907956",
+            "text": "Vedúci oddelenia"
+        },
+        {
+            "id": "FNC692690498719",
+            "text": "Vedúci organizačného útvaru‚ Vedúci organizačného útvaru"
+        },
+        {
+            "id": "FNC218657268967",
+            "text": "Vedúci školiaceho strediska"
+        },
+        {
+            "id": "FNC389829752680",
+            "text": "Vedúci úseku ekonomiky"
+        },
+        {
+            "id": "FNC749514653181",
+            "text": "Vedúci úseku PM&MK"
+        },
+        {
+            "id": "FNC600022756237",
+            "text": "Vodič"
+        },
+        {
+            "id": "FNC009212827817",
+            "text": "Výkonný riaditeľ"
+        },
+        {
+            "id": "FNC018543543267",
+            "text": "Zamestnanec‚ Zamestnanec"
+        },
+        {
+            "id": "FNC279727663968",
+            "text": "‚ Riaditeľ Obchodnej Skupiny"
+        }
+    ]
+    ,
+    
+    "UNITS": [
+        {
+            "id": "UNT367976619876",
+            "text": "posam-1000: Divízia GR"
+        },
+        {
+            "id": "UNT471963445899",
+            "text": "posam-2020: Business Services"
+        },
+        {
+            "id": "UNT187084576089",
+            "text": "posam-2070: Oddelenie marketingovej komunikácie"
+        },
+        {
+            "id": "UNT905643413735",
+            "text": "posam-2080: Úsek produktového manažmentu a obchodnej podpory"
+        },
+        {
+            "id": "UNT555868298984",
+            "text": "posam-2081: Vedenie úseku produktového manažmentu a obchodnej podpory"
+        },
+        {
+            "id": "UNT464626147539",
+            "text": "posam-2082: Oddelenie prípravy ponúk"
+        },
+        {
+            "id": "UNT286472004763",
+            "text": "posam-2083: Oddelenie prevádzkových služieb"
+        },
+        {
+            "id": "UNT742343068027",
+            "text": "posam-2084: Oddelenie aplikácií"
+        },
+        {
+            "id": "UNT305562424501",
+            "text": "posam-2085: Indirect Sales Dpt."
+        },
+        {
+            "id": "UNT087261749759",
+            "text": "posam-2087: Oddelenie infraštruktúrnych riešení"
+        },
+        {
+            "id": "UNT997286555633",
+            "text": "posam-2088 : Školenia a vzdelávanie"
+        },
+        {
+            "id": "UNT412426544300",
+            "text": "posam-2089: Vedenie úseku produktového manažmentu a obchodnej podpory"
+        },
+        {
+            "id": "UNT203772709276",
+            "text": "posam-2095: FRaI"
+        },
+        {
+            "id": "UNT019735486355",
+            "text": "posam-2100: Obchodná divízia"
+        },
+        {
+            "id": "UNT757095644506",
+            "text": "posam-2110: Verejná správa a zdravotníctvo"
+        },
+        {
+            "id": "UNT771694405321",
+            "text": "posam-2111: Vedenie obchodnej skupiny"
+        },
+        {
+            "id": "UNT753445638999",
+            "text": "posam-2112: Verejná správa"
+        },
+        {
+            "id": "UNT780412649761",
+            "text": "posam-2113: Zdravotníctvo"
+        },
+        {
+            "id": "UNT983442288092",
+            "text": "posam-2114: Business Development"
+        },
+        {
+            "id": "UNT310822254554",
+            "text": "posam-2115: Snomed"
+        },
+        {
+            "id": "UNT968842897836",
+            "text": "posam-2117: Infraštruktúrne riešenia"
+        },
+        {
+            "id": "UNT993435076349",
+            "text": "posam-2120: Priemysel a sieťové odvetvia"
+        },
+        {
+            "id": "UNT341054416289",
+            "text": "posam-2121: Vedenie obchodnej skupiny"
+        },
+        {
+            "id": "UNT974932461763",
+            "text": "posam-2122: Business Development Dpt."
+        },
+        {
+            "id": "UNT006594621054",
+            "text": "posam-2123: Obchodné a projektové oddelenie"
+        },
+        {
+            "id": "UNT719919464493",
+            "text": "posam-2125: Slovak Telecom"
+        },
+        {
+            "id": "UNT943342425364",
+            "text": "posam-2127: Infraštruktúrne riešenia"
+        },
+        {
+            "id": "UNT171673995267",
+            "text": "posam-2130: Financie a poisťovne"
+        },
+        {
+            "id": "UNT540918847587",
+            "text": "posam-2131: Vedenie obchodnej skupiny"
+        },
+        {
+            "id": "UNT490143923194",
+            "text": "posam-2133: Poisťovne"
+        },
+        {
+            "id": "UNT054855657121",
+            "text": "posam-2137: Infraštruktúrne riešenia"
+        },
+        {
+            "id": "UNT447879637228",
+            "text": "posam-2140: Banky"
+        },
+        {
+            "id": "UNT488270109159",
+            "text": "posam-2141: Vedenie obchodnej skupiny"
+        },
+        {
+            "id": "UNT324914973378",
+            "text": "posam-2142: Banky"
+        },
+        {
+            "id": "UNT090822909902",
+            "text": "posam-2147: Infraštruktúrne riešenia"
+        },
+        {
+            "id": "UNT863460333223",
+            "text": "posam-2150: Telco a Media"
+        },
+        {
+            "id": "UNT755322402269",
+            "text": "posam-2151: Vedenie obchodnej skupiny"
+        },
+        {
+            "id": "UNT860412866064",
+            "text": "posam-2152: ST group"
+        },
+        {
+            "id": "UNT034115330141",
+            "text": "posam-2153: Telco mimo ST/DT"
+        },
+        {
+            "id": "UNT046627488103",
+            "text": "posam-2154: Media"
+        },
+        {
+            "id": "UNT477661628381",
+            "text": "posam-2155: DT group"
+        },
+        {
+            "id": "UNT152413069430",
+            "text": "posam-2157: Infraštruktúrne riešenia"
+        },
+        {
+            "id": "UNT393823746460",
+            "text": "posam-2159: Réžia OS"
+        },
+        {
+            "id": "UNT328626772500",
+            "text": "posam-2199: Réžia obchodu"
+        },
+        {
+            "id": "UNT815735105439",
+            "text": "posam-3200: Divízia vývoja sw 1"
+        },
+        {
+            "id": "UNT924073868909",
+            "text": "posam-3210: Oddelenie vývoja BA"
+        },
+        {
+            "id": "UNT962285063524",
+            "text": "posam-3230: Oddelenie vývoja BB"
+        },
+        {
+            "id": "UNT905815972929",
+            "text": "posam-3231: Oddelenie vývoja BB2"
+        },
+        {
+            "id": "UNT029073347859",
+            "text": "posam-3240: Oddelenie vývoja KE"
+        },
+        {
+            "id": "UNT058074333164",
+            "text": "posam-3241: Oddelenie vývoja KE 2"
+        },
+        {
+            "id": "UNT935078219262",
+            "text": "posam-3260: Oddelenie konzultácií a analýz"
+        },
+        {
+            "id": "UNT515072171700",
+            "text": "posam-3299: Réžia SW1"
+        },
+        {
+            "id": "UNT057075374756",
+            "text": "posam-3300: Divízia vývoja sw 2"
+        },
+        {
+            "id": "UNT695064083641",
+            "text": "posam-3311: Oddelenie BA I."
+        },
+        {
+            "id": "UNT380537775256",
+            "text": "posam-3312: Oddelenie BA II."
+        },
+        {
+            "id": "UNT827594822868",
+            "text": "posam-3313: Oddelenie LV"
+        },
+        {
+            "id": "UNT197997273084",
+            "text": "posam-3314: Oddelenie BB"
+        },
+        {
+            "id": "UNT185415398288",
+            "text": "posam-3321: Oddelenie RIS I."
+        },
+        {
+            "id": "UNT237816679084",
+            "text": "posam-3322: Oddelenie RIS II."
+        },
+        {
+            "id": "UNT929560762876",
+            "text": "posam-3324: Oddelenie KE"
+        },
+        {
+            "id": "UNT591168443748",
+            "text": "posam-3325: Oddelenie ZA"
+        },
+        {
+            "id": "UNT981987073277",
+            "text": "posam-3326: Oddelenie ZA II."
+        },
+        {
+            "id": "UNT091712302631",
+            "text": "posam-3330: Oddelenie systémových analýz"
+        },
+        {
+            "id": "UNT146870325122",
+            "text": "posam-3340: Oddelenie testovania a podpory"
+        },
+        {
+            "id": "UNT291745039299",
+            "text": "posam-3350: Oddelenie .NET a CPP"
+        },
+        {
+            "id": "UNT926694156099",
+            "text": "posam-3370: Oddelenie biznis analýz"
+        },
+        {
+            "id": "UNT073211697136",
+            "text": "posam-3399: Réžia SW2"
+        },
+        {
+            "id": "UNT065249098297",
+            "text": "posam-3400: Divízia systémovej integrácie"
+        },
+        {
+            "id": "UNT054071603134",
+            "text": "posam-3410: Oddelenie systémov"
+        },
+        {
+            "id": "UNT058953774329",
+            "text": "posam-3420: Oddelenie komunikačných a kolaboračných systémov"
+        },
+        {
+            "id": "UNT135393125912",
+            "text": "posam-3430: Oddelenie databázových systémov"
+        },
+        {
+            "id": "UNT650745833566",
+            "text": "posam-3440: Oddelenie návrhu infraštruktúry"
+        },
+        {
+            "id": "UNT810027568210",
+            "text": "posam-3499: Réžia DSI"
+        },
+        {
+            "id": "UNT048434637602",
+            "text": "posam-3500: Divízia ERP systémov"
+        },
+        {
+            "id": "UNT437689898330",
+            "text": "posam-3510: Oddelenie SAP"
+        },
+        {
+            "id": "UNT058475719417",
+            "text": "posam-4500: Divízia servisných činností"
+        },
+        {
+            "id": "UNT005405766429",
+            "text": "posam-4510: Oddelenie servisu BA"
+        },
+        {
+            "id": "UNT067833726663",
+            "text": "posam-4520: Oddelenie servisu BB"
+        },
+        {
+            "id": "UNT618069058090",
+            "text": "posam-4530: oddelenie servisu KE"
+        },
+        {
+            "id": "UNT631940593566",
+            "text": "posam-4540: oddelenie servisu ZA"
+        },
+        {
+            "id": "UNT806341359430",
+            "text": "posam-4550: Dispečing servisu"
+        },
+        {
+            "id": "UNT198010394478",
+            "text": "posam-4560: Partneri servisu"
+        },
+        {
+            "id": "UNT692444755594",
+            "text": "posam-4570: Obchodné oddelenie servisu"
+        },
+        {
+            "id": "UNT330480867151",
+            "text": "posam-4580: Oddelenie obstarávania"
+        },
+        {
+            "id": "UNT266771185041",
+            "text": "posam-4599: Réžia servis"
+        },
+        {
+            "id": "UNT014102862805",
+            "text": "posam-4600: Divízia služieb"
+        },
+        {
+            "id": "UNT291780793081",
+            "text": "posam-4610: Kontaktné centrum"
+        },
+        {
+            "id": "UNT906719522109",
+            "text": "posam-4620: Oddelenie školiacich stredísk"
+        },
+        {
+            "id": "UNT168299583590",
+            "text": "posam-4621: Školiace stredisko BA"
+        },
+        {
+            "id": "UNT003197144610",
+            "text": "posam-4622: Školiace stredisko KE"
+        },
+        {
+            "id": "UNT909076476352",
+            "text": "posam-4630: Dohľadové centrum"
+        },
+        {
+            "id": "UNT748199067306",
+            "text": "posam-4640: Oddelenie SM"
+        },
+        {
+            "id": "UNT998537778904",
+            "text": "posam-4699: Réžia služby"
+        },
+        {
+            "id": "UNT088833994128",
+            "text": "posam-4800: Divízia technickej podpory SE"
+        },
+        {
+            "id": "UNT816261865139",
+            "text": "posam-4810: Oddelenie TP RAS"
+        },
+        {
+            "id": "UNT976837089226",
+            "text": "posam-4820: Oddelenie TP EBO"
+        },
+        {
+            "id": "UNT496363607629",
+            "text": "posam-4830: Oddelenie TP EMO"
+        },
+        {
+            "id": "UNT555047139536",
+            "text": "posam-4840: Oddelenie TP VET"
+        },
+        {
+            "id": "UNT038153509053",
+            "text": "posam-4850: Oddelenie TP ENO"
+        },
+        {
+            "id": "UNT006541782349",
+            "text": "posam-4860: Oddelenie TP EVO"
+        },
+        {
+            "id": "UNT090827175348",
+            "text": "posam-4870: Service desk"
+        },
+        {
+            "id": "UNT041467952251",
+            "text": "posam-4899: Réžia TP SE"
+        },
+        {
+            "id": "UNT505345436713",
+            "text": "posam-9100: Divízia kontrolingu a ekonomiky"
+        },
+        {
+            "id": "UNT534955026123",
+            "text": "posam-9110: Úsek kontrolingu"
+        },
+        {
+            "id": "UNT478046567300",
+            "text": "posam-9120: Úsek ekonomiky a financií"
+        },
+        {
+            "id": "UNT626124736587",
+            "text": "posam-9700: Divízia organizácie a riadenia"
+        },
+        {
+            "id": "UNT928690226097",
+            "text": "posam-9720: Úsek IIS"
+        },
+        {
+            "id": "UNT567727459804",
+            "text": "posam-9730: Správa priestorov"
+        },
+        {
+            "id": "UNT264821615367",
+            "text": "posam-9740: Projektová kancelária"
+        },
+        {
+            "id": "UNT661536916694",
+            "text": "posam-9750: Úsek ľudských zdrojov"
+        },
+        {
+            "id": "UNT055462465046",
+            "text": "posam-9751: Sekretariát a recepcia"
+        },
+        {
+            "id": "UNT133176044954",
+            "text": "posam-9760: Úsek IMS"
+        },
+        {
+            "id": "UNT133190682563",
+            "text": "posam-9799: Réžia EKaVS"
+        },
+        {
+            "id": "UNT984077125623",
+            "text": "posam-9900: FIRMA"
+        },
+        {
+            "id": "UNT833346927566",
+            "text": "posam-9910: BA"
+        },
+        {
+            "id": "UNT923253582769",
+            "text": "posam-9920: Pobočka BB"
+        },
+        {
+            "id": "UNT022194712465",
+            "text": "posam-9930: Pobočka KE"
+        },
+        {
+            "id": "UNT401971362252",
+            "text": "posam-9940: Pobočka ZA"
+        },
+        {
+            "id": "UNT920529071714",
+            "text": "posam-9950: LE"
+        },
+        {
+            "id": "UNT685962529973",
+            "text": "posam-9980: Vedenie firmy"
+        },
+        {
+            "id": "UNT737270062037",
+            "text": "posam-9990: Inkubátor"
+        },
+        {
+            "id": "UNT299927267032",
+            "text": "posamIT-1000: Vedenie"
+        },
+        {
+            "id": "UNT598180047693",
+            "text": "posamIT-2100: Obchodné oddelenie"
+        },
+        {
+            "id": "UNT430110958235",
+            "text": "posamIT-2130: Banky a poisťovne"
+        },
+        {
+            "id": "UNT805240567887",
+            "text": "posamIT-3420: Oddelenie realizácie IS"
+        },
+        {
+            "id": "UNT963381906029",
+            "text": "PosAm IT s.r.o.‚ Praha"
+        },
+        {
+            "id": "UNT931476217388",
+            "text": "PosAm‚ spol.s r.o."
+        },
+        {
+            "id": "UNT699986977030",
+            "text": "Recepcie"
+        },
+        {
+            "id": "UNT115948104056",
+            "text": "Support IS"
+        },
+        {
+            "id": "UNT043381311856",
+            "text": "Špecialne telefónne čísla"
+        }
+    ]
+    
+}

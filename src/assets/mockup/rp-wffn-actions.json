@@ -1,0 +1,5 @@
+{
+  "actions":[
+    "save", "EDIT", "ACT_ODOSLAT", "ACT_SCHVALIT", "ACT_VRATIT", "ACT_ZAMIETNUT", "ACT_VYPLATIT", "ACT_DELETE"
+  ]
+}

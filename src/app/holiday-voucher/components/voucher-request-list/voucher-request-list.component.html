@@ -1,0 +1,120 @@
+<article class="pt-2">
+  <div class="row">
+    <div class="col-12 col-md-10 col-lg-9 col-xl-8 mx-auto">
+      <header class="clearfix mb-5">
+        <h3 class="fs-7 font-weight-bold d-inline-block mr-6">Rekreačné poukazy</h3>
+        <a routerLink="/holiday-voucher/faq" class="font-weight-bold text-secondary float-right">Často kladené
+          otázky</a>
+      </header>
+      
+      <div class="b-article-detail">
+        <header class="article-header mb-6">
+          <div class="position-relative">
+            <div class="image box-shadow-lg">
+              <img [src]="(voucherRequestAllowed) ? './assets/rp_dom.jpg' : './assets/img-rp-empty-state.jpg'" alt="#" class="img-fluid ">
+            </div>
+          </div>
+
+          <div class="content">
+            <div class="row">
+              <div class="col-11 col-xl-9 mx-auto">
+                <!-- NEMA NAROK NA POUKAZ -->                
+                <div *ngIf="!voucherRequestAllowed" class="bg-white border-radius-md p-4 py-lg-7 px-lg-8 box-shadow-lg position-relative text-center">
+                  <h3 class="fs-7 font-weight-bold my-7 text-primary">Ľutujeme, nemáš nárok na príspevok na rekreáciu
+                  </h3>
+                </div>
+
+                <!-- MA NAROK NA POUKAZ -->
+                <div *ngIf="voucherRequestAllowed" class="bg-white border-radius-md p-4 py-lg-7 px-lg-8 box-shadow-lg position-relative">
+                  <div class="row align-items-center">
+                    <div class="col-12 col-md-6 text-center border-right-md-on">
+                      <div class="row">
+                        <div class="col-12 col-md-9 col-xl-8 mx-auto">
+                          <div class="font-weight-bold text-gray fs-6">Na rekreácie v tomto roku Ti zostáva:</div>
+                        </div>
+                      </div>
+                      <div class="fs-6 text-gray mt-2"><span
+                          class="font-weight-bold text-primary fs-7">{{voucherContribution | number | mena:'€'}}</span>
+                        z
+                        {{voucherContributionMax | number | mena:'€'}}</div>
+                    </div>
+                    <div class="col-12 col-md-6 text-center mt-2 mt-md-0">
+                      <a *ngIf="voucherContribution > 0" routerLink="/holiday-voucher/voucher-create"
+                        class="btn btn-secondary text-white text-uppercase fs-5 font-weight-bold py-3 px-4 px-md-6">Žiadosť
+                        o príspevok</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <div class="clearfix mb-2">
+          <h3 class="d-inline-block fs-6 font-weight-boldmb-4 px-2">Prehľad Tvojich žiadostí a čerpania príspevku na
+            rekreácie za
+            rok 2019</h3>
+          <a class="float-right text-uppercase font-weight-bold fs-3 text-secondary position-relative top-1"
+            routerLink="/holiday-voucher/vouchers-all">Zobraz všetky</a>
+          </div>
+
+        <div class="b-tree-line" *ngIf="requestList && requestList.length > 0">
+
+          <div *ngFor="let item of requestList; let i = index"
+            [class]="(i === 0) ? 'item d-block bg-white py-3 px-4 border-radius-md box-shadow-sm mt-0 ml-8' : 'item d-block bg-white py-3 px-4 border-radius-md box-shadow-sm mt-4 ml-8'">
+            <div class="row" *ngIf="item">
+              <!-- datum a miesto dovolenky -->
+              <div class="d-flex align-items-center col-12 col-md-6 col-lg-4 border-right-md-on">
+                <span
+                  [class]="(item.status == statusList.DRAFT) ? 'text-gray d-flex align-items-center w-100' : 'font-weight-bold d-flex align-items-center w-100'">
+                  <span
+                    [class]="(item.status == statusList.DRAFT) ? 'mr-3' : 'text-secondary mr-3'">{{item.holidayDate}}</span>
+                  <span class="text-truncate" placement="top"
+                    [ngbTooltip]="item.location">{{item.location | empty}}</span>
+                </span>
+              </div>
+
+              <!-- vyska prispevku -->
+              <div *ngIf="item.status == statusList.DRAFT"
+                class="d-flex align-items-center col-12 col-md-6 col-lg border-right-lg-on">
+                <span class="text-gray">Výška príspevku: {{item.contributionAmount | number | mena:'€' | empty }}</span>
+              </div>
+              <div *ngIf="item.status != statusList.DRAFT && item.status != statusList.DECLINED"
+                class="d-flex align-items-center col-12 col-md-6 col-lg border-right-lg-on">
+                Výška príspevku: <span
+                  class="font-weight-bold text-primary">{{item.contributionAmount | number | mena:'€' | empty }}</span>
+              </div>
+              <div *ngIf="item.status == statusList.DECLINED"
+                class="d-flex align-items-center col-12 col-md-6 col-lg border-right-lg-on">
+                <span class="text-gray">Výška príspevku:
+                  <strong>{{item.contributionAmount | number | mena:'€' | empty }}</strong></span>
+              </div>
+
+              <!-- stav a datum modifikacie -->
+              <div *ngIf="item.status == statusList.DRAFT"
+                class="d-flex align-items-center col-12 col-md-6 col-lg border-right-md-on">
+                <strong>{{statusListDesc[item.status]}}</strong> <span class="ml-1">({{item.modified}})</span>
+              </div>
+              <div *ngIf="item.status != statusList.DRAFT"
+                class="d-flex align-items-center col-12 col-md-6 col-lg border-right-md-on">
+                <span
+                  [class]="statusColorList[item.status] + ' font-weight-bold'">{{statusListDesc[item.status]}}</span>
+                <span class="text-gray ml-1">({{item.modified}})</span>
+              </div>
+
+              <!-- linka na dokument -->
+              <div class="d-flex align-items-center col-12 col-md-6 col-lg-auto">
+                <a [routerLink]="(item.status == statusList.DRAFT) ? '/holiday-voucher/voucher-edit/' + item.id : '/holiday-voucher/voucher/' + item.id"
+                  class="fs-8 text-secondary">
+                  <i [class]="(item.status == statusList.DRAFT) ? 'icon icon-edit' : 'icon icon-doc'"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</article>

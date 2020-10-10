@@ -1,0 +1,53 @@
+<search-list  #searchlist  [toptitle]="'Zoznam školení'" [limit]="10" [numPages]="5" 
+[clsOuterRow]="'row ml-9'" [clsOuterPanel]="'col-12'" [clsItemCols]="'col-12'"
+    [clsList]="'b-tree-line'" [clsInnerPanel]="'s-events'" [searchFields]="'name,personFN,place'">
+
+    <div role="header">
+        <div class="row mt-1 px-3">
+            <div class="col-4">
+                <div class="text-truncate font-weight-bold">Názov školenia</div>
+            </div>
+            <div class="col-2">
+                <div class="text-truncate font-weight-bold">Adresát</div>
+            </div>
+            <div class="col-2">
+                <div class="text-truncate font-weight-bold">Konanie školenia</div>
+            </div>
+            <div class="col-2">
+                <div class="text-truncate font-weight-bold">Povinné / Nepovinné</div>
+            </div>
+            <div class="col-2">
+                <div class="text-truncate font-weight-bold">Deň konania školenia</div>
+            </div>
+        </div>
+    </div>
+
+    <div role="back">
+        <a href="javascript:void(0)" (click)="goToLastPath()"
+            class="btn btn-secondary text-white text-uppercase fs-5 font-weight-bold px-4 px-md-6 mb-3 mb-md-0 back">Predošlá&nbsp;&nbsp;stránka</a>
+    </div>
+
+    <div role="item">
+        <ng-template #templateRef let-item="item" let-keywords="keywords">
+            <div class="bg-white py-4 px-3 border-radius-md box-shadow-sm" style="height:54px">
+                <div class="row">
+                    <div class="col-4">
+                        <a href="javascript:void(0)" (click)="updCourse(item.id)" class="text-truncate text-secondary font-weight-bold">{{item?.name}}</a>
+                    </div>
+                    <div class="col-2">
+                        <div class="text-truncate text-gray">{{item?.personFN}}</div>
+                    </div>
+                    <div class="col-2">
+                        <div class="text-truncate text-gray">{{item?.place}}</div>
+                    </div>
+                    <div class="col-2">
+                        <div class="text-truncate text-gray">{{item?.mandatory}}</div>
+                    </div>
+                    <div class="col-2">
+                        <div class="text-truncate text-gray">{{item?.procdate}}</div>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+    </div>
+</search-list>

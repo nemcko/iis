@@ -1,0 +1,203 @@
+<header classes="toptitle2">
+    <h3>Ročný rozhovor - nastavenie cieľov</h3>
+</header>
+<div class="fs-5 pb-4">
+    Výborne, zhodnotili sme minulý rok. Teraz je na čase nastaviť ciele do budúceho roka.
+    Keď budeš mať nastavené ciele, môžeš formulár uložiť. Vrátiť sa k nemu a zmeniť ciele budeš môcť až do ukončenia
+    zberu ročných rozhovorov {{lastDay() | date:'dd.MM.yyyy'}}
+</div>
+
+
+<header classes="header3">
+    <h3>Nastav začiatočný stav</h3>
+</header>
+<div class="fs-5 pb-3">
+    Je to východiskový bod kariéry, kde sa podľa teba momentálne nachádzaš.
+</div>
+<div class="row">
+    <div class="col-12">
+        <div class="bg-white py-8 px-6 py-lg-8 px-lg-8 border-radius-md box-shadow-sm mb-8 mt-5 mt-lg-0">
+            <div class="b-timeline my-1 my-lg-3 mx-lg-3">
+
+
+
+                <p-slider class="e-progress-bar pink-light d-inline-block w-100 mb-3 mt-1" [(ngModel)]="data.startlevel" [min]="0" [max]="100"
+                    [step]="5">              
+                </p-slider>
+                <div class="exslider" style="position:absolute;height:0;width:100%;left:0px;">
+                    <div class="mark" style="left: 5%;top:18px;"></div>
+                    <div class="mark" style="left: 10%;top:18px;"></div>
+                    <div class="mark" style="left: 15%;top:18px;"></div>
+                    <div class="mark" style="left: 20%;top:18px;"></div>
+                    <div class="mark" style="left: 25%;top:18px;"></div>
+                    <div class="mark" style="left: 30%;top:18px;"></div>
+                    <div class="mark" style="left: 35%;top:18px;"></div>
+                    <div class="mark" style="left: 40%;top:18px;"></div>
+                    <div class="mark" style="left: 45%;top:18px;"></div>
+                    <div class="mark" style="left: 55%;top:18px;"></div>
+                    <div class="mark" style="left: 60%;top:18px;"></div>
+                    <div class="mark" style="left: 65%;top:18px;"></div>
+                    <div class="mark" style="left: 70%;top:18px;"></div>
+                    <div class="mark" style="left: 80%;top:18px;"></div>
+                    <div class="mark" style="left: 85%;top:18px;"></div>
+                    <div class="mark" style="left: 90%;top:18px;"></div>
+                    <div class="mark" style="left: 95%;top:18px;"></div>
+                </div>
+
+
+                <div class="level" [ngClass]="{'active': data.startlevel>=0}" style="left: 0;top:4px;" data-toggle="tooltip" data-placement="top" title="Štart">
+                    <div class="title d-none d-lg-block">Štart</div>
+                </div>
+                <div class="level" [ngClass]="{'active': data.startlevel>=25}" style="left: 25%;top:4px;" data-toggle="tooltip" data-placement="top" title="Junior">
+                    <div class="title d-none d-lg-block">Junior</div>
+                </div>
+                <div class="level" [ngClass]="{'active': data.startlevel>=50}" style="left: 50%;top:4px;" data-toggle="tooltip" data-placement="top" title="Medior">
+                    <div class="title d-none d-lg-block">Medior</div>
+                </div>
+                <div class="level" [ngClass]="{'active': data.startlevel>=75}" style="left: 75%;top:4px;" data-toggle="tooltip" data-placement="top" title="Senior">
+                    <div class="title d-none d-lg-block">Senior</div>
+                </div>
+                <div class="level" [ngClass]="{'active': data.startlevel>=100}" style="left: 100%;top:4px;" data-toggle="tooltip" data-placement="top" title="Expert">
+                    <div class="title d-none d-lg-block">Expert</div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<header classes="sectionpanel">
+    <h3>Čo sa chcem naučiť do {{prevlastDayNextYear() | date:'dd.MM.yyyy'}}</h3>
+</header>
+<div class="row mb-4">
+    <div class="col-12">
+        <div classes="themebox">
+            <h3></h3>
+            <div>
+                <textarea classes="theme" rows="2" [(ngModel)]="data.intention" name="verbaleval"></textarea>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<header classes="sectionpanel">
+    <h3>Ciele na najbližší rok</h3>
+    <a href="javascript:void(0)" preventDefault (click)="addTarget()" class="text-secondary" *ngIf="hasTargets"><i
+            class="icon icon-plus-circle fs-7 position-relative top-1"></i> Pridaj
+        cieľ</a>
+</header>
+
+<div class="row" *ngIf="!hasTargets">
+    <div class="w-100 px-3 pb-3">
+        Odporúčame Ti definovať 3-5 cieľov na nadchádzajúci rok. S tým, že každý môže mať svoj vlastný deadline v rámci
+        celého obdobia.
+        Výstižne cieľ pomenuj a zároveň vlož text, ktorý ho jednoznačne popíše.
+    </div>
+    <div class="col-12 col-lg-6 mx-3 bg-white p-5 border-radius-md box-shadow-sm clearfix b-ils-info">
+        <div class="row align-items-center">
+            <div class="col-12 col-lg-6 text-center mb-6 order-lg-2">
+                <img src="assets/ils-table.svg" alt="#" class="img-fluid">
+            </div>
+            <div class="col-12 col-lg-6 px-xl-7 order-lg-1">
+                <h3 class="text-primary fs-7 font-weight-bold">Na nadchádzajúce obdobie zatiaľ nemáš definované nijaké
+                    ciele.</h3>
+                <a href="#" preventDefault (click)="addTarget()"
+                    class="btn bg-white box-shadow-md text-secondary text-uppercase fs-5 font-weight-bold px-6 py-2 px-md-6 mt-1 mt-lg-3 d-inline-block"
+                    data-toggle="modal" data-target="#howToModal">Pridaj cieľ</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row" *ngIf="hasTargets">
+    <div class="col-12 col-lg-6 mb-4" *ngFor="let item of data?.targets || []; let i = index"
+        [ngClass]="{'pr-xl-6': i%2===0}">
+        <div
+            class="bg-white pb-3 pt-5 px-4 border-radius-md box-shadow-sm clearfix h-100 d-flex flex-column position-relative">
+            <div class="e-progress-bar blue position-absolute top-0 left-0"><span style="width: 100%"></span></div>
+            <h3 class="font-weight-black fs-6 mb-2">{{item.name}}</h3>
+            <div class="lh-24">{{item.desc}}</div>
+            <div class="row mt-2">
+                <div class="col-12 col-lg">Váha cieľu: <strong>{{item.weight}}%</strong></div>
+                <div class="col-12 col-lg text-lg-right">Deadline:
+                    <strong>{{item.deadline | date:'dd.MM.yyyy'}}</strong></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<header classes="header3">
+    <h3>Nastav výsledný cieľ roka</h3>
+</header>
+<div class="fs-5 pb-3">
+    Je to bod kariéry do ktorého sa vieme dostať ak splníme všetky ciele na 100%.
+</div>
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="bg-white py-8 px-6 py-lg-8 px-lg-8 border-radius-md box-shadow-sm mb-8 mt-5 mt-lg-0">
+            <div class="b-timeline my-1 my-lg-3 mx-lg-3">
+
+
+
+                <p-slider class="e-progress-bar pink-light d-inline-block w-100 mb-3 mt-1" [(ngModel)]="data.endlevel" [min]="0" [max]="100"
+                    [step]="5">              
+                </p-slider>
+
+                <div class="exslider" style="position:absolute;height:0;width:100%;left:0px;">
+                    <div class="mark" style="left: 5%;top:18px;"></div>
+                    <div class="mark" style="left: 10%;top:18px;"></div>
+                    <div class="mark" style="left: 15%;top:18px;"></div>
+                    <div class="mark" style="left: 20%;top:18px;"></div>
+                    <div class="mark" style="left: 25%;top:18px;"></div>
+                    <div class="mark" style="left: 30%;top:18px;"></div>
+                    <div class="mark" style="left: 35%;top:18px;"></div>
+                    <div class="mark" style="left: 40%;top:18px;"></div>
+                    <div class="mark" style="left: 45%;top:18px;"></div>
+                    <div class="mark" style="left: 55%;top:18px;"></div>
+                    <div class="mark" style="left: 60%;top:18px;"></div>
+                    <div class="mark" style="left: 65%;top:18px;"></div>
+                    <div class="mark" style="left: 70%;top:18px;"></div>
+                    <div class="mark" style="left: 80%;top:18px;"></div>
+                    <div class="mark" style="left: 85%;top:18px;"></div>
+                    <div class="mark" style="left: 90%;top:18px;"></div>
+                    <div class="mark" style="left: 95%;top:18px;"></div>
+                </div>
+
+
+                <div class="level" [ngClass]="{'active': data.endlevel>=0}" style="left: 0;top:4px;" data-toggle="tooltip" data-placement="top" title="Štart">
+                    <div class="title d-none d-lg-block">Štart</div>
+                </div>
+                <div class="level" [ngClass]="{'active': data.endlevel>=25}" style="left: 25%;top:4px;" data-toggle="tooltip" data-placement="top" title="Junior">
+                    <div class="title d-none d-lg-block">Junior</div>
+                </div>
+                <div class="level" [ngClass]="{'active': data.endlevel>=50}" style="left: 50%;top:4px;" data-toggle="tooltip" data-placement="top" title="Medior">
+                    <div class="title d-none d-lg-block">Medior</div>
+                </div>
+                <div class="level" [ngClass]="{'active': data.endlevel>=75}" style="left: 75%;top:4px;" data-toggle="tooltip" data-placement="top" title="Senior">
+                    <div class="title d-none d-lg-block">Senior</div>
+                </div>
+                <div class="level" [ngClass]="{'active': data.endlevel>=100}" style="left: 100%;top:4px;" data-toggle="tooltip" data-placement="top" title="Expert">
+                    <div class="title d-none d-lg-block">Expert</div>
+                </div>
+
+                <div class="year start" [ngStyle]="{'left': data.startlevel + '%'}">
+                    <div class="title">Začiatok roka</div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div classes="footerpanel">
+    <a href="javascript:void(0)" (click)="parent.goToCard()" classes="footerbutton"><i
+            class="fas fa-arrow-left"></i>&nbsp;Späť na zhodnotenie</a>
+
+    <a *ngIf="parent.maySaveData()" href="#" preventDefault (click)="saveData()" classes="footerbutton"><i class="far fa-file"></i>&nbsp;Uložiť
+        ročný rozhovor</a>
+</div>

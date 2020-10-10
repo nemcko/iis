@@ -1,0 +1,20 @@
+<section>
+  <header class="clearfix mb-2">
+    <h3 class="fs-6 font-weight-bold d-inline-block mr-6">Poďakuj...</h3>
+    <a routerLink="/dashboard/podakovania"
+      class="float-right text-uppercase font-weight-bold fs-3 text-secondary position-relative top-1">Zobraz všetky</a>
+  </header>
+
+  <div
+    class="bg-white p-4 pt-7 text-center min-height-230 border-radius-md box-shadow-lg d-flex align-items-start justify-content-center position-relative article-actions-on">
+    <div class="content w-100">
+      <h3 class="fs-6 font-weight-bold lh-22 mb-6 px-6 thanks" *ngIf="podakovanie">
+        <a routerLink="/dashboard/podakovania" innerHTML="{{podakovanie.title}}"></a>
+      </h3>
+
+      <div>
+      <a href="#" preventDefault class="btn btn-white text-primary fs-5 font-weight-bold text-uppercase px-5" (click)="addThanks()">Chcem poďakovať</a>
+    </div>
+    </div>
+  </div>
+</section>

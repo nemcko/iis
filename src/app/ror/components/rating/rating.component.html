@@ -1,0 +1,207 @@
+<div class="row">
+  <div class="col-12 col-md-10 col-lg-8 mx-auto">
+    <section class="s-events">
+      <header class="clearfix mb-5">
+        <h3 class="fs-7 font-weight-bold d-inline-block mr-6">Detail ročného rozhovoru</h3>
+      </header>
+
+      <a routerLink="/ror/ratings"
+        class="btn btn-secondary text-white text-uppercase fs-5 font-weight-bold px-4 px-md-6 mb-3 mb-md-0 back">Späť na
+        prehľad</a>
+
+      <div class="d-block bg-white p-6 border-radius-md box-shadow-sm mt-0 position-relative mb-6">
+        <div class="row align-items-center">
+          <div class="col-12 col-md fs-7">
+            Stav rozhovoru:
+            <!-- nazov stavu s farebnym odlisenim -->
+            <span
+              [class]="ratingStatusColorList[rating.status] + ' font-weight-bold text-uppercase'">{{ratingStatusListDesc[rating.status]}}</span>
+          </div>
+          <!-- zobrazenie tlacidla na pracu so ziadostou - zamietnuta|prepracuj, koncept|uprav, -->
+          <div class="col-12 col-md-auto fs-7 mt-3 mt-md-0 preloader-on">
+            <app-loader-block key="wf_ror_loader"></app-loader-block>
+            <div>
+            <a *ngIf="wfActions.includes(ratingWFActions.EDIT)" [routerLink]="'/ror/rating-edit/' + rating.id"
+              class="btn btn-secondary text-white text-uppercase fs-5 font-weight-bold py-3 px-4 px-md-6">Uprav
+              hodnotenie</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ZAKLADNE UDAJE -->
+      <div class="d-block bg-white p-6 border-radius-md box-shadow-sm mt-6">
+        <div class="row">
+          <div class="col-12 fs-7">
+            <div>Hodnotený zamestnanec: <span class="font-weight-bold text-primary">{{rating.ratedUserFN}}</span></div>
+            <div class="mt-3">Pozícia: <span
+                class="font-weight-bold text-primary">{{rating.ratedUserPositionDesc}}</span></div>
+            <div class="mt-3">Dátum stretnutia: <span
+                class="font-weight-bold text-primary">{{rating.dateMeeting}}</span></div>
+            <div class="mt-3">Hodnotí: <span class="font-weight-bold text-primary">{{rating.managerFN}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CIELE/ULOHY/PROJEKTY -->
+      <div class="d-block bg-white p-6 border-radius-md box-shadow-sm mt-6" *ngIf="rating?.tasks && rating.status != ratingStatusList.DRAFT">
+        <span class="d-block text-secondary fs-7 mb-2 ml-2">
+          <strong>Ciele</strong>
+        </span>
+
+        <!-- RIADOK CIELOV/ULOH/PROJEKTOV -->
+        <div *ngFor="let task of rating.tasks; let i = index"
+          [class]="(i == 0) ? 'row mt-0 mb-4 pb-3 border-bottom' : 'row my-4 pb-3 border-bottom'">
+          <div class="col-12 fs-6 font-weight-bold">
+            {{task.title | urlDecode}}
+          </div>
+          <div class="col-12 my-2">
+            {{task.description | urlDecode}}
+          </div>
+          <div class="col-6 fs-6">
+            <span>Váha cieľa: </span><strong>{{task.weight}}%</strong>
+          </div>
+
+          <div class="col-6 fs-6 text-right">
+            <span>Termín: </span><strong>{{task.deadline}}</strong>
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- KOMPETENCIE - PROFESNE -->
+      <div class="d-block bg-white p-6 border-radius-md box-shadow-sm mt-6" *ngIf="rating?.competencesProfessional">
+        <div class="row">
+          <div class="col-10">
+            <span class="d-block text-secondary fs-7 ml-2"><strong>Kompetencie - Odborné</strong></span>
+            <span class="d-block fs-6 mb-2 ml-2"><strong>Popis</strong></span>
+          </div>
+
+          <div class="col-2">
+            <span class="d-block fs-6 mb-2 ml-2 mt-6"><strong>Hodnotenie</strong></span>
+          </div>
+        </div>
+
+        <!-- RIADOK KOMPETENCII -->
+
+        <div *ngFor="let area of rating.competencesProfessional">
+          <div class="row mt-2">
+            <div class="col-12">
+              <span class="d-block fs-6 mb-2 ml-2 text-primary"><strong>{{area.category}}</strong></span>
+            </div>
+          </div>
+          <div *ngFor="let item of area.competenceList; let i = index; let odd = odd; let first = first;" [class]="first ? 'row mt-0' : (odd ? 'row mt-2 odd' : 'row mt-2')">
+            <div class="col-10 fs-6">
+              {{item.title}}
+            </div>
+
+            <div class="col-2 fs-6 font-weight-bold text-primary">
+              {{item.rating}}
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+      <!-- KOMPETENCIE - OSOBNOSTNE -->
+      <div class="d-block bg-white p-6 border-radius-md box-shadow-sm mt-6" *ngIf="rating?.competencesPersonal">
+        <div class="row">
+          <div class="col-10">
+            <span class="d-block text-secondary fs-7 ml-2"><strong>Kompetencie - Osobnostné</strong></span>
+            <span class="d-block fs-6 mb-2 ml-2"><strong>Popis</strong></span>
+          </div>
+
+          <div class="col-2">
+            <span class="d-block fs-6 mb-2 ml-2 mt-6"><strong>Hodnotenie</strong></span>
+          </div>
+        </div>
+
+        <!-- RIADOK KOMPETENCII -->
+
+        <div *ngFor="let area of rating.competencesPersonal">
+          <div class="row mt-2">
+            <div class="col-12">
+              <span class="d-block fs-6 mb-2 ml-2 text-primary"><strong>{{area.category}}</strong></span>
+            </div>
+          </div>
+          <div *ngFor="let item of area.competenceList; let i = index; let odd = odd; let first = first;" [class]="first ? 'row mt-0' : (odd ? 'row mt-2 odd' : 'row mt-2')">
+
+            <div class="col-10 fs-6">
+              {{item.title}}
+            </div>
+
+
+            <div class="col-2 fs-6 font-weight-bold text-primary">
+              {{item.rating}}
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 4. ROZVOJ ZAMESTNANCA -->
+      <div class="d-block bg-white p-6 border-radius-md box-shadow-sm mt-6">
+        <div class="row">
+          <div class="col-12">
+            <span class="d-block text-secondary fs-7 ml-2"><strong>Zhrnutie roka - čo som sa naučil, moje
+                dojmy.</strong></span>
+            <span class="text-primary text-formated">
+              {{rating.yearSummary | urlDecode}}
+            </span>
+            <span class="d-block text-secondary fs-7 mt-6 ml-2"><strong>Čo sa chcem naučiť v blízkej dobe.</strong></span>
+            <span class="text-primary text-formated">
+              {{rating.nextDevelopment | urlDecode}}
+            </span>
+            <span class="d-block text-secondary fs-7 mt-6 ml-2"><strong>Čo ako zamestnanec navrhujem zlepšiť vo firme, resp.
+              v mojom tíme v budúcom období</strong></span>
+          <span class="text-primary text-formated">
+            {{rating.recommendation | urlDecode}}
+          </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. ZAVERECNE ZHODNOTENIE -->
+      <div class="d-block bg-white p-6 border-radius-md box-shadow-sm mt-6"  *ngIf="rating.status != ratingStatusList.DRAFT">
+        <div class="row">
+          <div class="col-12">
+            <span class="d-block text-secondary fs-7 ml-2"><strong>Krátke zhodnotenie ročného rozhovoru
+                (nadriadený)</strong></span>
+            <span class="text-primary text-formated">
+              {{rating.finalEvaluationManager | urlDecode}}
+            </span>
+
+            <span class="d-block text-secondary fs-7 mt-6 ml-2"><strong>Krátke zhodnotenie ročného rozhovoru
+                (zamestnanec)</strong></span>
+            <span class="text-primary text-formated">
+              {{rating.finalEvaluationUser | urlDecode}}
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. Poznámky -->
+      <div class="d-block bg-white p-6 border-radius-md box-shadow-sm mt-6">
+        <div class="row">
+          <div class="col-12">
+            <span class="d-block text-secondary fs-7 ml-2"><strong>Moje poznámky</strong></span>
+            <div *ngIf="isRatedPerson">
+              <span class="text-primary text-formated">
+                {{rating.notesUser | urlDecode}}
+              </span>
+            </div>
+            <div *ngIf="isManager">
+              <span class="text-primary text-formated">
+                {{rating.notesManager | urlDecode}}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </div>
+</div>
